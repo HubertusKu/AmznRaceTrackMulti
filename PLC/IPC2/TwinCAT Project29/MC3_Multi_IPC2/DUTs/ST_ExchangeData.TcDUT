@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+  <DUT Name="ST_ExchangeData" Id="{ed19bb78-b88c-498d-9a31-37fc83042cbb}">
+    <Declaration><![CDATA[TYPE ST_ExchangeData :
+STRUCT
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

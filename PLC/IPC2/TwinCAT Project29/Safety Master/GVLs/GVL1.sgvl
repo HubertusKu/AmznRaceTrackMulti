@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlobalVariables Crc="876061738" Id="21bca966-a6b2-4b69-b042-b2a130b8944b" FileFormatVersion="1.0">
+  <Variable Id="7fc7a4b0-53a0-4248-b4be-b76bf6e1e854">
+    <Name>Variable1</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="6bfcc66c-6f73-4112-9f10-db2d90b6a32c">
+        <SdsId>71</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="0284d183-eb25-4de9-b2a2-186cdece9044">
+        <ModelElementId>c5a4d8cc-2fbe-49f6-86b6-8166cdc548c9</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="4ea9f5a2-ad3a-4c56-8da0-2ad6470c074c">
+    <Name>Variable2</Name>
+    <SourceUsages>
+      <FbPortUsage Id="51250279-4ae2-4f6b-9ebd-edc160a38999">
+        <ModelElementId>5d77b102-e6b1-4616-a4c0-b588f4474a46</ModelElementId>
+      </FbPortUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <AliasDeviceIoUsage Id="5a2e5ef2-54db-41c8-a871-dc1996b4fed4">
+        <SdsId>144</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>1327546135</FunctionId>
+      </AliasDeviceIoUsage>
+      <AliasDeviceIoUsage Id="e43ce74d-1e81-43e1-87f4-34f47d5c4b45">
+        <SdsId>72</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>1131179972</FunctionId>
+      </AliasDeviceIoUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="079e3622-52d7-4da8-9cb3-e00517c5cf39">
+    <Name>Variable3</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="00874b31-229b-4084-92f3-b9673c4b47ed">
+        <SdsId>76</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="851ab75f-2c2a-4db1-b767-386a77da5bf2">
+        <ModelElementId>f638d8d2-da16-4d8c-848e-576e781e012b</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="40d6140e-97d6-4621-a4f3-febeff20d176">
+    <Name>Variable4</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="0d74bd10-264d-4c1b-a716-9f5a971a3ac6">
+        <SdsId>77</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="d5155f9a-ea5a-4e3e-b341-c79bec145dee">
+        <ModelElementId>045d4b31-d6bc-4334-85a0-38ad762d76b2</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="0b38d333-6efd-4687-90a1-9daeb0d137cc">
+    <Name>Variable5</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="88f72d13-6949-423e-b6d4-d50818da41ba">
+        <SdsId>78</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="559fcd9c-18b6-44fe-8e14-6eb41c57b980">
+        <ModelElementId>750dd2c6-9143-40d6-8304-eea17fb9f72c</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="4e50111e-f1e2-4d54-8331-a48fe24b1fc9">
+    <Name>Variable6</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="9af0d5f3-69ad-4805-8e33-7b79e9cb8dd3">
+        <SdsId>79</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="fce2a6f9-7a93-4512-b0c0-beab4bded697">
+        <ModelElementId>7c46db6f-13ff-4819-9ab0-8d250e0f9f0f</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="4a3f2a9e-0d2d-4ef2-b097-3f8b14e16446">
+    <Name>Variable33</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="6ef39577-c203-4f19-ae8c-02ab5aa7dfa5">
+        <SdsId>135</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="1a1a41b6-179b-41f0-a5e7-2ff099924888">
+        <ModelElementId>9f2e3a2f-a32e-4388-a7cc-8466cff000d1</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="e97515a5-18c1-407f-9e37-5f7e49983ec2">
+    <Name>Variable49</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="a7478afc-53ea-46b7-873e-ab40c2e69f69">
+        <SdsId>134</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="99a1cb99-6c2e-4512-9664-e67719521c4c">
+        <ModelElementId>ae955f75-e3b3-4bd3-a4ef-dad7dcea4d14</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="845ed15d-27a2-40b0-bc66-fce7e7b520ac">
+    <Name>Variable63</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="9d13beb7-c34c-45eb-ba3e-e45eb3b37e5b">
+        <SdsId>136</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="bd4ad97d-8e85-4c18-870c-335d444170c4">
+        <ModelElementId>345164a2-1af3-4d40-ac05-7843a50e9ac7</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="7c190d6f-57ee-4a64-a1bd-9ca8b081c5b3">
+    <Name>Variable64</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="213048d8-2e14-447d-b358-05884cfcaeb9">
+        <SdsId>137</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="f7ad20de-a547-46a3-99c7-686d7f2764d5">
+        <ModelElementId>ae917411-c785-4d2d-980e-b165d702fd34</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+  <Variable Id="498d7d6e-4a10-4ff2-b2d6-1b2ef4619e34">
+    <Name>Variable65</Name>
+    <SourceUsages>
+      <AliasDeviceIoUsage Id="a3b7efd8-9594-4b03-b006-73ac59708a8e">
+        <SdsId>138</SdsId>
+        <ChannelId>1</ChannelId>
+        <FunctionId>-167706367</FunctionId>
+      </AliasDeviceIoUsage>
+    </SourceUsages>
+    <TargetUsages>
+      <FbPortUsage Id="24093717-2587-4fee-b2f1-9b7f6814e8c8">
+        <ModelElementId>e0d46d56-e91f-45ad-acf6-d8f0366ab7be</ModelElementId>
+      </FbPortUsage>
+    </TargetUsages>
+  </Variable>
+</GlobalVariables>

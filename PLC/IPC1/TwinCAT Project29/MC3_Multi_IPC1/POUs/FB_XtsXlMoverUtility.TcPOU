@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+  <POU Name="FB_XtsXlMoverUtility" Id="{a87e1c85-714d-475f-8916-602e42c43157}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_XtsXlMoverUtility
+VAR_INPUT
+	EdtDriverOid: OTCID;
+END_VAR
+
+VAR_OUTPUT
+	bBusy: BOOL;
+	bDone: BOOL;
+	bError: BOOL;
+	bInit: BOOL;
+	ipResultMessage: I_TcMessage := fbResult;
+END_VAR
+
+VAR
+	fbResult: FB_TcMessage;
+	_ipComObject: ITComObject;
+	
+	PID_TriggerLeave						: PTCID := 16#030802EF;
+	PID_TriggerArrive						: PTCID := 16#030802EE;
+	PID_IsVirtualFeedbackEnabled			: PTCID := 16#0308050B;
+	PID_ConfiguredDetectionTrackObjectId	: PTCID := 16#030802F0;
+	PID_StartupTrackPosition				: PTCID := 16#03080370;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bInit THEN
+	IF GetComObject(nObjectId:=EdtDriverOid) THEN
+		bInit:=TRUE;
+	END_IF
+	RETURN;
+END_IF]]></ST>
+    </Implementation>
+    <Method Name="GetComObject" Id="{7adbca15-0a10-40c0-bede-1466662e866d}">
+      <Declaration><![CDATA[METHOD GetComObject : BOOL
+VAR_INPUT
+	nObjectId: OTCID;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[IF FW_ObjMgr_GetObjectInstance(	oid		:= nObjectId, 
+								iid		:= TC_GLOBAL_IID_LIST.IID_ITComObject, 
+								pipUnk	:= ADR(_ipComObject)) = 0
+THEN
+	GetComObject := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetConfiguredDetectionTrackObjectId" Id="{eac16a1e-a5eb-409d-b47d-7f319c3c0c43}">
+      <Declaration><![CDATA[METHOD SetConfiguredDetectionTrackObjectId : BOOL
+VAR_INPUT
+	nConfiguredDetectionTrackObjectId: OTCID;
+END_VAR
+
+VAR
+	nValue: OTCID;
+	stEventEntry: TcEventEntry;
+	pstEventEntry: REFERENCE TO TcEventEntry := stEventEntry;
+END_VAR
+
+VAR_INST
+	hResult : HRESULT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bError := FALSE;
+
+nValue := nConfiguredDetectionTrackObjectId;
+
+IF _ipComObject <> 0 THEN 
+	 hResult := 	_ipComObject.TcSetObjPara(		pid := PID_ConfiguredDetectionTrackObjectId,
+													nData := SIZEOF(nValue),
+													pData := ADR(nValue),
+													pgp := 0); 	
+	IF hResult = 0 THEN
+		SetConfiguredDetectionTrackObjectId := TRUE;
+	ELSE
+		HRESULTAdsErr_TO_TcEventEntry(hResult,stEventEntry);
+		IF NOT fbResult.EqualsToEventEntryEx( stOther := stEventEntry) THEN
+			fbResult.CreateEx(stEventEntry, 0);
+			fbResult.Send(0);
+			fbResult.Release();
+		END_IF
+		bError := TRUE;
+	END_IF							
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetIsVirtualFeedbackEnabled" Id="{19659944-21bc-4fbf-808b-a43c51182772}">
+      <Declaration><![CDATA[METHOD SetIsVirtualFeedbackEnabled : BOOL
+VAR_INPUT
+	bSetIsVirtualFeedbackEnabled: BOOL;
+END_VAR
+
+VAR
+	nValue: BOOL;
+	stEventEntry: TcEventEntry;
+	pstEventEntry: REFERENCE TO TcEventEntry := stEventEntry;
+END_VAR
+
+VAR_INST
+	hResult : HRESULT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bError := FALSE;
+
+nValue := bSetIsVirtualFeedbackEnabled;
+
+IF _ipComObject <> 0 THEN 
+	 hResult := 	_ipComObject.TcSetObjPara(		pid := PID_IsVirtualFeedbackEnabled,
+													nData := SIZEOF(nValue),
+													pData := ADR(nValue),
+													pgp := 0); 	
+	IF hResult = 0 THEN
+		SetIsVirtualFeedbackEnabled := TRUE;
+	ELSE
+		HRESULTAdsErr_TO_TcEventEntry(hResult,stEventEntry);
+		IF NOT fbResult.EqualsToEventEntryEx( stOther := stEventEntry) THEN
+			fbResult.CreateEx(stEventEntry, 0);
+			fbResult.Send(0);
+			fbResult.Release();
+		END_IF
+		bError := TRUE;
+	END_IF							
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="SetStartupTrackPosition" Id="{295f3ee7-3e88-451b-a331-5352ce923489}">
+      <Declaration><![CDATA[METHOD SetStartupTrackPosition : BOOL
+VAR_INPUT
+	nStartupTrackPosition: REAL;
+END_VAR
+
+VAR
+	nValue: REAL;
+	stEventEntry: TcEventEntry;
+	pstEventEntry: REFERENCE TO TcEventEntry := stEventEntry;
+END_VAR
+
+VAR_INST
+	hResult : HRESULT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bError := FALSE;
+
+nValue := nStartupTrackPosition;
+
+IF _ipComObject <> 0 THEN 
+	 hResult := 	_ipComObject.TcSetObjPara(		pid := PID_StartupTrackPosition,
+													nData := SIZEOF(nValue),
+													pData := ADR(nValue),
+													pgp := 0); 	
+	IF hResult = 0 THEN
+		SetStartupTrackPosition := TRUE;
+	ELSE
+		HRESULTAdsErr_TO_TcEventEntry(hResult,stEventEntry);
+		IF NOT fbResult.EqualsToEventEntryEx( stOther := stEventEntry) THEN
+			fbResult.CreateEx(stEventEntry, 0);
+			fbResult.Send(0);
+			fbResult.Release();
+		END_IF
+		bError := TRUE;
+	END_IF							
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="TriggerArrive" Id="{86f074ec-7faf-4275-b703-f2ca8ff645ee}">
+      <Declaration><![CDATA[METHOD TriggerArrive : BOOL
+VAR_INPUT
+END_VAR
+
+VAR
+	nValue: BOOL;
+	stEventEntry: TcEventEntry;
+	pstEventEntry: REFERENCE TO TcEventEntry := stEventEntry;
+END_VAR
+
+VAR_INST
+	hResult : HRESULT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//bError := FALSE;
+
+nValue := TRUE;
+
+IF _ipComObject <> 0 THEN 
+	 hResult := 	_ipComObject.TcSetObjPara(		pid := PID_TriggerArrive,
+													nData := SIZEOF(nValue),
+													pData := ADR(nValue),
+													pgp := 0); 	
+	IF hResult = 0 THEN
+		TriggerArrive := TRUE;
+	ELSE
+		HRESULTAdsErr_TO_TcEventEntry(hResult,stEventEntry);
+		IF NOT fbResult.EqualsToEventEntryEx( stOther := stEventEntry) THEN
+			fbResult.CreateEx(stEventEntry, 0);
+			fbResult.Send(0);
+			fbResult.Release();
+		END_IF
+		bError := TRUE;
+		TriggerArrive := FALSE;
+	END_IF							
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="TriggerLeave" Id="{6674bb8d-5138-49c1-b73d-1638c42dd90b}">
+      <Declaration><![CDATA[METHOD TriggerLeave : BOOL
+VAR_INPUT
+END_VAR
+
+VAR
+	nValue: BOOL;
+	stEventEntry: TcEventEntry;
+	pstEventEntry: REFERENCE TO TcEventEntry := stEventEntry;
+END_VAR
+
+VAR_INST
+	hResult : HRESULT;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[bError := FALSE;
+
+nValue := TRUE;
+
+IF _ipComObject <> 0 THEN 
+	 hResult := 	_ipComObject.TcSetObjPara(		pid := PID_TriggerLeave,
+													nData := SIZEOF(nValue),
+													pData := ADR(nValue),
+													pgp := 0); 	
+	IF hResult = 0 THEN
+		TriggerLeave := TRUE;
+	ELSE
+		HRESULTAdsErr_TO_TcEventEntry(hResult,stEventEntry);
+		IF NOT fbResult.EqualsToEventEntryEx( stOther := stEventEntry) THEN
+			fbResult.CreateEx(stEventEntry, 0);
+			fbResult.Send(0);
+			fbResult.Release();
+		END_IF
+		bError := TRUE;
+	END_IF							
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_XtsXlMoverUtility">
+      <LineId Id="3" Count="4" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_XtsXlMoverUtility.GetComObject">
+      <LineId Id="3" Count="4" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_XtsXlMoverUtility.SetConfiguredDetectionTrackObjectId">
+      <LineId Id="106" Count="20" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_XtsXlMoverUtility.SetIsVirtualFeedbackEnabled">
+      <LineId Id="42" Count="20" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_XtsXlMoverUtility.SetStartupTrackPosition">
+      <LineId Id="106" Count="20" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_XtsXlMoverUtility.TriggerArrive">
+      <LineId Id="42" Count="18" />
+      <LineId Id="75" Count="0" />
+      <LineId Id="61" Count="1" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_XtsXlMoverUtility.TriggerLeave">
+      <LineId Id="42" Count="20" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

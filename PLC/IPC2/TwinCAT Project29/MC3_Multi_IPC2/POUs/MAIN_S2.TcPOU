@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+  <POU Name="MAIN_S2" Id="{eb537839-0cb8-4f4d-83cf-5c0c733fdb11}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN_S2
+
+VAR
+	b110SyncState AT %I* :UINT ;
+	b110State AT %I* :UINT;  
+
+	AktiveSystem : BOOL := TRUE;
+	bSwitch : BOOL := FALSE;
+	nState: UINT;
+	CycelCount :ARRAY[1..GVL_MC.nNumMovers] OF INT;
+	MoverState :ARRAY[1..GVL_MC.nNumMovers] OF UINT;
+	nForCounter ,i: UINT;
+	Velo : LREAL := 2000;
+	//mover :ARRAY[1..nNumMovers] OF MC_PlanarMover;
+
+	ipXlMover : 	I_XtsXlMover1;
+
+
+	state AT %Q* : INT := -1;
+	arrivedOTCID : OTCID;
+	Start :BOOL;
+	bAlldone : BOOL;
+	
+	//TargetPos: LREAL :=1180 ;
+
+	test : otcid; 
+	XPU_Number : UINT := 1; 	
+	
+	Short : BOOL;
+	
+	XtsOutterLoopOid: OTCID ;	
+	XtsShortcutOid: OTCID ;
+	Switch : FB_PWM;
+	Init : BOOL ; 
+	EndTrack : INT :=E_TrackNum.MainStart ;
+ 	StartTrack : INT :=E_TrackNum.MainStart ;
+	MoverNo : DINT;
+	SystemReady: BOOL;
+	
+	cmdFeedback: Tc3_XtsInterface.XtsCommandFeedback;
+	BUFFER: BYTE;
+	
+	xEapStart AT %I*: BOOL;
+	xEAPReset AT %I*: BOOL;
+	EtherCATModulesWCState AT %I*: BOOL;
+	EhterCATFault: BOOL;
+	SyncFault: BOOL;
+	
+	temp: HRESULT;
+	
+	haltDynamics : DynamicConstraint_PathXY;
+	stMoverConfigSlow	: ST_MoverConfig;
+	stMoverConfigNormal : ST_MoverConfig;
+	stMoverConfigFast  : ST_MoverConfig;
+	stMoverCfgAggressive : ST_MoverConfig;
+	stMoverCfgHalt : ST_MoverConfig;
+	MoverStopDone : BOOL;
+	Fault : BOOL;
+	Fp_error : r_trig;
+END_VAR
+
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// =====================
+// Initalize XTS Utility
+GVL_MC.fbXtsEnvironment.Init(GVL_MC.cmdFeedback);
+IF NOT GVL_MC.cmdFeedback.IsDone THEN
+	RETURN;
+END_IF
+Velo := GVL_DataExchange.Dynamics.V;
+IF Velo = 0 THEN
+	Velo := 500;
+END_IF
+// =====================
+GVL_MC.ipXtsProcessingUnit :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number,0);
+FOR i := 1 TO GVL_MC.nNumMovers DO 
+	
+	IF NOT Init THEN
+		ipXlMover  :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number, 0).XlMover(i, 0);
+		GVL_MC.fbMover[i].Init(ipXlMover, GVL_MC.ipXtsProcessingUnit); 
+	END_IF
+	
+//	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
+//	IF Fp_error.Q THEN
+//		state := 140;
+//		Fault := TRUE;
+//
+//		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
+//	ELSE
+//		Fault := FALSE;
+//	END_IF
+	
+	
+	GVL_MC.Feedback[i].Update();
+	GVL_MC.fbMover[i].CycleUpdate();
+	//GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo + (i - 1) * 50, 4000, 4000, 16000);
+	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 10000, 16000);
+	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gap := 900;
+	GVL_MC.fbMover[i].P_MoveOnTrackOptions.direction := MC_Direction.mcDirectionPositive;
+	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gapMode := MC_GAP_MODE_ON_TRACK.Fast1D;
+END_FOR	
+
+FOR i := 1 TO GVL_MC.nNumTracks DO 
+	GVL_MC.aMcTracks[i].Update();
+	GVL_MC.TrackFeedback[i].Update();
+END_FOR	
+
+IF NOT Init THEN
+	Init := TRUE;
+END_IF
+
+IF state <99 AND xEAPReset THEN 
+	state := 0; 
+END_IF
+
+IF state = 99 AND xEAPStart THEN 
+	state := 100; 
+END_IF
+
+IF EtherCATModulesWCState THEN 
+	EhterCATFault := TRUE;
+END_IF  
+
+IF b110SyncState <>1 THEN 
+	SyncFault := TRUE; 
+END_IF
+//Switch(SafeetyOK :=TRUE ,);
+
+
+CASE state OF
+	0: 
+		
+		FOR i := 1 TO GVL_MC.nNumTracks DO  
+			GVL_MC.aMcTracks[i].Enable(GVL_MC.TrackFeedback[i]);
+			state := 1;
+		END_FOR
+		
+	1: 	
+		bAlldone := TRUE;
+		FOR i := 1 TO GVL_MC.nNumTracks DO  
+			bAlldone := bAlldone AND GVL_MC.aMcTracks[i].MCTOPLC_STD.State = MC_PLANAR_STATE.Enabled ;
+		END_FOR
+			
+ 		IF bAlldone THEN
+			state := 2;
+		END_IF
+
+	2:	
+		IF AktiveSystem THEN
+			FOR i := GVL_MC.nNumActiveMovers + 1 TO GVL_MC.nNumMovers DO  
+				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetStartupTrackPosition(0.2,0);	
+				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
+			END_FOR 
+		ELSE
+			FOR i := 1 TO GVL_MC.nNumMovers DO  
+				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetStartupTrackPosition(0.2,0);	
+				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
+			END_FOR 
+		END_IF	
+		state := 5;
+	5: 
+		FOR i := 1 TO GVL_MC.nNumMovers DO
+			GVL_MC.fbMover[i].P_PlanarMover.Reset(0);
+			GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);	
+			
+		END_FOR
+		
+		IF AktiveSystem THEN
+			state := 10;
+		ELSE
+			state := 100;
+		END_IF	
+
+	10:
+		FOR i := 1 TO GVL_MC.nNumActiveMovers DO
+			GVL_MC.fbMover[i].P_PlanarMover.Enable(0);		
+		END_FOR
+		state := 15; 
+	15:
+		bAlldone := TRUE;
+		FOR i := 1 TO GVL_MC.nNumActiveMovers DO  
+			bAlldone := bAlldone AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.STD.State = MC_PLANAR_STATE.Enabled;	
+		END_FOR
+		
+		IF bAlldone THEN
+			state := 18;
+		END_IF
+	18: 
+	
+		FOR i := 1 TO GVL_MC.nNumActiveMovers DO  
+			GVL_MC.fbMover[i].JoinNearestTrack();	
+		END_FOR
+		state := 20;
+	
+	20:
+		bAlldone := TRUE;
+		FOR i := 1 TO GVL_MC.nNumActiveMovers DO
+			bAlldone := bAlldone AND GVL_MC.fbMover[i].fbPlanarMover.MCTOPLC.STD.CommandMode = MC_PLANAR_MOVER_COMMAND_MODE.OnTrack  ;	
+			MoverState[i] := 10;
+			
+		END_FOR
+
+		IF bAlldone THEN
+			state := 99;
+		END_IF
+		
+	100: 
+		arrivedOTCID := GVL_MC.EnterSystem.PopFirstMoverInQueue();
+		IF arrivedOTCID <> 0 THEN
+			FOR i := 1  TO GVL_MC.nNumMovers DO
+				IF GVL_MC.fbMover[i].MoverOTCID = arrivedOTCID THEN
+					MoverState[i] := 0;
+				END_IF
+			END_FOR
+		END_IF
+	
+		FOR i := 1 TO GVL_MC.nNumMovers DO 
+			CASE MoverState[i] OF 
+		
+			0:
+				IF MoverNo <> 0 AND_THEN GVL_MC.fbMover[MoverNo].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID =  GVL_MC.aMcTracks[E_TrackNum.MainStart].MCTOPLC_STD.TrackOID THEN
+					Short := FALSE;
+				END_IF
+		
+				IF GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 100  THEN
+					IF NOT short AND bSwitch  THEN
+						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.MainStart],GVL_MC.aMcTracks[E_TrackNum.MainStart].GetLength()/2);
+						MoverNo := i;
+						Short := TRUE;
+						MoverState[i] := 10;
+					ELSE
+						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength()/2);			
+						MoverState[i] := 10;
+					END_IF				
+				END_IF
+								
+			10:
+				IF(  GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 500 AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID <>  GVL_MC.aMcTracks[StartTrack].MCTOPLC_STD.TrackOID) OR GVL_MC.nNumTracks =1 THEN
+					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 1500) ;//VElo*0.35);
+					MoverState[i] := 11;
+				END_IF
+			11:	
+				//special command no chance to break in time 
+				IF  SystemReady  THEN
+					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 200);
+					//GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength()-200);
+					MoverState[i] := 12;
+				END_IF		
+			12: IF GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > GVL_MC.aMcTracks[EndTrack].GetLength() - 2300 AND 
+				(GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[EndTrack].MCTOPLC_STD.TrackOID) AND SystemReady THEN 
+					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem); 
+					MoverState[i] := 15; 
+				END_IF	
+			END_CASE
+		END_FOR
+		
+		140:
+			FOR i := 1 TO GVL_MC.nNumMovers DO  
+				GVL_MC.fbMover[i].P_PlanarMover.Halt(GVL_MC.Feedback[i], haltDynamics);
+			END_FOR	
+			
+				state := 145;
+			
+		145:
+			bAllDone := TRUE;
+				FOR i := 1 TO GVL_MC.nNumMovers DO  
+				IF NOT(GVL_MC.Feedback[i].Done OR GVL_MC.Feedback[i].Error) THEN
+					bAllDone := FALSE;
+					EXIT;
+				END_IF
+			END_FOR
+			
+			IF bAllDone THEN
+				state := 150;
+			END_IF
+		
+		//Disable
+		150:
+			MoverStopDone := TRUE;
+			FOR i := 1 TO GVL_MC.nNumMovers DO  
+					GVL_MC.fbMover[i].P_PlanarMover.Disable(GVL_MC.Feedback[i]);
+			END_FOR
+				
+			state := 0;
+		
+	
+END_CASE
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN_S2">
+      <LineId Id="5475" Count="14" />
+      <LineId Id="5701" Count="0" />
+      <LineId Id="5490" Count="1" />
+      <LineId Id="5702" Count="0" />
+      <LineId Id="5734" Count="7" />
+      <LineId Id="5731" Count="2" />
+      <LineId Id="5492" Count="2" />
+      <LineId Id="5700" Count="0" />
+      <LineId Id="5495" Count="3" />
+      <LineId Id="5676" Count="0" />
+      <LineId Id="5499" Count="3" />
+      <LineId Id="5678" Count="2" />
+      <LineId Id="5677" Count="0" />
+      <LineId Id="5675" Count="0" />
+      <LineId Id="5503" Count="12" />
+      <LineId Id="5673" Count="1" />
+      <LineId Id="5516" Count="80" />
+      <LineId Id="5693" Count="6" />
+      <LineId Id="5691" Count="1" />
+      <LineId Id="5597" Count="2" />
+      <LineId Id="5612" Count="33" />
+      <LineId Id="5665" Count="2" />
+      <LineId Id="5703" Count="27" />
+      <LineId Id="5668" Count="4" />
+      <LineId Id="1513" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

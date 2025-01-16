@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Crc="2078345018" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b687843e-c740-431c-945c-676eb3319443}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TwinCAT3SafePlcProject</RootNamespace>
+    <AssemblyName>TwinCAT3SafePlcProject</AssemblyName>
+    <FileUpgradeFlags />
+    <UpgradeBackupLocation />
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetSystem>EL6900</TargetSystem>
+    <ProgrammingLanguage>Graphical Editor</ProgrammingLanguage>
+    <Worker>Administrator</Worker>
+    <IntProjName>Safety Master</IntProjName>
+    <IsNewCreated>false</IsNewCreated>
+    <SPlcProjVersion>1.8.0.0</SPlcProjVersion>
+    <NextSdsId>145</NextSdsId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="GVLs\GVL1.sgvl" />
+    <None Include="TwinSafeGroup1\Alias Devices\E-StopReq.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\FromMastersds.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 18 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 19 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 20 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 21 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 22 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 77 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 78 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 79 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 80 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Modules\Box 81 %28AT5100-0100%29 - Module 1 %28SAFETY%29.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\SafetyInRun.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\SafetyOk.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\STO.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\STO_Release.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Term 4 %28EL1918%29 - Module 1 %28FSOE%29.sds" />
+    <None Include="TwinSafeGroup1\TwinSafeGroup1.sal" />
+    <None Include="TwinSafeGroup1\TwinSafeGroup1.sal.diagram">
+      <DependentUpon>TwinSafeGroup1\TwinSafeGroup1.sal</DependentUpon>
+      <Visible>false</Visible>
+    </None>
+    <None Include="TargetSystemConfig.xml">
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GVLs" />
+    <Folder Include="TwinSafeGroup1" />
+    <Folder Include="TwinSafeGroup1\Alias Devices" />
+    <Folder Include="TwinSafeGroup1\Alias Devices\Modules" />
+    <Folder Include="User FBs" />
+    <None Include="TwinSafeGroup1\Alias Devices\ErrorAcknowledgement.sds" />
+    <None Include="TwinSafeGroup1\Alias Devices\Run.sds" />
+  </ItemGroup>
+  <ProjectExtensions />
+</Project>

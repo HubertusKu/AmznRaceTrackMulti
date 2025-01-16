@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+  <GVL Name="GVL_MC" Id="{0b209c63-aa83-4511-8475-d1f9ba389ff4}">
+    <Declaration><![CDATA[
+VAR_GLOBAL CONSTANT
+	nNumMovers			: UINT := 12;
+	nNumTracks			: UINT := 4;
+	XtsShortcutOid				: otcid := 16#01010490 ;
+	XtsOutterLoopOid 			: otcid := 16#01010480;
+	
+	fMagnetEntry : LREAL := 1800; //PLEASE ENTER THE MAGNET ENTRY!!!
+	fMagnetExit : LREAL := 2650; //PLEASE ENTER THE MAGNET EXIT!!!
+	
+    standardAccel : LREAL := 4000; 
+    standardDecel : LREAL :=4000; 
+    standardJerk : LREAL := 16000; 
+
+
+END_VAR
+VAR_GLOBAL PERSISTENT
+	nNumActiveMovers	: UINT := 1;
+END_VAR	
+VAR_GLOBAL
+	
+	//fbXtsXlMoverUtility 		:	ARRAY[1..nNumMovers] OF FB_XtsXlMoverUtility;
+	fbXtsEnvironment			: 	FB_XtsEnvironment;
+	ipXtsProcessingUnit			:   I_XtsProcessingUnit1;
+	cmdFeedback					: 	XtsCommandFeedback;
+	buffer						:   BYTE;
+	
+	fbMover						:	ARRAY[1..GVL_MC.nNumMovers] OF FB_Mover;
+	iMover						:	ARRAY[1..GVL_MC.nNumMovers] OF i_Mover;
+	aDynamics					:  	DynamicConstraint_PathXY;
+	Feedback 					:	ARRAY[1..GVL_MC.nNumMovers] OF MC_PlanarFeedback;
+	TrackFeedback 				:	ARRAY[1..GVL_MC.nNumTracks] OF MC_PlanarFeedback;
+	aMcTracks					:	ARRAY[1..GVL_MC.nNumTracks] OF MC_PlanarTrack;
+	ExitSystem 					: 	MC_PlanarTrackConnectionOut;
+	EnterSystem 				:	MC_PlanarTrackConnectionIn;	
+	Mover						:	ARRAY[0..GVL_MC.nNumMovers] OF MoverSort;
+	defaultGap					:	LREAL := 900.0;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+  <Itf Name="I_Mover" Id="{8f7a23e9-9aaf-41cd-ab60-e1f3e7434be6}">
+    <Declaration><![CDATA[
+INTERFACE I_Mover
+]]></Declaration>
+    <Method Name="CycleUpdate" Id="{16b91d1c-6612-4b15-8ad2-636991d1ec4b}">
+      <Declaration><![CDATA[METHOD CycleUpdate : BOOL
+VAR_INPUT
+
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="distToEndOfTrack" Id="{fb9918b4-0722-48f8-b168-52aeaaa03f02}">
+      <Declaration><![CDATA[PROPERTY distToEndOfTrack : LREAL]]></Declaration>
+      <Get Name="Get" Id="{433eaf7b-763b-4281-b0de-2d687b311edb}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="Init" Id="{7d28287b-661a-454a-bbbf-866a25751a67}">
+      <Declaration><![CDATA[METHOD Init : BOOL
+VAR_INPUT
+	XtsMover:  I_XtsXlMover1;
+	XtsProcessingUnit :  I_XtsProcessingUnit1;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="JoinNearestTrack" Id="{fcd27990-deab-4421-b7b8-1b953f6ea6ad}">
+      <Declaration><![CDATA[METHOD JoinNearestTrack : BOOL
+
+
+VAR
+
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="LeaveSystemAt" Id="{6f2a2cbe-473d-4242-8909-5b4e3f2617b3}">
+      <Declaration><![CDATA[METHOD LeaveSystemAt : BOOL
+VAR_INPUT
+	ConnectionOut: REFERENCE TO MC_PlanarTrackConnectionOut;	
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="MoveOnTrack" Id="{c13e8780-a810-4cef-9f66-33ce7886d601}">
+      <Declaration><![CDATA[METHOD MoveOnTrack : BOOL
+VAR_INPUT
+	track: REFERENCE TO MC_PlanarTrack;	
+	targetPos: LREAL;	
+	gap: LREAL;
+
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="MoverStopped" Id="{cf4e5790-f4c7-4a34-a6b7-f827bd1b58ea}">
+      <Declaration><![CDATA[PROPERTY MoverStopped : BOOL]]></Declaration>
+      <Get Name="Get" Id="{73e4d349-958f-49aa-8819-82dc54fcaf7e}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{2984a813-2861-404e-afcd-6fe40b3f298b}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="P_Dynamics" Id="{49f87732-ac80-4370-864b-d299b8982fb4}">
+      <Declaration><![CDATA[PROPERTY P_Dynamics : REFERENCE TO DynamicConstraint_PathXY;]]></Declaration>
+      <Get Name="Get" Id="{903e88f0-856c-40e6-82b1-4d7fd487c3a1}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="P_MoveOnTrackOptions" Id="{58176a06-420f-43c2-97e9-0a0866e730ae}">
+      <Declaration><![CDATA[PROPERTY P_MoveOnTrackOptions : REFERENCE TO ST_MoveOnTrackOptions;]]></Declaration>
+      <Get Name="Get" Id="{6b0efbc1-c933-4562-829f-485e4cd01185}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="P_MoverOTCID" Id="{7aee9de3-dd1b-4cf1-919f-0b06c2a67455}">
+      <Declaration><![CDATA[PROPERTY P_MoverOTCID : OTCID]]></Declaration>
+      <Get Name="Get" Id="{72dd4685-dec2-4ec6-a1f9-7c5baddcbdbd}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="P_PlanarFeedback" Id="{a9bbed57-3b9f-4517-b2ea-da5c58571634}">
+      <Declaration><![CDATA[PROPERTY P_PlanarFeedback : REFERENCE TO MC_PlanarFeedback]]></Declaration>
+      <Get Name="Get" Id="{1f34cbf7-27f6-4e1e-bf7e-6065ca290696}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="P_PlanarMover" Id="{251d31a4-2c02-4df5-94c5-20fa73edfdf1}">
+      <Declaration><![CDATA[PROPERTY P_PlanarMover :   REFERENCE TO  MC_PlanarMover]]></Declaration>
+      <Get Name="Get" Id="{a86b8714-3613-43d4-90ac-0b1a90218c8d}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="P_SyncFeedback" Id="{44e12130-9d7b-42f1-8fbe-83c3e8bf9e21}">
+      <Declaration><![CDATA[PROPERTY P_SyncFeedback : REFERENCE TO MC_PlanarFeedbackGearInPosOnTrackWithMasterMover]]></Declaration>
+      <Get Name="Get" Id="{c1e62b68-c344-428b-816f-4dc4e05c9105}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="P_TargetTrack" Id="{5f388733-1fb3-404b-a5dd-52830cf45c04}">
+      <Declaration><![CDATA[PROPERTY P_TargetTrack : UDINT
+]]></Declaration>
+      <Get Name="Get" Id="{809a5c07-54f0-4fe3-aefb-7e900f64f163}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{3d5b627b-7e6a-4502-b473-8d3ae7ff12bc}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="Rework" Id="{3fe0cb1d-a009-4172-baa6-bc56de96dde9}">
+      <Declaration><![CDATA[PROPERTY Rework : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{ae6b01cc-d3e1-4ca8-a0ef-10aa8b8616ec}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{c35d6475-d359-4b71-b6dc-7aa7369c8609}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="SyncToOtherMover" Id="{53951dae-e642-4c0f-afd2-22812dd067a9}">
+      <Declaration><![CDATA[METHOD SyncToOtherMover : Bool
+VAR_INPUT
+	masterSyncPos : LREAL; // Position on the master track
+	followerSyncPos : LREAL; // position on the follower track
+	PlanarMoverToFollow: REFERENCE TO Tc3_Mc3PlanarMotion.MC_PlanarMover;
+	masterTrack : REFERENCE TO Tc3_Mc3PlanarMotion.MC_PlanarTrack; 
+	followerTrack : REFERENCE TO Tc3_Mc3PlanarMotion.MC_PlanarTrack; 
+	velo : LREAL; 
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="UpdateXtsTrack" Id="{5fee0b6d-2168-4518-a132-30a77a73fb31}">
+      <Declaration><![CDATA[METHOD  UpdateXtsTrack
+VAR_INPUT
+END_VAR
+VAR
+
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="XlProcessingUnit" Id="{dd82962b-2ee3-41c8-88b9-f5400df6df47}">
+      <Declaration><![CDATA[PROPERTY XlProcessingUnit : I_XtsProcessingUnit1]]></Declaration>
+      <Get Name="Get" Id="{5f7bca70-5352-4656-adad-72b4bfd0f749}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="XtsComFeed" Id="{6c7b5599-6bad-4746-b79f-cc3b776015d0}">
+      <Declaration><![CDATA[PROPERTY XtsComFeed : REFERENCE TO  XtsCommandFeedback]]></Declaration>
+      <Get Name="Get" Id="{f07767b0-f530-48d2-a8fa-343aaf046073}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="XtsXlMover" Id="{52294691-411d-487f-bcfb-f7b79c0a9bc7}">
+      <Declaration><![CDATA[PROPERTY XtsXlMover :  I_XtsXlMover1]]></Declaration>
+      <Get Name="Get" Id="{830996b0-f731-49d4-af8d-f3122d44d6e6}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

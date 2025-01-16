@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TargetSystemConfig Crc="3986947981" Version="1.5">
+  <TargetSystemType>HSafetyPLC</TargetSystemType>
+  <TargetSystemSubType>AT891x</TargetSystemSubType>
+  <IsExternalDevice>false</IsExternalDevice>
+  <TargetSystemObjectId>50462743</TargetSystemObjectId>
+  <TargetSystemObjectName>Box 23 (AT5100-0100)</TargetSystemObjectName>
+  <SoftwareVersion>00 (V00.02) BETA</SoftwareVersion>
+  <SerialNumber>0</SerialNumber>
+  <ProjectCRC />
+  <MapProjectCRC>false</MapProjectCRC>
+  <MapSerialNumber>false</MapSerialNumber>
+  <VersionNumber>1</VersionNumber>
+  <FSOEAddress>116</FSOEAddress>
+  <DipSwitch>116</DipSwitch>
+  <AmsNetID>0.0.0.0.9.1</AmsNetID>
+  <AmsPort>1001</AmsPort>
+  <ConnectionInfoDataConfigOld>false</ConnectionInfoDataConfigOld>
+  <TakeOverSafetyAliasDeviceNamesInProcessImage>false</TakeOverSafetyAliasDeviceNamesInProcessImage>
+  <TakeOverStandardAliasDeviceNamesInProcessImage>false</TakeOverStandardAliasDeviceNamesInProcessImage>
+  <BackupRestore Needed="0" Activated="false" RestoreUserAdministration="false" />
+</TargetSystemConfig>
