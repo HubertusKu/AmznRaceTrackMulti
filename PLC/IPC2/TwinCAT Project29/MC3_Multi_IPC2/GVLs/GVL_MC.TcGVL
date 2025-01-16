@@ -4,7 +4,7 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL CONSTANT
 	nNumMovers					: UINT := 12;
-	nNumActiveMovers 			: UINT := 0;
+	nNumActiveMovers 			: UINT := 2;
 	nNumTracks					: UINT := 1;
 	XtsShortcutOid				: otcid := 16#010100B0 ;
 	XtsOutterLoopOid 			: otcid := 16#01010300;

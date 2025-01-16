@@ -97,7 +97,7 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 	GVL_MC.Feedback[i].Update();
 	GVL_MC.fbMover[i].CycleUpdate();
 	//GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo + (i - 1) * 50, 4000, 4000, 16000);
-	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 10000, 16000);
+	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 4000, 16000);
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gap := 900;
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.direction := MC_Direction.mcDirectionPositive;
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gapMode := MC_GAP_MODE_ON_TRACK.Fast1D;
@@ -254,6 +254,17 @@ CASE state OF
 					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem); 
 					MoverState[i] := 15; 
 				END_IF	
+				
+			15:
+			 	IF GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).GetIsVirtualFeedbackEnabled(0) AND //In some cases the planar mover gots an error, we have to evaluate why
+					GVL_MC.fbMover[i].P_PlanarMover.Error THEN
+					GVL_MC.fbMover[i].P_PlanarMover.Reset(0);
+					MoverState[i] := 16; 
+				END_IF
+				
+			16: 
+				GVL_MC.fbMover[i].P_PlanarMover.Disable(0);
+				MoverState[i] := 17; 
 			END_CASE
 		END_FOR
 		
@@ -314,6 +325,13 @@ END_CASE
       <LineId Id="5691" Count="1" />
       <LineId Id="5597" Count="2" />
       <LineId Id="5612" Count="33" />
+      <LineId Id="5742" Count="2" />
+      <LineId Id="5747" Count="0" />
+      <LineId Id="5745" Count="0" />
+      <LineId Id="5748" Count="0" />
+      <LineId Id="5746" Count="0" />
+      <LineId Id="5749" Count="2" />
+      <LineId Id="5753" Count="0" />
       <LineId Id="5665" Count="2" />
       <LineId Id="5703" Count="27" />
       <LineId Id="5668" Count="4" />

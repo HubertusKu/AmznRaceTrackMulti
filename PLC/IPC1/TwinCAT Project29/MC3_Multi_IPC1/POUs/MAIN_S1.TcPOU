@@ -398,6 +398,17 @@ CASE state OF
 					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem); 
 					MoverState[i] := 15; 
 				END_IF
+				
+			15:
+			 	IF GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).GetIsVirtualFeedbackEnabled(0) AND //In some cases the planar mover gots an error, we have to evaluate why
+					GVL_MC.fbMover[i].P_PlanarMover.Error THEN
+					GVL_MC.fbMover[i].P_PlanarMover.Reset(0);
+					MoverState[i] := 16; 
+				END_IF
+				
+			16: 
+				GVL_MC.fbMover[i].P_PlanarMover.Disable(0);
+				MoverState[i] := 17; 
 		
 			END_CASE
 		END_FOR	
@@ -570,6 +581,9 @@ END_IF
       <LineId Id="5691" Count="0" />
       <LineId Id="5567" Count="0" />
       <LineId Id="5485" Count="3" />
+      <LineId Id="5919" Count="0" />
+      <LineId Id="5921" Count="8" />
+      <LineId Id="5920" Count="0" />
       <LineId Id="5701" Count="0" />
       <LineId Id="5183" Count="0" />
       <LineId Id="5795" Count="1" />
