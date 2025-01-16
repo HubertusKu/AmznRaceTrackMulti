@@ -211,7 +211,7 @@ CASE state OF
 	5: 
 		FOR i := 1 TO GVL_MC.nNumMovers DO
 			GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);	
-			GVL_MC.fbMover[i].P_PlanarMover.Reset(0);		
+			
 		END_FOR
 		
 		IF AktiveSystem THEN
@@ -222,9 +222,16 @@ CASE state OF
 
 	10:
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO
+			GVL_MC.fbMover[i].P_PlanarMover.Reset(0);	
+		//	GVL_MC.fbMover[i].P_PlanarMover.Enable(0);		
+		END_FOR
+		state := 11; 
+	11:
+		FOR i := 1 TO GVL_MC.nNumActiveMovers DO
+		//	GVL_MC.fbMover[i].P_PlanarMover.Reset(0);	
 			GVL_MC.fbMover[i].P_PlanarMover.Enable(0);		
 		END_FOR
-		state := 15; 
+		state := 15;	
 	15:
 		bAlldone := TRUE;
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO  
@@ -505,7 +512,12 @@ END_IF
       <LineId Id="5401" Count="1" />
       <LineId Id="5405" Count="3" />
       <LineId Id="5529" Count="0" />
-      <LineId Id="5409" Count="33" />
+      <LineId Id="5409" Count="9" />
+      <LineId Id="5912" Count="0" />
+      <LineId Id="5419" Count="2" />
+      <LineId Id="5914" Count="4" />
+      <LineId Id="5913" Count="0" />
+      <LineId Id="5422" Count="20" />
       <LineId Id="5565" Count="0" />
       <LineId Id="5443" Count="3" />
       <LineId Id="5566" Count="0" />
