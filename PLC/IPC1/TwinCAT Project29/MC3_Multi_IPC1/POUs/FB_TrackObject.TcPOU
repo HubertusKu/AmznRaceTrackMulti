@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
   <POU Name="FB_TrackObject" Id="{29e2a0b7-3367-458c-a943-6af05a504777}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_TrackObject
 // for a track/part this block keeps a list of the movers in order with their positions on a track
 
 VAR_INPUT
 	TrackID: OTCID;
-	iMover	:REFERENCE TO ARRAY[1..gvl_mc.nNumMovers ] OF I_Mover;
+	iMover	:REFERENCE TO ARRAY[1..nNumMovers] OF I_Mover;
 	trackLength : LREAL;// this should be a loookup but I don't know how to look it up so I'm going to pass it externally 
 END_VAR
 
@@ -16,14 +16,14 @@ VAR_OUTPUT
 	bError: BOOL;
 	bInit: BOOL;
 	ipResultMessage: I_TcMessage := fbResult;
-	moverIDs : ARRAY[1..gvl_mc.nNumMovers] OF UDINT;
+	moverIDs : ARRAY[1..nNumMovers] OF UDINT;
 END_VAR
 
 VAR
 	nNumMoversThisTrack: UDINT; //numberofMovers currently on this track
-	nMoverList: ARRAY [1..gvl_mc.nNumMovers] OF OTCID; //list of movers currently on the track 
+	nMoverList: ARRAY [1..nNumMovers] OF OTCID; //list of movers currently on the track 
 
-	distToNextMover : ARRAY[1..gvl_mc.nNumMovers] OF LREAL;  
+	distToNextMover : ARRAY[1..nNumMovers] OF LREAL;  
 END_VAR
 
 VAR
@@ -204,23 +204,5 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
-    <LineIds Name="FB_TrackObject">
-      <LineId Id="1" Count="5" />
-    </LineIds>
-    <LineIds Name="FB_TrackObject.CyclicUpdate">
-      <LineId Id="1" Count="18" />
-    </LineIds>
-    <LineIds Name="FB_TrackObject.findMergePosition">
-      <LineId Id="1" Count="24" />
-    </LineIds>
-    <LineIds Name="FB_TrackObject.GetComObject">
-      <LineId Id="1" Count="5" />
-    </LineIds>
-    <LineIds Name="FB_TrackObject.GetMoverList">
-      <LineId Id="1" Count="19" />
-    </LineIds>
-    <LineIds Name="FB_TrackObject.GetNumMovers">
-      <LineId Id="1" Count="23" />
-    </LineIds>
   </POU>
 </TcPlcObject>

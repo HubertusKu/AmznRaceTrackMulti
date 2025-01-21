@@ -9,7 +9,7 @@
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>MC3_Multi_IPC1</Name>
-    <ProgramVersion>3.1.4026.11</ProgramVersion>
+    <ProgramVersion>3.1.4026.13</ProgramVersion>
     <Application>{eb3ad2c4-a649-4b7d-aa35-014ab6d86e89}</Application>
     <TypeSystem>{b6350fbd-8d66-4983-b51a-ea84aa7110fc}</TypeSystem>
     <Implicit_Task_Info>{e7a53ed4-1d73-4118-8bb9-e94171eea788}</Implicit_Task_Info>
@@ -49,6 +49,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_MoverConfig.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_MoverInfo.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_MoverOnTrackInfo.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_PlanarTrackConfig.TcDUT">
