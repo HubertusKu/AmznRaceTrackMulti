@@ -207,7 +207,15 @@ CASE state OF
 				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
 			END_FOR 
 		END_IF			
+		state := 3;
+		
+	3:
+		FOR i := 1 TO GVL_MC.fbXtsEnvironment.ProcessingUnit(1, 0).XlPartCount() DO
+			 GVL_MC.fbXtsEnvironment.ProcessingUnit(1, 0).XlPart(i, 0).TriggerReset(0);
+		END_FOR
+		
 		state := 5;
+		
 	5: 
 		FOR i := 1 TO GVL_MC.nNumMovers DO
 			GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);	
@@ -521,7 +529,13 @@ END_IF
       <LineId Id="5397" Count="3" />
       <LineId Id="5508" Count="0" />
       <LineId Id="5401" Count="1" />
-      <LineId Id="5405" Count="3" />
+      <LineId Id="5405" Count="0" />
+      <LineId Id="5930" Count="0" />
+      <LineId Id="5932" Count="3" />
+      <LineId Id="5931" Count="0" />
+      <LineId Id="5937" Count="0" />
+      <LineId Id="5936" Count="0" />
+      <LineId Id="5406" Count="2" />
       <LineId Id="5529" Count="0" />
       <LineId Id="5409" Count="9" />
       <LineId Id="5912" Count="0" />
