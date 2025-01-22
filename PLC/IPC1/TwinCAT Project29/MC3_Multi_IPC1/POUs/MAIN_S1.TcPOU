@@ -107,6 +107,17 @@ VAR
 	
 	MessageTrigger : ARRAY[1..20] OF R_trig;
 	
+	
+	TestPowerMat : BOOL := TRUE;
+	StopTime : TIME := T#1S;
+	StopTimer :ARRAY[1..nNumMovers] OF ton;
+	StartTimer :ARRAY[1..nNumMovers] OF BOOL;
+	SwitchParkPos : LREAL := 3500;
+	trapError: BOOL;
+	trapErrorID: UDINT;
+	moverWithFault: UDINT;
+	stepWithFault: INT;
+	stopAndWait : ARRAY[1..nNumMovers] OF TON; 
 END_VAR
 
 
@@ -327,7 +338,7 @@ CASE state OF
 			0:		 
 				IF  bSwitch AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[E_TrackNum.MainStart].MCTOPLC_STD.TrackOID    THEN
 					IF NOT short   THEN
-						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.Small], GVL_MC.aMcTracks[E_TrackNum.Small].GetLength()/2, GVL_MC.defaultGap);
+						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.Small], SwitchParkPos(* GVL_MC.aMcTracks[E_TrackNum.Small].GetLength()/2*), GVL_MC.defaultGap);
 						MoverNo1 := i;
 						Short := TRUE;
 						MoverState[i] := 6;
@@ -339,8 +350,23 @@ CASE state OF
 					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength()-450, GVL_MC.defaultGap);
 					MoverState[i] := 12;				
 				END_IF
-			
-		
+			4:
+				IF fbMover[i].P_PlanarFeedback.Error AND NOT trapError THEN //trap the error once.   
+						trapError := fbMover[i].P_PlanarFeedback.Error; 
+						trapErrorID := fbMover[i].P_PlanarFeedback.ErrorId;
+						stepWithFault := 4;
+ 						moverWithFault := i; 
+					END_IF
+					IF fbMover[i].P_PlanarFeedback.Done THEN 
+						MoverState[i] := 5; //50;
+						stopAndWait[i](IN:=TRUE, PT:=StopTime); 
+					END_IF 	
+			5:
+				stopAndWait[i](); 
+					IF stopAndWait[i].Q  OR NOT TestPowerMat THEN // send the mover to a sync Position 2.6m before the end of the track 
+						stopAndWait[i](IN:=FALSE); 							
+						MoverState[i] := 6; 
+					END_IF 	
 				
 			6:
                

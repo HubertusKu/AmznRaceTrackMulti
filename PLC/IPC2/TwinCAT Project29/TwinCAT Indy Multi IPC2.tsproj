@@ -6665,7 +6665,7 @@ External Setpoint Generation:
 			</Licenses>
 			<Parameters>
 				<Group><![CDATA[General]]></Group>
-				<Group><![CDATA[Simulation]]></Group>
+				<Group Collapsed="true"><![CDATA[Simulation]]></Group>
 				<Group><![CDATA[Maximum Dynamics]]></Group>
 				<Group><![CDATA[Default Dynamics]]></Group>
 				<Group Collapsed="true"><![CDATA[Monitoring]]></Group>
@@ -7490,2503 +7490,7 @@ External Setpoint Generation:
 				</Property>
 			</Properties>
 		</ModuleTmc>
-		<ModuleTmc GUID="{12B68D44-8ED3-C979-B823-FBF731EE9E67}" TcSmClass="TComMcPlanarMoverObj">
-			<Name>Planar Mover</Name>
-			<CLSID ClassFactory="TcNc3">{050300C6-0000-0000-F000-000000000064}</CLSID>
-			<Info>
-				<ImageData>424d360300000000000036000000280000001000000010000000010018000000000000000000c30e0000c30e000000000000000000003d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b297b766f7a756d79746c77726a767168756f66736e64716c626f695f6d675d6b655a696358666155645e523d3b293d3b297f7a737f7b727e7a717c78707a766d78746bb6b4aeb6b4ae726d63706a606d685d6b665b6964586661553d3b293d3b2989847e8a867f8a867e88847cb6b4aeb6b4ae3d3b293d3b29b6b4aeb6b4ae706b606d685d6b665b6863583d3b293d3b2995918b96938db6b4aeb6b4ae3d3b293d3b2988837b817c743d3b293d3b29b6b4aeb6b4ae6d685d6b655a3d3b293d3b29a19e98b6b4ae3d3b293d3b299e9b943d3b29b6b4aeb6b4ae3d3b29a09c963d3b293d3b29b6b4ae6d675d3d3b293d3b29aca9a43d3b29aeaba6adaaa4a9a6a13d3b293d3b293d3b293d3b29a09c967b766d7570663d3b29b6b4ae3d3b293d3b29b6b3ae3d3b29b9b6b2b7b5b13d3b293d3b29a9a6a0a09c963d3b293d3b29a09c96a09c963d3b29b6b4ae3d3b293d3b29c1bfbb3d3b293d3b293d3b29bfbcb8bab8b3b3b0aba9a6a0a09c9696928b3d3b293d3b293d3b29b6b4ae3d3b293d3b29cac8c53d3b29ceccc9cccbc7c9c7c4c3c1bdbbb8b4b1aea9a6a39d9c9891908c85847f773d3b29b6b4ae3d3b293d3b29d1cfcd3d3b29d7d6d3d6d5d2d1cfcdcac8c5c1bebab6b4afaca9a3a09d9795918a89847d3d3b29b6b4ae3d3b293d3b29d6d4d2dcdbd93d3b293d3b29d6d5d2cfcdcac5c3c0bab8b3afaca7a4a19b3d3b293d3b297f7a7277736b3d3b293d3b29d9d7d6e0dfdde5e4e2e2e1df3d3b293d3b29c7c5c2bcb9b53d3b293d3b299a96908d8982807c7479756c3d3b293d3b29d8d6d5dedddce2e1e0dfdeddd8d7d5d0cfcc3d3b293d3b29b1aeaaa6a39d9a96918e8a84817d767a766e3d3b293d3b29d4d2d1d9d7d6dad9d8d9d8d6d4d2d0cdcbc9c4c2bfbab7b3afaca8a5a19c9995908d8983817c757b766f3d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b29</ImageData>
-				<TabExtension Url="motion\XPlanarMoverUi\index.html">
-					<Url>Motion UI</Url><![CDATA[Motion UI]]></TabExtension>
-			</Info>
-			<Licenses>
-				<License>
-					<LicenseId>{C2F58FAE-EB3E-4252-A3D4-E912569E6EFC}</LicenseId>
-				</License>
-			</Licenses>
-			<Parameters>
-				<Group><![CDATA[General]]></Group>
-				<Group Collapsed="true"><![CDATA[Simulation]]></Group>
-				<Group><![CDATA[Maximum Dynamics]]></Group>
-				<Group><![CDATA[Default Dynamics]]></Group>
-				<Group><![CDATA[Monitoring]]></Group>
-				<Group Collapsed="true"><![CDATA[Internal]]></Group>
-				<Parameter HideParameter="true">
-					<Name>TraceLevel</Name>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
-					<Default>
-						<Value>2</Value>
-					</Default>
-					<PTCID>#x03002103</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" RefreshableValue="true">
-					<Name>Ctx_TaskOidMET</Name>
-					<Comment><![CDATA[Task implementing ICyclicCaller for cyclic execution of this module]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x03002060</PTCID>
-				</Parameter>
-				<Parameter Group="Simulation">
-					<Name>Simulation mode</Name>
-					<Comment><![CDATA[Specifies if mover is in simulation mode or not, i.e. if the mover needs hardware (driver) connection via CoE.]]></Comment>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<Default>
-						<Value>1</Value>
-					</Default>
-					<PTCID>#x050300b1</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>Mover width</Name>
-					<Comment><![CDATA[Width that is used for internal collision checks.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[mm]]></Unit>
-					<Default>
-						<Value>155.0</Value>
-					</Default>
-					<PTCID>#x050300b2</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>Mover height</Name>
-					<Comment><![CDATA[Height that is used for internal collision checks.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[mm]]></Unit>
-					<Default>
-						<Value>155.0</Value>
-					</Default>
-					<PTCID>#x050300b3</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter HideParameter="true" Group="Simulation">
-					<Name>Initial position</Name>
-					<Comment><![CDATA[Mover position, can be set for disabled mover.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<PTCID>#x050300b5</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="General">
-					<Name>Minimal position</Name>
-					<Comment><![CDATA[Mover minimal position, can be set for disabled mover. For the c coordinate the interpretation is not absolute.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>-1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>-1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>-1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>-3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>-3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>-11.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d3</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="General">
-					<Name>Maximal position</Name>
-					<Comment><![CDATA[Mover maximal position, can be set for disabled mover. For the c coordinate the interpretation is not absolute.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>11.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d4</PTCID>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>C coordinate modulus</Name>
-					<Comment><![CDATA[C coordinate modulus, can be set for disabled mover.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[°]]></Unit>
-					<Default>
-						<Value>360.0</Value>
-					</Default>
-					<PTCID>#x05030107</PTCID>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>C coordinate modulo tolerance window</Name>
-					<Comment><![CDATA[C coordinate modulo tolerance window, can be set for disabled mover.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[°]]></Unit>
-					<Default>
-						<Value>0.0</Value>
-					</Default>
-					<PTCID>#x05030108</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="Simulation">
-					<Name>PartOID</Name>
-					<Comment><![CDATA[Object id of the PlanarPart the initial position is on.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x050300e0</PTCID>
-				</Parameter>
-				<Parameter Group="Monitoring">
-					<Name>Position Lag Monitoring Enabled</Name>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<Default>
-						<Value>1</Value>
-					</Default>
-					<PTCID>#x0503011a</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Monitoring">
-					<Name>Maximum Position Lag Value</Name>
-					<Comment><![CDATA[The maximum of the allowed lag for each coordinate. Must be in [0.0,100.0] for each coordinate.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>1.5</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300be</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Monitoring">
-					<Name>Maximum Position Lag Filter Time</Name>
-					<Comment><![CDATA[The maximum of the allowed time for a lag distance violation of each coordinate. Must be in [0.0,10.0] for each coordinate.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[s]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>0.02</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300bf</PTCID>
-				</Parameter>
-				<Parameter Group="Monitoring">
-					<Name>Timeout for state machine</Name>
-					<Comment><![CDATA[Timout for enable, disable, and reset commands of the user in seconds.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[s]]></Unit>
-					<Default>
-						<Value>5</Value>
-					</Default>
-					<PTCID>#x0503d004</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Maximum Dynamics">
-					<Name>Maximum dynamic XY</Name>
-					<Comment><![CDATA[Maximum dynamic of the mover in the XY plane.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>2000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>200000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300b8</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Maximum Dynamics">
-					<Name>Maximum dynamic C</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers C rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>35000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300b9</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic Z</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers Z coordinate.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ba</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic A</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers A rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ca</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic B</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers B rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cb</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic XY</Name>
-					<Comment><![CDATA[Default dynamic of the mover in the XY plane.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>200.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>200.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cc</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic C</Name>
-					<Comment><![CDATA[Default dynamic of the movers C rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cd</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic Z</Name>
-					<Comment><![CDATA[Default dynamic of the movers Z coordinate.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ce</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic A</Name>
-					<Comment><![CDATA[Default dynamic of the movers A rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cf</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic B</Name>
-					<Comment><![CDATA[Default dynamic of the movers B rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d0</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>SetPos</Name>
-					<Comment><![CDATA[Mover position, read only.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<PTCID>#x050300d2</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>CoordinateSystemOID</Name>
-					<Comment><![CDATA[The coordinate system the mover is on, set and act position are given in this system.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x05030126</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>Hardware mover OTCID</Name>
-					<Comment><![CDATA[The object ID of the hardware mover connected to this mover (zero if in simuation mode).]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x0503012d</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>GroupOID</Name>
-					<Comment><![CDATA[Object id of the PlanarGroup the mover is in, read only.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x050300c3</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" CreateSymbol="true" ReadOnly="true">
-					<Name>State</Name>
-					<Comment><![CDATA[State, read only.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{6D2B99B2-A9F2-44AF-A298-4BB7A08AE294}" Namespace="MC">MC_PLANAR_STATE</BaseType>
-					<PTCID>#x050300b6</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>Command mode</Name>
-					<Comment><![CDATA[Command mode, read only.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{FAE6DCD6-33EF-4275-8592-10BCED19E1EA}" Namespace="MC">MC_PLANAR_MOVER_COMMAND_MODE</BaseType>
-					<PTCID>#x050300b7</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ShowSubItems="true" ReadOnly="true">
-					<Name>ActPos</Name>
-					<Comment><![CDATA[Mover hardware position, read only.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<PTCID>#x050300c1</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ShowSubItems="true" CreateSymbol="true" ReadOnly="true">
-					<Name>Mover SetPos on track</Name>
-					<Comment><![CDATA[Mover state on track, read only.]]></Comment>
-					<BitSize>320</BitSize>
-					<BaseType GUID="{DB4B14FF-1923-4ED2-A97C-3D3120BDBDAA}" Namespace="MC">CDT_MCTOPLC_PLANAR_MOVER_TRACK</BaseType>
-					<PTCID>#x050300c2</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>External setpoint generation mode</Name>
-					<Comment><![CDATA[Indicates which external setpoint generation mode is active.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{C4BA2B11-27FE-4956-B736-B8F79E7E1624}" Namespace="MC">MC_EXTERNAL_SET_POSITION_MODE</BaseType>
-					<PTCID>#x050300db</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>On track information</Name>
-					<Comment><![CDATA[General information about the move on the track (target position, gap, etc.).]]></Comment>
-					<BitSize>576</BitSize>
-					<BaseType GUID="{245D0CA9-641C-4E63-AAB6-519FF2022292}" Namespace="MC">MC_MOVER_ON_TRACK_INFORMATION</BaseType>
-					<PTCID>#x05030180</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Forward blocking neighbours</Name>
-					<Comment><![CDATA[OIDs of neighbours in front of this mover blocking it in standstill on the track.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" Max="1">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503012e</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Backward blocking neighbours</Name>
-					<Comment><![CDATA[OIDs of neighbours behind this mover blocking it in standstill on the track.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" Max="1">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503012f</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Track trail information</Name>
-					<Comment><![CDATA[OIDs of all tracks in this movers track trail.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" MaxUnbounded="true">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503013e</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Entering system</Name>
-					<Comment><![CDATA[True if not (yet) on system but already approaching on other system.]]></Comment>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<PTCID>#x05030175</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Leaving system</Name>
-					<Comment><![CDATA[True if (still) on system but already approaching the other system to leave this system.]]></Comment>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<PTCID>#x05030178</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>ChildAreaLocation</Name>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{C5711B60-10CA-42F2-8DE1-6039CB261CCF}" Namespace="IO">TcIoChildAreaLocation</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">2</Elements>
-					</ArrayInfo>
-					<PTCID>#x03000029</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>PlcInputsCfg</Name>
-					<BitSize>128</BitSize>
-					<BaseType GUID="{BD3BA8A6-FB59-4197-B6BA-A3B09FFC369C}" Namespace="IO">TcIoDataAreaCfg</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">1</Elements>
-					</ArrayInfo>
-					<PTCID>#x03007000</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>PlcOutputsCfg</Name>
-					<BitSize>640</BitSize>
-					<BaseType GUID="{BD3BA8A6-FB59-4197-B6BA-A3B09FFC369C}" Namespace="IO">TcIoDataAreaCfg</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">5</Elements>
-					</ArrayInfo>
-					<PTCID>#x03007001</PTCID>
-				</Parameter>
-			</Parameters>
-			<DataAreas>
-				<DataArea>
-					<AreaNo AreaType="InputDst" CreateSymbols="true">4</AreaNo>
-					<Name>IoToMc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{DCBC2796-F4A6-49ED-AD13-8E71F04F5FD7}" Namespace="MC" PointerTo="1">CDT_HWTOMC_MOVER</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>IO2MC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="InputDst" ChildArea="true" CreateSymbols="true">0</AreaNo>
-					<Name>PlcToMc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{BC77732B-A71D-4084-AA53-85A5016932F3}" Namespace="MC" PointerTo="1">CDT_PLCTOMC_PLANAR_MOVER_STD</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c006</PTCID>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>PLC2MC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="OutputSrc" CreateSymbols="true">5</AreaNo>
-					<Name>McToIo</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{F6B8E2E8-5F96-45E0-AD21-3E97B7E9BDB2}" Namespace="MC" PointerTo="1">CDT_MCTOHW_MOVER</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>MC2IO</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="OutputSrc" ChildArea="true" CreateSymbols="true">1</AreaNo>
-					<Name>McToPlc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x28">20</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{7D131116-81E4-45B0-AC50-A71EE4201E30}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_STD</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c007</PTCID>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>SET</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{D7D4F146-9962-4745-8631-17F5FB457164}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_SET</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c008</PTCID>
-						<BitOffs X64="64">32</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>ACT</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{F18FBB92-D68F-43D8-95AE-0E42EDCD14E2}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_ACT</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c009</PTCID>
-						<BitOffs X64="128">64</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>COORDMODE</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{B2D0D1AF-2BA9-49BA-AF3F-BC95009CD9CD}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_COORDMODE</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c00a</PTCID>
-						<BitOffs X64="192">96</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>SETONTRACK</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{DB4B14FF-1923-4ED2-A97C-3D3120BDBDAA}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_TRACK</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c003</PTCID>
-						<BitOffs X64="256">128</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>MC2PLC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-			</DataAreas>
-			<Properties>
-				<Property>
-					<Name>Category</Name>
-					<Value>MC Object</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>MC AxisModule</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>McDefaultAxis</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>TcMcPlcAxis</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>HideTcComContextPP</Value>
-				</Property>
-			</Properties>
-		</ModuleTmc>
-<<<<<<< HEAD
 		<ModuleTmc GUID="{00F6E9D3-81E3-9198-D0BB-132205E6AD71}" TcSmClass="TComMcPlanarMoverObj">
-=======
-		<ModuleTmc GUID="{0F00FDD0-9D27-D3D0-7B05-1BCDA7BD4810}" TcSmClass="TComMcPlanarMoverObj">
-			<Name>Planar Mover</Name>
-			<CLSID ClassFactory="TcNc3">{050300C6-0000-0000-F000-000000000064}</CLSID>
-			<Info>
-				<ImageData>424d360300000000000036000000280000001000000010000000010018000000000000000000c30e0000c30e000000000000000000003d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b297b766f7a756d79746c77726a767168756f66736e64716c626f695f6d675d6b655a696358666155645e523d3b293d3b297f7a737f7b727e7a717c78707a766d78746bb6b4aeb6b4ae726d63706a606d685d6b665b6964586661553d3b293d3b2989847e8a867f8a867e88847cb6b4aeb6b4ae3d3b293d3b29b6b4aeb6b4ae706b606d685d6b665b6863583d3b293d3b2995918b96938db6b4aeb6b4ae3d3b293d3b2988837b817c743d3b293d3b29b6b4aeb6b4ae6d685d6b655a3d3b293d3b29a19e98b6b4ae3d3b293d3b299e9b943d3b29b6b4aeb6b4ae3d3b29a09c963d3b293d3b29b6b4ae6d675d3d3b293d3b29aca9a43d3b29aeaba6adaaa4a9a6a13d3b293d3b293d3b293d3b29a09c967b766d7570663d3b29b6b4ae3d3b293d3b29b6b3ae3d3b29b9b6b2b7b5b13d3b293d3b29a9a6a0a09c963d3b293d3b29a09c96a09c963d3b29b6b4ae3d3b293d3b29c1bfbb3d3b293d3b293d3b29bfbcb8bab8b3b3b0aba9a6a0a09c9696928b3d3b293d3b293d3b29b6b4ae3d3b293d3b29cac8c53d3b29ceccc9cccbc7c9c7c4c3c1bdbbb8b4b1aea9a6a39d9c9891908c85847f773d3b29b6b4ae3d3b293d3b29d1cfcd3d3b29d7d6d3d6d5d2d1cfcdcac8c5c1bebab6b4afaca9a3a09d9795918a89847d3d3b29b6b4ae3d3b293d3b29d6d4d2dcdbd93d3b293d3b29d6d5d2cfcdcac5c3c0bab8b3afaca7a4a19b3d3b293d3b297f7a7277736b3d3b293d3b29d9d7d6e0dfdde5e4e2e2e1df3d3b293d3b29c7c5c2bcb9b53d3b293d3b299a96908d8982807c7479756c3d3b293d3b29d8d6d5dedddce2e1e0dfdeddd8d7d5d0cfcc3d3b293d3b29b1aeaaa6a39d9a96918e8a84817d767a766e3d3b293d3b29d4d2d1d9d7d6dad9d8d9d8d6d4d2d0cdcbc9c4c2bfbab7b3afaca8a5a19c9995908d8983817c757b766f3d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b29</ImageData>
-				<TabExtension Url="motion\XPlanarMoverUi\index.html">
-					<Url>Motion UI</Url><![CDATA[Motion UI]]></TabExtension>
-			</Info>
-			<Licenses>
-				<License>
-					<LicenseId>{C2F58FAE-EB3E-4252-A3D4-E912569E6EFC}</LicenseId>
-				</License>
-			</Licenses>
-			<Parameters>
-				<Group><![CDATA[General]]></Group>
-				<Group><![CDATA[Simulation]]></Group>
-				<Group><![CDATA[Maximum Dynamics]]></Group>
-				<Group><![CDATA[Default Dynamics]]></Group>
-				<Group><![CDATA[Monitoring]]></Group>
-				<Group Collapsed="true"><![CDATA[Internal]]></Group>
-				<Parameter HideParameter="true">
-					<Name>TraceLevel</Name>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
-					<Default>
-						<Value>2</Value>
-					</Default>
-					<PTCID>#x03002103</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" RefreshableValue="true">
-					<Name>Ctx_TaskOidMET</Name>
-					<Comment><![CDATA[Task implementing ICyclicCaller for cyclic execution of this module]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x03002060</PTCID>
-				</Parameter>
-				<Parameter Group="Simulation">
-					<Name>Simulation mode</Name>
-					<Comment><![CDATA[Specifies if mover is in simulation mode or not, i.e. if the mover needs hardware (driver) connection via CoE.]]></Comment>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<Default>
-						<Value>1</Value>
-					</Default>
-					<PTCID>#x050300b1</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>Mover width</Name>
-					<Comment><![CDATA[Width that is used for internal collision checks.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[mm]]></Unit>
-					<Default>
-						<Value>155.0</Value>
-					</Default>
-					<PTCID>#x050300b2</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>Mover height</Name>
-					<Comment><![CDATA[Height that is used for internal collision checks.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[mm]]></Unit>
-					<Default>
-						<Value>155.0</Value>
-					</Default>
-					<PTCID>#x050300b3</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter HideParameter="true" Group="Simulation">
-					<Name>Initial position</Name>
-					<Comment><![CDATA[Mover position, can be set for disabled mover.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<PTCID>#x050300b5</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="General">
-					<Name>Minimal position</Name>
-					<Comment><![CDATA[Mover minimal position, can be set for disabled mover. For the c coordinate the interpretation is not absolute.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>-1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>-1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>-1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>-3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>-3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>-11.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d3</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="General">
-					<Name>Maximal position</Name>
-					<Comment><![CDATA[Mover maximal position, can be set for disabled mover. For the c coordinate the interpretation is not absolute.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>11.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d4</PTCID>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>C coordinate modulus</Name>
-					<Comment><![CDATA[C coordinate modulus, can be set for disabled mover.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[°]]></Unit>
-					<Default>
-						<Value>360.0</Value>
-					</Default>
-					<PTCID>#x05030107</PTCID>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>C coordinate modulo tolerance window</Name>
-					<Comment><![CDATA[C coordinate modulo tolerance window, can be set for disabled mover.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[°]]></Unit>
-					<Default>
-						<Value>0.0</Value>
-					</Default>
-					<PTCID>#x05030108</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="Simulation">
-					<Name>PartOID</Name>
-					<Comment><![CDATA[Object id of the PlanarPart the initial position is on.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x050300e0</PTCID>
-				</Parameter>
-				<Parameter Group="Monitoring">
-					<Name>Position Lag Monitoring Enabled</Name>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<Default>
-						<Value>1</Value>
-					</Default>
-					<PTCID>#x0503011a</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Monitoring">
-					<Name>Maximum Position Lag Value</Name>
-					<Comment><![CDATA[The maximum of the allowed lag for each coordinate. Must be in [0.0,100.0] for each coordinate.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>1.5</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300be</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Monitoring">
-					<Name>Maximum Position Lag Filter Time</Name>
-					<Comment><![CDATA[The maximum of the allowed time for a lag distance violation of each coordinate. Must be in [0.0,10.0] for each coordinate.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[s]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>0.02</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300bf</PTCID>
-				</Parameter>
-				<Parameter Group="Monitoring">
-					<Name>Timeout for state machine</Name>
-					<Comment><![CDATA[Timout for enable, disable, and reset commands of the user in seconds.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[s]]></Unit>
-					<Default>
-						<Value>5</Value>
-					</Default>
-					<PTCID>#x0503d004</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Maximum Dynamics">
-					<Name>Maximum dynamic XY</Name>
-					<Comment><![CDATA[Maximum dynamic of the mover in the XY plane.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>2000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>200000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300b8</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Maximum Dynamics">
-					<Name>Maximum dynamic C</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers C rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>35000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300b9</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic Z</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers Z coordinate.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ba</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic A</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers A rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ca</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic B</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers B rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cb</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic XY</Name>
-					<Comment><![CDATA[Default dynamic of the mover in the XY plane.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>200.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>200.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cc</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic C</Name>
-					<Comment><![CDATA[Default dynamic of the movers C rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cd</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic Z</Name>
-					<Comment><![CDATA[Default dynamic of the movers Z coordinate.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ce</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic A</Name>
-					<Comment><![CDATA[Default dynamic of the movers A rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cf</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic B</Name>
-					<Comment><![CDATA[Default dynamic of the movers B rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d0</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>SetPos</Name>
-					<Comment><![CDATA[Mover position, read only.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<PTCID>#x050300d2</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>CoordinateSystemOID</Name>
-					<Comment><![CDATA[The coordinate system the mover is on, set and act position are given in this system.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x05030126</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>Hardware mover OTCID</Name>
-					<Comment><![CDATA[The object ID of the hardware mover connected to this mover (zero if in simuation mode).]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x0503012d</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>GroupOID</Name>
-					<Comment><![CDATA[Object id of the PlanarGroup the mover is in, read only.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x050300c3</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" CreateSymbol="true" ReadOnly="true">
-					<Name>State</Name>
-					<Comment><![CDATA[State, read only.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{6D2B99B2-A9F2-44AF-A298-4BB7A08AE294}" Namespace="MC">MC_PLANAR_STATE</BaseType>
-					<PTCID>#x050300b6</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>Command mode</Name>
-					<Comment><![CDATA[Command mode, read only.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{FAE6DCD6-33EF-4275-8592-10BCED19E1EA}" Namespace="MC">MC_PLANAR_MOVER_COMMAND_MODE</BaseType>
-					<PTCID>#x050300b7</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ShowSubItems="true" ReadOnly="true">
-					<Name>ActPos</Name>
-					<Comment><![CDATA[Mover hardware position, read only.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<PTCID>#x050300c1</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ShowSubItems="true" CreateSymbol="true" ReadOnly="true">
-					<Name>Mover SetPos on track</Name>
-					<Comment><![CDATA[Mover state on track, read only.]]></Comment>
-					<BitSize>320</BitSize>
-					<BaseType GUID="{DB4B14FF-1923-4ED2-A97C-3D3120BDBDAA}" Namespace="MC">CDT_MCTOPLC_PLANAR_MOVER_TRACK</BaseType>
-					<PTCID>#x050300c2</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>External setpoint generation mode</Name>
-					<Comment><![CDATA[Indicates which external setpoint generation mode is active.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{C4BA2B11-27FE-4956-B736-B8F79E7E1624}" Namespace="MC">MC_EXTERNAL_SET_POSITION_MODE</BaseType>
-					<PTCID>#x050300db</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Forward blocking neighbours</Name>
-					<Comment><![CDATA[OIDs of neighbours in front of this mover blocking it in standstill on the track.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" Max="1">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503012e</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Backward blocking neighbours</Name>
-					<Comment><![CDATA[OIDs of neighbours behind this mover blocking it in standstill on the track.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" Max="1">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503012f</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Track trail information</Name>
-					<Comment><![CDATA[OIDs of all tracks in this movers track trail.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" MaxUnbounded="true">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503013e</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>ChildAreaLocation</Name>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{C5711B60-10CA-42F2-8DE1-6039CB261CCF}" Namespace="IO">TcIoChildAreaLocation</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">2</Elements>
-					</ArrayInfo>
-					<PTCID>#x03000029</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>PlcInputsCfg</Name>
-					<BitSize>128</BitSize>
-					<BaseType GUID="{BD3BA8A6-FB59-4197-B6BA-A3B09FFC369C}" Namespace="IO">TcIoDataAreaCfg</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">1</Elements>
-					</ArrayInfo>
-					<PTCID>#x03007000</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>PlcOutputsCfg</Name>
-					<BitSize>640</BitSize>
-					<BaseType GUID="{BD3BA8A6-FB59-4197-B6BA-A3B09FFC369C}" Namespace="IO">TcIoDataAreaCfg</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">5</Elements>
-					</ArrayInfo>
-					<PTCID>#x03007001</PTCID>
-				</Parameter>
-			</Parameters>
-			<DataAreas>
-				<DataArea>
-					<AreaNo AreaType="InputDst" CreateSymbols="true">4</AreaNo>
-					<Name>IoToMc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{DCBC2796-F4A6-49ED-AD13-8E71F04F5FD7}" Namespace="MC" PointerTo="1">CDT_HWTOMC_MOVER</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>IO2MC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="InputDst" ChildArea="true" CreateSymbols="true">0</AreaNo>
-					<Name>PlcToMc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{BC77732B-A71D-4084-AA53-85A5016932F3}" Namespace="MC" PointerTo="1">CDT_PLCTOMC_PLANAR_MOVER_STD</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c006</PTCID>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>PLC2MC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="OutputSrc" CreateSymbols="true">5</AreaNo>
-					<Name>McToIo</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{F6B8E2E8-5F96-45E0-AD21-3E97B7E9BDB2}" Namespace="MC" PointerTo="1">CDT_MCTOHW_MOVER</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>MC2IO</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="OutputSrc" ChildArea="true" CreateSymbols="true">1</AreaNo>
-					<Name>McToPlc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x28">20</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{7D131116-81E4-45B0-AC50-A71EE4201E30}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_STD</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c007</PTCID>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>SET</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{D7D4F146-9962-4745-8631-17F5FB457164}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_SET</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c008</PTCID>
-						<BitOffs X64="64">32</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>ACT</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{F18FBB92-D68F-43D8-95AE-0E42EDCD14E2}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_ACT</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c009</PTCID>
-						<BitOffs X64="128">64</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>COORDMODE</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{B2D0D1AF-2BA9-49BA-AF3F-BC95009CD9CD}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_COORDMODE</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c00a</PTCID>
-						<BitOffs X64="192">96</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>SETONTRACK</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{DB4B14FF-1923-4ED2-A97C-3D3120BDBDAA}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_TRACK</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c003</PTCID>
-						<BitOffs X64="256">128</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>MC2PLC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-			</DataAreas>
-			<Properties>
-				<Property>
-					<Name>Category</Name>
-					<Value>MC Object</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>MC AxisModule</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>McDefaultAxis</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>TcMcPlcAxis</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>HideTcComContextPP</Value>
-				</Property>
-			</Properties>
-		</ModuleTmc>
-		<ModuleTmc GUID="{72450A87-D065-E5BF-2099-FF0391A08908}" TcSmClass="TComMcPlanarMoverObj">
-			<Name>Planar Mover</Name>
-			<CLSID ClassFactory="TcNc3">{050300C6-0000-0000-F000-000000000064}</CLSID>
-			<Info>
-				<ImageData>424d360300000000000036000000280000001000000010000000010018000000000000000000c30e0000c30e000000000000000000003d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b297b766f7a756d79746c77726a767168756f66736e64716c626f695f6d675d6b655a696358666155645e523d3b293d3b297f7a737f7b727e7a717c78707a766d78746bb6b4aeb6b4ae726d63706a606d685d6b665b6964586661553d3b293d3b2989847e8a867f8a867e88847cb6b4aeb6b4ae3d3b293d3b29b6b4aeb6b4ae706b606d685d6b665b6863583d3b293d3b2995918b96938db6b4aeb6b4ae3d3b293d3b2988837b817c743d3b293d3b29b6b4aeb6b4ae6d685d6b655a3d3b293d3b29a19e98b6b4ae3d3b293d3b299e9b943d3b29b6b4aeb6b4ae3d3b29a09c963d3b293d3b29b6b4ae6d675d3d3b293d3b29aca9a43d3b29aeaba6adaaa4a9a6a13d3b293d3b293d3b293d3b29a09c967b766d7570663d3b29b6b4ae3d3b293d3b29b6b3ae3d3b29b9b6b2b7b5b13d3b293d3b29a9a6a0a09c963d3b293d3b29a09c96a09c963d3b29b6b4ae3d3b293d3b29c1bfbb3d3b293d3b293d3b29bfbcb8bab8b3b3b0aba9a6a0a09c9696928b3d3b293d3b293d3b29b6b4ae3d3b293d3b29cac8c53d3b29ceccc9cccbc7c9c7c4c3c1bdbbb8b4b1aea9a6a39d9c9891908c85847f773d3b29b6b4ae3d3b293d3b29d1cfcd3d3b29d7d6d3d6d5d2d1cfcdcac8c5c1bebab6b4afaca9a3a09d9795918a89847d3d3b29b6b4ae3d3b293d3b29d6d4d2dcdbd93d3b293d3b29d6d5d2cfcdcac5c3c0bab8b3afaca7a4a19b3d3b293d3b297f7a7277736b3d3b293d3b29d9d7d6e0dfdde5e4e2e2e1df3d3b293d3b29c7c5c2bcb9b53d3b293d3b299a96908d8982807c7479756c3d3b293d3b29d8d6d5dedddce2e1e0dfdeddd8d7d5d0cfcc3d3b293d3b29b1aeaaa6a39d9a96918e8a84817d767a766e3d3b293d3b29d4d2d1d9d7d6dad9d8d9d8d6d4d2d0cdcbc9c4c2bfbab7b3afaca8a5a19c9995908d8983817c757b766f3d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b293d3b29</ImageData>
-				<TabExtension Url="motion\XPlanarMoverUi\index.html">
-					<Url>Motion UI</Url><![CDATA[Motion UI]]></TabExtension>
-			</Info>
-			<Licenses>
-				<License>
-					<LicenseId>{C2F58FAE-EB3E-4252-A3D4-E912569E6EFC}</LicenseId>
-				</License>
-			</Licenses>
-			<Parameters>
-				<Group><![CDATA[General]]></Group>
-				<Group><![CDATA[Simulation]]></Group>
-				<Group><![CDATA[Maximum Dynamics]]></Group>
-				<Group><![CDATA[Default Dynamics]]></Group>
-				<Group><![CDATA[Monitoring]]></Group>
-				<Group Collapsed="true"><![CDATA[Internal]]></Group>
-				<Parameter HideParameter="true">
-					<Name>TraceLevel</Name>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
-					<Default>
-						<Value>2</Value>
-					</Default>
-					<PTCID>#x03002103</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" RefreshableValue="true">
-					<Name>Ctx_TaskOidMET</Name>
-					<Comment><![CDATA[Task implementing ICyclicCaller for cyclic execution of this module]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x03002060</PTCID>
-				</Parameter>
-				<Parameter Group="Simulation">
-					<Name>Simulation mode</Name>
-					<Comment><![CDATA[Specifies if mover is in simulation mode or not, i.e. if the mover needs hardware (driver) connection via CoE.]]></Comment>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<Default>
-						<Value>1</Value>
-					</Default>
-					<PTCID>#x050300b1</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>Mover width</Name>
-					<Comment><![CDATA[Width that is used for internal collision checks.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[mm]]></Unit>
-					<Default>
-						<Value>155.0</Value>
-					</Default>
-					<PTCID>#x050300b2</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>Mover height</Name>
-					<Comment><![CDATA[Height that is used for internal collision checks.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[mm]]></Unit>
-					<Default>
-						<Value>155.0</Value>
-					</Default>
-					<PTCID>#x050300b3</PTCID>
-					<ContextId OnlineAccess="true">0</ContextId>
-				</Parameter>
-				<Parameter HideParameter="true" Group="Simulation">
-					<Name>Initial position</Name>
-					<Comment><![CDATA[Mover position, can be set for disabled mover.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<PTCID>#x050300b5</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="General">
-					<Name>Minimal position</Name>
-					<Comment><![CDATA[Mover minimal position, can be set for disabled mover. For the c coordinate the interpretation is not absolute.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>-1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>-1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>-1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>-3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>-3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>-11.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d3</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="General">
-					<Name>Maximal position</Name>
-					<Comment><![CDATA[Mover maximal position, can be set for disabled mover. For the c coordinate the interpretation is not absolute.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>1e10</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>3.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>11.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d4</PTCID>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>C coordinate modulus</Name>
-					<Comment><![CDATA[C coordinate modulus, can be set for disabled mover.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[°]]></Unit>
-					<Default>
-						<Value>360.0</Value>
-					</Default>
-					<PTCID>#x05030107</PTCID>
-				</Parameter>
-				<Parameter Group="General">
-					<Name>C coordinate modulo tolerance window</Name>
-					<Comment><![CDATA[C coordinate modulo tolerance window, can be set for disabled mover.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[°]]></Unit>
-					<Default>
-						<Value>0.0</Value>
-					</Default>
-					<PTCID>#x05030108</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" Group="Simulation">
-					<Name>PartOID</Name>
-					<Comment><![CDATA[Object id of the PlanarPart the initial position is on.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x050300e0</PTCID>
-				</Parameter>
-				<Parameter Group="Monitoring">
-					<Name>Position Lag Monitoring Enabled</Name>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<Default>
-						<Value>1</Value>
-					</Default>
-					<PTCID>#x0503011a</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Monitoring">
-					<Name>Maximum Position Lag Value</Name>
-					<Comment><![CDATA[The maximum of the allowed lag for each coordinate. Must be in [0.0,100.0] for each coordinate.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>1.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>1.5</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300be</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Monitoring">
-					<Name>Maximum Position Lag Filter Time</Name>
-					<Comment><![CDATA[The maximum of the allowed time for a lag distance violation of each coordinate. Must be in [0.0,10.0] for each coordinate.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[s]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.x</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.y</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.z</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.a</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.b</Name>
-							<Value>0.02</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.c</Name>
-							<Value>0.02</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300bf</PTCID>
-				</Parameter>
-				<Parameter Group="Monitoring">
-					<Name>Timeout for state machine</Name>
-					<Comment><![CDATA[Timout for enable, disable, and reset commands of the user in seconds.]]></Comment>
-					<BitSize>64</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
-					<Unit><![CDATA[s]]></Unit>
-					<Default>
-						<Value>5</Value>
-					</Default>
-					<PTCID>#x0503d004</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Maximum Dynamics">
-					<Name>Maximum dynamic XY</Name>
-					<Comment><![CDATA[Maximum dynamic of the mover in the XY plane.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>2000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>200000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300b8</PTCID>
-				</Parameter>
-				<Parameter ShowSubItems="true" Group="Maximum Dynamics">
-					<Name>Maximum dynamic C</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers C rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>7000.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>35000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300b9</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic Z</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers Z coordinate.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ba</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic A</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers A rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ca</PTCID>
-				</Parameter>
-				<Parameter Group="Maximum Dynamics">
-					<Name>Maximum dynamic B</Name>
-					<Comment><![CDATA[Maximum dynamic of the movers B rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>10.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cb</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic XY</Name>
-					<Comment><![CDATA[Default dynamic of the mover in the XY plane.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>100.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>200.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>200.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>1000.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cc</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic C</Name>
-					<Comment><![CDATA[Default dynamic of the movers C rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cd</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic Z</Name>
-					<Comment><![CDATA[Default dynamic of the movers Z coordinate.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[mm per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300ce</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic A</Name>
-					<Comment><![CDATA[Default dynamic of the movers A rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300cf</PTCID>
-				</Parameter>
-				<Parameter Group="Default Dynamics">
-					<Name>Default dynamic B</Name>
-					<Comment><![CDATA[Default dynamic of the movers B rotation.]]></Comment>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{38ED262D-F8F3-4BB3-9E0F-BFC46C6E916B}" Namespace="MC">DynamicLimits1D</BaseType>
-					<Unit><![CDATA[° per s, s², or s³]]></Unit>
-					<Default>
-						<SubItem>
-							<Name>.V</Name>
-							<Value>5.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.A</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.D</Name>
-							<Value>20.0</Value>
-						</SubItem>
-						<SubItem>
-							<Name>.J</Name>
-							<Value>100.0</Value>
-						</SubItem>
-					</Default>
-					<PTCID>#x050300d0</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>SetPos</Name>
-					<Comment><![CDATA[Mover position, read only.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<Unit><![CDATA[mm, °]]></Unit>
-					<PTCID>#x050300d2</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>CoordinateSystemOID</Name>
-					<Comment><![CDATA[The coordinate system the mover is on, set and act position are given in this system.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x05030126</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>Hardware mover OTCID</Name>
-					<Comment><![CDATA[The object ID of the hardware mover connected to this mover (zero if in simuation mode).]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x0503012d</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>GroupOID</Name>
-					<Comment><![CDATA[Object id of the PlanarGroup the mover is in, read only.]]></Comment>
-					<BitSize>32</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<PTCID>#x050300c3</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" CreateSymbol="true" ReadOnly="true">
-					<Name>State</Name>
-					<Comment><![CDATA[State, read only.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{6D2B99B2-A9F2-44AF-A298-4BB7A08AE294}" Namespace="MC">MC_PLANAR_STATE</BaseType>
-					<PTCID>#x050300b6</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>Command mode</Name>
-					<Comment><![CDATA[Command mode, read only.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{FAE6DCD6-33EF-4275-8592-10BCED19E1EA}" Namespace="MC">MC_PLANAR_MOVER_COMMAND_MODE</BaseType>
-					<PTCID>#x050300b7</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ShowSubItems="true" ReadOnly="true">
-					<Name>ActPos</Name>
-					<Comment><![CDATA[Mover hardware position, read only.]]></Comment>
-					<BitSize>384</BitSize>
-					<BaseType GUID="{5AC0538E-BDFA-4B58-A6B5-99E997DABADA}" Namespace="MC">MoverVector</BaseType>
-					<PTCID>#x050300c1</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ShowSubItems="true" CreateSymbol="true" ReadOnly="true">
-					<Name>Mover SetPos on track</Name>
-					<Comment><![CDATA[Mover state on track, read only.]]></Comment>
-					<BitSize>320</BitSize>
-					<BaseType GUID="{DB4B14FF-1923-4ED2-A97C-3D3120BDBDAA}" Namespace="MC">CDT_MCTOPLC_PLANAR_MOVER_TRACK</BaseType>
-					<PTCID>#x050300c2</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" ReadOnly="true">
-					<Name>External setpoint generation mode</Name>
-					<Comment><![CDATA[Indicates which external setpoint generation mode is active.]]></Comment>
-					<BitSize>16</BitSize>
-					<BaseType GUID="{C4BA2B11-27FE-4956-B736-B8F79E7E1624}" Namespace="MC">MC_EXTERNAL_SET_POSITION_MODE</BaseType>
-					<PTCID>#x050300db</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Forward blocking neighbours</Name>
-					<Comment><![CDATA[OIDs of neighbours in front of this mover blocking it in standstill on the track.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" Max="1">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503012e</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Backward blocking neighbours</Name>
-					<Comment><![CDATA[OIDs of neighbours behind this mover blocking it in standstill on the track.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" Max="1">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503012f</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Track trail information</Name>
-					<Comment><![CDATA[OIDs of all tracks in this movers track trail.]]></Comment>
-					<BitSize>0</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
-					<ArrayInfo>
-						<LBound>1</LBound>
-						<Elements Min="0" MaxUnbounded="true">0</Elements>
-					</ArrayInfo>
-					<PTCID>#x0503013e</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Entering system</Name>
-					<Comment><![CDATA[True if not (yet) on system but already approaching on other system.]]></Comment>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<PTCID>#x05030175</PTCID>
-				</Parameter>
-				<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true">
-					<Name>Leaving system</Name>
-					<Comment><![CDATA[True if (still) on system but already approaching the other system to leave this system.]]></Comment>
-					<BitSize>8</BitSize>
-					<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-					<PTCID>#x05030178</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>ChildAreaLocation</Name>
-					<BitSize>256</BitSize>
-					<BaseType GUID="{C5711B60-10CA-42F2-8DE1-6039CB261CCF}" Namespace="IO">TcIoChildAreaLocation</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">2</Elements>
-					</ArrayInfo>
-					<PTCID>#x03000029</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>PlcInputsCfg</Name>
-					<BitSize>128</BitSize>
-					<BaseType GUID="{BD3BA8A6-FB59-4197-B6BA-A3B09FFC369C}" Namespace="IO">TcIoDataAreaCfg</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">1</Elements>
-					</ArrayInfo>
-					<PTCID>#x03007000</PTCID>
-				</Parameter>
-				<Parameter HideParameter="true" ReadOnly="true" Group="Internal" RefreshableValue="true">
-					<Name>PlcOutputsCfg</Name>
-					<BitSize>640</BitSize>
-					<BaseType GUID="{BD3BA8A6-FB59-4197-B6BA-A3B09FFC369C}" Namespace="IO">TcIoDataAreaCfg</BaseType>
-					<ArrayInfo>
-						<LBound>0</LBound>
-						<Elements Min="0" MaxUnbounded="true">5</Elements>
-					</ArrayInfo>
-					<PTCID>#x03007001</PTCID>
-				</Parameter>
-			</Parameters>
-			<DataAreas>
-				<DataArea>
-					<AreaNo AreaType="InputDst" CreateSymbols="true">4</AreaNo>
-					<Name>IoToMc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{DCBC2796-F4A6-49ED-AD13-8E71F04F5FD7}" Namespace="MC" PointerTo="1">CDT_HWTOMC_MOVER</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>IO2MC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="InputDst" ChildArea="true" CreateSymbols="true">0</AreaNo>
-					<Name>PlcToMc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{BC77732B-A71D-4084-AA53-85A5016932F3}" Namespace="MC" PointerTo="1">CDT_PLCTOMC_PLANAR_MOVER_STD</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c006</PTCID>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>PLC2MC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="OutputSrc" CreateSymbols="true">5</AreaNo>
-					<Name>McToIo</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x8">4</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{F6B8E2E8-5F96-45E0-AD21-3E97B7E9BDB2}" Namespace="MC" PointerTo="1">CDT_MCTOHW_MOVER</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>MC2IO</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-				<DataArea>
-					<AreaNo AreaType="OutputSrc" ChildArea="true" CreateSymbols="true">1</AreaNo>
-					<Name>McToPlc</Name>
-					<ContextId>0</ContextId>
-					<ByteSize X64="#x28">20</ByteSize>
-					<Symbol>
-						<Name>STD</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{7D131116-81E4-45B0-AC50-A71EE4201E30}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_STD</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c007</PTCID>
-						<BitOffs>0</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>SET</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{D7D4F146-9962-4745-8631-17F5FB457164}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_SET</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c008</PTCID>
-						<BitOffs X64="64">32</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>ACT</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{F18FBB92-D68F-43D8-95AE-0E42EDCD14E2}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_ACT</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c009</PTCID>
-						<BitOffs X64="128">64</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>COORDMODE</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{B2D0D1AF-2BA9-49BA-AF3F-BC95009CD9CD}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_COORDMODE</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c00a</PTCID>
-						<BitOffs X64="192">96</BitOffs>
-					</Symbol>
-					<Symbol>
-						<Name>SETONTRACK</Name>
-						<BitSize X64="64">32</BitSize>
-						<BaseType GUID="{DB4B14FF-1923-4ED2-A97C-3D3120BDBDAA}" Namespace="MC" PointerTo="1">CDT_MCTOPLC_PLANAR_MOVER_TRACK</BaseType>
-						<Properties>
-							<Property>
-								<Name>TcPointerMapping</Name>
-							</Property>
-						</Properties>
-						<PTCID>#x0503c003</PTCID>
-						<BitOffs X64="256">128</BitOffs>
-					</Symbol>
-					<Properties>
-						<Property>
-							<Name>TcMappingDataArea</Name>
-							<Value>MC2PLC</Value>
-						</Property>
-					</Properties>
-				</DataArea>
-			</DataAreas>
-			<Properties>
-				<Property>
-					<Name>Category</Name>
-					<Value>MC Object</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>MC AxisModule</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>McDefaultAxis</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>TcMcPlcAxis</Value>
-				</Property>
-				<Property>
-					<Name>Category</Name>
-					<Value>HideTcComContextPP</Value>
-				</Property>
-			</Properties>
-		</ModuleTmc>
-		<ModuleTmc GUID="{3209871F-5982-EF64-B657-08A4762CCC9B}" TcSmClass="TComMcPlanarMoverObj">
->>>>>>> HardwareTestBronzeStr
 			<Name>Planar Mover</Name>
 			<CLSID ClassFactory="TcNc3">{050300C6-0000-0000-F000-000000000064}</CLSID>
 			<Info>
@@ -11698,7 +9202,7 @@ External Setpoint Generation:
 				<Cpu CpuId="3" BaseTime="2500"/>
 			</Settings>
 			<Tasks>
-				<Task Id="2" Priority="1" CycleTime="5000" AmsPort="350" Affinity="#x00000008" AdtTasks="true">
+				<Task Id="2" Priority="1" CycleTime="2500" AmsPort="350" Affinity="#x00000008" AdtTasks="true">
 					<Name>XTS Task</Name>
 				</Task>
 				<Task Id="3" Priority="32" AdtTasks="true" JobTask="true">
@@ -11716,10 +9220,10 @@ External Setpoint Generation:
 				</Task>
 			</Tasks>
 			<Modules>
-				<Module Id="#x01010730" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+				<Module Id="#x01010730" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 					<Name>XTS ProcessingUnit 2</Name>
 					<ImageId>1000</ImageId>
-					<TmcDesc GUID="{53A0BC71-1B01-456F-8AF4-C892F791F4C2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<TmcDesc GUID="{53A0BC71-1B01-456F-8AF4-C892F791F4C2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XtsProcessingUnit</Name>
 						<CLSID ClassFactory="TcIoXts">{61827435-7B03-4734-A344-F5A75F8060C8}</CLSID>
 						<Info>
@@ -11738,7 +9242,7 @@ External Setpoint Generation:
 									<OTCID>#x02010020</OTCID>
 								</ManualConfig>
 								<Priority>1</Priority>
-								<CycleTime>500000</CycleTime>
+								<CycleTime>250000</CycleTime>
 							</Context>
 							<Context>
 								<Id>2</Id>
@@ -14130,10 +11634,10 @@ External Setpoint Generation:
 							</Value>
 						</InterfacePointerValues>
 					</TmcDesc>
-					<Module Id="#x01010740" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010740" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XL Part Main</Name>
 						<ImageId>1001</ImageId>
-						<TmcDesc GUID="{93A38860-5211-4770-B4BB-87154C8B57F2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{93A38860-5211-4770-B4BB-87154C8B57F2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLPart</Name>
 							<CLSID ClassFactory="TcIoXts">{46246B03-1D83-42F3-841A-5A74A94B96C2}</CLSID>
 							<Info>
@@ -14147,7 +11651,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -14348,10 +11852,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x01010110" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010110" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 13</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -14365,7 +11869,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -14840,10 +12344,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010100" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010100" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 12</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -14857,7 +12361,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -15332,10 +12836,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 11</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -15349,7 +12853,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -15824,10 +13328,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 10</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -15841,7 +13345,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -16316,10 +13820,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 9</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -16333,7 +13837,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -16808,10 +14312,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 8</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -16825,7 +14329,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -17300,10 +14804,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 7</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -17317,7 +14821,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -17792,10 +15296,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 6</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -17809,7 +15313,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -18284,10 +15788,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010090" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010090" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 5</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -18301,7 +15805,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -18776,10 +16280,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010080" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010080" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XL Module 4</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -18793,7 +16297,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -19269,10 +16773,10 @@ External Setpoint Generation:
 							</TmcDesc>
 						</Module>
 					</Module>
-					<Module Id="#x01010020" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010020" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Track Main</Name>
 						<ImageId>1003</ImageId>
-						<TmcDesc GUID="{4EBEBA88-A772-4DC6-8AA0-C3959356823A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{4EBEBA88-A772-4DC6-8AA0-C3959356823A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsTrack</Name>
 							<CLSID ClassFactory="TcIoXts">{AAB804B1-26EB-4240-BC7B-2DBE6FE99982}</CLSID>
 							<Info>
@@ -19286,7 +16790,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -19493,10 +16997,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 1</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -19510,7 +17014,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -19869,10 +17373,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 2</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -19886,7 +17390,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -20245,10 +17749,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 3</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -20262,7 +17766,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -20621,10 +18125,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 4</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -20638,7 +18142,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -20997,10 +18501,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 5</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -21014,7 +18518,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -21124,7 +18628,7 @@ External Setpoint Generation:
 									<PTCID>#x03080279</PTCID>
 									<ContextId>1</ContextId>
 								</Parameter>
-								<Parameter CreateSymbol="true" Group="Simulation">
+								<Parameter Group="Simulation">
 									<Name>IsVirtualFeedbackEnabled</Name>
 									<Comment><![CDATA[If enabled the actual position follows the setPosition ignoring missing hardware.]]></Comment>
 									<BitSize>8</BitSize>
@@ -21373,10 +18877,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 6</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -21390,7 +18894,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -21500,7 +19004,7 @@ External Setpoint Generation:
 									<PTCID>#x03080279</PTCID>
 									<ContextId>1</ContextId>
 								</Parameter>
-								<Parameter CreateSymbol="true" Group="Simulation">
+								<Parameter Group="Simulation">
 									<Name>IsVirtualFeedbackEnabled</Name>
 									<Comment><![CDATA[If enabled the actual position follows the setPosition ignoring missing hardware.]]></Comment>
 									<BitSize>8</BitSize>
@@ -21749,10 +19253,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 7</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -21766,7 +19270,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -21876,7 +19380,7 @@ External Setpoint Generation:
 									<PTCID>#x03080279</PTCID>
 									<ContextId>1</ContextId>
 								</Parameter>
-								<Parameter CreateSymbol="true" Group="Simulation">
+								<Parameter Group="Simulation">
 									<Name>IsVirtualFeedbackEnabled</Name>
 									<Comment><![CDATA[If enabled the actual position follows the setPosition ignoring missing hardware.]]></Comment>
 									<BitSize>8</BitSize>
@@ -22125,10 +19629,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 8</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -22142,7 +19646,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -22501,10 +20005,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 9</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -22518,7 +20022,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -22877,10 +20381,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010ca0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010ca0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 10</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -22894,7 +20398,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -23061,11 +20565,11 @@ External Setpoint Generation:
 								<Parameter OnlineParameter="true" ShowSubItems="true" ReadOnly="true" Group="Info">
 									<Name>CurrentModuleObjectIDs</Name>
 									<Comment><![CDATA[Returns the object IDs of the current modules.]]></Comment>
-									<BitSize>32</BitSize>
+									<BitSize>0</BitSize>
 									<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
 									<ArrayInfo>
 										<LBound>0</LBound>
-										<Elements Min="0" MaxUnbounded="true">1</Elements>
+										<Elements Min="0" MaxUnbounded="true">0</Elements>
 									</ArrayInfo>
 									<PTCID>#x03080208</PTCID>
 									<ContextId>1</ContextId>
@@ -23253,10 +20757,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010cb0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010cb0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 11</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -23270,7 +20774,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -23437,11 +20941,11 @@ External Setpoint Generation:
 								<Parameter OnlineParameter="true" ShowSubItems="true" ReadOnly="true" Group="Info">
 									<Name>CurrentModuleObjectIDs</Name>
 									<Comment><![CDATA[Returns the object IDs of the current modules.]]></Comment>
-									<BitSize>32</BitSize>
+									<BitSize>0</BitSize>
 									<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
 									<ArrayInfo>
 										<LBound>0</LBound>
-										<Elements Min="0" MaxUnbounded="true">1</Elements>
+										<Elements Min="0" MaxUnbounded="true">0</Elements>
 									</ArrayInfo>
 									<PTCID>#x03080208</PTCID>
 									<ContextId>1</ContextId>
@@ -23629,10 +21133,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010cc0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010cc0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>IPC2 XL_Mover 12</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -23646,7 +21150,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -24006,10 +21510,10 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Module>
-				<Module Id="#x01010030" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+				<Module Id="#x01010030" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 					<Name>Std Parameter Set - 4mm AirGap StraightTunedLeon</Name>
 					<ImageId>1005</ImageId>
-					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XtsMoverParameterSet</Name>
 						<CLSID ClassFactory="TcIoXts">{B055B40D-DEC1-4D72-961C-D151E31A9BA5}</CLSID>
 						<Info>
@@ -24178,10 +21682,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>General</Name>
 						<ImageId>1006</ImageId>
-						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverGeneralParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{98BEC76D-D436-4208-9F8B-486BE57865BD}</CLSID>
 							<Info>
@@ -24445,10 +21949,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Encoder</Name>
 						<ImageId>1007</ImageId>
-						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverEncoderParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{2A657C12-787C-40C0-8E6C-D68FB6D58760}</CLSID>
 							<Info>
@@ -24629,10 +22133,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010060" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010060" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Position Control</Name>
 						<ImageId>1008</ImageId>
-						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverPositionControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{57584E44-D085-4D23-86E4-3BE2859F4EC5}</CLSID>
 							<Info>
@@ -24857,10 +22361,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Velocity Control</Name>
 						<ImageId>1009</ImageId>
-						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverVelocityControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{E9D8B517-6857-41D8-A4A3-60C89603D74A}</CLSID>
 							<Info>
@@ -25111,10 +22615,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010120" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010120" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Filter 1</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -25255,10 +22759,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010130" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010130" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Filter 2</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -25399,10 +22903,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010140" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010140" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Feed Forward</Name>
 						<ImageId>1011</ImageId>
-						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverFeedForwardParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{7E8B155E-1E66-48E1-9D28-0607FA48FC11}</CLSID>
 							<Info>
@@ -25704,10 +23208,10 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Module>
-				<Module Id="#x010106a0" Disabled="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+				<Module Id="#x010106a0" Disabled="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 					<Name>4mmAirGapSonoma</Name>
 					<ImageId>1005</ImageId>
-					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XtsMoverParameterSet</Name>
 						<CLSID ClassFactory="TcIoXts">{B055B40D-DEC1-4D72-961C-D151E31A9BA5}</CLSID>
 						<Info>
@@ -25880,10 +23384,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010106b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>General_Obj1 (XtsMoverGeneralParameterSet)</Name>
 						<ImageId>1006</ImageId>
-						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverGeneralParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{98BEC76D-D436-4208-9F8B-486BE57865BD}</CLSID>
 							<Info>
@@ -26147,10 +23651,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Encoder_Obj2 (XtsMoverEncoderParameterSet)</Name>
 						<ImageId>1007</ImageId>
-						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverEncoderParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{2A657C12-787C-40C0-8E6C-D68FB6D58760}</CLSID>
 							<Info>
@@ -26331,10 +23835,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Position Controller_Obj3 (XtsMoverPositionControllerParameterSet)</Name>
 						<ImageId>1008</ImageId>
-						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverPositionControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{57584E44-D085-4D23-86E4-3BE2859F4EC5}</CLSID>
 							<Info>
@@ -26559,10 +24063,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Velocity Controller_Obj4 (XtsMoverVelocityControllerParameterSet)</Name>
 						<ImageId>1009</ImageId>
-						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverVelocityControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{E9D8B517-6857-41D8-A4A3-60C89603D74A}</CLSID>
 							<Info>
@@ -26813,10 +24317,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Filter1</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -26957,10 +24461,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010700" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010700" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Feed Forward_Obj6 (XtsMoverFeedForwardParameterSet)</Name>
 						<ImageId>1011</ImageId>
-						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverFeedForwardParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{7E8B155E-1E66-48E1-9D28-0607FA48FC11}</CLSID>
 							<Info>
@@ -27261,10 +24765,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010710" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010710" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Filter2</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -27566,10 +25070,10 @@ External Setpoint Generation:
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 					</Vars>
-					<Module Id="#x010104a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010104a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>Axis 1_Obj1 (XtsMoverController)</Name>
 						<ImageId>1012</ImageId>
-						<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XtsMoverController</Name>
 							<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 							<Info>
@@ -29115,12 +26619,16 @@ External Setpoint Generation:
 								<Value>11</Value>
 							</Value>
 							<Value>
+								<Name>Position Lag Monitoring Enabled</Name>
+								<EnumText>FALSE</EnumText>
+							</Value>
+							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -29324,10 +26832,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010750" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010750" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 01 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -29341,7 +26849,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -29472,10 +26980,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010760" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010760" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 01 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -29489,7 +26997,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -30799,11 +28307,7 @@ External Setpoint Generation:
 				<Axis Id="#x05110160" ShareTmcDesc="true">
 					<Name>MC_Mover 02 IPC2</Name>
 					<ImageId>1013</ImageId>
-<<<<<<< HEAD
-					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{12B68D44-8ED3-C979-B823-FBF731EE9E67}">
-=======
-					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{0F00FDD0-9D27-D3D0-7B05-1BCDA7BD4810}">
->>>>>>> HardwareTestBronzeStr
+					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{00F6E9D3-81E3-9198-D0BB-132205E6AD71}">
 						<Name>Planar Mover</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -30883,16 +28387,12 @@ External Setpoint Generation:
 								<Value>11</Value>
 							</Value>
 							<Value>
-								<Name>Position Lag Monitoring Enabled</Name>
-								<EnumText>FALSE</EnumText>
-							</Value>
-							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -31096,10 +28596,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010109b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 02 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -31113,7 +28613,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -31244,10 +28744,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x010109c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010109c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 02 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -31261,7 +28761,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -32571,11 +30071,7 @@ External Setpoint Generation:
 				<Axis Id="#x05110170" ShareTmcDesc="true">
 					<Name>MC_Mover 03 IPC2</Name>
 					<ImageId>1013</ImageId>
-<<<<<<< HEAD
 					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{00F6E9D3-81E3-9198-D0BB-132205E6AD71}">
-=======
-					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{72450A87-D065-E5BF-2099-FF0391A08908}">
->>>>>>> HardwareTestBronzeStr
 						<Name>Planar Mover</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -32656,11 +30152,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -32864,10 +30360,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010109d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 03 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -32881,7 +30377,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -33012,10 +30508,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x010109e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010109e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 03 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -33029,7 +30525,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -34420,11 +31916,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -34628,10 +32124,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010109f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 04 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -34645,7 +32141,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -34776,10 +32272,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a00" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a00" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 04 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -34793,7 +32289,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -36103,11 +33599,7 @@ External Setpoint Generation:
 				<Axis Id="#x05110190" ShareTmcDesc="true">
 					<Name>MC_Mover 05 IPC2</Name>
 					<ImageId>1013</ImageId>
-<<<<<<< HEAD
 					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{740E003D-7B29-1263-E019-A5928F300FD8}">
-=======
-					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{3209871F-5982-EF64-B657-08A4762CCC9B}">
->>>>>>> HardwareTestBronzeStr
 						<Name>Planar Mover</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -36188,11 +33680,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -36396,10 +33888,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 05 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -36413,7 +33905,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -36544,10 +34036,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 05 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -36561,7 +34053,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -37871,11 +35363,7 @@ External Setpoint Generation:
 				<Axis Id="#x051101a0" ShareTmcDesc="true">
 					<Name>MC_Mover 06 IPC2</Name>
 					<ImageId>1013</ImageId>
-<<<<<<< HEAD
 					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{740E003D-7B29-1263-E019-A5928F300FD8}">
-=======
-					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{3209871F-5982-EF64-B657-08A4762CCC9B}">
->>>>>>> HardwareTestBronzeStr
 						<Name>Planar Mover</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -37956,11 +35444,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -38164,10 +35652,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 06 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -38181,7 +35669,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -38312,10 +35800,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 06 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -38329,7 +35817,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -39639,11 +37127,7 @@ External Setpoint Generation:
 				<Axis Id="#x051101b0" ShareTmcDesc="true">
 					<Name>MC_Mover 07 IPC2</Name>
 					<ImageId>1013</ImageId>
-<<<<<<< HEAD
 					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{740E003D-7B29-1263-E019-A5928F300FD8}">
-=======
-					<TmcDesc GUID="{5FC17892-62EA-4736-9999-D79964E87717}" TcSmClass="TComMcPlanarMoverObj" SharedTmc="{3209871F-5982-EF64-B657-08A4762CCC9B}">
->>>>>>> HardwareTestBronzeStr
 						<Name>Planar Mover</Name>
 						<InitSequence>PSO</InitSequence>
 						<Contexts>
@@ -39724,11 +37208,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -39932,10 +37416,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 07 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -39949,7 +37433,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -40080,10 +37564,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 07 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -40097,7 +37581,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -41488,11 +38972,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -41696,10 +39180,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 08 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -41713,7 +39197,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -41844,10 +39328,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 08 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -41861,7 +39345,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -43252,11 +40736,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -43460,10 +40944,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 09 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -43477,7 +40961,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -43608,10 +41092,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010aa0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010aa0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 09 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -43625,7 +41109,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -45016,11 +42500,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -45224,10 +42708,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010ab0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010ab0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 10 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -45241,7 +42725,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -45372,10 +42856,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010ac0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010ac0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 10 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -45389,7 +42873,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -46780,11 +44264,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -46988,10 +44472,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010ad0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010ad0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 11 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -47005,7 +44489,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -47136,10 +44620,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010ae0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010ae0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 11 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -47153,7 +44637,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -48544,11 +46028,11 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.x</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.y</Name>
-								<Value>40</Value>
+								<Value>100</Value>
 							</Value>
 							<Value>
 								<Name>Maximum Position Lag Value.z</Name>
@@ -48752,10 +46236,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010b10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010b10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 						<Name>XConverter 12 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -48769,7 +46253,7 @@ External Setpoint Generation:
 										<OTCID>#x02010020</OTCID>
 									</ManualConfig>
 									<Priority>1</Priority>
-									<CycleTime>500000</CycleTime>
+									<CycleTime>250000</CycleTime>
 								</Context>
 							</Contexts>
 							<Interfaces>
@@ -48900,10 +46384,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010b20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010b20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 							<Name>MoverController 12 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -48917,7 +46401,7 @@ External Setpoint Generation:
 											<OTCID>#x02010020</OTCID>
 										</ManualConfig>
 										<Priority>1</Priority>
-										<CycleTime>500000</CycleTime>
+										<CycleTime>250000</CycleTime>
 									</Context>
 								</Contexts>
 								<Interfaces>
@@ -50952,7 +48436,7 @@ External Setpoint Generation:
 							</Value>
 							<Value>
 								<Name>Target position.Position</Name>
-								<Value>10</Value>
+								<Value>2000</Value>
 							</Value>
 							<Value>
 								<Name>Target position.TrackOid</Name>
@@ -51379,11 +48863,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{23F3AAC5-D2AC-4B6B-826F-C638329B5E0D}" Name="SaftyPLC" PrjFilePath="SaftyPLC\SaftyPLC.plcproj" TmcFilePath="SaftyPLC\SaftyPLC.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-<<<<<<< HEAD
 				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{B35E5DD1-F506-6A1D-971D-BF22CEF7265E}" TmcPath="SaftyPLC\SaftyPLC.tmc">
-=======
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{5EC3C8F3-D55F-38A8-271D-E68DC621BBC0}" TmcPath="SaftyPLC\SaftyPLC.tmc">
->>>>>>> HardwareTestBronzeStr
 					<Name>SaftyPLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -51515,11 +48995,7 @@ External Setpoint Generation:
 				</Instance>
 			</Project>
 			<Project GUID="{58EE9543-7EAA-4B53-B777-145942758DE0}" Name="MC3_Multi_IPC2" PrjFilePath="MC3_Multi_IPC2\MC3_Multi_IPC2.plcproj" TmcFilePath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-<<<<<<< HEAD
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{F01AB8E8-E8A7-2644-CC35-FC334BEB5F66}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
-=======
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{D5877182-99F5-348C-1E46-4F77B551B3A5}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
->>>>>>> HardwareTestBronzeStr
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A61165B1-0DD2-8719-2DB7-82F9E7B37103}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
 					<Name>MC3_Multi_IPC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -55410,7 +52886,6 @@ Bit 8 - 15 : reserved]]></Comment>
 		</Io>
 	</Project>
 	<Mappings>
-<<<<<<< HEAD
 		<MappingInfo Identifier="{00000000-0060-0304-6000-120560000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-0060-0304-7000-120560000403}" Id="#x02030040"/>
 		<MappingInfo Identifier="{08502001-0060-0304-0020-500860000403}" Id="#x02030010" Watchdog="00000000000000000000000000000000"/>
@@ -55431,32 +52906,6 @@ Bit 8 - 15 : reserved]]></Comment>
 		<MappingInfo Identifier="{02010040-2001-0850-6000-120500205008}" Id="#x02030070" Watchdog="04000000100000000400000004000000"/>
 		<MappingInfo Identifier="{02010040-2001-0850-7000-120500205008}" Id="#x02030080" Watchdog="04000000100000000400000004000000"/>
 		<MappingInfo Identifier="{08502041-0060-0304-4020-500860000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
-=======
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500820000403}" Id="#x02030070"/>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500880000403}" Id="#x02030060"/>
-		<MappingInfo Identifier="{00000000-0060-0304-6000-120560000403}" Id="#x02030030"/>
-		<MappingInfo Identifier="{00000000-0060-0304-7000-120560000403}" Id="#x02030040"/>
-		<MappingInfo Identifier="{08502001-0060-0304-0020-500860000403}" Id="#x020300c0" Watchdog="00000000000000000000000000000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-100A-010190011105}" Id="#x02030110" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-100B-010110021105}" Id="#x02030180" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-300A-0101A0011105}" Id="#x02030120" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-5007-010150011105}" Id="#x020300d0" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-500A-0101B0011105}" Id="#x02030130" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-700A-0101C0011105}" Id="#x02030140" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-900A-0101D0011105}" Id="#x02030150" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-B009-010160011105}" Id="#x020300e0" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-B00A-0101E0011105}" Id="#x02030160" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-D009-010170011105}" Id="#x020300f0" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-D00A-0101F0011105}" Id="#x02030170" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010020-0040-0201-F009-010180011105}" Id="#x02030100" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{03040020-0060-0304-2000-040360000403}" Id="#x02030050" Watchdog="10000000040000000400000004000000"/>
-		<MappingInfo Identifier="{02010040-2001-0850-1000-100500205008}" Id="#x02030020" Watchdog="04000000100000000400000004000000"/>
-		<MappingInfo Identifier="{02010040-2001-0850-4000-120500205008}" Id="#x02030080" Watchdog="04000000100000000400000004000000"/>
-		<MappingInfo Identifier="{02010040-2001-0850-6000-120500205008}" Id="#x020300a0" Watchdog="04000000100000000400000004000000"/>
-		<MappingInfo Identifier="{02010040-2001-0850-7000-120500205008}" Id="#x020300b0" Watchdog="04000000100000000400000004000000"/>
-		<MappingInfo Identifier="{08502041-0060-0304-4020-500860000403}" Id="#x02030090" Watchdog="00000000000000000000000000000000"/>
-		<MappingInfo Identifier="{03040080-0020-0304-8000-040320000403}" Id="#x02030010" Watchdog="04000000040000000400000004000000"/>
->>>>>>> HardwareTestBronzeStr
 		<OwnerA Name="TIID^Device 1 (EtherCAT)">
 			<OwnerB Name="TIID^Device 2 (EtherCAT Automation Protocol)^Box 28 (Publisher)">
 				<Link VarA="Term 1 (EK1200)^Term 4 (EL1918)^ConnectionInputs^Message_144 TxPDO" VarB="Safety^Outputs^VarData"/>
