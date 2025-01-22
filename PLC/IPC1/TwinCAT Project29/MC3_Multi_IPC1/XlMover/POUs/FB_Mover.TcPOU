@@ -522,7 +522,7 @@ FOR nForCounter := 1 TO UDINT_TO_UINT(nTrackTrailCount) DO
 	END_IF
 END_FOR
 
-IF oid2 = _nextMcTrackOid AND   ipXtsMover.GetPositionInfo_partPosition(CmdFeedback) < 600THEN //no change
+IF oid2 = nextMcTrackOid OR ipXtsMover.GetPositionInfo_partPosition(CmdFeedback) < 500 THEN //no change
 	RETURN;
 END_IF
 
