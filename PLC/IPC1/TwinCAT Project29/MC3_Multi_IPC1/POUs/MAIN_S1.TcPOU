@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
   <POU Name="MAIN_S1" Id="{1e7add0e-820a-414b-96de-5fe81886ac49}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN_S1
 
@@ -37,7 +37,7 @@ VAR
 	
 	XtsOutterLoopOid: OTCID ;	
 	XtsShortcutOid: OTCID ;
-	Switch : FB_PWM;
+	
 	Init : BOOL ; 
 	EndTrack : INT := E_TrackNum.MainEnd;
  	StartTrack : INT :=E_TrackNum.MainStart ;
@@ -52,7 +52,7 @@ VAR
 	Switchcounter : DINT;
 	FP_Counter : r_trig;
 	
-	searchGap : F_SearchTheBigTrackForAHole; 
+
 	aMoverTrack : ARRAY[1..GVL_Mc.nNumMovers] OF otcid;
 	FirstMoverTrackPos : LREAL;
 	MoverGap : LREAL;
@@ -101,6 +101,12 @@ VAR
 	
 	Fp_error : R_trig;
 	
+	ModuleState1 AT%I*: E_EcState;
+	ModuleState2 AT%I*: E_EcState;
+	ModuleState3 AT%I*: ARRAY[0..2] OF E_EcState;
+	
+	MessageTrigger : ARRAY[1..20] OF R_trig;
+	
 END_VAR
 
 
@@ -114,6 +120,9 @@ GVL_MC.fbXtsEnvironment.Init(GVL_MC.cmdFeedback);
 IF NOT GVL_MC.cmdFeedback.IsDone THEN
 	RETURN;
 END_IF
+
+
+//=================== Check State of Modules===========================================
 IF EtherCATWCState23To49 OR EtherCATWCState50To76 THEN 
 	EtherCATFault := TRUE; 
 END_IF
@@ -121,7 +130,34 @@ IF b110SyncState <> 1 THEN
 	syncFault := TRUE;  
 END_IF
 
-// =====================
+MessageTrigger[1](clk:=ModuleState1 <> 8 AND state> 0);
+IF MessageTrigger[1].Q THEN
+	ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Module Fault Line 1 %s' , strArg:= TO_STRING(ModuleState1));
+END_IF
+
+MessageTrigger[2](clk:=ModuleState2 <> 8 AND state> 0);
+IF MessageTrigger[2].Q THEN
+	ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Module Fault Line 2 %s ' , strArg:= TO_STRING(ModuleState2));
+END_IF
+
+MessageTrigger[3](clk:=ModuleState3[0] <> 8 AND state> 0);
+IF MessageTrigger[3].Q THEN
+	ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Module Fault Line 3 Default SyncUnit %s ' , strArg:= TO_STRING(ModuleState3[0]));
+END_IF
+
+MessageTrigger[4](clk:=ModuleState3[1] <> 8 AND state> 0);
+IF MessageTrigger[4].Q THEN
+	ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Module Fault Line 3 XtsTask SyncUnit %s ' , strArg:= TO_STRING(ModuleState3[1]));
+END_IF
+
+MessageTrigger[5](clk:=ModuleState3[2] <> 8 AND state> 0);
+IF MessageTrigger[5].Q THEN
+	ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Module Fault Line 3 PlcTask SyncUnit %s ' , strArg:= TO_STRING(ModuleState3[2]));
+END_IF
+
+
+//===========================================================================================
+
 GVL_MC.ipXtsProcessingUnit :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number,0);
 FOR i := 1 TO GVL_MC.nNumMovers DO 
 	IF NOT Init THEN
@@ -142,9 +178,10 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 	
 	GVL_MC.Feedback[i].Update();
 	GVL_MC.fbMover[i].CycleUpdate();
-	//GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo + (i - 1) * 50, gvl_mc.standardAccel, gvl_mc.standardDecel, gvl_mc.standardJerk);
-	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 4000, 16000);
 
+	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 4000, 16000);
+	GVL_DataExchange.aMoverInfos[i] :=  GVL_MC.fbMover[i].P_MoverInfos;
+	
 	IF GVL_MC.fbMover[i].P_PlanarMover.Error  AND GVL_MC.iMover[i].XtsXlMover.GetIsActive(0) THEN
 		Fault := TRUE;
 	END_IF
@@ -163,7 +200,7 @@ IF NOT Init THEN
 END_IF
 
 
-Switch(SafeetyOK :=TRUE ,);
+
 
 GVL_DataExchange.Dynamics.v := Velo;
 
@@ -197,22 +234,20 @@ CASE state OF
 
 	2:	
 		IF AktiveSystem THEN
-			FOR i := GVL_MC.nNumActiveMovers + 1 TO GVL_MC.nNumMovers DO  
-				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetStartupTrackPosition(0.2,0);	
-				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
+			FOR i :=1  TO GVL_MC.nNumActiveMovers DO  
+			
+				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(0,0);
 			END_FOR 
 		ELSE
 			FOR i := 1 TO GVL_MC.nNumMovers DO  
 				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetStartupTrackPosition(0.2,0);	
 				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
+				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);
 			END_FOR 
 		END_IF			
 		state := 5;
 	5: 
-		FOR i := 1 TO GVL_MC.nNumMovers DO
-			GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);	
-			
-		END_FOR
+
 		
 		IF AktiveSystem THEN
 			state := 10;
@@ -222,13 +257,11 @@ CASE state OF
 
 	10:
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO
-			GVL_MC.fbMover[i].P_PlanarMover.Reset(0);	
-		//	GVL_MC.fbMover[i].P_PlanarMover.Enable(0);		
+			GVL_MC.fbMover[i].P_PlanarMover.Reset(0);			
 		END_FOR
 		state := 11; 
 	11:
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO
-		//	GVL_MC.fbMover[i].P_PlanarMover.Reset(0);	
 			GVL_MC.fbMover[i].P_PlanarMover.Enable(0);		
 		END_FOR
 		state := 15;	
@@ -291,7 +324,7 @@ CASE state OF
 						Short := TRUE;
 						MoverState[i] := 6;
 					ELSE
-						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.Big],(GVL_MC.aMcTracks[E_TrackNum.Big].GetLength()/2), GVL_MC.defaultGap);			
+						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.Big],(GVL_MC.aMcTracks[E_TrackNum.Big].GetLength()-12000), GVL_MC.defaultGap);			
 						MoverState[i] := 10;
 					END_IF
 				ELSIF NOT bSwitch AND  GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[E_TrackNum.MainStart].MCTOPLC_STD.TrackOID THEN
@@ -338,28 +371,6 @@ CASE state OF
 						fbMover[moverInFront].MoveOnTrack(track:= GVL_Mc.aMcTracks[E_TrackNum.Big], targetPos:= GVL_Mc.aMcTracks[E_TrackNum.Big].GetLength()-500, gap:= 0);
 
 					END_IF 
-					
-				
-					
-			//	8: // wait for in Sync 
-			//		IF fbMover[nForCounter].P_SyncFeedback.Active AND MOver[moverInFront].TrackID =  GVL_Mc.aMcTracks[E_TrackNum.Big].MCTOPLC_STD.TrackOID THEN // actively syncing calculate distance from mover 
-			//			followerToEndOfTrack := fbMover[nForCounter].distToEndOfTrack; 
-			//			leaderToEndofTrack := fbMover[moverInFront].distToEndOfTrack; 
-			//			distToMoverInFront := followerToEndOfTrack - leaderToEndofTrack; 
-			//		ELSE 
-			//			followerToEndOfTrack := 0; 
-			//			leaderToEndofTrack := 0; 
-			//			distToMoverInFront := 0;
-			//		END_IF
-			//		
-			//		IF fbMover[nForCounter].P_SyncFeedback.inSync OR  MOver[nForCounter].TrackID =  GVL_Mc.aMcTracks[E_TrackNum.Mainend].MCTOPLC_STD.TrackOID THEN 
-			//			MoverState[nForCounter] := 10;
-			//			//IsMoverCommandedInShortcut :=FALSE;
-			//		ELSIF	fbMover[nForCounter].P_SyncFeedback.Error THEN
-			//			MoverState[nForCounter] := 60;
-			//		END_IF 
-
-
 			
   			
                   
@@ -371,21 +382,20 @@ CASE state OF
                   		distToMoverInFront := followerToEndOfTrack - leaderToEndofTrack; 
 						
                   ELSE 
-					//	gvl_mc.fbMover[moverInFront].P_MoveOnTrackOptions.gap := 1000;
                  		followerToEndOfTrack := 0; 
                  		leaderToEndofTrack := 0; 
                  		distToMoverInFront := 0;
                   END_IF
-                  IF gvl_mc.fbMover[i].P_SyncFeedback.inSync  AND  Gvl_mc.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 5500 THEN // OR gvl_mc.MOver[i].TrackID =  GVL_Mc.aMCTracks[E_TrackNum.MainEnd].MCTOPLC_STD.TrackOID THEN 
-                        gvl_mc.fbMover[moverInFront].P_MoveOnTrackOptions.gap := GVL_MC.defaultGap;  //  set mover in fronts gap
-						gvl_MC.fbMover[I].P_MoveOnTrackOptions.gap := GVL_MC.defaultGap; //
-						gvl_mc.fbMover[i].MoveOnTrack(GVL_Mc.aMcTracks[E_TrackNum.MainEnd], GVL_Mc.aMCTracks[E_TrackNum.MainEnd].GetLength()-200, GVL_MC.defaultGap);
+				  
+               	IF fbMover[nForCounter].P_SyncFeedback.inSync OR  MOver[nForCounter].TrackID =  GVL_Mc.aMCTracks[E_TrackNum.MainEnd].MCTOPLC_STD.TrackOID THEN 
 						MoverState[i] := 10;
-                  END_IF
+						Short :=FALSE;
+				ELSIF	fbMover[nForCounter].P_SyncFeedback.Error THEN
+						MoverState[i] := 6;
+				END_IF 
 
 			10:
-				 //gvl_mc.fbMover[i].P_MoveOnTrackOptions.gap := ;
-				 // If the mover is 500mm onto the end track re-issue a move command 
+
 				IF SystemReady AND (  GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 500 AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID <>  GVL_MC.aMcTracks[StartTrack].MCTOPLC_STD.TrackOID) THEN
 					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack], GVL_MC.aMcTracks[EndTrack].GetLength()- 200, GVL_MC.defaultGap);
 					MoverState[i] := 12;
@@ -395,7 +405,7 @@ CASE state OF
 				//500mm after that the boundary change commmand is issued 
 				IF GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > GVL_MC.aMcTracks[E_TrackNum.MainEnd].GetLength() - 2300 AND // 2300
 				(GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[E_TrackNum.MainEnd].MCTOPLC_STD.TrackOID)  THEN 
-					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem); 
+					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem, GVL_MC.defaultGap); 
 					MoverState[i] := 15; 
 				END_IF
 				
@@ -479,122 +489,5 @@ END_IF
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="MAIN_S1">
-      <LineId Id="5027" Count="5" />
-      <LineId Id="5679" Count="0" />
-      <LineId Id="5682" Count="4" />
-      <LineId Id="5033" Count="3" />
-      <LineId Id="5038" Count="0" />
-      <LineId Id="5755" Count="0" />
-      <LineId Id="5039" Count="0" />
-      <LineId Id="5754" Count="0" />
-      <LineId Id="5040" Count="0" />
-      <LineId Id="5797" Count="0" />
-      <LineId Id="5799" Count="7" />
-      <LineId Id="5907" Count="0" />
-      <LineId Id="5904" Count="0" />
-      <LineId Id="5041" Count="1" />
-      <LineId Id="5578" Count="1" />
-      <LineId Id="5741" Count="0" />
-      <LineId Id="5562" Count="0" />
-      <LineId Id="5561" Count="0" />
-      <LineId Id="5563" Count="0" />
-      <LineId Id="5043" Count="0" />
-      <LineId Id="5749" Count="0" />
-      <LineId Id="5751" Count="0" />
-      <LineId Id="5750" Count="0" />
-      <LineId Id="5748" Count="0" />
-      <LineId Id="5044" Count="3" />
-      <LineId Id="5694" Count="2" />
-      <LineId Id="5048" Count="3" />
-      <LineId Id="5527" Count="0" />
-      <LineId Id="5525" Count="0" />
-      <LineId Id="5666" Count="0" />
-      <LineId Id="5665" Count="0" />
-      <LineId Id="5677" Count="1" />
-      <LineId Id="5676" Count="0" />
-      <LineId Id="5667" Count="1" />
-      <LineId Id="5670" Count="2" />
-      <LineId Id="5053" Count="1" />
-      <LineId Id="5376" Count="20" />
-      <LineId Id="5507" Count="0" />
-      <LineId Id="5397" Count="3" />
-      <LineId Id="5508" Count="0" />
-      <LineId Id="5401" Count="1" />
-      <LineId Id="5405" Count="3" />
-      <LineId Id="5529" Count="0" />
-      <LineId Id="5409" Count="9" />
-      <LineId Id="5912" Count="0" />
-      <LineId Id="5419" Count="2" />
-      <LineId Id="5914" Count="4" />
-      <LineId Id="5913" Count="0" />
-      <LineId Id="5422" Count="20" />
-      <LineId Id="5565" Count="0" />
-      <LineId Id="5443" Count="3" />
-      <LineId Id="5566" Count="0" />
-      <LineId Id="5447" Count="0" />
-      <LineId Id="5736" Count="4" />
-      <LineId Id="5121" Count="1" />
-      <LineId Id="5723" Count="0" />
-      <LineId Id="5729" Count="0" />
-      <LineId Id="5732" Count="3" />
-      <LineId Id="5730" Count="1" />
-      <LineId Id="5725" Count="0" />
-      <LineId Id="5123" Count="0" />
-      <LineId Id="5518" Count="0" />
-      <LineId Id="5521" Count="1" />
-      <LineId Id="5516" Count="1" />
-      <LineId Id="5707" Count="0" />
-      <LineId Id="5124" Count="0" />
-      <LineId Id="5463" Count="14" />
-      <LineId Id="5822" Count="0" />
-      <LineId Id="5864" Count="0" />
-      <LineId Id="5866" Count="7" />
-      <LineId Id="5902" Count="0" />
-      <LineId Id="5874" Count="1" />
-      <LineId Id="5865" Count="0" />
-      <LineId Id="5823" Count="24" />
-      <LineId Id="5876" Count="1" />
-      <LineId Id="5848" Count="10" />
-      <LineId Id="5911" Count="0" />
-      <LineId Id="5859" Count="4" />
-      <LineId Id="5808" Count="2" />
-      <LineId Id="5610" Count="0" />
-      <LineId Id="5653" Count="0" />
-      <LineId Id="5633" Count="3" />
-      <LineId Id="5659" Count="0" />
-      <LineId Id="5637" Count="1" />
-      <LineId Id="5662" Count="0" />
-      <LineId Id="5639" Count="0" />
-      <LineId Id="5660" Count="0" />
-      <LineId Id="5640" Count="5" />
-      <LineId Id="5692" Count="1" />
-      <LineId Id="5663" Count="0" />
-      <LineId Id="5646" Count="0" />
-      <LineId Id="5583" Count="0" />
-      <LineId Id="5478" Count="0" />
-      <LineId Id="5910" Count="0" />
-      <LineId Id="5909" Count="0" />
-      <LineId Id="5479" Count="3" />
-      <LineId Id="5575" Count="0" />
-      <LineId Id="5484" Count="0" />
-      <LineId Id="5691" Count="0" />
-      <LineId Id="5567" Count="0" />
-      <LineId Id="5485" Count="3" />
-      <LineId Id="5919" Count="0" />
-      <LineId Id="5921" Count="8" />
-      <LineId Id="5920" Count="0" />
-      <LineId Id="5701" Count="0" />
-      <LineId Id="5183" Count="0" />
-      <LineId Id="5795" Count="1" />
-      <LineId Id="5768" Count="26" />
-      <LineId Id="5184" Count="4" />
-      <LineId Id="5559" Count="0" />
-      <LineId Id="5531" Count="10" />
-      <LineId Id="5564" Count="0" />
-      <LineId Id="5542" Count="16" />
-      <LineId Id="5189" Count="1" />
-      <LineId Id="1513" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

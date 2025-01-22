@@ -37,6 +37,7 @@ END_VAR
       <Declaration><![CDATA[METHOD LeaveSystemAt : BOOL
 VAR_INPUT
 	ConnectionOut: REFERENCE TO MC_PlanarTrackConnectionOut;	
+	gap : LREAL; 		
 END_VAR
 ]]></Declaration>
     </Method>

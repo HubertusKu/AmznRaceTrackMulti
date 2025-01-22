@@ -9,7 +9,7 @@
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>MC3_Multi_IPC2</Name>
-    <ProgramVersion>3.1.4026.11</ProgramVersion>
+    <ProgramVersion>3.1.4026.13</ProgramVersion>
     <Application>{ab2543e7-26a4-4d0e-a89f-6e889c644ec6}</Application>
     <TypeSystem>{6667c897-a8a0-4a35-8769-c0efd69a88b6}</TypeSystem>
     <Implicit_Task_Info>{befc2aab-d1ed-4f00-9114-7a03fa097dcf}</Implicit_Task_Info>
@@ -39,6 +39,9 @@
     <Compile Include="DUTs\ST_Color_Code.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\ST_DataExchange.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\ST_DivertConfig.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +55,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_MoverConfig.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_MoverInfo.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\ST_MoverOnTrackInfo.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="DUTs\ST_PlanarTrackConfig.TcDUT">
@@ -86,12 +95,6 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_PWM.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_XtsXlMoverUtility.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\MAIN_S2.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -102,6 +105,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="XlMover\POUs\FB_Mover.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XlMover\POUs\F_GetTrackEnum.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

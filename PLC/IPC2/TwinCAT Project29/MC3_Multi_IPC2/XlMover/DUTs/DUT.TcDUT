@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
-  <DUT Name="DUT" Id="{de7bdfb9-08e8-4f12-99ca-b68db8892940}">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
+  <DUT Name="DUT" Id="{c0343946-28b4-4019-897a-aad4e77d6aa1}">
     <Declaration><![CDATA[TYPE ST_XtsCommandFeedback :
 STRUCT
 		(* Returns wether the execution of the method is done. *)

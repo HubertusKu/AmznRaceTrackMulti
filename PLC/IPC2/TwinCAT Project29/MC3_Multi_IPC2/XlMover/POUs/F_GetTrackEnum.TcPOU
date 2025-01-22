@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
+  <POU Name="F_GetTrackEnum" Id="{0d5dca81-16f6-43de-961d-cadca5dc1c6e}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_GetTrackEnum : E_TrackNum
+VAR_INPUT
+	Track : otcid;
+END_VAR
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF GVL_Mc.aMCTracks[E_TrackNum.MainStart].MCTOPLC_STD.TrackOID = track THEN 
+                F_GetTrackEnum := E_TrackNum.MainStart; 
+ELSIF 
+                GVL_Mc.aMCTracks[E_TrackNum.MainEnd].MCTOPLC_STD.TrackOID = track THEN 
+                F_GetTrackEnum := E_TrackNum.MainEnd; 
+ELSIF 
+                GVL_Mc.aMCtracks[E_TrackNum.Big].MCTOPLC_STD.TrackOID = track THEN 
+                F_GetTrackEnum := E_TrackNum.Big;
+ELSIF 
+                GVL_Mc.aMCtracks[E_TrackNum.Small].MCTOPLC_STD.TrackOID = track THEN 
+                F_GetTrackEnum := E_TrackNum.Small; 
+ 
+END_IF
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
   <GVL Name="GVL_DataExchange" Id="{b965512f-ca95-4016-9567-ab8189b42824}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-		Dynamics AT%I*: ST_Dynamics;
+	Dynamics AT%I*: ST_Dynamics;
+		
+	aMoverInfos : ARRAY[1..nNumMovers] OF ST_MoverInfo;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -17,6 +17,8 @@ VAR
 	
 	_GearInOptions: Tc3_Mc3PlanarMotion.ST_GearInPosOnTrackWithMasterMoverOptions;
 	_stMoveOnTrackOptions: ST_MoveOnTrackOptions;
+	_stLeaveSystemAtOptions : ST_LeaveSystemAtOptions;
+	
 	_syncTrail : MC_PlanarTrackTrail;
 	
 	CmdFeedback :  XtsCommandFeedback;
@@ -66,8 +68,14 @@ IF fbPlanarMover.MCTOPLC.SETONTRACK.TrackOID<>0 THEN
 END_IF
 
 fbPlanarMover.Update();
-
+fbPlanarFeedback.Update();
+SyncMoverFeedback.Update();
+ 
 _stMoverinfos.MoverOtcid := fbPlanarMover.MCTOPLC.STD.MoverOID ;
+_stMoverinfos.IsActive := ipXtsMover.GetIsActive(0);
+_stMoverinfos.ActPos :=  ipXtsMover.GetPositionInfo_trackPosition(0);
+_stMoverinfos.ActVelo := fbPlanarMover.MCTOPLC.SETONTRACK.SetVelo;
+_stMoverinfos.IsVirtuell := ipXtsMover.GetIsVirtualFeedbackEnabled(0);
 _stMoverinfos.Positition :=	fbPlanarMover.MCTOPLC.SETONTRACK.SetPos;
 _stMoverinfos.Track := fbPlanarMover.MCTOPLC.SETONTRACK.TrackOID;
 _stMoverinfos.Error := fbPlanarMover.Error;
@@ -83,13 +91,12 @@ _stMoverinfos.TargetTrackPosition := _stMoverOnTrackInfos.TargetPosition;
 _stMoverinfos.TargetTrack := _stMoverOnTrackInfos.TargetTrack;
 _stMoverinfos.RemainingDistance := _stMoverOnTrackInfos.Remainingdistance;
 
-fbPlanarFeedback.Update();
-SyncMoverFeedback.Update(); 
+
 
 
 UpdateXtsTrack();
+GetOnTrackInfos() ;
 
-GetOnTrackInfos();
 
 
 ]]></ST>
@@ -143,13 +150,13 @@ IF _ipComObject <> 0 THEN
 													pgp := 0); 	
 	IF hResult = 0 THEN
 		GetOnTrackInfos := TRUE;
-	ELSE
-		HRESULTAdsErr_TO_TcEventEntry(hResult,stEventEntry);
-		IF NOT fbResult.EqualsToEventEntryEx( stOther := stEventEntry) THEN
-			fbResult.CreateEx(stEventEntry, 0);
-			fbResult.Send(0);
-			fbResult.Release();
-		END_IF
+ELSE
+	HRESULTAdsErr_TO_TcEventEntry(hResult,stEventEntry);
+	IF NOT fbResult.EqualsToEventEntryEx( stOther := stEventEntry) THEN
+		fbResult.CreateEx(stEventEntry, 0);
+		fbResult.Send(0);
+		fbResult.Release();
+	END_IF
 		bError := TRUE;
 	END_IF							
 END_IF
@@ -181,16 +188,20 @@ _syncTrail.AddTrack(track:= GVL_Mc.aMCTracks[E_TrackNum.MainStart]);
 
 //_stDynamics.SetValuesVADJ(500, 4000, 4000, 10000);
 
-_bIsInitialized := TRUE;
-Init := TRUE;
 
+
+
+	_bIsInitialized := TRUE;
+	Init := TRUE;
 
 IF NOT bInit THEN
 	IF GetComObject(nObjectId:=fbPlanarMover.MCTOPLC.STD.MoverOID) THEN
 		bInit:=TRUE;
 	END_IF
 	RETURN;
-END_IF]]></ST>
+END_IF
+
+]]></ST>
       </Implementation>
     </Method>
     <Method Name="JoinNearestTrack" Id="{7049d311-b9c1-401e-88ee-2d1a43482209}">
@@ -229,10 +240,15 @@ END_IF]]></ST>
       <Declaration><![CDATA[METHOD LeaveSystemAt : BOOL
 VAR_INPUT
 	ConnectionOut: REFERENCE TO MC_PlanarTrackConnectionOut;
+	gap : LREAL; 
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[fbPlanarMover.LeaveSystemAt(fbPlanarFeedback, ConnectionOut,  _stDynamics,0);
+        <ST><![CDATA[_stLeaveSystemAtOptions.gap := gap;
+_stLeaveSystemAtOptions.gapMode := MC_GAP_MODE_ON_TRACK.Fast1D; 
+_stLeaveSystemAtOptions.dynamicMode :=  MC_DYNAMIC_MODE_ON_TRACK.None;
+
+fbPlanarMover.LeaveSystemAt(fbPlanarFeedback, ConnectionOut,  _stDynamics,_stLeaveSystemAtOptions);
 ]]></ST>
       </Implementation>
     </Method>
@@ -316,6 +332,17 @@ END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[P_MoveOnTrackOptions REF= _stMoveOnTrackOptions;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Property Name="P_MoverInfos" Id="{e247c7bf-cf6b-4d35-b73d-b6630d38bcfa}">
+      <Declaration><![CDATA[PROPERTY P_MoverInfos : REFERENCE TO ST_MoverInfo]]></Declaration>
+      <Get Name="Get" Id="{2209c8c8-3656-4e7a-ba16-81096ca2bc85}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[P_MoverInfos  REF= _stMoverInfos;]]></ST>
         </Implementation>
       </Get>
     </Property>

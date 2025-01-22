@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
   <POU Name="MAIN_S2" Id="{eb537839-0cb8-4f4d-83cf-5c0c733fdb11}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN_S2
 
@@ -33,7 +33,7 @@ VAR
 	
 	XtsOutterLoopOid: OTCID ;	
 	XtsShortcutOid: OTCID ;
-	Switch : FB_PWM;
+
 	Init : BOOL ; 
 	EndTrack : INT :=E_TrackNum.MainStart ;
  	StartTrack : INT :=E_TrackNum.MainStart ;
@@ -96,11 +96,13 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 	
 	GVL_MC.Feedback[i].Update();
 	GVL_MC.fbMover[i].CycleUpdate();
-	//GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo + (i - 1) * 50, 4000, 4000, 16000);
+
 	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 4000, 16000);
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gap := 900;
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.direction := MC_Direction.mcDirectionPositive;
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gapMode := MC_GAP_MODE_ON_TRACK.Fast1D;
+	
+	GVL_DataExchange.aMoverInfos[i] :=  GVL_MC.fbMover[i].P_MoverInfos;
 END_FOR	
 
 FOR i := 1 TO GVL_MC.nNumTracks DO 
@@ -150,23 +152,19 @@ CASE state OF
 
 	2:	
 		IF AktiveSystem THEN
-			FOR i := GVL_MC.nNumActiveMovers + 1 TO GVL_MC.nNumMovers DO  
-				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetStartupTrackPosition(0.2,0);	
-				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
+			FOR i:=  1 TO GVL_MC.nNumActiveMovers DO  
+				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(0,0);
 			END_FOR 
 		ELSE
 			FOR i := 1 TO GVL_MC.nNumMovers DO  
 				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetStartupTrackPosition(0.2,0);	
 				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
+				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);	
 			END_FOR 
 		END_IF	
 		state := 5;
 	5: 
-		FOR i := 1 TO GVL_MC.nNumMovers DO
-			GVL_MC.fbMover[i].P_PlanarMover.Reset(0);
-			GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);	
-			
-		END_FOR
+
 		
 		IF AktiveSystem THEN
 			state := 10;
@@ -176,9 +174,14 @@ CASE state OF
 
 	10:
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO
+			GVL_MC.fbMover[i].P_PlanarMover.Reset(0);
+		END_FOR
+		state := 11;
+ 	11:
+		FOR i := 1 TO GVL_MC.nNumActiveMovers DO	
 			GVL_MC.fbMover[i].P_PlanarMover.Enable(0);		
 		END_FOR
-		state := 15; 
+		state := 15;	
 	15:
 		bAlldone := TRUE;
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO  
@@ -211,7 +214,7 @@ CASE state OF
 		arrivedOTCID := GVL_MC.EnterSystem.PopFirstMoverInQueue();
 		IF arrivedOTCID <> 0 THEN
 			FOR i := 1  TO GVL_MC.nNumMovers DO
-				IF GVL_MC.fbMover[i].MoverOTCID = arrivedOTCID THEN
+				IF GVL_MC.fbMover[i].p_MoverOTCID = arrivedOTCID THEN
 					MoverState[i] := 0;
 				END_IF
 			END_FOR
@@ -227,31 +230,31 @@ CASE state OF
 		
 				IF GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 100  THEN
 					IF NOT short AND bSwitch  THEN
-						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.MainStart],GVL_MC.aMcTracks[E_TrackNum.MainStart].GetLength()/2);
+						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.MainStart],GVL_MC.aMcTracks[E_TrackNum.MainStart].GetLength()/2,GVL_MC.defaultGap);
 						MoverNo := i;
 						Short := TRUE;
 						MoverState[i] := 10;
 					ELSE
-						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength()/2);			
+						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength()/2,GVL_MC.defaultGap);			
 						MoverState[i] := 10;
 					END_IF				
 				END_IF
 								
 			10:
 				IF(  GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 500 AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID <>  GVL_MC.aMcTracks[StartTrack].MCTOPLC_STD.TrackOID) OR GVL_MC.nNumTracks =1 THEN
-					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 1500) ;//VElo*0.35);
+					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 1500,GVL_MC.defaultGap) ;//VElo*0.35);
 					MoverState[i] := 11;
 				END_IF
 			11:	
 				//special command no chance to break in time 
 				IF  SystemReady  THEN
-					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 200);
+					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 200,GVL_MC.defaultGap);
 					//GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength()-200);
 					MoverState[i] := 12;
 				END_IF		
 			12: IF GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > GVL_MC.aMcTracks[EndTrack].GetLength() - 2300 AND 
 				(GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[EndTrack].MCTOPLC_STD.TrackOID) AND SystemReady THEN 
-					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem); 
+					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem, GVL_MC.defaultGap); 
 					MoverState[i] := 15; 
 				END_IF	
 				
@@ -303,39 +306,5 @@ END_CASE
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="MAIN_S2">
-      <LineId Id="5475" Count="14" />
-      <LineId Id="5701" Count="0" />
-      <LineId Id="5490" Count="1" />
-      <LineId Id="5702" Count="0" />
-      <LineId Id="5734" Count="7" />
-      <LineId Id="5731" Count="2" />
-      <LineId Id="5492" Count="2" />
-      <LineId Id="5700" Count="0" />
-      <LineId Id="5495" Count="3" />
-      <LineId Id="5676" Count="0" />
-      <LineId Id="5499" Count="3" />
-      <LineId Id="5678" Count="2" />
-      <LineId Id="5677" Count="0" />
-      <LineId Id="5675" Count="0" />
-      <LineId Id="5503" Count="12" />
-      <LineId Id="5673" Count="1" />
-      <LineId Id="5516" Count="80" />
-      <LineId Id="5693" Count="6" />
-      <LineId Id="5691" Count="1" />
-      <LineId Id="5597" Count="2" />
-      <LineId Id="5612" Count="33" />
-      <LineId Id="5742" Count="2" />
-      <LineId Id="5747" Count="0" />
-      <LineId Id="5745" Count="0" />
-      <LineId Id="5748" Count="0" />
-      <LineId Id="5746" Count="0" />
-      <LineId Id="5749" Count="2" />
-      <LineId Id="5753" Count="0" />
-      <LineId Id="5665" Count="2" />
-      <LineId Id="5703" Count="27" />
-      <LineId Id="5668" Count="4" />
-      <LineId Id="1513" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

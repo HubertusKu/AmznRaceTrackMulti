@@ -4,6 +4,10 @@
     <Declaration><![CDATA[TYPE ST_MoverInfo :
 STRUCT
 	MoverOtcid : otcid;
+	IsVirtuell : BOOL;
+	IsActive : BOOL;
+	ActPos: LREAL;
+	ActVelo: LREAL;
 	PlanarMoverCommandMode : MC_Planar_Mover_Command_Mode;
 	State : MC_Planar_State;
 	Positition : LREAL;

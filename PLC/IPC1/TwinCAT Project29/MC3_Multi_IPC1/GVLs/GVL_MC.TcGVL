@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
   <GVL Name="GVL_MC" Id="{0b209c63-aa83-4511-8475-d1f9ba389ff4}">
     <Declaration><![CDATA[
 VAR_GLOBAL CONSTANT
@@ -22,7 +22,7 @@ VAR_GLOBAL PERSISTENT
 END_VAR	
 VAR_GLOBAL
 	
-	//fbXtsXlMoverUtility 		:	ARRAY[1..nNumMovers] OF FB_XtsXlMoverUtility;
+
 	fbXtsEnvironment			: 	FB_XtsEnvironment;
 	ipXtsProcessingUnit			:   I_XtsProcessingUnit1;
 	cmdFeedback					: 	XtsCommandFeedback;

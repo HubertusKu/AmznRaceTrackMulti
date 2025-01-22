@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
   <GVL Name="GVL_MC" Id="{e6112190-7ee2-4c69-9f2e-cd1d96ada747}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
+    <Declaration><![CDATA[
 VAR_GLOBAL CONSTANT
 	nNumMovers					: UINT := 12;
 	nNumActiveMovers 			: UINT := 2;
@@ -25,6 +25,7 @@ VAR_GLOBAL
 	aMcTracks					:	ARRAY[1..GVL_MC.nNumTracks] OF MC_PlanarTrack;
 	ExitSystem 					: 	MC_PlanarTrackConnectionOut;
 	EnterSystem 				:	MC_PlanarTrackConnectionIn;
+	defaultGap					:	LREAL := 900.0;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
