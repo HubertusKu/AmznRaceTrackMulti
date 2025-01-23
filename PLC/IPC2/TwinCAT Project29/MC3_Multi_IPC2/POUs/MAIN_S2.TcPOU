@@ -14,7 +14,7 @@ VAR
 	MoverState :ARRAY[1..GVL_MC.nNumMovers] OF UINT;
 	nForCounter ,i: UINT;
 	Velo : LREAL := 2000;
-	//mover :ARRAY[1..nNumMovers] OF MC_PlanarMover;
+
 
 	ipXlMover : 	I_XtsXlMover1;
 
@@ -23,8 +23,7 @@ VAR
 	arrivedOTCID : OTCID;
 	Start :BOOL;
 	bAlldone : BOOL;
-	
-	//TargetPos: LREAL :=1180 ;
+
 
 	test : otcid; 
 	XPU_Number : UINT := 1; 	
@@ -129,7 +128,7 @@ END_IF
 IF b110SyncState <>1 THEN 
 	SyncFault := TRUE; 
 END_IF
-//Switch(SafeetyOK :=TRUE ,);
+
 
 
 CASE state OF
