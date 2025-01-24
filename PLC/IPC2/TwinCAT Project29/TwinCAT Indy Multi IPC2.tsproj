@@ -5032,6 +5032,9 @@ External Setpoint Generation:
 				<Property>
 					<Name>plcAttribute_qualified_only</Name>
 				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
+				</Property>
 			</Properties>
 		</DataType>
 		<DataType>
@@ -5082,6 +5085,9 @@ External Setpoint Generation:
 			<Properties>
 				<Property>
 					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
 				</Property>
 			</Properties>
 		</DataType>
@@ -5204,6 +5210,9 @@ External Setpoint Generation:
 				<Property>
 					<Name>plcAttribute_qualified_only</Name>
 				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
+				</Property>
 			</Properties>
 		</DataType>
 		<DataType>
@@ -5234,6 +5243,9 @@ External Setpoint Generation:
 			<Properties>
 				<Property>
 					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
 				</Property>
 			</Properties>
 		</DataType>
@@ -5276,10 +5288,13 @@ External Setpoint Generation:
 				<Property>
 					<Name>plcAttribute_qualified_only</Name>
 				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
+				</Property>
 			</Properties>
 		</DataType>
 		<DataType>
-			<Name GUID="{245D0CA9-641C-4E63-AAB6-519FF2022292}" Namespace="MC">MC_MOVER_ON_TRACK_INFORMATION</Name>
+			<Name GUID="{245D0CA9-641C-4E63-AAB6-519FF2022292}" Namespace="MC" TcBaseType="true">MC_MOVER_ON_TRACK_INFORMATION</Name>
 			<Comment><![CDATA[Information about a mover on track (target position, gap, etc.).]]></Comment>
 			<BitSize>576</BitSize>
 			<SubItem>
@@ -5670,6 +5685,9 @@ External Setpoint Generation:
 				<Property>
 					<Name>plcAttribute_qualified_only</Name>
 				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
+				</Property>
 			</Properties>
 		</DataType>
 		<DataType>
@@ -5759,6 +5777,9 @@ External Setpoint Generation:
 			<Properties>
 				<Property>
 					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
 				</Property>
 			</Properties>
 		</DataType>
@@ -6350,6 +6371,46 @@ External Setpoint Generation:
 			</SubItem>
 		</DataType>
 		<DataType>
+			<Name GUID="{CB35A4B2-D195-4444-82AC-4F0EF80AE938}" Namespace="MC">PlanarMoverInfo</Name>
+			<Comment><![CDATA[The oid and state of a planar mover, including planar state, command mode, and flags indicating a busy or free mover.]]></Comment>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>MoverOID</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object Id of the mover object, registered at the environment.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PlanarState</Name>
+				<Type GUID="{6D2B99B2-A9F2-44AF-A298-4BB7A08AE294}" Namespace="MC">MC_PLANAR_STATE</Type>
+				<Comment><![CDATA[State of the planar mover, e.g. disabled.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CommandMode</Name>
+				<Type GUID="{FAE6DCD6-33EF-4275-8592-10BCED19E1EA}" Namespace="MC">MC_PLANAR_MOVER_COMMAND_MODE</Type>
+				<Comment><![CDATA[Command mode of the planar mover, e.g. onTrack.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Busy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[Indicates if the mover performs any command (movement).]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Free</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[Indicates if the mover is free (i.e. does not control a real mover).]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
 			<Name GUID="{79107B5F-AFEC-4E5A-AF95-460E7D782CE1}" Namespace="MC" TcBaseType="true">CDT_MCTOPLC_PLANAR_ENVIRONMENT</Name>
 			<Comment><![CDATA[CDT provides current planar environment information.]]></Comment>
 			<BitSize>128</BitSize>
@@ -6381,37 +6442,6 @@ External Setpoint Generation:
 				<BitSize>32</BitSize>
 				<BitOffs>96</BitOffs>
 			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Name>
-			<BitSize>256</BitSize>
-			<SubItem>
-				<Name>V</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<BitSize>64</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>J</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<BitSize>64</BitSize>
-				<BitOffs>64</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>D</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<BitSize>64</BitSize>
-				<BitOffs>128</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>A</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<BitSize>64</BitSize>
-				<BitOffs>192</BitOffs>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{76B46C5A-3834-A827-19CD-BB547965FE41}"/>
-			</Hides>
 		</DataType>
 		<DataType>
 			<Name GUID="{1500FFCE-0727-F0FF-6AEB-C3B7FBED5C6B}" Namespace="Tc3_Mc3PlanarMotion" IecLibraryType="true" AutoDeleteType="true">CDT_MCTOPLC_PLANAR_MOVER</Name>
@@ -6497,6 +6527,37 @@ External Setpoint Generation:
 					</Property>
 				</Properties>
 			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Name>
+			<BitSize>256</BitSize>
+			<SubItem>
+				<Name>V</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>J</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>A</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{76B46C5A-3834-A827-19CD-BB547965FE41}"/>
+			</Hides>
 		</DataType>
 		<DataType>
 			<Name GUID="{8CF7E034-6BBC-291C-E83F-2D2297581DBB}" Namespace="Tc3_Mc3PlanarMotion" IecLibraryType="true" AutoDeleteType="true">CDT_PLCTOMC_PLANAR_MOVER</Name>
@@ -9220,10 +9281,10 @@ External Setpoint Generation:
 				</Task>
 			</Tasks>
 			<Modules>
-				<Module Id="#x01010730" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+				<Module Id="#x01010730" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 					<Name>XTS ProcessingUnit 2</Name>
 					<ImageId>1000</ImageId>
-					<TmcDesc GUID="{53A0BC71-1B01-456F-8AF4-C892F791F4C2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<TmcDesc GUID="{53A0BC71-1B01-456F-8AF4-C892F791F4C2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XtsProcessingUnit</Name>
 						<CLSID ClassFactory="TcIoXts">{61827435-7B03-4734-A344-F5A75F8060C8}</CLSID>
 						<Info>
@@ -11634,10 +11695,10 @@ External Setpoint Generation:
 							</Value>
 						</InterfacePointerValues>
 					</TmcDesc>
-					<Module Id="#x01010740" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010740" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XL Part Main</Name>
 						<ImageId>1001</ImageId>
-						<TmcDesc GUID="{93A38860-5211-4770-B4BB-87154C8B57F2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{93A38860-5211-4770-B4BB-87154C8B57F2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLPart</Name>
 							<CLSID ClassFactory="TcIoXts">{46246B03-1D83-42F3-841A-5A74A94B96C2}</CLSID>
 							<Info>
@@ -11852,10 +11913,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x01010110" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010110" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 13</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -12344,10 +12405,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010100" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010100" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 12</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -12836,10 +12897,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x010100f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 11</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -13328,10 +13389,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x010100e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 10</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -13820,10 +13881,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x010100d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 9</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -14312,10 +14373,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x010100c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 8</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -14804,10 +14865,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x010100b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 7</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -15296,10 +15357,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x010100a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 6</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -15788,10 +15849,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010090" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010090" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 5</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -16280,10 +16341,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010080" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010080" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XL Module 4</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -16773,10 +16834,10 @@ External Setpoint Generation:
 							</TmcDesc>
 						</Module>
 					</Module>
-					<Module Id="#x01010020" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010020" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Track Main</Name>
 						<ImageId>1003</ImageId>
-						<TmcDesc GUID="{4EBEBA88-A772-4DC6-8AA0-C3959356823A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{4EBEBA88-A772-4DC6-8AA0-C3959356823A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsTrack</Name>
 							<CLSID ClassFactory="TcIoXts">{AAB804B1-26EB-4240-BC7B-2DBE6FE99982}</CLSID>
 							<Info>
@@ -16997,10 +17058,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 1</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -17373,10 +17434,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 2</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -17749,10 +17810,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 3</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -18125,10 +18186,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 4</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -18501,10 +18562,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 5</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -18877,10 +18938,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 6</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -19253,10 +19314,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 7</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -19629,10 +19690,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 8</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -20005,10 +20066,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010c90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 9</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -20381,10 +20442,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010ca0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010ca0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 10</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -20757,10 +20818,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010cb0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010cb0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 11</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -21133,10 +21194,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010cc0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010cc0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>IPC2 XL_Mover 12</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -21510,10 +21571,10 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Module>
-				<Module Id="#x01010030" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+				<Module Id="#x01010030" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 					<Name>Std Parameter Set - 4mm AirGap StraightTunedLeon</Name>
 					<ImageId>1005</ImageId>
-					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XtsMoverParameterSet</Name>
 						<CLSID ClassFactory="TcIoXts">{B055B40D-DEC1-4D72-961C-D151E31A9BA5}</CLSID>
 						<Info>
@@ -21682,10 +21743,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>General</Name>
 						<ImageId>1006</ImageId>
-						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverGeneralParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{98BEC76D-D436-4208-9F8B-486BE57865BD}</CLSID>
 							<Info>
@@ -21949,10 +22010,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Encoder</Name>
 						<ImageId>1007</ImageId>
-						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverEncoderParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{2A657C12-787C-40C0-8E6C-D68FB6D58760}</CLSID>
 							<Info>
@@ -22133,10 +22194,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010060" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010060" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Position Control</Name>
 						<ImageId>1008</ImageId>
-						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverPositionControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{57584E44-D085-4D23-86E4-3BE2859F4EC5}</CLSID>
 							<Info>
@@ -22361,10 +22422,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Velocity Control</Name>
 						<ImageId>1009</ImageId>
-						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverVelocityControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{E9D8B517-6857-41D8-A4A3-60C89603D74A}</CLSID>
 							<Info>
@@ -22615,10 +22676,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010120" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010120" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Filter 1</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -22759,10 +22820,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010130" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010130" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Filter 2</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -22903,10 +22964,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010140" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010140" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Feed Forward</Name>
 						<ImageId>1011</ImageId>
-						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverFeedForwardParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{7E8B155E-1E66-48E1-9D28-0607FA48FC11}</CLSID>
 							<Info>
@@ -23208,10 +23269,10 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Module>
-				<Module Id="#x010106a0" Disabled="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+				<Module Id="#x010106a0" Disabled="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 					<Name>4mmAirGapSonoma</Name>
 					<ImageId>1005</ImageId>
-					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XtsMoverParameterSet</Name>
 						<CLSID ClassFactory="TcIoXts">{B055B40D-DEC1-4D72-961C-D151E31A9BA5}</CLSID>
 						<Info>
@@ -23384,10 +23445,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010106b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010106b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>General_Obj1 (XtsMoverGeneralParameterSet)</Name>
 						<ImageId>1006</ImageId>
-						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverGeneralParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{98BEC76D-D436-4208-9F8B-486BE57865BD}</CLSID>
 							<Info>
@@ -23651,10 +23712,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010106c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Encoder_Obj2 (XtsMoverEncoderParameterSet)</Name>
 						<ImageId>1007</ImageId>
-						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverEncoderParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{2A657C12-787C-40C0-8E6C-D68FB6D58760}</CLSID>
 							<Info>
@@ -23835,10 +23896,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010106d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Position Controller_Obj3 (XtsMoverPositionControllerParameterSet)</Name>
 						<ImageId>1008</ImageId>
-						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverPositionControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{57584E44-D085-4D23-86E4-3BE2859F4EC5}</CLSID>
 							<Info>
@@ -24063,10 +24124,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010106e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Velocity Controller_Obj4 (XtsMoverVelocityControllerParameterSet)</Name>
 						<ImageId>1009</ImageId>
-						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverVelocityControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{E9D8B517-6857-41D8-A4A3-60C89603D74A}</CLSID>
 							<Info>
@@ -24317,10 +24378,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010106f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Filter1</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -24461,10 +24522,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010700" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010700" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Feed Forward_Obj6 (XtsMoverFeedForwardParameterSet)</Name>
 						<ImageId>1011</ImageId>
-						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverFeedForwardParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{7E8B155E-1E66-48E1-9D28-0607FA48FC11}</CLSID>
 							<Info>
@@ -24765,10 +24826,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010710" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010710" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Filter2</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -25070,10 +25131,10 @@ External Setpoint Generation:
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 					</Vars>
-					<Module Id="#x010104a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010104a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>Axis 1_Obj1 (XtsMoverController)</Name>
 						<ImageId>1012</ImageId>
-						<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XtsMoverController</Name>
 							<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 							<Info>
@@ -25426,6 +25487,72 @@ External Setpoint Generation:
 										<BitSize>16</BitSize>
 										<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 										<BitOffs>720</BitOffs>
+									</Symbol>
+								</DataArea>
+								<DataArea>
+									<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+									<Name>Debugs</Name>
+									<ContextId>1</ContextId>
+									<ByteSize>80</ByteSize>
+									<Symbol>
+										<Name>Debug01</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>0</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug02</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>64</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug03</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>128</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug04</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>192</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug05</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>256</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug06</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>320</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug07</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>384</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug08</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>448</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug09</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>512</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Debug10</Name>
+										<BitSize>64</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+										<BitOffs>576</BitOffs>
 									</Symbol>
 								</DataArea>
 							</DataAreas>
@@ -26832,10 +26959,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010750" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010750" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 01 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -26980,10 +27107,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010760" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010760" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 01 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -27341,6 +27468,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -28596,10 +28789,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010109b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 02 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -28744,10 +28937,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x010109c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x010109c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 02 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -29105,6 +29298,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -30360,10 +30619,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010109d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 03 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -30508,10 +30767,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x010109e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x010109e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 03 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -30869,6 +31128,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -32124,10 +32449,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x010109f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 04 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -32272,10 +32597,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a00" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010a00" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 04 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -32633,6 +32958,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -33888,10 +34279,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010a10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 05 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -34036,10 +34427,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010a20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 05 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -34397,6 +34788,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -35652,10 +36109,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010a30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 06 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -35800,10 +36257,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010a40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 06 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -36161,6 +36618,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -37416,10 +37939,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010a50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 07 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -37564,10 +38087,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010a60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 07 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -37925,6 +38448,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -39180,10 +39769,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010a70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 08 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -39328,10 +39917,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010a80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 08 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -39689,6 +40278,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -40944,10 +41599,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010a90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 09 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -41092,10 +41747,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010aa0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010aa0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 09 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -41453,6 +42108,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -42708,10 +43429,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010ab0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010ab0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 10 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -42856,10 +43577,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010ac0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010ac0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 10 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -43217,6 +43938,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -44472,10 +45259,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010ad0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010ad0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 11 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -44620,10 +45407,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010ae0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010ae0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 11 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -44981,6 +45768,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -46236,10 +47089,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010b10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+					<Module Id="#x01010b10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 						<Name>XConverter 12 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -46384,10 +47237,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010b20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+						<Module Id="#x01010b20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 							<Name>MoverController 12 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.27.0">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.19">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -46745,6 +47598,72 @@ External Setpoint Generation:
 											<BitSize>16</BitSize>
 											<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
 											<BitOffs>720</BitOffs>
+										</Symbol>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="InputSrc" CreateSymbols="true">30</AreaNo>
+										<Name>Debugs</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>80</ByteSize>
+										<Symbol>
+											<Name>Debug01</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug02</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug03</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug04</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug05</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>256</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug06</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>320</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug07</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>384</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug08</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>448</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug09</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>512</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>Debug10</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>576</BitOffs>
 										</Symbol>
 									</DataArea>
 								</DataAreas>
@@ -48809,6 +49728,17 @@ External Setpoint Generation:
 								</ArrayInfo>
 								<PTCID>#x050300e2</PTCID>
 							</Parameter>
+							<Parameter OnlineParameter="true" ReadOnly="true">
+								<Name>PlanarMoversInfo</Name>
+								<Comment><![CDATA[Array containing the planar state, command mode, and flags indicating a busy or free mover.]]></Comment>
+								<BitSize>0</BitSize>
+								<BaseType GUID="{CB35A4B2-D195-4444-82AC-4F0EF80AE938}" Namespace="MC">PlanarMoverInfo</BaseType>
+								<ArrayInfo>
+									<LBound>1</LBound>
+									<Elements Min="0" MaxUnbounded="true">0</Elements>
+								</ArrayInfo>
+								<PTCID>#x05030181</PTCID>
+							</Parameter>
 						</Parameters>
 						<DataAreas>
 							<DataArea>
@@ -48863,7 +49793,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{23F3AAC5-D2AC-4B6B-826F-C638329B5E0D}" Name="SaftyPLC" PrjFilePath="SaftyPLC\SaftyPLC.plcproj" TmcFilePath="SaftyPLC\SaftyPLC.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{B35E5DD1-F506-6A1D-971D-BF22CEF7265E}" TmcPath="SaftyPLC\SaftyPLC.tmc">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{0CDA0A03-1B1B-3320-0EF7-3078C8700966}" TmcPath="SaftyPLC\SaftyPLC.tmc">
 					<Name>SaftyPLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -48995,7 +49925,7 @@ External Setpoint Generation:
 				</Instance>
 			</Project>
 			<Project GUID="{58EE9543-7EAA-4B53-B777-145942758DE0}" Name="MC3_Multi_IPC2" PrjFilePath="MC3_Multi_IPC2\MC3_Multi_IPC2.plcproj" TmcFilePath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{A61165B1-0DD2-8719-2DB7-82F9E7B37103}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{00FFF51D-2561-9018-A504-1EA6CEF3CF33}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
 					<Name>MC3_Multi_IPC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -49088,10 +50018,6 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DataExchange.Dynamics</Name>
-							<Type GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Type>
-						</Var>
-						<Var>
 							<Name>GVL_MC.fbMover[1].fbPlanarMover.MCTOPLC</Name>
 							<Comment><![CDATA[ Mover data that is transferred from the Planar Mover to this function block. ]]></Comment>
 							<Type GUID="{1500FFCE-0727-F0FF-6AEB-C3B7FBED5C6B}" Namespace="Tc3_Mc3PlanarMotion">CDT_MCTOPLC_PLANAR_MOVER</Type>
@@ -49165,6 +50091,10 @@ External Setpoint Generation:
 							<Name>GVL_MC.EnterSystem.MCTOPLC_STD</Name>
 							<Comment><![CDATA[ Track connection in data that is transferred from the Planar Track Connection In to this function block. ]]></Comment>
 							<Type GUID="{114358A6-D770-4A98-986E-C49E74F8BB9A}" Namespace="MC">CDT_MCTOPLC_PLANAR_TRACK_CONNECTION_IN</Type>
+						</Var>
+						<Var>
+							<Name>GVL_DataExchange.Dynamics</Name>
+							<Type GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Type>
 						</Var>
 					</Vars>
 					<Contexts>
@@ -52888,7 +53818,7 @@ Bit 8 - 15 : reserved]]></Comment>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-0060-0304-6000-120560000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-0060-0304-7000-120560000403}" Id="#x02030040"/>
-		<MappingInfo Identifier="{08502001-0060-0304-0020-500860000403}" Id="#x02030010" Watchdog="00000000000000000000000000000000"/>
+		<MappingInfo Identifier="{08502001-0060-0304-0020-500860000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{02010020-0040-0201-100A-010190011105}" Id="#x02030110" Watchdog="20000000040000000400000004000000"/>
 		<MappingInfo Identifier="{02010020-0040-0201-100B-010110021105}" Id="#x02030180" Watchdog="20000000040000000400000004000000"/>
 		<MappingInfo Identifier="{02010020-0040-0201-300A-0101A0011105}" Id="#x02030120" Watchdog="20000000040000000400000004000000"/>
@@ -52905,7 +53835,7 @@ Bit 8 - 15 : reserved]]></Comment>
 		<MappingInfo Identifier="{02010040-2001-0850-4000-120500205008}" Id="#x02030060" Watchdog="04000000100000000400000004000000"/>
 		<MappingInfo Identifier="{02010040-2001-0850-6000-120500205008}" Id="#x02030070" Watchdog="04000000100000000400000004000000"/>
 		<MappingInfo Identifier="{02010040-2001-0850-7000-120500205008}" Id="#x02030080" Watchdog="04000000100000000400000004000000"/>
-		<MappingInfo Identifier="{08502041-0060-0304-4020-500860000403}" Id="#x02030020" Watchdog="00000000000000000000000000000000"/>
+		<MappingInfo Identifier="{08502041-0060-0304-4020-500860000403}" Id="#x02030010" Watchdog="00000000000000000000000000000000"/>
 		<OwnerA Name="TIID^Device 1 (EtherCAT)">
 			<OwnerB Name="TIID^Device 2 (EtherCAT Automation Protocol)^Box 28 (Publisher)">
 				<Link VarA="Term 1 (EK1200)^Term 4 (EL1918)^ConnectionInputs^Message_144 TxPDO" VarB="Safety^Outputs^VarData"/>

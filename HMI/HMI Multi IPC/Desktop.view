@@ -701,7 +701,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiDatagrid_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="386" data-tchmi-height-unit="px" data-tchmi-left="638" data-tchmi-left-unit="px" data-tchmi-top="119" data-tchmi-top-unit="px" data-tchmi-width="850" data-tchmi-width-unit="px" data-tchmi-src-data="%s%ADS.PLC IPC1.GVL_DataExchange.aMoverInfos|BindingMode=OneWay|SubscriptionMode=Change%/s%">
+<div id="TcHmiDatagrid_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="386" data-tchmi-height-unit="px" data-tchmi-left="649" data-tchmi-left-unit="px" data-tchmi-top="119" data-tchmi-top-unit="px" data-tchmi-width="900" data-tchmi-width-unit="px" data-tchmi-src-data="%s%ADS.PLC IPC1.GVL_DataExchange.aMoverInfos|BindingMode=OneWay|SubscriptionMode=Change%/s%">
     <script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
 [
   {

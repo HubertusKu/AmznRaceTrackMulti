@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
+  <POU Name="FB_XtsDataLoggerForController" Id="{4fda0c0a-0378-48a2-8ba2-5bfb02d06ac0}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_XtsDataLoggerForController
+VAR_INPUT
+	iXtsEnv 			: I_TcIoXtsEnvironment; 
+	nNumOfMovers		: UINT; 
+END_VAR
+VAR_OUTPUT
+	bReady				: BOOL := FALSE;
+	nErrorID			: HRESULT; 
+END_VAR
+
+VAR PERSISTENT
+	PersistentRollerID : ARRAY[1..nNumMovers] OF INT;
+	PersistentRollerExchangeDate : ARRAY[1..nNumMovers] OF STRING;
+END_VAR
+
+
+VAR
+{region "Background Handling"}
+	//During Init() all Pointer Addresses are stored in this struct
+	stPointerAddresses: ARRAY[1..nNumMovers] OF ST_XtsControllerPointer;
+	ControllerOID		: ARRAY [1..nNumMovers] OF OTCID; 
+{endregion}
+	
+{region "Data Logging Application"}	
+	nMover			: INT;
+
+	{attribute 'TcAnalytics'}
+	aMoverData				: ARRAY[1..nNumMovers] OF ST_MoverData;
+	{attribute 'TcAnalytics'}
+	aMoverDataReduced		: ARRAY[1..nNumMovers] OF	ST_MoverDataReduced;
+
+{endregion}
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//wait until XTS Application is ready before anything else is done
+IF  iXtsEnv <> 0 THEN
+	IF iXtsEnv.P_IsInitialized THEN
+		// Initialize the Logger FB
+		IF NOT bReady  THEN
+			bReady:= Init(); 
+			RETURN; 
+		ELSE 
+			//once everything is initialized, start reading data
+			ccl_UpdateMoverData(); 
+		END_IF 	
+	END_IF 
+END_IF
+
+]]></ST>
+    </Implementation>
+    <Folder Name="GetPointers" Id="{0c71df47-a955-4983-a4f3-b471549a1736}" />
+    <Method Name="ccl_UpdateMoverData" Id="{6beeba42-d1fd-4600-855b-1939f8aa9fbc}">
+      <Declaration><![CDATA[METHOD ccl_UpdateMoverData : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+// -------------------------------------- Retrieve and compute mover data -----------------------------------------
+FOR nMover:=1 TO nNumOfMovers DO
+	// ***************************************Part 1: assign mover data to an array *****************************//
+	//1. Act Current
+	aMoverData[nMover].SetCurrent := stPointerAddresses[nMover].SetCurrentPointer ^; 
+	//3. Aktuelle ungefilterte Modulo Istposition			
+	aMoverData[nMover].ActHwPosModulo := stPointerAddresses[nMover].ActHwPosModuloPointer^;
+	//4. actFollowingError (gefilterter Schleppfehler in 0.1 micrometer)
+	aMoverData[nMover].ActPosError := stPointerAddresses[nMover].ActPosErrorPointer^;
+	//5.  Set velocityItp
+	aMoverData[nMover].SetVeloItp := stPointerAddresses[nMover].SetVeloItpPointer^;
+	//6. Set AccItp
+	aMoverData[nMover].SetAccItp := stPointerAddresses[nMover].SetAccItpPointer^;
+	//7. ActVelo
+	aMoverData[nMover].actVelo := stPointerAddresses[nMover].ActVeloPointer^;
+	//8. Roller ID
+	aMoverData[nMover].RollerID := PersistentRollerID[nMover]; 
+
+	//*************************************** Part 2: assign mover data for reduced set of variables ********************//
+
+	//1. Actual current command
+	aMoverDataReduced[nMover].SetCurrent := stPointerAddresses[nMover].SetCurrentPointer^; 
+	//3. Aktuelle ungefilterte Modulo Istposition			
+	aMoverDataReduced[nMover].ActHwPosModulo := stPointerAddresses[nMover].ActHwPosModuloPointer^;
+	//8.  Set velocityItp
+	aMoverDataReduced[nMover].SetVeloItp := stPointerAddresses[nMover].SetVeloItpPointer^;
+END_FOR]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetActHwPosModuloPointer" Id="{545ee952-faf6-4fbe-a77f-0166a9d43d19}" FolderPath="GetPointers\">
+      <Declaration><![CDATA[METHOD GetActHwPosModuloPointer : POINTER TO DINT
+VAR_INPUT
+	ControllerOID : OTCID;
+END_VAR
+VAR
+	ipComObject			: ITcWatchSource;
+	oidActHwPosModulo	: OTCID := 16#A0000010;
+	sizeData			: UDINT;
+	adrData 			: PVOID; 
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+nErrorID := FW_ObjMgr_GetObjectInstance(	oid		:=	ControllerOID, 
+											iid		:=	TC_GLOBAL_IID_LIST.IID_ITcWatchSource, 
+											pipUnk 	:= ADR(ipComObject));
+
+
+																				
+IF ipComObject <> 0 THEN
+	
+	sizeData := SIZEOF(GetActHwPosModuloPointer);
+	adrData := ADR(GetActHwPosModuloPointer);
+
+	nErrorID := ipComObject.InterpretGroupOffsetLength( 	indexOffset := oidActHwPosModulo ,
+															cbLength 	:= sizeData,
+															ppData 		:= adrData);
+	ipComObject.TcRelease();	
+	ipComObject := 0;													
+														
+												
+END_IF												
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetActPosErrorPointer" Id="{2ecd72a2-84a2-4a71-957c-596e585b1820}" FolderPath="GetPointers\">
+      <Declaration><![CDATA[METHOD GetActPosErrorPointer : POINTER TO LREAL
+VAR_INPUT
+	ControllerOID : OTCID;
+END_VAR
+VAR
+	ipComObject			: ITcWatchSource;
+	oidActPosError		: OTCID := 16#A0000018;
+	sizeData			: UDINT;
+	adrData 			: PVOID; 
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+nErrorID := FW_ObjMgr_GetObjectInstance(	oid		:=	ControllerOID, 
+											iid		:=	TC_GLOBAL_IID_LIST.IID_ITcWatchSource, 
+											pipUnk 	:= ADR(ipComObject));
+
+
+																				
+IF ipComObject <> 0 THEN
+	
+	sizeData := SIZEOF(GetActPosErrorPointer);
+	adrData := ADR(GetActPosErrorPointer);
+
+	nErrorID := ipComObject.InterpretGroupOffsetLength( 	indexOffset := oidActPosError ,
+															cbLength 	:= sizeData,
+															ppData 		:= adrData);
+	ipComObject.TcRelease();	
+	ipComObject := 0;													
+														
+												
+END_IF												
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetActVeloPointer" Id="{585ee1f2-7235-4fbd-8162-a4589b32290e}" FolderPath="GetPointers\">
+      <Declaration><![CDATA[METHOD GetActVeloPointer : POINTER TO LREAL
+VAR_INPUT
+	ControllerOID : OTCID;
+END_VAR
+VAR
+	ipComObject			: ITcWatchSource;
+	oidActVelo	: OTCID := 16#A0000008;
+	sizeData			: UDINT;
+	adrData 			: PVOID; 
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+nErrorID := FW_ObjMgr_GetObjectInstance(	oid		:=	ControllerOID, 
+											iid		:=	TC_GLOBAL_IID_LIST.IID_ITcWatchSource, 
+											pipUnk 	:= ADR(ipComObject));
+
+
+																				
+IF ipComObject <> 0 THEN
+	
+	sizeData := SIZEOF(GetActVeloPointer);
+	adrData := ADR(GetActVeloPointer);
+
+	nErrorID := ipComObject.InterpretGroupOffsetLength( 	indexOffset := oidActVelo ,
+															cbLength 	:= sizeData,
+															ppData 		:= adrData);
+	ipComObject.TcRelease();	
+	ipComObject := 0;													
+														
+												
+END_IF												
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetSetAccItpPointer" Id="{38fda956-3272-4366-8ea8-4b26a0282b1a}" FolderPath="GetPointers\">
+      <Declaration><![CDATA[METHOD GetSetAccItpPointer : POINTER TO LREAL
+VAR_INPUT
+	ControllerOID : OTCID;
+END_VAR
+VAR
+	ipComObject			: ITcWatchSource;
+	oidSetAccItp		: OTCID := 16#A0000038;
+	sizeData			: UDINT;
+	adrData 			: PVOID; 
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+nErrorID := FW_ObjMgr_GetObjectInstance(	oid		:=	ControllerOID, 
+											iid		:=	TC_GLOBAL_IID_LIST.IID_ITcWatchSource, 
+											pipUnk 	:= ADR(ipComObject));
+
+
+																				
+IF ipComObject <> 0 THEN
+	
+	sizeData := SIZEOF(GetSetAccItpPointer);
+	adrData := ADR(GetSetAccItpPointer);
+
+	nErrorID := ipComObject.InterpretGroupOffsetLength( 	indexOffset := oidSetAccItp ,
+															cbLength 	:= sizeData,
+															ppData 		:= adrData);
+	ipComObject.TcRelease();	
+	ipComObject := 0;													
+														
+												
+END_IF												
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetSetCurrentPointer" Id="{32bf2739-ffc9-4f88-809c-ec244e04556a}" FolderPath="GetPointers\">
+      <Declaration><![CDATA[METHOD GetSetCurrentPointer : POINTER TO LREAL
+VAR_INPUT
+	ControllerOID : OTCID;
+END_VAR
+VAR
+	ipComObject			: ITcWatchSource;
+	oidSetCurrent 		: OTCID := 16#A0000048;
+	sizeData			: UDINT;
+	adrData 			: PVOID; 
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+nErrorID := FW_ObjMgr_GetObjectInstance(	oid		:=	ControllerOID, 
+											iid		:=	TC_GLOBAL_IID_LIST.IID_ITcWatchSource, 
+											pipUnk 	:= ADR(ipComObject));
+
+
+																				
+IF ipComObject <> 0 THEN
+	
+	sizeData := SIZEOF(GetSetCurrentPointer);
+	adrData := ADR(GetSetCurrentPointer);
+
+	nErrorID := ipComObject.InterpretGroupOffsetLength( 	indexOffset := oidSetCurrent ,
+															cbLength 	:= sizeData,
+															ppData 		:= adrData);
+	ipComObject.TcRelease();	
+	ipComObject := 0;													
+														
+												
+END_IF												
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GetSetVeloItpPointer" Id="{e3a179d5-a2c3-4c5b-a620-b5edc38673c5}" FolderPath="GetPointers\">
+      <Declaration><![CDATA[METHOD GetSetVeloItpPointer : POINTER TO LREAL
+VAR_INPUT
+	ControllerOID : OTCID;
+END_VAR
+VAR
+	ipComObject			: ITcWatchSource;
+	oidSetVeloItp	: OTCID := 16#A0000030;
+	sizeData			: UDINT;
+	adrData 			: PVOID; 
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+nErrorID := FW_ObjMgr_GetObjectInstance(	oid		:=	ControllerOID, 
+											iid		:=	TC_GLOBAL_IID_LIST.IID_ITcWatchSource, 
+											pipUnk 	:= ADR(ipComObject));
+
+
+																				
+IF ipComObject <> 0 THEN
+	
+	sizeData := SIZEOF(GetSetVeloItpPointer);
+	adrData := ADR(GetSetVeloItpPointer);
+
+	nErrorID := ipComObject.InterpretGroupOffsetLength( 	indexOffset := oidSetVeloItp ,
+															cbLength 	:= sizeData,
+															ppData 		:= adrData);
+	ipComObject.TcRelease();	
+	ipComObject := 0;													
+														
+												
+END_IF												
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Init" Id="{08285b2f-6d19-4dc6-b813-e454afe05d5f}">
+      <Declaration><![CDATA[METHOD Init : BOOL
+VAR_INPUT
+END_VAR
+
+VAR_INST
+	nState : INT; 
+	i : INT; 
+	
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+
+CASE nState OF 
+	
+	0: //Get Controller OID 
+	
+		FOR nMover:= 1 TO nNumOfMovers DO
+			
+			ControllerOID[nMover] := fbXtsEnv.XpuTcIo(1).MoverTcIo(nMover).GetMoverControllerOid();
+				
+			stPointerAddresses[nMover].ActHwPosModuloPointer := GetActHwPosModuloPointer(ControllerOID[nMover]);
+			stPointerAddresses[nMover].SetVeloItpPointer := GetSetVeloItpPointer(ControllerOID[nMover]);
+			stPointerAddresses[nMover].ActVeloPointer := GetActVeloPointer(ControllerOID[nMover]);
+			stPointerAddresses[nMover].SetAccItpPointer := GetSetAccItpPointer(ControllerOID[nMover]);
+			stPointerAddresses[nMover].ActPosErrorPointer := GetActPosErrorPointer(ControllerOID[nMover]);
+			stPointerAddresses[nMover].SetCurrentPointer := GetSetCurrentPointer(ControllerOID[nMover]); 
+		
+		END_FOR 
+	
+		nState:= 100; 
+		
+
+	100: 
+		Init:= TRUE; 
+		nState:= 0;
+
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

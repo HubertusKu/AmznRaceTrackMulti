@@ -50,6 +50,9 @@
 				<Property>
 					<Name>plcAttribute_qualified_only</Name>
 				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
+				</Property>
 			</Properties>
 		</DataType>
 		<DataType>
@@ -104,6 +107,100 @@
 				<Comment><![CDATA[True if the part is forced to disabled state.]]></Comment>
 				<BitSize>8</BitSize>
 				<BitOffs>256</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{FAE6DCD6-33EF-4275-8592-10BCED19E1EA}" Namespace="MC">MC_PLANAR_MOVER_COMMAND_MODE</Name>
+			<Comment><![CDATA[Indicates the command mode of an enabled PlanarMover, i.e. how setpoints are currently produced.]]></Comment>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Invalid]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[Indicates no or invalid information, e.g. no connection or component not yet ready.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[FreeMovement]]></Text>
+				<Enum>101</Enum>
+				<Comment><![CDATA[Indicates a freely moving PlanarMover.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[OnTrack]]></Text>
+				<Enum>102</Enum>
+				<Comment><![CDATA[Indicates that the PlanarMover is moving on a PlanarTrack.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[JoiningTrack]]></Text>
+				<Enum>103</Enum>
+				<Comment><![CDATA[Indicates that the PlanarMover is approaching a PlanarTrack to join it.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[LeavingTrack]]></Text>
+				<Enum>104</Enum>
+				<Comment><![CDATA[Indicates that the PlanarMover is leaving a PlanarTrack to move freely afterwards.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ExternalSetpointGeneration]]></Text>
+				<Enum>105</Enum>
+				<Comment><![CDATA[Indicates that the PlanarMover is following externally provided setpoints.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[CRotationFreeMovement]]></Text>
+				<Enum>106</Enum>
+				<Comment><![CDATA[Indicates that the PlanarMover only rotating the C coordinate in free movement, X and Y are standing.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[CRotationOnTrack]]></Text>
+				<Enum>107</Enum>
+				<Comment><![CDATA[Indicates that the PlanarMover only rotating the C coordinate on a track, X and Y are standing.]]></Comment>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+				<Property>
+					<Name>plcAttribute_to_string</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{CB35A4B2-D195-4444-82AC-4F0EF80AE938}" Namespace="MC">PlanarMoverInfo</Name>
+			<Comment><![CDATA[The oid and state of a planar mover, including planar state, command mode, and flags indicating a busy or free mover.]]></Comment>
+			<BitSize>96</BitSize>
+			<SubItem>
+				<Name>MoverOID</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object Id of the mover object, registered at the environment.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>PlanarState</Name>
+				<Type GUID="{6D2B99B2-A9F2-44AF-A298-4BB7A08AE294}" Namespace="MC">MC_PLANAR_STATE</Type>
+				<Comment><![CDATA[State of the planar mover, e.g. disabled.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CommandMode</Name>
+				<Type GUID="{FAE6DCD6-33EF-4275-8592-10BCED19E1EA}" Namespace="MC">MC_PLANAR_MOVER_COMMAND_MODE</Type>
+				<Comment><![CDATA[Command mode of the planar mover, e.g. onTrack.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Busy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[Indicates if the mover performs any command (movement).]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Free</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[Indicates if the mover is free (i.e. does not control a real mover).]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
 			</SubItem>
 		</DataType>
 		<DataType>
@@ -249,6 +346,17 @@
 						<Elements Min="0" MaxUnbounded="true">1</Elements>
 					</ArrayInfo>
 					<PTCID>#x050300e2</PTCID>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true">
+					<Name>PlanarMoversInfo</Name>
+					<Comment><![CDATA[Array containing the planar state, command mode, and flags indicating a busy or free mover.]]></Comment>
+					<BitSize>0</BitSize>
+					<BaseType GUID="{CB35A4B2-D195-4444-82AC-4F0EF80AE938}" Namespace="MC">PlanarMoverInfo</BaseType>
+					<ArrayInfo>
+						<LBound>1</LBound>
+						<Elements Min="0" MaxUnbounded="true">0</Elements>
+					</ArrayInfo>
+					<PTCID>#x05030181</PTCID>
 				</Parameter>
 			</Parameters>
 			<DataAreas>

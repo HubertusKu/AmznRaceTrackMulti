@@ -57,12 +57,6 @@
     <Compile Include="DUTs\ST_MoverConfig.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\ST_MoverInfo.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\ST_MoverOnTrackInfo.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\ST_PlanarTrackConfig.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -83,6 +77,10 @@
     </Compile>
     <Compile Include="DUTs\ST_TrackConfig.TcDUT">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FB_XtsDataLoggerForController.TcPOU">
+      <SubType>Code</SubType>
+      <ExcludeFromBuild>true</ExcludeFromBuild>
     </Compile>
     <Compile Include="GVLs\GVL_DataExchange.TcGVL">
       <SubType>Code</SubType>
@@ -116,7 +114,9 @@
     <Folder Include="GVLs" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
-    <Folder Include="XlMover" />
+    <Folder Include="XlMover">
+      <ExcludeFromBuild>true</ExcludeFromBuild>
+    </Folder>
     <Folder Include="XlMover\DUTs" />
     <Folder Include="XlMover\ITFs" />
     <Folder Include="XlMover\POUs" />
@@ -146,6 +146,10 @@
       <DefaultResolution>Tc3_Physics, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc3_Physics</Namespace>
     </PlaceholderReference>
+    <PlaceholderReference Include="Tc3_XL_Motion">
+      <DefaultResolution>Tc3_XL_Motion, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc3_XL_Motion</Namespace>
+    </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="MC3_Multi_IPC2.tmc">
@@ -158,7 +162,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <LibraryReference Include="Tc3_XtsInterface,0.2.27.0,Beckhoff Automation GmbH">
+    <LibraryReference Include="Tc3_XtsInterface,0.100.0.19,Beckhoff Automation GmbH">
       <Namespace>Tc3_XtsInterface</Namespace>
     </LibraryReference>
   </ItemGroup>

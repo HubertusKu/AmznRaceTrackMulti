@@ -26,7 +26,7 @@ VAR
 	ipXtsProcessingUnit:  I_XtsProcessingUnit1;
 
 	_stMoverInfos : ST_MoverInfo;	
-	_stMoverOnTrackInfos : ST_MoverOnTrackInfo;
+	_stMoverOnTrackInfos : MC_MOVER_ON_TRACK_INFORMATION;
 
 	_nextMcTrackOid: OTCID;
 	_stDynamics: DynamicConstraint_PathXY;
@@ -48,11 +48,15 @@ END_VAR
       <ST><![CDATA[]]></ST>
     </Implementation>
     <Method Name="CycleUpdate" Id="{f03058aa-6296-4ef4-9484-d5b71f801a75}">
-      <Declaration><![CDATA[METHOD CycleUpdate : BOOL
+      <Declaration><![CDATA[
+
+METHOD CycleUpdate : BOOL
 VAR_INPUT
 END_VAR
-VAR 
+
+VAR_INST
 	_trackEnum: e_TrackNum;
+
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[IF NOT _bIsInitialized THEN
@@ -70,18 +74,18 @@ END_IF
 fbPlanarMover.Update();
 fbPlanarFeedback.Update();
 SyncMoverFeedback.Update();
- 
-_stMoverinfos.MoverOtcid := fbPlanarMover.MCTOPLC.STD.MoverOID ;
+
+_stMoverinfos.MoverOtcid :=TO_STRING(fbPlanarMover.MCTOPLC.STD.MoverOID) ;
 _stMoverinfos.IsActive := ipXtsMover.GetIsActive(0);
 _stMoverinfos.ActPos :=  ipXtsMover.GetPositionInfo_trackPosition(0);
 _stMoverinfos.ActVelo := fbPlanarMover.MCTOPLC.SETONTRACK.SetVelo;
 _stMoverinfos.IsVirtuell := ipXtsMover.GetIsVirtualFeedbackEnabled(0);
 _stMoverinfos.Positition :=	fbPlanarMover.MCTOPLC.SETONTRACK.SetPos;
-_stMoverinfos.Track := fbPlanarMover.MCTOPLC.SETONTRACK.TrackOID;
+_stMoverinfos.Track := TO_STRING(_trackEnum);
 _stMoverinfos.Error := fbPlanarMover.Error;
 _stMoverinfos.ErrorID := fbPlanarMover.ErrorId;
-_stMoverinfos.PlanarMoverCommandMode := fbPlanarMover.MCTOPLC.STD.CommandMode;
-_stMoverinfos.State :=  fbPlanarMover.MCTOPLC.STD.State;
+_stMoverinfos.PlanarMoverCommandMode :=  TO_STRING(fbPlanarMover.MCTOPLC.STD.CommandMode);
+_stMoverinfos.State :=  TO_STRING(fbPlanarMover.MCTOPLC.STD.State);
 _stMoverinfos.Gap := _stMoverOnTrackInfos.Gap;
 _stMoverinfos.LimitAcc := _stMoverOnTrackInfos.LimitA;
 _stMoverinfos.LimitDec := _stMoverOnTrackInfos.LimitD;
@@ -131,8 +135,8 @@ END_IF]]></ST>
     <Method Name="GetOnTrackInfos" Id="{80c76236-e464-41c7-ade3-18309c2f7e10}">
       <Declaration><![CDATA[METHOD GetOnTrackInfos : BOOL
 VAR
-	nData 			: UDINT := SIZEOF(_stMoverOnTrackInfos);
-	pData 			: PVOID := ADR(_stMoverOnTrackInfos);
+	nData 			: UDINT := SIZEOF(MC_MOVER_ON_TRACK_INFORMATION);
+	pData 			: PVOID := ADR(MC_MOVER_ON_TRACK_INFORMATION);
 	stEventEntry	: TcEventEntry;
 	pstEventEntry	: REFERENCE TO TcEventEntry REF= stEventEntry;
 END_VAR
@@ -303,15 +307,6 @@ END_VAR
 P_Dynamics REF= _stDynamics; ]]></ST>
         </Implementation>
       </Get>
-      <Set Name="Set" Id="{46a429c7-5874-4bf4-9a1c-c1cbfa753f9c}">
-        <Declaration><![CDATA[PUBLIC 
-VAR
-END_VAR
-]]></Declaration>
-        <Implementation>
-          <ST><![CDATA[_stDynamics := P_Dynamics;  ]]></ST>
-        </Implementation>
-      </Set>
     </Property>
     <Property Name="P_IsInitialized" Id="{b7011b40-0827-4f2c-9967-dcf04f3d6670}">
       <Declaration><![CDATA[PROPERTY P_IsInitialized : bool]]></Declaration>
@@ -522,7 +517,7 @@ FOR nForCounter := 1 TO UDINT_TO_UINT(nTrackTrailCount) DO
 	END_IF
 END_FOR
 
-IF oid2 = _nextMcTrackOid OR ipXtsMover.GetPositionInfo_partPosition(CmdFeedback) < 500 THEN //no change
+IF oid2 = _nextMcTrackOid AND ipXtsMover.GetPositionInfo_partPosition(CmdFeedback) < 600 THEN //no change
 	RETURN;
 END_IF
 

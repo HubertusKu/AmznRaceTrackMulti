@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ST_PointerAddresses" Id="{1d93d85c-c594-409e-b1c0-9d60f9c35a71}">
+    <Declaration><![CDATA[TYPE ST_PointerAddresses :
+STRUCT
+	SetCurrentPointer 		: POINTER TO LREAL;
+	ActHwPosModuloPointer 	: POINTER TO DINT;
+	ActPosErrorPointer 		: POINTER TO LREAL;
+	SetVeloItpPointer		: POINTER TO LREAL;
+	SetAccItpPointer	 	: POINTER TO LREAL;
+	ActVeloPointer 			: POINTER TO LREAL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

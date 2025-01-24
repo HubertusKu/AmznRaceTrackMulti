@@ -125,7 +125,8 @@ VAR_INPUT
 	remoteState AT %I*: INT;
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// =====================
+      <ST><![CDATA[
+// =====================
 // Initalize XTS Utility
 GVL_MC.fbXtsEnvironment.Init(GVL_MC.cmdFeedback);
 IF NOT GVL_MC.cmdFeedback.IsDone THEN
@@ -296,7 +297,7 @@ CASE state OF
 	18: 
 	
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO  
-			GVL_MC.fbMover[i].JoinNearestTrack();	
+			GVL_MC.fbMover[i].JoinNearestTrack(aMcTracks,nNumTracks);	
 		END_FOR
 		state := 20;
 	

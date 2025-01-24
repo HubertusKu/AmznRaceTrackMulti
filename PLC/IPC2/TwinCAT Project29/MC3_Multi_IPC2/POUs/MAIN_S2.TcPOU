@@ -150,7 +150,7 @@ CASE state OF
 		END_IF
 
 	2:	
-		IF AktiveSystem THEN
+		IF AktiveSystem  AND GVL_MC.nNumActiveMovers  > 0 THEN
 			FOR i:=  1 TO GVL_MC.nNumActiveMovers DO  
 				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(0,0);
 			END_FOR 
@@ -201,7 +201,7 @@ CASE state OF
 	18: 
 	
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO  
-			GVL_MC.fbMover[i].JoinNearestTrack();	
+			GVL_MC.fbMover[i].JoinNearestTrack(aMcTracks,nNumTracks );	
 		END_FOR
 		state := 20;
 	
