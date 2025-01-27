@@ -4,7 +4,7 @@
     <Declaration><![CDATA[TYPE ST_MoverInfo :
 STRUCT
 
-	MoverOtcid :  STRING(20);
+	MoverOtcid :  Otcid;
 	IsVirtuell : BOOL;
 	IsActive : BOOL;
 	ActPos: LREAL;

@@ -78,7 +78,7 @@ fbPlanarMover.Update();
 fbPlanarFeedback.Update();
 SyncMoverFeedback.Update();
 
-_stMoverinfos.MoverOtcid :=TO_STRING(fbPlanarMover.MCTOPLC.STD.MoverOID) ;
+_stMoverinfos.MoverOtcid :=fbPlanarMover.MCTOPLC.STD.MoverOID ;
 _stMoverinfos.IsActive := ipXtsMover.GetIsActive(0);
 _stMoverinfos.ActPos :=  ipXtsMover.GetPositionInfo_trackPosition(0);
 _stMoverinfos.ActVelo := fbPlanarMover.MCTOPLC.SETONTRACK.SetVelo;

@@ -721,6 +721,12 @@
     "ignoreEscapeSequences": false,
     "autoFocusOut": true,
     "autoSelectText": true,
+    "format": {
+      "objectType": "Function",
+      "active": true,
+      "fn": "TcHmi.Functions.HMI_Multi_IPC.FunctionJS1",
+      "fnParams": []
+    },
     "sortable": true
   },
   {
@@ -740,6 +746,18 @@
     "ignoreEscapeSequences": false,
     "autoFocusOut": true,
     "autoSelectText": true,
+    "format": {
+      "objectType": "Function",
+      "active": true,
+      "fn": "TcHmi.Functions.Beckhoff.GaugeValueFormatter",
+      "fnParams": [
+        {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Number",
+          "value": "2"
+        }
+      ]
+    },
     "sortable": true
   },
   {
@@ -759,6 +777,18 @@
     "ignoreEscapeSequences": false,
     "autoFocusOut": true,
     "autoSelectText": false,
+    "format": {
+      "objectType": "Function",
+      "active": true,
+      "fn": "TcHmi.Functions.Beckhoff.GaugeValueFormatter",
+      "fnParams": [
+        {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Number",
+          "value": "2"
+        }
+      ]
+    },
     "sortable": true
   },
   {
@@ -1155,6 +1185,31 @@
     "path": "ErrorID",
     "comparator": "!=",
     "value": "0"
+  }
+]
+</script>
+</div>
+<div id="TcHmiButton_12" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="68" data-tchmi-left-unit="px" data-tchmi-text="Button" data-tchmi-top="176" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="true">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "Function",
+        "active": true,
+        "fn": "TcHmi.Functions.HMI_Multi_IPC.FunctionJS1",
+        "fnParams": [
+          {
+            "objectType": "StaticValue",
+            "valueType": "tchmi:general#/definitions/Number",
+            "value": "150"
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
   }
 ]
 </script>
