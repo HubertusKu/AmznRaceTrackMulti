@@ -6,7 +6,7 @@
 *.plcproj.orig
 *.tpy
 *.tclrs
-*.library
+**/.library*/
 *.compiled-library
 *.compileinfo
 *.asm
