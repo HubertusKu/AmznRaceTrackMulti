@@ -10,10 +10,6 @@ VAR_GLOBAL CONSTANT
 	
 	fMagnetEntry : LREAL := 1800; //PLEASE ENTER THE MAGNET ENTRY!!!
 	fMagnetExit : LREAL := 2650; //PLEASE ENTER THE MAGNET EXIT!!!
-	
-    standardAccel : LREAL := 4000; 
-    standardDecel : LREAL :=4000; 
-    standardJerk : LREAL := 16000; 
 
 
 END_VAR

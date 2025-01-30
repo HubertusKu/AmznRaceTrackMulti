@@ -72,7 +72,11 @@ IF NOT GVL_MC.cmdFeedback.IsDone THEN
 END_IF
 Velo := GVL_DataExchange.Dynamics.V;
 IF Velo = 0 THEN
-	Velo := 500;
+	stMoverConfigNormal.Velo 		:= 500;
+	stMoverConfigNormal.Accel 		:= 4000;
+	stMoverConfigNormal.Decel 		:= 4000;
+	stMoverConfigNormal.Jerk 		:= 16000;
+	stMoverConfigNormal.MoverGap 	:= 900;
 END_IF
 // =====================
 GVL_MC.ipXtsProcessingUnit :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number,0);
@@ -83,22 +87,21 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 		GVL_MC.fbMover[i].Init(ipXlMover, GVL_MC.ipXtsProcessingUnit); 
 	END_IF
 	
-//	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
-//	IF Fp_error.Q THEN
-//		state := 140;
-//		Fault := TRUE;
-//
-//		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
-//	ELSE
-//		Fault := FALSE;
-//	END_IF
+	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
+	IF Fp_error.Q THEN
+		state := 140;
+		Fault := TRUE;
+
+		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
+	ELSE
+		Fault := FALSE;
+	END_IF
 	
 	
 	GVL_MC.Feedback[i].Update();
 	GVL_MC.fbMover[i].CycleUpdate();
-	//GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo + (i - 1) * 50, 4000, 4000, 16000);
-	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 4000, 16000);
-	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gap := 900;
+	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(stMoverConfigNormal.Velo, stMoverConfigNormal.Accel, stMoverConfigNormal.Decel, stMoverConfigNormal.Jerk);
+	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gap := stMoverConfigNormal.MoverGap;
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.direction := MC_Direction.mcDirectionPositive;
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gapMode := MC_GAP_MODE_ON_TRACK.Fast1D;
 END_FOR	
@@ -127,7 +130,7 @@ END_IF
 IF b110SyncState <>1 THEN 
 	SyncFault := TRUE; 
 END_IF
-//Switch(SafeetyOK :=TRUE ,);
+
 
 
 CASE state OF
@@ -247,14 +250,13 @@ CASE state OF
 								
 			10:
 				IF(  GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 500 AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID <>  GVL_MC.aMcTracks[StartTrack].MCTOPLC_STD.TrackOID) OR GVL_MC.nNumTracks =1 THEN
-					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 1500) ;//VElo*0.35);
+					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 1500) ;
 					MoverState[i] := 11;
 				END_IF
 			11:	
 				//special command no chance to break in time 
 				IF  SystemReady  THEN
 					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength() - 200);
-					//GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack],GVL_MC.aMcTracks[EndTrack].GetLength()-200);
 					MoverState[i] := 12;
 				END_IF		
 			12: IF GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > GVL_MC.aMcTracks[EndTrack].GetLength() - 2300 AND 
@@ -312,13 +314,15 @@ END_CASE
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN_S2">
-      <LineId Id="5475" Count="14" />
+      <LineId Id="5475" Count="8" />
+      <LineId Id="5762" Count="3" />
+      <LineId Id="5484" Count="5" />
       <LineId Id="5701" Count="0" />
       <LineId Id="5490" Count="1" />
       <LineId Id="5702" Count="0" />
       <LineId Id="5734" Count="7" />
       <LineId Id="5731" Count="2" />
-      <LineId Id="5492" Count="2" />
+      <LineId Id="5492" Count="1" />
       <LineId Id="5700" Count="0" />
       <LineId Id="5495" Count="3" />
       <LineId Id="5676" Count="0" />
@@ -336,7 +340,8 @@ END_CASE
       <LineId Id="5693" Count="6" />
       <LineId Id="5691" Count="1" />
       <LineId Id="5597" Count="2" />
-      <LineId Id="5612" Count="33" />
+      <LineId Id="5612" Count="25" />
+      <LineId Id="5639" Count="6" />
       <LineId Id="5742" Count="2" />
       <LineId Id="5747" Count="0" />
       <LineId Id="5745" Count="0" />

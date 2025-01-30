@@ -30,11 +30,16 @@
     "DEFINITIONS": {},
     "DEFLATECOMPRESSIONLEVEL": 5,
     "DIAGNOSTICS_DOMAINS": [],
-    "DISABLED_CONFIGURATION_HINTS": [],
+    "DISABLED_CONFIGURATION_HINTS": [
+        "HTTPS_REMOTE_HINT",
+        "REQUIREAUTH_REMOTE_HINT",
+        "ENDPOINTS_OVERWRITTEN_HINT"
+    ],
     "DISCOVERY": 1,
     "ENDPOINTS": [
         "http://127.0.0.1:13000",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "http://127.22.209.128:1010"
     ],
     "ETAGENABLED": true,
     "EXTENSIONS": {
@@ -230,7 +235,7 @@
     ],
     "FLOODPROTECTION": 500,
     "FLOODPROTECTION_LOG_INTERVAL": "PT1M",
-    "GLOBALHTTPHEADERS": "{LASTMODIFIED}\nStrict-Transport-Security: max-age=31536000; includeSubDomains\nX-Content-Type-Options: nosniff",
+    "GLOBALHTTPHEADERS": "{LASTMODIFIED}\r\nStrict-Transport-Security: max-age=31536000; includeSubDomains\r\nX-Content-Type-Options: nosniff",
     "GZIPENABLED": true,
     "GZIPMINSIZE": 800,
     "HTTP_FLOODPROTECTION": 100,

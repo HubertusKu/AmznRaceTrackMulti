@@ -4,12 +4,14 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL CONSTANT
 	nNumMovers					: UINT := 12;
-	nNumActiveMovers 			: UINT := 0;
+
 	nNumTracks					: UINT := 1;
 	XtsShortcutOid				: otcid := 16#010100B0 ;
 	XtsOutterLoopOid 			: otcid := 16#01010300;
 END_VAR
-
+VAR_GLOBAL PERSISTENT
+	nNumActiveMovers	: UINT := 1;
+END_VAR	
 VAR_GLOBAL
 	//fbXtsXlMoverUtility 		:	ARRAY[1..nNumMovers] OF FB_XtsXlMoverUtility;
 	fbXtsEnvironment			: 	FB_XtsEnvironment;
