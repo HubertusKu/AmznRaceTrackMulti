@@ -85,5 +85,87 @@
     }
   ]
 }</TcHmiEditor_SplitAreaStates>
+    <RecentColors>[
+  {
+    "counter": 0,
+    "color": "#FF79EC10"
+  },
+  {
+    "counter": 0,
+    "color": "#FF73EA06"
+  },
+  {
+    "counter": 0,
+    "color": "#FF000000"
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  },
+  {
+    "counter": 0,
+    "color": null
+  }
+]</RecentColors>
   </PropertyGroup>
 </Project>

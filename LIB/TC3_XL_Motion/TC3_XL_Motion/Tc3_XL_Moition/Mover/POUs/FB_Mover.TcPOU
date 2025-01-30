@@ -77,6 +77,9 @@ _PositionOnTrack := fbPlanarMover.MCTOPLC.SETONTRACK.SetPos;
 fbPlanarMover.Update();
 fbPlanarFeedback.Update();
 SyncMoverFeedback.Update();
+UpdateXtsTrack();
+GetOnTrackInfos() ;
+
 
 _stMoverinfos.MoverOtcid :=fbPlanarMover.MCTOPLC.STD.MoverOID ;
 _stMoverinfos.IsActive := ipXtsMover.GetIsActive(0);
@@ -108,8 +111,7 @@ IF stPointerAddresses.ActHwPosModuloPointer <> 0 THEN
 	ScopeVariables.SetForce := stPointerAddresses.SetForcePointer^;
 
 END_IF
-UpdateXtsTrack();
-GetOnTrackInfos() ;
+
 
 
 

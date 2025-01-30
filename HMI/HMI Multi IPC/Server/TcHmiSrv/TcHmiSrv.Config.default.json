@@ -1768,6 +1768,80 @@
                     }
                 ]
             },
+            "ADS-PLC IPC1.ST_MoverConfig": {
+                "additionalProperties": false,
+                "properties": {
+                    "Accel": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "Decel": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "Jerk": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "MoverGap": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "Velo": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "VeloComp": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "Velo",
+                    "Accel",
+                    "Decel",
+                    "Jerk",
+                    "VeloComp",
+                    "MoverGap"
+                ],
+                "type": "object"
+            },
             "ADS-PLC IPC1.ST_MoverInfo": {
                 "additionalProperties": false,
                 "properties": {
@@ -2107,7 +2181,7 @@
             "ADS-PLC IPC1.Tc3_EventLogger.FB_AsyncStrResult": {
                 "additionalProperties": false,
                 "attributes": {
-                    "VTableOffset": "452504",
+                    "VTableOffset": "453240",
                     "VfInitVTableIndex": "8",
                     "conditionalshow_all_locals": "",
                     "enable_dynamic_creation": "",
@@ -2281,7 +2355,7 @@
                     "reflection": ""
                 },
                 "properties": {
-                    "FB_TcEventBase_1135__RequestEventClassName_1167__bBusy": {
+                    "FB_TcEventBase_1137__RequestEventClassName_1169__bBusy": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:general#/definitions/BOOL"
@@ -2295,7 +2369,7 @@
                             }
                         ]
                     },
-                    "FB_TcEventBase_1135__RequestEventClassName_1167__fbResult": {
+                    "FB_TcEventBase_1137__RequestEventClassName_1169__fbResult": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.Tc3_EventLogger.FB_AsyncStrResult"
@@ -2309,7 +2383,7 @@
                             }
                         ]
                     },
-                    "FB_TcEventBase_1135__RequestEventText_1168__bBusy": {
+                    "FB_TcEventBase_1137__RequestEventText_1170__bBusy": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:general#/definitions/BOOL"
@@ -2323,7 +2397,7 @@
                             }
                         ]
                     },
-                    "FB_TcEventBase_1135__RequestEventText_1168__fbResult": {
+                    "FB_TcEventBase_1137__RequestEventText_1170__fbResult": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.Tc3_EventLogger.FB_AsyncStrResult"
@@ -2401,10 +2475,10 @@
                 },
                 "required": [
                     "fbSourceInfo",
-                    "FB_TcEventBase_1135__RequestEventClassName_1167__fbResult",
-                    "FB_TcEventBase_1135__RequestEventClassName_1167__bBusy",
-                    "FB_TcEventBase_1135__RequestEventText_1168__fbResult",
-                    "FB_TcEventBase_1135__RequestEventText_1168__bBusy"
+                    "FB_TcEventBase_1137__RequestEventClassName_1169__fbResult",
+                    "FB_TcEventBase_1137__RequestEventClassName_1169__bBusy",
+                    "FB_TcEventBase_1137__RequestEventText_1170__fbResult",
+                    "FB_TcEventBase_1137__RequestEventText_1170__bBusy"
                 ],
                 "type": "object"
             },
@@ -2613,8 +2687,8 @@
                 "attributes": {
                     "qualified_only": "",
                     "to_string": "",
-                    "to_string_function": "__TO_STRING__687",
-                    "to_wstring_function": "__TO_WSTRING__687"
+                    "to_string_function": "__TO_STRING__689",
+                    "to_wstring_function": "__TO_WSTRING__689"
                 },
                 "enum": [
                     0,
@@ -2651,8 +2725,8 @@
                 "attributes": {
                     "qualified_only": "",
                     "to_string": "",
-                    "to_string_function": "__TO_STRING__776",
-                    "to_wstring_function": "__TO_WSTRING__776"
+                    "to_string_function": "__TO_STRING__778",
+                    "to_wstring_function": "__TO_WSTRING__778"
                 },
                 "enum": [
                     0,
@@ -2685,7 +2759,7 @@
                 "attributes": {
                     "TcExtends": "Tc3_Mc3PlanarMotion.MC_PlanarFeedbackBase",
                     "c++_compatible": "",
-                    "external_name": "MC_PlanarFeedback_GUID_1CBD7738_7E6E_E1D3_0176_92DEA843AEF4",
+                    "external_name": "MC_PlanarFeedback_GUID_9F045671_46EC_2B17_981C_0B9DE72BFA54",
                     "no_assign_warning": ""
                 },
                 "properties": {
@@ -2783,7 +2857,7 @@
                 "attributes": {
                     "TcExtends": "Tc3_Mc3PlanarMotion.MC_PlanarFeedbackInSync",
                     "c++_compatible": "",
-                    "external_name": "MC_PlanarFeedbackGearInPosOnTrackWithMasterMover_GUID_3001845D_C069_E1F6_041C_72064FF74B0D",
+                    "external_name": "MC_PlanarFeedbackGearInPosOnTrackWithMasterMover_GUID_B3B8A514_F8EB_2B32_9D76_EB45009F1FAD",
                     "no_assign_warning": ""
                 },
                 "properties": {
@@ -2880,7 +2954,7 @@
                 "additionalProperties": false,
                 "attributes": {
                     "c++_compatible": "",
-                    "external_name": "MC_PlanarMover_GUID_CE04CE91_1A28_E210_36AE_1C7D9AF0568F",
+                    "external_name": "MC_PlanarMover_GUID_4DBDEFD8_22AA_28D4_AFC4_853ED598022F",
                     "no_assign_warning": "",
                     "no_explicit_call": "do not call this POU directly"
                 },
@@ -2945,7 +3019,7 @@
                 "additionalProperties": false,
                 "attributes": {
                     "c++_compatible": "",
-                    "external_name": "MC_PlanarTrackTrail_GUID_6B250C9C_E2E7_E253_012D_FE97C10428B4",
+                    "external_name": "MC_PlanarTrackTrail_GUID_E89C2DD5_DA65_2897_9847_67D48E6C7C14",
                     "no_assign_warning": "",
                     "no_explicit_call": "do not call this POU directly"
                 },
@@ -2986,8 +3060,8 @@
                 "attributes": {
                     "qualified_only": "",
                     "to_string": "",
-                    "to_string_function": "__TO_STRING__1060",
-                    "to_wstring_function": "__TO_WSTRING__1060"
+                    "to_string_function": "__TO_STRING__1062",
+                    "to_wstring_function": "__TO_WSTRING__1062"
                 },
                 "enum": [
                     0,
@@ -3291,7 +3365,7 @@
                 "additionalProperties": false,
                 "attributes": {
                     "c++_compatible": "",
-                    "external_name": "DynamicConstraint_PathXY_GUID_25EFC6AB_0F85_49B3_060C_0BF090C42DC0",
+                    "external_name": "DynamicConstraint_PathXY_GUID_87DFEB39_8C0B_363C_E499_0D7B1A42B64F",
                     "no_assign_warning": "",
                     "no_explicit_call": "do not call this POU directly"
                 },
@@ -3316,8 +3390,8 @@
                     "qualified_only": "",
                     "strict": "",
                     "to_string": "",
-                    "to_string_function": "__TO_STRING__1476",
-                    "to_wstring_function": "__TO_WSTRING__1476"
+                    "to_string_function": "__TO_STRING__1481",
+                    "to_wstring_function": "__TO_WSTRING__1481"
                 },
                 "enum": [
                     1,
@@ -3384,67 +3458,14 @@
                                 "attributes": {
                                     "implicit_inst_var": ""
                                 },
-                                "propertyOrder": 31
-                            }
-                        ]
-                    },
-                    "FB_Mover_552__GetOnTrackInfos_587__bError": {
-                        "allOf": [
-                            {
-                                "$ref": "tchmi:general#/definitions/BOOL"
-                            },
-                            {
-                                "attributes": {
-                                    "implicit_inst_var": ""
-                                },
-                                "propertyOrder": 33
-                            }
-                        ]
-                    },
-                    "FB_Mover_552__GetOnTrackInfos_587__hResult": {
-                        "allOf": [
-                            {
-                                "$ref": "tchmi:general#/definitions/HRESULT"
-                            },
-                            {
-                                "attributes": {
-                                    "implicit_inst_var": ""
-                                },
                                 "propertyOrder": 32
                             }
                         ]
                     },
-                    "FB_Mover_552__JoinNearestTrack_592__cmdFeedback": {
+                    "FB_Mover_552__GetOnTrackInfos_588__bError": {
                         "allOf": [
                             {
-                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.Tc3_XtsInterface.XtsCommandFeedback"
-                            },
-                            {
-                                "attributes": {
-                                    "implicit_inst_var": ""
-                                },
-                                "propertyOrder": 37
-                            }
-                        ]
-                    },
-                    "FB_Mover_552__JoinNearestTrack_592__mcTrackOid": {
-                        "allOf": [
-                            {
-                                "$ref": "tchmi:general#/definitions/OTCID"
-                            },
-                            {
-                                "attributes": {
-                                    "OTCID": "",
-                                    "implicit_inst_var": ""
-                                },
-                                "propertyOrder": 35
-                            }
-                        ]
-                    },
-                    "FB_Mover_552__JoinNearestTrack_592__nForCounter": {
-                        "allOf": [
-                            {
-                                "$ref": "tchmi:general#/definitions/UINT"
+                                "$ref": "tchmi:general#/definitions/BOOL"
                             },
                             {
                                 "attributes": {
@@ -3454,10 +3475,23 @@
                             }
                         ]
                     },
-                    "FB_Mover_552__JoinNearestTrack_592__objectInfo": {
+                    "FB_Mover_552__GetOnTrackInfos_588__hResult": {
                         "allOf": [
                             {
-                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.Tc3_Mc3PlanarMotion.PlanarObjectInfo"
+                                "$ref": "tchmi:general#/definitions/HRESULT"
+                            },
+                            {
+                                "attributes": {
+                                    "implicit_inst_var": ""
+                                },
+                                "propertyOrder": 33
+                            }
+                        ]
+                    },
+                    "FB_Mover_552__JoinNearestTrack_594__cmdFeedback": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.Tc3_XtsInterface.XtsCommandFeedback"
                             },
                             {
                                 "attributes": {
@@ -3467,7 +3501,7 @@
                             }
                         ]
                     },
-                    "FB_Mover_552__JoinNearestTrack_592__partOid": {
+                    "FB_Mover_552__JoinNearestTrack_594__mcTrackOid": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:general#/definitions/OTCID"
@@ -3481,6 +3515,46 @@
                             }
                         ]
                     },
+                    "FB_Mover_552__JoinNearestTrack_594__nForCounter": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UINT"
+                            },
+                            {
+                                "attributes": {
+                                    "implicit_inst_var": ""
+                                },
+                                "propertyOrder": 35
+                            }
+                        ]
+                    },
+                    "FB_Mover_552__JoinNearestTrack_594__objectInfo": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.Tc3_Mc3PlanarMotion.PlanarObjectInfo"
+                            },
+                            {
+                                "attributes": {
+                                    "implicit_inst_var": ""
+                                },
+                                "propertyOrder": 39
+                            }
+                        ]
+                    },
+                    "FB_Mover_552__JoinNearestTrack_594__partOid": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/OTCID"
+                            },
+                            {
+                                "attributes": {
+                                    "OTCID": "",
+                                    "implicit_inst_var": ""
+                                },
+                                "propertyOrder": 37
+                            }
+                        ]
+                    },
                     "PID_OnTrackInfos": {
                         "allOf": [
                             {
@@ -3488,6 +3562,16 @@
                             },
                             {
                                 "propertyOrder": 26
+                            }
+                        ]
+                    },
+                    "ScopeVariables": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.Tc3_XL_Motion.ST_ScopeValues"
+                            },
+                            {
+                                "propertyOrder": 31
                             }
                         ]
                     },
@@ -3799,14 +3883,15 @@
                     "nErrorID",
                     "ControllerOID",
                     "stPointerAddresses",
+                    "ScopeVariables",
                     "FB_Mover_552__CycleUpdate_581___trackEnum",
-                    "FB_Mover_552__GetOnTrackInfos_587__hResult",
-                    "FB_Mover_552__GetOnTrackInfos_587__bError",
-                    "FB_Mover_552__JoinNearestTrack_592__nForCounter",
-                    "FB_Mover_552__JoinNearestTrack_592__mcTrackOid",
-                    "FB_Mover_552__JoinNearestTrack_592__partOid",
-                    "FB_Mover_552__JoinNearestTrack_592__cmdFeedback",
-                    "FB_Mover_552__JoinNearestTrack_592__objectInfo"
+                    "FB_Mover_552__GetOnTrackInfos_588__hResult",
+                    "FB_Mover_552__GetOnTrackInfos_588__bError",
+                    "FB_Mover_552__JoinNearestTrack_594__nForCounter",
+                    "FB_Mover_552__JoinNearestTrack_594__mcTrackOid",
+                    "FB_Mover_552__JoinNearestTrack_594__partOid",
+                    "FB_Mover_552__JoinNearestTrack_594__cmdFeedback",
+                    "FB_Mover_552__JoinNearestTrack_594__objectInfo"
                 ],
                 "type": "object"
             },
@@ -4041,7 +4126,7 @@
                     "ActHwPosModuloPointer": {
                         "allOf": [
                             {
-                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.POINTER-TO-DINT"
+                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.POINTER-TO-LREAL"
                             },
                             {
                                 "propertyOrder": 2
@@ -4088,6 +4173,16 @@
                             }
                         ]
                     },
+                    "SetForcePointer": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.POINTER-TO-LREAL"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
                     "SetVeloItpPointer": {
                         "allOf": [
                             {
@@ -4099,6 +4194,102 @@
                         ]
                     }
                 },
+                "type": "object"
+            },
+            "ADS-PLC IPC1.Tc3_XL_Motion.ST_ScopeValues": {
+                "additionalProperties": false,
+                "properties": {
+                    "ActHwPosModulo": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "ActPosError": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "ActStatus": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.XTS.DriveState"
+                            },
+                            {
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "ActVelo": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "SetAccItp": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "SetCurrent": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "SetForce": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "SetVeloItp": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/LREAL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "SetCurrent",
+                    "ActHwPosModulo",
+                    "ActPosError",
+                    "SetVeloItp",
+                    "SetAccItp",
+                    "ActVelo",
+                    "SetForce",
+                    "ActStatus"
+                ],
                 "type": "object"
             },
             "ADS-PLC IPC1.Tc3_XtsInterface.I_XtsProcessingUnit1": {
@@ -4275,6 +4466,56 @@
                     {
                         "label": "Name",
                         "value": 4
+                    }
+                ],
+                "type": "integer"
+            },
+            "ADS-PLC IPC1.XTS.DriveState": {
+                "attributes": {
+                    "plcAttribute_qualified_only": ""
+                },
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ],
+                "options": [
+                    {
+                        "label": "Unknown",
+                        "value": 0
+                    },
+                    {
+                        "label": "FaultReactionActive",
+                        "value": 1
+                    },
+                    {
+                        "label": "Fault",
+                        "value": 2
+                    },
+                    {
+                        "label": "NotReadyToSwitchOn",
+                        "value": 3
+                    },
+                    {
+                        "label": "SwitchOnDisabled",
+                        "value": 4
+                    },
+                    {
+                        "label": "ReadyToSwitchOn",
+                        "value": 5
+                    },
+                    {
+                        "label": "SwitchedOn",
+                        "value": 6
+                    },
+                    {
+                        "label": "OperationEnabled",
+                        "value": 7
                     }
                 ],
                 "type": "integer"
@@ -5615,6 +5856,16 @@
             "MAPPING": "PLC IPC1::MAIN_S1::bSwitch",
             "SCHEMA": {
                 "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC IPC1.MAIN_S1.stMoverConfigNormal": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC IPC1::MAIN_S1::stMoverConfigNormal",
+            "SCHEMA": {
+                "$ref": "tchmi:server#/definitions/ADS-PLC%20IPC1.ST_MoverConfig"
             },
             "USEMAPPING": true
         },
@@ -8658,6 +8909,7 @@
                 "ADS.PLC IPC1.MAIN_S1.Velo": 3,
                 "ADS.PLC IPC1.MAIN_S1.bMagnetOn": 3,
                 "ADS.PLC IPC1.MAIN_S1.bSwitch": 3,
+                "ADS.PLC IPC1.MAIN_S1.stMoverConfigNormal": 3,
                 "ADS.PLC IPC1.MAIN_S1.state": 3,
                 "ADS.PLC IPC2.GVL_DataExchange.aMoverInfos": 3,
                 "ADS.PLC IPC2.GVL_MC.nNumActiveMovers": 3,

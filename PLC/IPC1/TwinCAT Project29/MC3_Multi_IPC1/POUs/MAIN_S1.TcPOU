@@ -178,6 +178,7 @@ END_IF
 //===========================================================================================
 
 GVL_MC.ipXtsProcessingUnit :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number,0);
+AllDone  := TRUE;
 FOR i := 1 TO GVL_MC.nNumMovers DO 	
 	
 	IF NOT InitDone  THEN

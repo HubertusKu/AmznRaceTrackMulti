@@ -1,6 +1,27 @@
 [
   {
-    "serverExtensions": [],
+    "serverExtensions": [
+      {
+        "publishServerExtension": true,
+        "name": "ADS"
+      },
+      {
+        "publishServerExtension": true,
+        "name": "TcHmiLua"
+      },
+      {
+        "publishServerExtension": true,
+        "name": "TcHmiSqliteLogger"
+      },
+      {
+        "publishServerExtension": true,
+        "name": "TcHmiSrv"
+      },
+      {
+        "publishServerExtension": true,
+        "name": "TcHmiUserManagement"
+      }
+    ],
     "profileName": "Local",
     "publishMode": "TcHmi",
     "targetDirectory": "",
@@ -12,19 +33,19 @@
     "createPublishLog": false,
     "salt": "effb07740819480f864d9edd961b701f",
     "encryptedTcHmiServerPassword": "yX43zrIcwnA/Pugb0moDHQ==",
-    "tcHmiServerHost": "127.0.0.1",
-    "tcHmiServerPort": "1020",
+    "tcHmiServerHost": "localhost",
+    "tcHmiServerPort": "1010",
     "uploadTimeout": "60",
     "connectionTimeout": "5",
     "requestTimeout": "60",
     "extensionStartupTimeout": "120",
     "clientCertificateCN": "",
-    "tcHmiUseTLS": false,
+    "tcHmiUseTLS": true,
     "useClientCertificate": false,
     "launchBrowserAfterPublish": true,
     "createVirtualDirectoriesOnTargetSystem": false,
     "tcHmiServerUserName": "__SystemAdministrator",
-    "tcHmiDestinationUrl": "http://127.0.0.1:1020/",
+    "tcHmiDestinationUrl": "https://localhost:1010/",
     "publishConfiguration": "remote",
     "tcHmiIgnoreCertificateErrors": true
   }
