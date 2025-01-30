@@ -52847,6 +52847,9 @@ Bit 8 - 15 : reserved]]></Comment>
 				<Image Id="2" ImageFlags="#x00000030" AddrType="9" ImageType="3">
 					<Name>Image</Name>
 				</Image>
+				<Image Id="4" AddrType="10" ImageType="3">
+					<Name>Image-2</Name>
+				</Image>
 				<Box Id="1" BoxType="9099">
 					<Name>Term 1 (EK1200)</Name>
 					<ImageId>1017</ImageId>
@@ -52857,6 +52860,7 @@ Bit 8 - 15 : reserved]]></Comment>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07113052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1809 16Ch. Dig. Input 24V, 3ms" Desc="EL1809" PortABoxInfo="#x01000001">
 							<SyncMan>001002000000010004000000000000000200001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+							<SuTask>#x02010020</SuTask>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
 								<Entry Name="Input" Index="#x6000" Sub="#x01">
 									<Type>BIT</Type>
@@ -52946,6 +52950,7 @@ Bit 8 - 15 : reserved]]></Comment>
 							<SyncMan>000f01004400010003000000000000000100000f44090000</SyncMan>
 							<SyncMan>010f01004400010003000000000000000100010f44090000</SyncMan>
 							<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
+							<SuTask>#x02010020</SuTask>
 							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
 								<Entry Name="Output" Index="#x7000" Sub="#x01">
 									<Type>BIT</Type>
@@ -53046,7 +53051,7 @@ Bit 8 - 15 : reserved]]></Comment>
 							<BootStrapData>0010f400f410f400</BootStrapData>
 							<SuName></SuName>
 							<SuName></SuName>
-							<SuTask>#x00000000</SuTask>
+							<SuTask>#x02010020</SuTask>
 							<SuTask>#x00000000</SuTask>
 							<MBoxUserCmdData>004003000a0000001f000000000000000000000000000000000000000000000020f31005020000000100456e61626c6520446961674d65737361676520617320656d657267656e637900</MBoxUserCmdData>
 							<Pdo Name="ConnectionInputs" Index="#x1a00" Flags="#x2011" SyncMan="3">
@@ -53254,7 +53259,7 @@ Bit 8 - 15 : reserved]]></Comment>
 						</Slot>
 					</EtherCAT>
 				</Box>
-				<EtherCAT/>
+				<EtherCAT DcSyncTask="2"/>
 			</Device>
 			<Device Id="2" DevType="112" AmsPort="28674" AmsNetId="0.0.0.0.3.1" RemoteName="Device 2 (EtherCAT Automation Protocol)">
 				<Name>Device 2 (EtherCAT Automation Protocol)</Name>
@@ -53578,6 +53583,9 @@ Bit 8 - 15 : reserved]]></Comment>
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500820000403}" Id="#x02030070"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500841000403}" Id="#x02030190"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500880000403}" Id="#x02030060"/>
 		<MappingInfo Identifier="{00000000-0060-0304-6000-120560000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-0060-0304-7000-120560000403}" Id="#x02030040"/>
 		<MappingInfo Identifier="{08502001-0060-0304-0020-500860000403}" Id="#x02030010" Watchdog="00000000000000000000000000000000"/>
