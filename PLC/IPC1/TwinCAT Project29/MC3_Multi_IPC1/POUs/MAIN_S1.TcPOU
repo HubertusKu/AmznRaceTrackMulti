@@ -118,6 +118,9 @@ VAR
 	moverWithFault: UDINT;
 	stepWithFault: INT;
 	stopAndWait : ARRAY[1..nNumMovers] OF TON; 
+	
+	AllDone : BOOL;
+	InitDone  :BOOL;
 END_VAR
 
 
@@ -171,32 +174,34 @@ END_IF
 //===========================================================================================
 
 GVL_MC.ipXtsProcessingUnit :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number,0);
-FOR i := 1 TO GVL_MC.nNumMovers DO 
-	IF NOT Init THEN
+FOR i := 1 TO GVL_MC.nNumMovers DO 	
+	
+	IF NOT InitDone  THEN
 		ipXlMover  :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number, 0).XlMover(i, 0);
-		GVL_MC.fbMover[i].Init(ipXlMover, GVL_MC.ipXtsProcessingUnit); 
-		gvl_mc.iMover[i] := gvl_mc.fbmover[i];
+		AllDone := AllDone AND GVL_MC.fbMover[i].Init(ipXlMover, GVL_MC.ipXtsProcessingUnit); 
+	END_IF
+	InitDone := alldone;
+	
+	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
+	IF Fp_error.Q THEN
+		state := 140;
+		Fault := TRUE;
+
+		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
+	ELSE
+		Fault := FALSE;
 	END_IF
 	
-//	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
-//	IF Fp_error.Q THEN
-//		state := 140;
-//		Fault := TRUE;
-//		bMagnetOn := FALSE;
-//		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
-//	ELSE
-//		Fault := FALSE;
-//	END_IF
 	
 	GVL_MC.Feedback[i].Update();
 	GVL_MC.fbMover[i].CycleUpdate();
-
+	GVL_MC.iMover[i] := GVL_MC.fbMover[i];
 	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 4000, 16000);
-	GVL_DataExchange.aMoverInfos[i] :=  GVL_MC.fbMover[i].P_MoverInfos;
+	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gap := 900;
+	GVL_MC.fbMover[i].P_MoveOnTrackOptions.direction := MC_Direction.mcDirectionPositive;
+	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gapMode := MC_GAP_MODE_ON_TRACK.Fast1D;
 	
-	IF GVL_MC.fbMover[i].P_PlanarMover.Error  AND GVL_MC.iMover[i].XtsXlMover.GetIsActive(0) THEN
-		Fault := TRUE;
-	END_IF
+	GVL_DataExchange.aMoverInfos[i] :=  GVL_MC.fbMover[i].P_MoverInfos;
 END_FOR	
 
 fbTrackobject(TrackID:= GVL_mc.aMcTracks[E_TrackNum.big].MCTOPLC_STD.TrackOID,iMover:= gvl_mc.iMover ); 
@@ -245,16 +250,15 @@ CASE state OF
 		END_IF
 
 	2:	
-		IF AktiveSystem THEN
-			FOR i :=1  TO GVL_MC.nNumActiveMovers DO  
-			
+	
+		FOR i := 1+GVL_MC.nNumActiveMovers TO GVL_MC.nNumMovers DO  
+			GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetStartupTrackPosition(0.2,0);	
+			GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
+			GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);
+		END_FOR
+		IF  GVL_MC.nNumActiveMovers > 0 THEN
+			FOR i :=1  TO GVL_MC.nNumActiveMovers DO 	
 				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(0,0);
-			END_FOR 
-		ELSE
-			FOR i := 1 TO GVL_MC.nNumMovers DO  
-				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetStartupTrackPosition(0.2,0);	
-				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).SetIsVirtualFeedbackEnabled(1,0);
-				GVL_MC.fbMover[i].XlProcessingUnit.XlMover(i,0).TriggerArrive(0);
 			END_FOR 
 		END_IF			
 		state := 3;

@@ -18,7 +18,7 @@ VAR_GLOBAL
 	buffer						: 	BYTE;
 	
 	fbMover						:	ARRAY[1..GVL_MC.nNumMovers] OF FB_Mover;
-	
+	iMover						:	ARRAY[1..GVL_MC.nNumMovers] OF I_Mover;
 	aDynamics					:  	DynamicConstraint_PathXY;
 	Feedback 					:	ARRAY[1..GVL_MC.nNumMovers] OF MC_PlanarFeedback;
 	TrackFeedback 				:	ARRAY[1..GVL_MC.nNumTracks] OF MC_PlanarFeedback;

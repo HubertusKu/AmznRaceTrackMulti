@@ -66,9 +66,9 @@ FOR J := 1 TO nNumMoversThisTrack DO
 END_FOR
 FOR I := 1 TO nNumMoversThisTrack DO 
 	IF I <= nNumMoversThisTrack -1 THEN
-		distToNextMover[I] := fbMover[moverIDs[I+1]].distToEndOfTrack - fbMover[moverIDs[I]].distToEndOfTrack;
+		distToNextMover[I] := fbMover[moverIDs[I+1]].GetDistanceToEot(gvl_MC.aMcTracks[E_TrackNum.big].GetLength()) - fbMover[moverIDs[I]].GetDistanceToEot(gvl_MC.aMcTracks[E_TrackNum.big].GetLength());
 	ELSIF I = nNumMoversThisTrack THEN
-		distToNextMover[I] := trackLength - fbMover[moverIDs[I]].distToEndOfTrack;
+		distToNextMover[I] := trackLength - fbMover[moverIDs[I]].GetDistanceToEot(gvl_MC.aMcTracks[E_TrackNum.big].GetLength());
 	END_IF
 END_FOR]]></ST>
       </Implementation>
@@ -102,7 +102,7 @@ IF nNumMoversThisTrack = 0  THEN // if there's no movers on the track we can jus
 ELSE
 	// find a mover to follow starting at sync position look for a space to merge sized hole 
 	FOR I := 1 TO nNumMoversThisTrack DO 
-		IF fbMover[moverIDs[I]].distToEndOfTrack > mergeSyncCommandPos THEN // this mover is a potentialmover to follow 
+		IF fbMover[moverIDs[I]].GetDistanceToEot(gvl_MC.aMcTracks[E_TrackNum.big].GetLength()) > mergeSyncCommandPos THEN // this mover is a potentialmover to follow 
 			IF distToNextMover[I] > spaceToMerge THEN // follow this mover 
 				nMoverToFollow := moverIDs[I]; //yes follow this mover 
 				mergeNotPossible := FALSE; // the merge is possible 

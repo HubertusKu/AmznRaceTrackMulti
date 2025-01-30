@@ -48,7 +48,8 @@ END_VAR
       <ST><![CDATA[]]></ST>
     </Implementation>
     <Method Name="CycleUpdate" Id="{f03058aa-6296-4ef4-9484-d5b71f801a75}">
-      <Declaration><![CDATA[METHOD CycleUpdate : BOOL
+      <Declaration><![CDATA[
+METHOD CycleUpdate : BOOL
 VAR_INPUT
 END_VAR
 VAR 

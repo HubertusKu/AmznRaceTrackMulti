@@ -32,9 +32,9 @@
 </script>
 
 </div>
-<div id="TcHmiCheckbox_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCheckbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="412" data-tchmi-left-unit="px" data-tchmi-text="Safety OK IPC1" data-tchmi-top="476" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-state-symbol="%s%ADS.Safety IPC1.GVL_Safety.SaeftyOk%/s%">
+<div id="TcHmiCheckbox_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCheckbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="210" data-tchmi-left-unit="px" data-tchmi-text="Safety OK IPC1" data-tchmi-top="471" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-state-symbol="%s%ADS.Safety IPC1.GVL_Safety.SaeftyOk%/s%">
 </div>
-<div id="TcHmiCheckbox_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCheckbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="210" data-tchmi-left-unit="px" data-tchmi-text="Safety OK IPC2" data-tchmi-top="476" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-state-symbol="%s%ADS.Safety IPC2.GVL_Safety.SaeftyOk%/s%">
+<div id="TcHmiCheckbox_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiCheckbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-left="412" data-tchmi-left-unit="px" data-tchmi-text="Safety OK IPC2" data-tchmi-top="471" data-tchmi-top-unit="px" data-tchmi-width="150" data-tchmi-width-unit="px" data-tchmi-state-symbol="%s%ADS.Safety IPC2.GVL_Safety.SaeftyOk%/s%">
 </div>
 <div id="TcHmiButton_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="310" data-tchmi-left-unit="px" data-tchmi-text="Start (0)" data-tchmi-top="572" data-tchmi-top-unit="px" data-tchmi-width="153" data-tchmi-width-unit="px" data-tchmi-word-wrap="true">
 
@@ -701,7 +701,7 @@
 ]
 </script>
 </div>
-<div id="TcHmiDatagrid_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="386" data-tchmi-height-unit="px" data-tchmi-left="638" data-tchmi-left-unit="px" data-tchmi-top="119" data-tchmi-top-unit="px" data-tchmi-width="850" data-tchmi-width-unit="px" data-tchmi-src-data="%s%ADS.PLC IPC1.GVL_DataExchange.aMoverInfos|BindingMode=OneWay|SubscriptionMode=Change%/s%">
+<div id="TcHmiDatagrid_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="386" data-tchmi-height-unit="px" data-tchmi-left="649" data-tchmi-left-unit="px" data-tchmi-top="119" data-tchmi-top-unit="px" data-tchmi-width="900" data-tchmi-width-unit="px" data-tchmi-src-data="%s%ADS.PLC IPC1.GVL_DataExchange.aMoverInfos|BindingMode=OneWay|SubscriptionMode=Change%/s%">
     <script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
 [
   {
@@ -721,6 +721,272 @@
     "ignoreEscapeSequences": false,
     "autoFocusOut": true,
     "autoSelectText": true,
+    "format": {
+      "objectType": "Function",
+      "active": true,
+      "fn": "TcHmi.Functions.HMI_Multi_IPC.FunctionJS1",
+      "fnParams": []
+    },
+    "sortable": true
+  },
+  {
+    "name": "ActVelo",
+    "label": "ActVelo",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": true,
+    "format": {
+      "objectType": "Function",
+      "active": true,
+      "fn": "TcHmi.Functions.Beckhoff.GaugeValueFormatter",
+      "fnParams": [
+        {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Number",
+          "value": "2"
+        }
+      ]
+    },
+    "sortable": true
+  },
+  {
+    "name": "ActPos",
+    "label": "ActPos",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": false,
+    "format": {
+      "objectType": "Function",
+      "active": true,
+      "fn": "TcHmi.Functions.Beckhoff.GaugeValueFormatter",
+      "fnParams": [
+        {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Number",
+          "value": "2"
+        }
+      ]
+    },
+    "sortable": true
+  },
+  {
+    "name": "IsVirtuell",
+    "label": "IsVirtuell",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": true,
+    "sortable": true
+  },
+  {
+    "name": "IsActive",
+    "label": "IsActive",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": true,
+    "sortable": true
+  },
+  {
+    "name": "Gap",
+    "label": "Gap",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": true,
+    "sortable": true
+  },
+  {
+    "name": "State",
+    "label": "State",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": true,
+    "sortable": true
+  },
+  {
+    "name": "PlanarMoverCommandMode",
+    "label": "CommandMode",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": true,
+    "sortable": true
+  },
+  {
+    "name": "ErrorID",
+    "label": "ErrorID",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": true,
+    "sortable": true
+  },
+  {
+    "name": "Track",
+    "label": "Track",
+    "control": "TextBlock",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false,
+    "autoFocusOut": true,
+    "autoSelectText": true,
+    "sortable": true
+  }
+]
+</script>
+
+<script data-tchmi-target-attribute="data-tchmi-cell-content-padding" type="application/json">
+{
+  "left": 3,
+  "leftUnit": "px",
+  "right": 3,
+  "rightUnit": "px",
+  "top": 0,
+  "topUnit": "px",
+  "bottom": 0,
+  "bottomUnit": "px"
+}
+</script>
+
+
+<script data-tchmi-target-attribute="data-tchmi-filter" type="application/json">
+[
+  {
+    "path": "IsVirtuell",
+    "comparator": "==",
+    "value": "false"
+  },
+  {
+    "logic": "OR"
+  },
+  {
+    "path": "ErrorID",
+    "comparator": "!=",
+    "value": "0"
+  }
+]
+</script>
+</div>
+<div id="TcHmiDatagrid_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="398" data-tchmi-height-unit="px" data-tchmi-left="649" data-tchmi-left-unit="px" data-tchmi-top="600" data-tchmi-top-unit="px" data-tchmi-width="900" data-tchmi-width-unit="px" data-tchmi-src-data="%s%ADS.PLC IPC2.GVL_DataExchange.aMoverInfos|SubscriptionMode=Change%/s%">
+<script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
+[
+  {
+    "name": "MoverOtcid",
+    "label": "MoverOtcid",
+    "control": "TextBlock",
+    "width": 55,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "editable": false,
+    "horizontalAlignment": "Center",
+    "verticalAlignment": "Center",
+    "format": {
+      "objectType": "Function",
+      "active": true,
+      "fn": "TcHmi.Functions.HMI_Multi_IPC.FunctionJS1",
+      "fnParams": []
+    },
+    "dataDefinitions": {
+      "minValue": 0.0,
+      "maxValue": 100.0,
+      "decimalDigits": 0.0,
+      "decimalPrecisionMode": "Round",
+      "resetToLastValidValue": false
+    },
     "sortable": true
   },
   {
@@ -929,232 +1195,27 @@
 ]
 </script>
 </div>
-<div id="TcHmiDatagrid_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiDatagrid" data-tchmi-height="398" data-tchmi-height-unit="px" data-tchmi-left="649" data-tchmi-left-unit="px" data-tchmi-top="600" data-tchmi-top-unit="px" data-tchmi-width="900" data-tchmi-width-unit="px" data-tchmi-src-data="%s%ADS.PLC IPC2.GVL_DataExchange.aMoverInfos|SubscriptionMode=Change%/s%">
-<script data-tchmi-target-attribute="data-tchmi-src-column" type="application/json">
-        [
-          {
-            "name": "MoverOtcid",
-            "label": "MoverOtcid",
-            "control": "TextBlock",
-            "width": 55,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Center",
-            "verticalAlignment": "Center",
-            "dataDefinitions": {
-              "minValue": 0.0,
-              "maxValue": 100.0,
-              "decimalDigits": 0.0,
-              "decimalPrecisionMode": "Round",
-              "resetToLastValidValue": false
-            },
-            "sortable": true
-          },
-          {
-            "name": "ActVelo",
-            "label": "ActVelo",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": true,
-            "sortable": true
-          },
-          {
-            "name": "ActPos",
-            "label": "ActPos",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": false,
-            "sortable": true
-          },
-          {
-            "name": "IsVirtuell",
-            "label": "IsVirtuell",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": true,
-            "sortable": true
-          },
-          {
-            "name": "IsActive",
-            "label": "IsActive",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": true,
-            "sortable": true
-          },
-          {
-            "name": "Gap",
-            "label": "Gap",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": true,
-            "sortable": true
-          },
-          {
-            "name": "State",
-            "label": "State",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": true,
-            "sortable": true
-          },
-          {
-            "name": "PlanarMoverCommandMode",
-            "label": "CommandMode",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": true,
-            "sortable": true
-          },
-          {
-            "name": "ErrorID",
-            "label": "ErrorID",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": true,
-            "sortable": true
-          },
-          {
-            "name": "Track",
-            "label": "Track",
-            "control": "TextBlock",
-            "width": 50,
-            "widthUnit": "px",
-            "resize": true,
-            "minWidth": 50,
-            "minWidthUnit": "px",
-            "editable": false,
-            "horizontalAlignment": "Left",
-            "verticalAlignment": "Center",
-            "headerHorizontalAlignment": "Center",
-            "headerVerticalAlignment": "Center",
-            "ignoreEscapeSequences": false,
-            "autoFocusOut": true,
-            "autoSelectText": true,
-            "sortable": true
-          }
-                ]
-    </script>
+<div id="TcHmiButton_12" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="68" data-tchmi-left-unit="px" data-tchmi-text="Button" data-tchmi-top="176" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="true">
 
-<script data-tchmi-target-attribute="data-tchmi-cell-content-padding" type="application/json">
-{
-  "left": 3,
-  "leftUnit": "px",
-  "right": 3,
-  "rightUnit": "px",
-  "top": 0,
-  "topUnit": "px",
-  "bottom": 0,
-  "bottomUnit": "px"
-}
-</script>
-
-
-<script data-tchmi-target-attribute="data-tchmi-filter" type="application/json">
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
-    "path": "IsVirtuell",
-    "comparator": "==",
-    "value": "false"
-  },
-  {
-    "logic": "OR"
-  },
-  {
-    "path": "ErrorID",
-    "comparator": "!=",
-    "value": "0"
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "Function",
+        "active": true,
+        "fn": "TcHmi.Functions.HMI_Multi_IPC.FunctionJS1",
+        "fnParams": [
+          {
+            "objectType": "StaticValue",
+            "valueType": "tchmi:general#/definitions/Number",
+            "value": "150"
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
   }
 ]
 </script>

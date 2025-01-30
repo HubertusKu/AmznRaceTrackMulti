@@ -10,12 +10,13 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Property Name="distToEndOfTrack" Id="{54946fd7-00e4-4584-be84-948ea3635443}">
-      <Declaration><![CDATA[PROPERTY distToEndOfTrack : Lreal]]></Declaration>
-      <Get Name="Get" Id="{72f5bf45-38a7-4db3-85a2-cd77e7e3e0e0}">
-        <Declaration><![CDATA[]]></Declaration>
-      </Get>
-    </Property>
+    <Method Name="GetDistanceToEot" Id="{c91b2c76-08f0-4c9a-a6b4-12cb24acad37}">
+      <Declaration><![CDATA[METHOD GetDistanceToEot : LREAL
+VAR_INPUT
+	TrackLenght : LREAL;
+END_VAR
+]]></Declaration>
+    </Method>
     <Method Name="Init" Id="{70e27be2-2f8a-4a12-af9c-c87e7a1f6409}">
       <Declaration><![CDATA[METHOD Init : BOOL
 VAR_INPUT
