@@ -4,6 +4,10 @@
     <Declaration><![CDATA[PROGRAM MAIN_S1
 
 VAR
+	voltage_trafo	 	AT %I* 	: REAL ;
+	current_trafo		AT %I* 	: REAL;  
+	power_trafo					: REAL;
+
 	b110SyncState AT %I* :UINT ;
 	b110State AT %I* :UINT;  
 	EtherCATWCState23To49 AT %I* : BOOL; 
@@ -130,25 +134,30 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 		gvl_mc.iMover[i] := gvl_mc.fbmover[i];
 	END_IF
 	
-//	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
-//	IF Fp_error.Q THEN
-//		state := 140;
-//		Fault := TRUE;
-//		bMagnetOn := FALSE;
-//		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
-//	ELSE
-//		Fault := FALSE;
-//	END_IF
-	
+	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
+	IF Fp_error.Q THEN
+		state := 140;
+		Fault := TRUE;
+		bMagnetOn := FALSE;
+		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
+	ELSE
+		Fault := FALSE;
+	END_IF
+
 	GVL_MC.Feedback[i].Update();
 	GVL_MC.fbMover[i].CycleUpdate();
 	//GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo + (i - 1) * 50, gvl_mc.standardAccel, gvl_mc.standardDecel, gvl_mc.standardJerk);
-	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(Velo, 4000, 4000, 16000);
+	GVL_MC.fbMover[i].P_Dynamics.SetValuesVADJ(stMoverConfigNormal.Velo,stMoverConfigNormal.Accel, stMoverConfigNormal.Decel, stMoverConfigNormal.Jerk);
 
 	IF GVL_MC.fbMover[i].P_PlanarMover.Error  AND GVL_MC.iMover[i].XtsXlMover.GetIsActive(0) THEN
 		Fault := TRUE;
 	END_IF
 END_FOR	
+
+GVL_DataExchange.Dynamics.v := stMoverConfigNormal.Velo;
+GVL_DataExchange.Dynamics.A := stMoverConfigNormal.Accel;
+GVL_DataExchange.Dynamics.D := stMoverConfigNormal.Decel;
+GVL_DataExchange.Dynamics.J := stMoverConfigNormal.Jerk;
 
 fbTrackobject(TrackID:= GVL_mc.aMcTracks[E_TrackNum.big].MCTOPLC_STD.TrackOID,iMover:= gvl_mc.iMover ); 
 fbTrackobject.CyclicUpdate();
@@ -165,7 +174,7 @@ END_IF
 
 Switch(SafeetyOK :=TRUE ,);
 
-GVL_DataExchange.Dynamics.v := Velo;
+
 
 IF state < 99 AND xReset THEN 
 	IF State = 1 THEN 
@@ -485,6 +494,11 @@ IF GVL_MC.Mover[1].TrackID = GVL_Mc.aMcTracks[E_TrackNum.MainStart].MCTOPLC_STD.
 	END_IF   
 END_IF
 
+
+
+// Calculation of the transformator power 
+power_trafo := voltage_trafo * current_trafo;
+
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN_S1">
@@ -508,6 +522,7 @@ END_IF
       <LineId Id="5561" Count="0" />
       <LineId Id="5563" Count="0" />
       <LineId Id="5043" Count="0" />
+      <LineId Id="5943" Count="4" />
       <LineId Id="5749" Count="0" />
       <LineId Id="5751" Count="0" />
       <LineId Id="5750" Count="0" />
@@ -608,6 +623,9 @@ END_IF
       <LineId Id="5564" Count="0" />
       <LineId Id="5542" Count="16" />
       <LineId Id="5189" Count="1" />
+      <LineId Id="5938" Count="2" />
+      <LineId Id="5942" Count="0" />
+      <LineId Id="5941" Count="0" />
       <LineId Id="1513" Count="0" />
     </LineIds>
   </POU>

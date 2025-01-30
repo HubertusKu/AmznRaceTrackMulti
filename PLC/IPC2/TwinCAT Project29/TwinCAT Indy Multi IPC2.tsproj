@@ -736,1101 +736,1131 @@
 			</Relations>
 		</DataType>
 		<DataType>
-			<Name GUID="{68E64A2B-A826-9780-C29E-0598DC59AC66}">XtsEventClass</Name>
+			<Name GUID="{EC0AEFE8-7A05-1214-1B8B-DD987D74ADF7}">XtsEventClass</Name>
 			<DisplayName TxtId=""><![CDATA[XtsEventClass]]></DisplayName>
 			<EventId>
 				<Name Id="0">BuildInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Version {0} Build date: {1} Build time: {2}]]></DisplayName>
+				<DisplayName TxtId="0"><![CDATA[Version {0} Build date: {1} Build time: {2}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="1">ModuleCountInfo</Name>
-				<DisplayName TxtId=""><![CDATA[{0} XTS module(s) are loaded.]]></DisplayName>
+				<DisplayName TxtId="1"><![CDATA[{0} XTS module(s) are loaded.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="2">MoverCountInfo</Name>
-				<DisplayName TxtId=""><![CDATA[{0} XTS mover(s) are loaded.]]></DisplayName>
+				<DisplayName TxtId="2"><![CDATA[{0} XTS mover(s) are loaded.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="3">AllMoversAreDetectedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[All XTS mover(s) are detected.]]></DisplayName>
+				<DisplayName TxtId="3"><![CDATA[All XTS mover(s) are detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="4">PathLengthInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Path length is {0} mm.]]></DisplayName>
+				<DisplayName TxtId="4"><![CDATA[Path length is {0} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5">PathIsClosedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Path is closed.]]></DisplayName>
+				<DisplayName TxtId="5"><![CDATA[Path is closed.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="6">PathIsOpenInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Path is open.]]></DisplayName>
+				<DisplayName TxtId="6"><![CDATA[Path is open.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="7">DetectionStartedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Searching of XTS mover(s) is started.]]></DisplayName>
+				<DisplayName TxtId="7"><![CDATA[Searching of XTS mover(s) is started.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="8">TeachingIsCompleteInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching is complete.]]></DisplayName>
+				<DisplayName TxtId="8"><![CDATA[Teaching is complete.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9">TeachingIsStartedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching is started on {0} modules.]]></DisplayName>
+				<DisplayName TxtId="9"><![CDATA[Teaching is started on {0} modules.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="10">TeachingIsStoppedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching is stopped on {0} modules.]]></DisplayName>
+				<DisplayName TxtId="10"><![CDATA[Teaching is stopped on {0} modules.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="11">TeachingIsCreatedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data is created at {0}.]]></DisplayName>
+				<DisplayName TxtId="11"><![CDATA[Teaching data is created at {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="12">TeachingIsLoadedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching '{0}' is loaded.]]></DisplayName>
+				<DisplayName TxtId="12"><![CDATA[Teaching '{0}' is loaded.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="13">TeachingIsSavedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data {0} is saved.]]></DisplayName>
+				<DisplayName TxtId="13"><![CDATA[Teaching data {0} is saved.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="14">TeachingIsValidInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data {0} is valid.]]></DisplayName>
+				<DisplayName TxtId="14"><![CDATA[Teaching data {0} is valid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="15">TeachingAllModulesAreEnabledInfo</Name>
-				<DisplayName TxtId=""><![CDATA[All XTS modules are enabled for teaching.]]></DisplayName>
+				<DisplayName TxtId="15"><![CDATA[All XTS modules are enabled for teaching.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="16">TeachingModuleIsEnabledInfo</Name>
-				<DisplayName TxtId=""><![CDATA[XTS module {0} is enabled for teaching.]]></DisplayName>
+				<DisplayName TxtId="16"><![CDATA[XTS module {0} is enabled for teaching.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="17">TeachingModuleIsDisabledInfo</Name>
-				<DisplayName TxtId=""><![CDATA[XTS module {0} is disabled for teaching.]]></DisplayName>
+				<DisplayName TxtId="17"><![CDATA[XTS module {0} is disabled for teaching.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="18">EtherCatIsReadyInfo</Name>
-				<DisplayName TxtId=""><![CDATA[IO Processing Unit (ID = {0}): EtherCAT is ready now ({1} device(s) are checked).]]></DisplayName>
+				<DisplayName TxtId="18"><![CDATA[IO Processing Unit (ID = {0}): EtherCAT is ready now ({1} device(s) are checked).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="19">WritingDumpInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Writing dump file {0}...]]></DisplayName>
+				<DisplayName TxtId="19"><![CDATA[Writing dump file {0}...]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="20">MonitorEtherCatInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Start up of {0} ({1}) is monitored.]]></DisplayName>
+				<DisplayName TxtId="20"><![CDATA[Start up of {0} ({1}) is monitored.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="21">TeachingNoDefaultOneIsAvailableInfo</Name>
-				<DisplayName TxtId=""><![CDATA[No default teaching data is supplied by the hardware. Please teach the system using the TcIoXts driver.]]></DisplayName>
+				<DisplayName TxtId="21"><![CDATA[No default teaching data is supplied by the hardware. Please teach the system using the TcIoXts driver.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="22">MoverIdDetectionValidInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID is detected.]]></DisplayName>
+				<DisplayName TxtId="22"><![CDATA[Mover ID is detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="23">MoverAbDetectionValidInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID is detected. {0} mover(s) with ID '1' and {1} mover(s) with ID '-' are detected.]]></DisplayName>
+				<DisplayName TxtId="23"><![CDATA[Mover ID is detected. {0} mover(s) with ID '1' and {1} mover(s) with ID '-' are detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="24">IdDetectionIsActivatedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID detection mode '{0}' is activated.]]></DisplayName>
+				<DisplayName TxtId="24"><![CDATA[Mover ID detection mode '{0}' is activated.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="25">IdDetectionHasBeenTriggeredInfo</Name>
-				<DisplayName TxtId=""><![CDATA[The Mover ID Detection has been triggered.]]></DisplayName>
+				<DisplayName TxtId="25"><![CDATA[The Mover ID Detection has been triggered.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="26">SynchronizationObjectCreatedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Synchonization object is created for {0} tasks.]]></DisplayName>
+				<DisplayName TxtId="26"><![CDATA[Synchonization object is created for {0} tasks.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="27">TaskIsAddedToSynchronisationObjectInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Task ({0}) is added to barrier.]]></DisplayName>
+				<DisplayName TxtId="27"><![CDATA[Task ({0}) is added to barrier.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="28">IsRegisteredByAllTasksAsIODriverInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Is registered by all tasks as IO driver.]]></DisplayName>
+				<DisplayName TxtId="28"><![CDATA[Is registered by all tasks as IO driver.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="29">EnableTimeIsSetInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Enable time is set.]]></DisplayName>
+				<DisplayName TxtId="29"><![CDATA[Enable time is set.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="30">DisableTimeIsElapsedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Disable time is elapsed.]]></DisplayName>
+				<DisplayName TxtId="30"><![CDATA[Disable time is elapsed.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="31">DataPointersAreInitializedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[{0} DataPointers are initialized.]]></DisplayName>
+				<DisplayName TxtId="31"><![CDATA[{0} DataPointers are initialized.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="32">ModulesWillBeInitializedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[{0} modules will be initialized...]]></DisplayName>
+				<DisplayName TxtId="32"><![CDATA[{0} modules will be initialized...]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="33">RecordWillBeWrittenInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Record will be written. File: {0}]]></DisplayName>
+				<DisplayName TxtId="33"><![CDATA[Record will be written. File: {0}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="34">MoverIndexRangeIsSetToInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Index range = [{0}, {1}].]]></DisplayName>
+				<DisplayName TxtId="34"><![CDATA[Index range = [{0}, {1}].]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="35">TeachingModuleIdentityCheckSucceededInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Module identity check for teaching is passed successfully.]]></DisplayName>
+				<DisplayName TxtId="35"><![CDATA[Module identity check for teaching is passed successfully.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="36">TeachingPlausibilityCheckSucceededInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching plausibility check is passed successfully.]]></DisplayName>
+				<DisplayName TxtId="36"><![CDATA[Teaching plausibility check is passed successfully.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="37">TeachingCheckSumCheckSucceededInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching checksum check is passed successfully.]]></DisplayName>
+				<DisplayName TxtId="37"><![CDATA[Teaching checksum check is passed successfully.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="38">RedetectionIsTriggeredInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Redetection is triggered.]]></DisplayName>
+				<DisplayName TxtId="38"><![CDATA[Redetection is triggered.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="39">MoverAbDetectionValidInfo2Info</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID is detected. {0} mover(s) with ID '{1}' and {2} mover(s) with ID '{3}' are detected.]]></DisplayName>
+				<DisplayName TxtId="39"><![CDATA[Mover ID is detected. {0} mover(s) with ID '{1}' and {2} mover(s) with ID '{3}' are detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="40">InputsCheckValidInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Inputs check is valid.]]></DisplayName>
+				<DisplayName TxtId="40"><![CDATA[Inputs check is valid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="41">TeachingFileFormatCanBeUpdatedInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file format can be updated. To do so, trigger corresponding XPU parameter.]]></DisplayName>
+				<DisplayName TxtId="41"><![CDATA[Teaching file format can be updated. To do so, trigger corresponding XPU parameter.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="42">DumpWriterEnteringRouterMemoryFallbackInfo</Name>
-				<DisplayName TxtId=""><![CDATA[DumpWriter entering fallback mode, using router memory.]]></DisplayName>
+				<DisplayName TxtId="42"><![CDATA[DumpWriter entering fallback mode, using router memory.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="43">TeachingIsLoadedWithWarningsInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching '{0}' is loaded with {1} warnings.]]></DisplayName>
+				<DisplayName TxtId="43"><![CDATA[Teaching '{0}' is loaded with {1} warnings.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="44">TeachingPlausibilityCheckSucceededWithWarningsInfo</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></DisplayName>
+				<DisplayName TxtId="44"><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="45">GapCalibrationSummaryInfo</Name>
+				<DisplayName TxtId="45"><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5000">CycleTimeWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></DisplayName>
+				<DisplayName TxtId="5000"><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5001">DetectedTooFewMoversWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Too few movers are detected. Expected = {0}, Detected = {1}]]></DisplayName>
+				<DisplayName TxtId="5001"><![CDATA[Too few movers are detected. Expected = {0}, Detected = {1}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5002">DetectedTooManyMoversWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Too many movers are detected. Expected = {0}, Detected = {1}]]></DisplayName>
+				<DisplayName TxtId="5002"><![CDATA[Too many movers are detected. Expected = {0}, Detected = {1}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5003">TeachingDataIsMissingWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data {0} is missing.]]></DisplayName>
+				<DisplayName TxtId="5003"><![CDATA[Teaching data {0} is missing.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5004">TeachingDataOfModuleIsInvalidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data of XTS module {0} is invalid.]]></DisplayName>
+				<DisplayName TxtId="5004"><![CDATA[Teaching data of XTS module {0} is invalid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5005">TeachingOffsetsAreAllZeroWarning</Name>
-				<DisplayName TxtId=""><![CDATA[All teaching values of XTS module {0} are zero.]]></DisplayName>
+				<DisplayName TxtId="5005"><![CDATA[All teaching values of XTS module {0} are zero.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5006">TeachingOffsetsAreAllNegativeWarning</Name>
-				<DisplayName TxtId=""><![CDATA[All teaching values of XTS module {0} are negative.]]></DisplayName>
+				<DisplayName TxtId="5006"><![CDATA[All teaching values of XTS module {0} are negative.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5007">TeachingOffsetsAreAllPositiveWarning</Name>
-				<DisplayName TxtId=""><![CDATA[All teaching values of XTS module {0} are positive.]]></DisplayName>
+				<DisplayName TxtId="5007"><![CDATA[All teaching values of XTS module {0} are positive.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5008">TeachingOffsetsAreNotInExpectedRangeWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Some teaching values of XTS module {0} are not in the expected range ({1}, {2}).]]></DisplayName>
+				<DisplayName TxtId="5008"><![CDATA[Some teaching values of XTS module {0} are not in the expected range ({1}, {2}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5009">WaitForEtherCatWarning</Name>
-				<DisplayName TxtId=""><![CDATA[IO Processing Unit (ID = {0}) is waiting for {1} ({2}) to start up.]]></DisplayName>
+				<DisplayName TxtId="5009"><![CDATA[IO Processing Unit (ID = {0}) is waiting for {1} ({2}) to start up.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5010">MoverFrozenWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Mover {0} is frozen at position {1} mm.]]></DisplayName>
+				<DisplayName TxtId="5010"><![CDATA[Mover {0} is frozen at position {1} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5011">MoverIdDetectionHasBeenAlreadyStartedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The Mover ID Detection has already been started. Do not start it again.]]></DisplayName>
+				<DisplayName TxtId="5011"><![CDATA[The Mover ID Detection has already been started. Do not start it again.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5012">WaitForMoverDetectionBeforeStartingMoverIdDetectionWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Wait until the mover detection is finished before starting the mover ID detection.]]></DisplayName>
+				<DisplayName TxtId="5012"><![CDATA[Wait until the mover detection is finished before starting the mover ID detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5013">PendingMoverIdDetectionWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The system is waiting for triggering the Mover ID Detection (via PLC or manually).]]></DisplayName>
+				<DisplayName TxtId="5013"><![CDATA[The system is waiting for triggering the Mover ID Detection (via PLC or manually).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5014">FalseValueInDelayBetweenMoverPacksWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'DelayBetweenMoverPacks' should be between 0.001s and 1s.]]></DisplayName>
+				<DisplayName TxtId="5014"><![CDATA[The parameter 'DelayBetweenMoverPacks' should be between 0.001s and 1s.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5015">IgnoreChangesDelayBetweenMoverPacksWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Changes to parameter 'DelayBetweenMoverPacks' are ignored because the detection is running.]]></DisplayName>
+				<DisplayName TxtId="5015"><![CDATA[Changes to parameter 'DelayBetweenMoverPacks' are ignored because the detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5016">FalseValueInDelayBetweenMoversInPackWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'DelayBetweenMoversInPack' should be between 0.005s and 1s.]]></DisplayName>
+				<DisplayName TxtId="5016"><![CDATA[The parameter 'DelayBetweenMoversInPack' should be between 0.005s and 1s.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5017">IgnoreChangesDelayBetweenMoversInPackWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Changes to parameter 'DelayBetweenMoversInPack' are ignored because the detection is running.]]></DisplayName>
+				<DisplayName TxtId="5017"><![CDATA[Changes to parameter 'DelayBetweenMoversInPack' are ignored because the detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5018">FalseValueInGapToDefineMoverPackWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'GapToDefineMoverPack' should be between 49mm and 1000mm dependend on your mechanical tool.]]></DisplayName>
+				<DisplayName TxtId="5018"><![CDATA[The parameter 'GapToDefineMoverPack' should be between 49mm and 1000mm dependend on your mechanical tool.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5019">IgnoreChangesInGapToDefineMoverPackWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Changes to parameter 'GapToDefineMoverPack' are ignored because the detection is running.]]></DisplayName>
+				<DisplayName TxtId="5019"><![CDATA[Changes to parameter 'GapToDefineMoverPack' are ignored because the detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5020">IgnoreChangesInMoverIdPositionAssignmentWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Changes to parameter 'MoverIdPositionAssignment' are ignored because the detection is running.]]></DisplayName>
+				<DisplayName TxtId="5020"><![CDATA[Changes to parameter 'MoverIdPositionAssignment' are ignored because the detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5021">MoverIdHasAlreadyBeenDetectedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The Mover ID Detection is valid. Do not trigger the Mover ID Detection once again.]]></DisplayName>
+				<DisplayName TxtId="5021"><![CDATA[The Mover ID Detection is valid. Do not trigger the Mover ID Detection once again.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5022">TeachingDataOfModuleIsSkippedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data for module '{0}' is skipped because it is not found in the current teaching file.]]></DisplayName>
+				<DisplayName TxtId="5022"><![CDATA[Teaching data for module '{0}' is skipped because it is not found in the current teaching file.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5023">FileAccessServiceCouldNotBeInitializedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[File access service could not be intiailized. ({0} / Error = {1}).]]></DisplayName>
+				<DisplayName TxtId="5023"><![CDATA[File access service could not be intiailized. ({0} / Error = {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5024">ModuleCountOfPartIsZeroWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Module count of part is zero.]]></DisplayName>
+				<DisplayName TxtId="5024"><![CDATA[Module count of part is zero.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5025">StandStillTeachingNotAppropriateWarning</Name>
-				<DisplayName TxtId=""><![CDATA[StandStillTeaching is not appropriate for hygienic XTS.]]></DisplayName>
+				<DisplayName TxtId="5025"><![CDATA[StandStillTeaching is not appropriate for hygienic XTS.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5026">MovementTeachingNotAppropriateWarning</Name>
-				<DisplayName TxtId=""><![CDATA[MovementTeaching is only appropriate for hygienic XTS.]]></DisplayName>
+				<DisplayName TxtId="5026"><![CDATA[MovementTeaching is only appropriate for hygienic XTS.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5027">TeachingCheckSumDoesNotMatchWithTeachingFileWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The check sum does not match with the given teaching file! File is ignored and defaults will be used.]]></DisplayName>
+				<DisplayName TxtId="5027"><![CDATA[The check sum does not match with the given teaching file! File is ignored and defaults will be used.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5028">OnlineIdentitiesOfTeachingFileDoNotMatchWithModulesWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Online identities of teaching file do not match with online identities of modules.]]></DisplayName>
+				<DisplayName TxtId="5028"><![CDATA[Online identities of teaching file do not match with online identities of modules.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5029">TeachingFileCannotBeUsedUseDefaultTeachingInsteadWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file will be ignored because of inconsistencies. Default teaching is used instead.]]></DisplayName>
+				<DisplayName TxtId="5029"><![CDATA[Teaching file will be ignored because of inconsistencies. Default teaching is used instead.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5030">TeachingOffsetsAreAllOneWarning</Name>
-				<DisplayName TxtId=""><![CDATA[All teaching values of XTS module {0} are one.]]></DisplayName>
+				<DisplayName TxtId="5030"><![CDATA[All teaching values of XTS module {0} are one.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5031">TeachingNoDataForModuleWithOidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[No teaching data is found for module with object ID '{0}'.]]></DisplayName>
+				<DisplayName TxtId="5031"><![CDATA[No teaching data is found for module with object ID '{0}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5032">CycleTimeWithInfoWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The XTS is designed to run with a cycle time of 250 us but task '{0}' has a cycle time of {1} us. Use other cycle times with care.]]></DisplayName>
+				<DisplayName TxtId="5032"><![CDATA[The XTS is designed to run with a cycle time of 250 us but task '{0}' has a cycle time of {1} us. Use other cycle times with care.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5033">MoverFrozenWithTrackInfoWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Mover '{0}' is frozen at position {1} mm (Default Track = {2}).]]></DisplayName>
+				<DisplayName TxtId="5033"><![CDATA[Mover '{0}' is frozen at position {1} mm (Default Track = {2}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5034">InputsExceedMaxLimitWarning</Name>
-				<DisplayName TxtId=""><![CDATA[On '{0}' the input channel(s) '{1}' exceed the min/max limit! Please check a hardware fault and make sure that there is no movement during mover detection process.]]></DisplayName>
+				<DisplayName TxtId="5034"><![CDATA[On '{0}' the input channel(s) '{1}' exceed the min/max limit! Please check a hardware fault and make sure that there is no movement during mover detection process.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5035">NoTracksAreIncludedInDetectionWarning</Name>
-				<DisplayName TxtId=""><![CDATA[No tracks are included in detection. Include track to be able to start detection.]]></DisplayName>
+				<DisplayName TxtId="5035"><![CDATA[No tracks are included in detection. Include track to be able to start detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5036">InputsExceedNoiseLimitWarning</Name>
-				<DisplayName TxtId=""><![CDATA[On '{0}' the input channel(s) '{1}' exceed the noise limit! Please check a hardware fault and make sure that there is no movement during mover detection process.]]></DisplayName>
+				<DisplayName TxtId="5036"><![CDATA[On '{0}' the input channel(s) '{1}' exceed the noise limit! Please check a hardware fault and make sure that there is no movement during mover detection process.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5037">MountingOffsetNotValidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'MountingOffset' is greater than the max supported value of 3.0mm. Please adapt this value!]]></DisplayName>
+				<DisplayName TxtId="5037"><![CDATA[The parameter 'MountingOffset' is greater than the max supported value of 3.0mm. Please adapt this value!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5038">UserLengthNotValidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter 'UserLength' is greater than 3.0mm of hardware length. Please adapt this value!]]></DisplayName>
+				<DisplayName TxtId="5038"><![CDATA[The parameter 'UserLength' is greater than 3.0mm of hardware length. Please adapt this value!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5039">InputsFrozenWarning</Name>
-				<DisplayName TxtId=""><![CDATA[On '{0}' the input Channel(s) '{1}' are frozen! Please check a hardware fault.]]></DisplayName>
+				<DisplayName TxtId="5039"><![CDATA[On '{0}' the input Channel(s) '{1}' are frozen! Please check a hardware fault.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5040">TeachingNoDataForModuleWithBtnWarning</Name>
-				<DisplayName TxtId=""><![CDATA[No teaching data is found for module with btn '{0}'.]]></DisplayName>
+				<DisplayName TxtId="5040"><![CDATA[No teaching data is found for module with btn '{0}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5041">DumpBufferMemoryWasNotSufficientWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Dump writing failed due to insufficient buffer memory. Trying to enter DumpWriterFallbackMode, if enabled...]]></DisplayName>
+				<DisplayName TxtId="5041"><![CDATA[Dump writing failed due to insufficient buffer memory. Trying to enter DumpWriterFallbackMode, if enabled...]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5042">TeachingDataForNotFoundModuleWithBtnWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file contains data for module with btn '{0}' but module cound not be found.]]></DisplayName>
+				<DisplayName TxtId="5042"><![CDATA[Teaching file contains data for module with btn '{0}' but module cound not be found.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5043">TeachingDataForNotFoundModuleWithOidWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file contains data for module with object ID '0x{0}' but module cound not be found.]]></DisplayName>
+				<DisplayName TxtId="5043"><![CDATA[Teaching file contains data for module with object ID '0x{0}' but module cound not be found.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5044">TeachingDriveIdentitiesMismatchWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Drive identity mismatch for module '{0} ({1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></DisplayName>
+				<DisplayName TxtId="5044"><![CDATA[Drive identity mismatch for module '{0} ({1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5045">TeachingEncoderIdentitiesMismatchWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Encoder identity mismatch for module '{0} ({1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></DisplayName>
+				<DisplayName TxtId="5045"><![CDATA[Encoder identity mismatch for module '{0} ({1})' is detected. Teaching data has identity '{2}' whereas module has '{3}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5046">TeachingModuleTypeMismatchWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Module type for module '{0} ({1})' is detected. Teaching data has module type '{2}' whereas module has '{3}'.]]></DisplayName>
+				<DisplayName TxtId="5046"><![CDATA[Module type for module '{0} ({1})' is detected. Teaching data has module type '{2}' whereas module has '{3}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5047">TeachingNotAvailableWarning</Name>
-				<DisplayName TxtId=""><![CDATA[{0} module(s) have no teaching data available. Please teach them in order to start up.]]></DisplayName>
+				<DisplayName TxtId="5047"><![CDATA[{0} module(s) have no teaching data available. Please teach them in order to start up.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5048">TeachingNoDataForModuleWarning</Name>
-				<DisplayName TxtId=""><![CDATA[No teaching data is found for module '{0} ({1})'.]]></DisplayName>
+				<DisplayName TxtId="5048"><![CDATA[No teaching data is found for module '{0} ({1})'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5049">TeachingNoDataForModule2Warning</Name>
-				<DisplayName TxtId=""><![CDATA[No teaching data is found for module '{0} ({1})' with btn '{0}'.]]></DisplayName>
+				<DisplayName TxtId="5049"><![CDATA[No teaching data is found for module '{0} ({1})' with btn '{0}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5050">TeachingOldWithNewExchangeDetectedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data for module '{0} ({1})' is old. The teaching does not contain a btn but the module defines one.]]></DisplayName>
+				<DisplayName TxtId="5050"><![CDATA[Teaching data for module '{0} ({1})' is old. The teaching does not contain a btn but the module defines one.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5051">MoverTaskOrderWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Performance is decreased. Tasks of movers should be assigned in order.]]></DisplayName>
+				<DisplayName TxtId="5051"><![CDATA[Performance is decreased. Tasks of movers should be assigned in order.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5052">SameDetectionPriorityWarning</Name>
-				<DisplayName TxtId=""><![CDATA[{0} and {1} have the same detection priority.]]></DisplayName>
+				<DisplayName TxtId="5052"><![CDATA[{0} and {1} have the same detection priority.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5053">CurrentIsLimitedByIoWarning</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Current is limited by IO.]]></DisplayName>
+				<DisplayName TxtId="5053"><![CDATA[{0}: Current is limited by IO.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5054">PreviewFeatureIsLoadedWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Preview feature '{0}' is loaded.]]></DisplayName>
+				<DisplayName TxtId="5054"><![CDATA[Preview feature '{0}' is loaded.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5055">PreviewFeatureTestInfoWarning</Name>
-				<DisplayName TxtId=""><![CDATA[A preview feature is intended to be used for testing. Feedback is highly appreciated!]]></DisplayName>
+				<DisplayName TxtId="5055"><![CDATA[A preview feature is intended to be used for testing. Feedback is highly appreciated!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5056">PreviewFeatureCanChangeInfoWarning</Name>
-				<DisplayName TxtId=""><![CDATA[But keep in mind that TcCOM modules, parameters, functions or behavior could be changed/removed in future.]]></DisplayName>
+				<DisplayName TxtId="5056"><![CDATA[But keep in mind that TcCOM modules, parameters, functions or behavior could be changed/removed in future.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5057">GapOrOffsetUsedOnEcoWarning</Name>
-				<DisplayName TxtId=""><![CDATA[Please be advised that the parameters 'Offset', 'Scaling' and 'Gap' are currently not fully supported for AT22xx modules. Ensure that your application does not rely on these parameters to avoid any potential issues.]]></DisplayName>
+				<DisplayName TxtId="5057"><![CDATA[Please be advised that the parameters 'Offset', 'Scaling' and 'Gap' are currently not fully supported for AT22xx modules. Ensure that your application does not rely on these parameters to avoid any potential issues.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="5058">AllPartsAreExcludedFromDetectionWarning</Name>
-				<DisplayName TxtId=""><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></DisplayName>
+				<DisplayName TxtId="5058"><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5059">MeasuredParameterDiffersFromConfigurationWarning</Name>
+				<DisplayName TxtId="5059"><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5060">NotAllModulesMeasuredWarning</Name>
+				<DisplayName TxtId="5060"><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5061">GapMeasurementIsAlreadyActiveWarning</Name>
+				<DisplayName TxtId="5061"><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="5062">MoverFrozenWithPartInfoWarning</Name>
+				<DisplayName TxtId="5062"><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9000">CannotAcccessXtsTaskError</Name>
-				<DisplayName TxtId=""><![CDATA[XTS task cannot be accessed. Is the context of the TcIoXts driver set correctly?]]></DisplayName>
+				<DisplayName TxtId="9000"><![CDATA[XTS task cannot be accessed. Is the context of the TcIoXts driver set correctly?]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9001">CycleTimeNotSupportedError</Name>
-				<DisplayName TxtId=""><![CDATA[Cycle time {0} us of XTS task is not supported! Set cycle time to 250 us.]]></DisplayName>
+				<DisplayName TxtId="9001"><![CDATA[Cycle time {0} us of XTS task is not supported! Set cycle time to 250 us.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9002">LostMoverError</Name>
-				<DisplayName TxtId=""><![CDATA[A XTS mover is lost at {0} mm. Please perform a new detection.]]></DisplayName>
+				<DisplayName TxtId="9002"><![CDATA[A XTS mover is lost at {0} mm. Please perform a new detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9003">MotorError</Name>
-				<DisplayName TxtId=""><![CDATA[The module '{0}' with drive terminal '{1}' has an error.]]></DisplayName>
+				<DisplayName TxtId="9003"><![CDATA[The module '{0}' with drive terminal '{1}' has an error.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9004">MoverCountNotSupportedError</Name>
-				<DisplayName TxtId=""><![CDATA[Out of memory. XTS mover count is not supported.]]></DisplayName>
+				<DisplayName TxtId="9004"><![CDATA[Out of memory. XTS mover count is not supported.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9005">StartUpError</Name>
-				<DisplayName TxtId=""><![CDATA[TcIoXts driver has failed to start up. Please check the configuration and bootdata files!]]></DisplayName>
+				<DisplayName TxtId="9005"><![CDATA[TcIoXts driver has failed to start up. Please check the configuration and bootdata files!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9006">TeachingDataInvalidError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data is invalid. {0}]]></DisplayName>
+				<DisplayName TxtId="9006"><![CDATA[Teaching data is invalid. {0}]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9007">TeachingDataCorruptedError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching file '{0}' is corrupted.]]></DisplayName>
+				<DisplayName TxtId="9007"><![CDATA[Teaching file '{0}' is corrupted.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9008">TeachingDataOfModuleInvalidError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data of XTS module {0} is invalid.]]></DisplayName>
+				<DisplayName TxtId="9008"><![CDATA[Teaching data of XTS module {0} is invalid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9009">TeachingDataSaveError</Name>
-				<DisplayName TxtId=""><![CDATA[Saving of teaching data {0} has failed.]]></DisplayName>
+				<DisplayName TxtId="9009"><![CDATA[Saving of teaching data {0} has failed.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9010">MoverFrozenError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover {0} is frozen at position {1} mm.]]></DisplayName>
+				<DisplayName TxtId="9010"><![CDATA[Mover {0} is frozen at position {1} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9011">FileNotFoundError</Name>
-				<DisplayName TxtId=""><![CDATA[File '{0}' cannot be loaded. Please check that the installation is correct and restart TwinCAT.]]></DisplayName>
+				<DisplayName TxtId="9011"><![CDATA[File '{0}' cannot be loaded. Please check that the installation is correct and restart TwinCAT.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9012">MoverIdDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID Detection failed. A general error occurs on '{0}' with the global number '{1}'.]]></DisplayName>
+				<DisplayName TxtId="9012"><![CDATA[Mover ID Detection failed. A general error occurs on '{0}' with the global number '{1}'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9013">SoftDriveNotRespondingDuringIdDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[The SoftDrive '{0}' of the mover '{1}' is not responding. Please check the axis configuration and the SoftDrive version.]]></DisplayName>
+				<DisplayName TxtId="9013"><![CDATA[The SoftDrive '{0}' of the mover '{1}' is not responding. Please check the axis configuration and the SoftDrive version.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9014">NoMoverIdDetectedError</Name>
-				<DisplayName TxtId=""><![CDATA[No Mover ID has been detected! Check if there is a mover with a special magnet plate set on the system and restart the ID Detection.]]></DisplayName>
+				<DisplayName TxtId="9014"><![CDATA[No Mover ID has been detected! Check if there is a mover with a special magnet plate set on the system and restart the ID Detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9015">TooManyMoverIdsDetectedError</Name>
-				<DisplayName TxtId=""><![CDATA[Too many ({0}) mover IDs has been detected! Make sure that there is only one Mover 1 - with special magnet plate - installed on the system.]]></DisplayName>
+				<DisplayName TxtId="9015"><![CDATA[Too many ({0}) mover IDs has been detected! Make sure that there is only one Mover 1 - with special magnet plate - installed on the system.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9016">AxisEnabledBeforeMoverIdDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[The mover {0} gets an enable command before Mover ID Detection is processed. If there is no Mover 1 - with special magnet plate - installed then set 'MoverIdDetectionMode' to 'Standard'.]]></DisplayName>
+				<DisplayName TxtId="9016"><![CDATA[The mover {0} gets an enable command before Mover ID Detection is processed. If there is no Mover 1 - with special magnet plate - installed then set 'MoverIdDetectionMode' to 'Standard'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9017">MoverIdDetectionInterruptedError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID Detection was interrupted by changing the 'MoverIdDetectionMode'.]]></DisplayName>
+				<DisplayName TxtId="9017"><![CDATA[Mover ID Detection was interrupted by changing the 'MoverIdDetectionMode'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9018">NoTrackDefinedForMoverIdDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID detection cannot start because no track is defined to run the detection.]]></DisplayName>
+				<DisplayName TxtId="9018"><![CDATA[Mover ID detection cannot start because no track is defined to run the detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9019">NoMoverIdDetectionOnDetectionModeStandardError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID detection is disabled in 'Standard' mode.]]></DisplayName>
+				<DisplayName TxtId="9019"><![CDATA[Mover ID detection is disabled in 'Standard' mode.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9020">TeachingInvalidSelectionStringError</Name>
-				<DisplayName TxtId=""><![CDATA[Start teaching command is invalid. Please check the selection string if it contains only valid numbers and/or ranges (Example: 1, 2, 5 - 10).]]></DisplayName>
+				<DisplayName TxtId="9020"><![CDATA[Start teaching command is invalid. Please check the selection string if it contains only valid numbers and/or ranges (Example: 1, 2, 5 - 10).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9021">IdDetectionMode1IsNotSupportedForMultipleTracksError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover ID detection mode 'Mover1' is only supported for systems consisting of one track.]]></DisplayName>
+				<DisplayName TxtId="9021"><![CDATA[Mover ID detection mode 'Mover1' is only supported for systems consisting of one track.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9022">TooManyMoverADetectedError</Name>
-				<DisplayName TxtId=""><![CDATA[Too many Mover 1 are detected. Expected = {0}, Detected = {1}.]]></DisplayName>
+				<DisplayName TxtId="9022"><![CDATA[Too many Mover 1 are detected. Expected = {0}, Detected = {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9023">TeachingDataFileVersionNotSupportedError</Name>
-				<DisplayName TxtId=""><![CDATA[Version of teaching data file '{0}' is not supported. Please create a new teaching file with the current driver.]]></DisplayName>
+				<DisplayName TxtId="9023"><![CDATA[Version of teaching data file '{0}' is not supported. Please create a new teaching file with the current driver.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9024">TooFewMoverADetectedError</Name>
-				<DisplayName TxtId=""><![CDATA[Too few Mover 1 are detected. Expected = {0}, Detected = {1}.]]></DisplayName>
+				<DisplayName TxtId="9024"><![CDATA[Too few Mover 1 are detected. Expected = {0}, Detected = {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9025">TooManyMoverAExpectedError</Name>
-				<DisplayName TxtId=""><![CDATA[Too many Mover 1 expected. Expected = {0}, Total mover count = {1}.]]></DisplayName>
+				<DisplayName TxtId="9025"><![CDATA[Too many Mover 1 expected. Expected = {0}, Total mover count = {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9026">IdDetectionExpectationsDoesNotMatchCountOfIncludedMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Configuration of expected mover IDs does not match the count of included movers.]]></DisplayName>
+				<DisplayName TxtId="9026"><![CDATA[Configuration of expected mover IDs does not match the count of included movers.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9027">IdDetectionDetectedIdsDoesNotMatchExpectationsError</Name>
-				<DisplayName TxtId=""><![CDATA[ID detection has failed - expected ID '{0}' count is {1} but {2} have been detected.]]></DisplayName>
+				<DisplayName TxtId="9027"><![CDATA[ID detection has failed - expected ID '{0}' count is {1} but {2} have been detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9028">IdDetectionExpectationsHasInvalidNotationError</Name>
-				<DisplayName TxtId=""><![CDATA[Configuration of expected mover IDs has invalid notation.]]></DisplayName>
+				<DisplayName TxtId="9028"><![CDATA[Configuration of expected mover IDs has invalid notation.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9029">CouldNotRegisterByError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not register by {0}.]]></DisplayName>
+				<DisplayName TxtId="9029"><![CDATA[Could not register by {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9030">CouldNotInitializeError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not initialize {0}.]]></DisplayName>
+				<DisplayName TxtId="9030"><![CDATA[Could not initialize {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9031">CouldNotSetToPreOpError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not set '{0}' in PRE-OP state.]]></DisplayName>
+				<DisplayName TxtId="9031"><![CDATA[Could not set '{0}' in PRE-OP state.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9032">CouldNotSetToSafeOpError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not set '{0}' in SAFE-OP state.]]></DisplayName>
+				<DisplayName TxtId="9032"><![CDATA[Could not set '{0}' in SAFE-OP state.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9033">CouldNotSetToOpError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not set '{0}' in OP state.]]></DisplayName>
+				<DisplayName TxtId="9033"><![CDATA[Could not set '{0}' in OP state.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9034">GeneralRegistrationFailedError</Name>
-				<DisplayName TxtId=""><![CDATA[Registration of {0} has failed. Error = {1}.]]></DisplayName>
+				<DisplayName TxtId="9034"><![CDATA[Registration of {0} has failed. Error = {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9035">ModulePositionIndicesInconsistentError</Name>
-				<DisplayName TxtId=""><![CDATA[List of modules in part {0} are not consistent regarding the module's PositionIndex parameters.]]></DisplayName>
+				<DisplayName TxtId="9035"><![CDATA[List of modules in part {0} are not consistent regarding the module's PositionIndex parameters.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9036">CouldNotRegisterAsIODriverByTaskError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not register as IO driver by Task ({0}).]]></DisplayName>
+				<DisplayName TxtId="9036"><![CDATA[Could not register as IO driver by Task ({0}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9037">TaskCouldNotBeAddedToSynchonizationObjectError</Name>
-				<DisplayName TxtId=""><![CDATA[Task ({0}) could not be added to barrier.]]></DisplayName>
+				<DisplayName TxtId="9037"><![CDATA[Task ({0}) could not be added to barrier.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9038">NoLicenseServerAvailableError</Name>
-				<DisplayName TxtId=""><![CDATA[No license server available. Start up is aborted.]]></DisplayName>
+				<DisplayName TxtId="9038"><![CDATA[No license server available. Start up is aborted.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9039">NotAllModulesOfPartCouldBeAddedError</Name>
-				<DisplayName TxtId=""><![CDATA[Not all modules of part could be added! (Added {0} from {1}).]]></DisplayName>
+				<DisplayName TxtId="9039"><![CDATA[Not all modules of part could be added! (Added {0} from {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9040">CouldNotLoadCurrentTableError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not load current table.]]></DisplayName>
+				<DisplayName TxtId="9040"><![CDATA[Could not load current table.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9041">CouldNotGetInterfaceOfTaskError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not get interface of task (Object ID = {0}, Error = {1}).]]></DisplayName>
+				<DisplayName TxtId="9041"><![CDATA[Could not get interface of task (Object ID = {0}, Error = {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9042">CouldNotGetRTInterfaceOfTaskError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not get RT-interface of task (Object ID = {0}, Error = {1}).]]></DisplayName>
+				<DisplayName TxtId="9042"><![CDATA[Could not get RT-interface of task (Object ID = {0}, Error = {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9043">EtherCATInfoServiceCouldNotBeInitializedError</Name>
-				<DisplayName TxtId=""><![CDATA[EtherCAT info service could not be initialized. ERROR = {0}.]]></DisplayName>
+				<DisplayName TxtId="9043"><![CDATA[EtherCAT info service could not be initialized. ERROR = {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9044">CouldNotInitializeAllDataPointersError</Name>
-				<DisplayName TxtId=""><![CDATA[Could not initialize {0} DataPointers.]]></DisplayName>
+				<DisplayName TxtId="9044"><![CDATA[Could not initialize {0} DataPointers.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9045">NoModulesHaveBeenRegistreredError</Name>
-				<DisplayName TxtId=""><![CDATA[No modules have been registered.]]></DisplayName>
+				<DisplayName TxtId="9045"><![CDATA[No modules have been registered.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9046">CannotAccesPartWithOidError</Name>
-				<DisplayName TxtId=""><![CDATA[Cannot access part with object ID {0}.]]></DisplayName>
+				<DisplayName TxtId="9046"><![CDATA[Cannot access part with object ID {0}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9047">CyleTimeNotEqualError</Name>
-				<DisplayName TxtId=""><![CDATA[The cylce time of {0} us of task '{1}' does not match the cylce time of task '{2}' which uses {3} us. Ensure that each task used by the processing unit executes with the same cycle time.]]></DisplayName>
+				<DisplayName TxtId="9047"><![CDATA[The cylce time of {0} us of task '{1}' does not match the cylce time of task '{2}' which uses {3} us. Ensure that each task used by the processing unit executes with the same cycle time.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9048">CpuIsUsedMultipleTimesError</Name>
-				<DisplayName TxtId=""><![CDATA[The CPU with ID {0} is used by {1} tasks. Ensure that each task used by the processing unit has its own cpu.]]></DisplayName>
+				<DisplayName TxtId="9048"><![CDATA[The CPU with ID {0} is used by {1} tasks. Ensure that each task used by the processing unit has its own cpu.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9049">MoverFrozenWithTrackInfoError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover '{0}' is frozen at track position {1} mm (Track = {2}).]]></DisplayName>
+				<DisplayName TxtId="9049"><![CDATA[Mover '{0}' is frozen at track position {1} mm (Track = {2}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9050">TeachingFileNumberAlreadyUsedError</Name>
-				<DisplayName TxtId=""><![CDATA[The teaching file number '{0}' is already used by '{1}'. Please choose a different one for either instance.]]></DisplayName>
+				<DisplayName TxtId="9050"><![CDATA[The teaching file number '{0}' is already used by '{1}'. Please choose a different one for either instance.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9051">PartHasNoModulesError</Name>
-				<DisplayName TxtId=""><![CDATA[The part '{0}' ({1}) has no modules. Please add modules to the part or delete/deactivate the part itself.]]></DisplayName>
+				<DisplayName TxtId="9051"><![CDATA[The part '{0}' ({1}) has no modules. Please add modules to the part or delete/deactivate the part itself.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9052">ParameterIsNotSetToValidValueError</Name>
-				<DisplayName TxtId=""><![CDATA[The parameter '{0}' is not set to a valid value ({1}).]]></DisplayName>
+				<DisplayName TxtId="9052"><![CDATA[The parameter '{0}' is not set to a valid value ({1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9053">RequiredDataPointersAreNotSetError</Name>
-				<DisplayName TxtId=""><![CDATA[Cannot start up, because required data pointers of '{0}' are not valid. Please check Data Pointer links and IO Devices.]]></DisplayName>
+				<DisplayName TxtId="9053"><![CDATA[Cannot start up, because required data pointers of '{0}' are not valid. Please check Data Pointer links and IO Devices.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9054">DumpCouldNotBeWrittenError</Name>
-				<DisplayName TxtId=""><![CDATA[DumpWriter could not enter fallback mode, so dump could not be written. Please enable DumpWriterFallbackMode.]]></DisplayName>
+				<DisplayName TxtId="9054"><![CDATA[DumpWriter could not enter fallback mode, so dump could not be written. Please enable DumpWriterFallbackMode.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9055">DumpBufferSizeEstimationWasWrongError</Name>
-				<DisplayName TxtId=""><![CDATA[The needed buffer size of dumpWriter was greater than worst case estimation used for initialization! Estimation was {0} bytes, buffer had a size of {1} bytes (10 percent extra safety margin to estimation) and dumpWriter needed {2} bytes.]]></DisplayName>
+				<DisplayName TxtId="9055"><![CDATA[The needed buffer size of dumpWriter was greater than worst case estimation used for initialization! Estimation was {0} bytes, buffer had a size of {1} bytes (10 percent extra safety margin to estimation) and dumpWriter needed {2} bytes.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9056">TeachingDataModuleCountMismatchError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching data cannot be loaded. It contains data for {0} modules but the current system has {1} modules.]]></DisplayName>
+				<DisplayName TxtId="9056"><![CDATA[Teaching data cannot be loaded. It contains data for {0} modules but the current system has {1} modules.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9057">TeachingErrorsStartUpAbortedError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching '{0}' is not loaded through {1} error(s). Start up process is aborted. Deactivate your custom teaching or reteach your system.]]></DisplayName>
+				<DisplayName TxtId="9057"><![CDATA[Teaching '{0}' is not loaded through {1} error(s). Start up process is aborted. Deactivate your custom teaching or reteach your system.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9058">TeachingWarningsStartUpAbortedError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching '{0}' is not loaded through {1} warning(s). Start up process is aborted. If warnings are ok then disable the 'IsAbortOnTeachingWarningsEnabled' parameter. Otherwise deactivate your custom teaching or reteach your system.]]></DisplayName>
+				<DisplayName TxtId="9058"><![CDATA[Teaching '{0}' is not loaded through {1} warning(s). Start up process is aborted. If warnings are ok then disable the 'IsAbortOnTeachingWarningsEnabled' parameter. Otherwise deactivate your custom teaching or reteach your system.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9059">TeachingTypeNotSupportedError</Name>
-				<DisplayName TxtId=""><![CDATA['{0}' teaching is not supported by module '{1} ({2})'.]]></DisplayName>
+				<DisplayName TxtId="9059"><![CDATA['{0}' teaching is not supported by module '{1} ({2})'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9060">TeachingChecksumMismatchError</Name>
-				<DisplayName TxtId=""><![CDATA[Startup is aborted. Checksum of the teaching file does not match with the project. Please check your teaching.]]></DisplayName>
+				<DisplayName TxtId="9060"><![CDATA[Startup is aborted. Checksum of the teaching file does not match with the project. Please check your teaching.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9061">TeachingPlausibilityCheckFailedError</Name>
-				<DisplayName TxtId=""><![CDATA[Teaching plausibility check has failed for {0} out of {1} modules. Start up process is aborted. If warnings are ok then disable the 'IsAbortOnTeachingWarningsEnabled' parameter. Otherwise deactivate your custom teaching or reteach your system.]]></DisplayName>
+				<DisplayName TxtId="9061"><![CDATA[Teaching plausibility check has failed for {0} out of {1} modules. Start up process is aborted. If warnings are ok then disable the 'IsAbortOnTeachingWarningsEnabled' parameter. Otherwise deactivate your custom teaching or reteach your system.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9062">DetectionAbortedDueToEnabledMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Detection is aborted due to {0} enabled movers.]]></DisplayName>
+				<DisplayName TxtId="9062"><![CDATA[Detection is aborted due to {0} enabled movers.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9063">DetectionAbortedDueToNotEnoughMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Detection on {0} included tracks is aborted because there are not enough movers available. Total available are {1} where {2} are already on included tracks but {3} are configured to be detected.]]></DisplayName>
+				<DisplayName TxtId="9063"><![CDATA[Detection on {0} included tracks is aborted because there are not enough movers available. Total available are {1} where {2} are already on included tracks but {3} are configured to be detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9064">DetectionAbortedDueTooManyMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Detection on {0} included tracks is aborted because there are already too many included movers ({1}) on track but only {2} are configured to be detected.]]></DisplayName>
+				<DisplayName TxtId="9064"><![CDATA[Detection on {0} included tracks is aborted because there are already too many included movers ({1}) on track but only {2} are configured to be detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9065">CouldNotInitialize2Error</Name>
-				<DisplayName TxtId=""><![CDATA[Could not initialize {0} (Error = {1}).]]></DisplayName>
+				<DisplayName TxtId="9065"><![CDATA[Could not initialize {0} (Error = {1}).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9066">AuxTaskMustBeUsedAloneError</Name>
-				<DisplayName TxtId=""><![CDATA[Aux task cannot be used to calculate the update of modules or movers but it has been used for {0} module(s) and {1} mover(s).]]></DisplayName>
+				<DisplayName TxtId="9066"><![CDATA[Aux task cannot be used to calculate the update of modules or movers but it has been used for {0} module(s) and {1} mover(s).]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9067">PartResetIgnoredError</Name>
-				<DisplayName TxtId=""><![CDATA[Part reset is not done. Activate part based handling on the Prcoessing Unit first in order to use it.]]></DisplayName>
+				<DisplayName TxtId="9067"><![CDATA[Part reset is not done. Activate part based handling on the Prcoessing Unit first in order to use it.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9068">DetectionAbortedNoTracksIncludedError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover detection is aborted. No tracks are included in detection.]]></DisplayName>
+				<DisplayName TxtId="9068"><![CDATA[Mover detection is aborted. No tracks are included in detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9069">DetectionAbortedExpectedMoversNotFoundError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover detection is aborted after {0} cycles. {1} movers are detected but {2} are expected.]]></DisplayName>
+				<DisplayName TxtId="9069"><![CDATA[Mover detection is aborted after {0} cycles. {1} movers are detected but {2} are expected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9070">ArriveAbortedTrackIsInvalidError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover arrive is aborted. Track ({0}) is invalid - configure the track for arrive on the mover.]]></DisplayName>
+				<DisplayName TxtId="9070"><![CDATA[Mover arrive is aborted. Track ({0}) is invalid - configure the track for arrive on the mover.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9071">MoverDriveSummaryError</Name>
-				<DisplayName TxtId=""><![CDATA[Additional module(s) with a drive error have been detected.]]></DisplayName>
+				<DisplayName TxtId="9071"><![CDATA[Additional module(s) with a drive error have been detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9072">LostMover2Error</Name>
-				<DisplayName TxtId=""><![CDATA[Mover '{0}' ({1}) of '{2}' ({3}) is lost at part '{4}' ({5}) - {6} mm. Please perform a new detection.]]></DisplayName>
+				<DisplayName TxtId="9072"><![CDATA[Mover '{0}' ({1}) of '{2}' ({3}) is lost at part '{4}' ({5}) - {6} mm. Please perform a new detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9073">TaskMustNotBeUsedAloneError</Name>
-				<DisplayName TxtId=""><![CDATA[The used task '{0}' is not used by any mover or module. Ensure that the task is used by at least one mover or module.]]></DisplayName>
+				<DisplayName TxtId="9073"><![CDATA[The used task '{0}' is not used by any mover or module. Ensure that the task is used by at least one mover or module.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9074">DifferentObjectVersionsError</Name>
-				<DisplayName TxtId=""><![CDATA[Different versions of {0} ({1}) and {2} ({3}) detected.]]></DisplayName>
+				<DisplayName TxtId="9074"><![CDATA[Different versions of {0} ({1}) and {2} ({3}) detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9075">NoParameterSetConfiguredError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: No parameter set is configured.]]></DisplayName>
+				<DisplayName TxtId="9075"><![CDATA[{0}: No parameter set is configured.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9076">GetParameterSetFailedError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Failed to get parameter set with OTCID {1}. Please make sure the object {1} is a XTS Controller Parameter Set.]]></DisplayName>
+				<DisplayName TxtId="9076"><![CDATA[{0}: Failed to get parameter set with OTCID {1}. Please make sure the object {1} is a XTS Controller Parameter Set.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9077">CantConnectToControllerError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Failed to get Mover Controller interface with OTCID {1}.]]></DisplayName>
+				<DisplayName TxtId="9077"><![CDATA[{0}: Failed to get Mover Controller interface with OTCID {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9078">InvalidTrackPolarityWithSoftDriveError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't use '{1}' ({2}) with negative polarity and '{3}' ({4}) with SoftDrive. Please use a positive polarity or a Mover ontroller.]]></DisplayName>
+				<DisplayName TxtId="9078"><![CDATA[{0}: Can't use '{1}' ({2}) with negative polarity and '{3}' ({4}) with SoftDrive. Please use a positive polarity or a Mover ontroller.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9079">InvalidNegativeOffsetError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Negative offset ({1}) is only allowed if the Track is closed.]]></DisplayName>
+				<DisplayName TxtId="9079"><![CDATA[{0}: Negative offset ({1}) is only allowed if the Track is closed.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9080">CantInitSwapError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't initialize swap. Swap is already pending on {1}.]]></DisplayName>
+				<DisplayName TxtId="9080"><![CDATA[{0}: Can't initialize swap. Swap is already pending on {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9081">CantGetInterfaceOfMoverError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't get interface of Mover with object ID {1}.]]></DisplayName>
+				<DisplayName TxtId="9081"><![CDATA[{0}: Can't get interface of Mover with object ID {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9082">InvalidDriveStatusForSwapError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't swap mover with {1} because at least one mover has drive status OperationEnabled.]]></DisplayName>
+				<DisplayName TxtId="9082"><![CDATA[{0}: Can't swap mover with {1} because at least one mover has drive status OperationEnabled.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9083">CantSetParameterWhileDetectionError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't set {1} while mover detection is running.]]></DisplayName>
+				<DisplayName TxtId="9083"><![CDATA[{0}: Can't set {1} while mover detection is running.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9084">InvalidParameterValue_LimitsInclusiveError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Parameter '{1}' has an invalid value '{2}'. The allowed range is [{3}, {4}].]]></DisplayName>
+				<DisplayName TxtId="9084"><![CDATA[{0}: Parameter '{1}' has an invalid value '{2}'. The allowed range is [{3}, {4}].]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9085">InvalidParameterValue_MustBePositiveError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Parameter '{1}' has an invalid value '{2}'. The value must be positive.]]></DisplayName>
+				<DisplayName TxtId="9085"><![CDATA[{0}: Parameter '{1}' has an invalid value '{2}'. The value must be positive.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9086">SoftDriveAndEcoUsedError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't use SoftDrive with AT22xx modules. Please use the MoverController.]]></DisplayName>
+				<DisplayName TxtId="9086"><![CDATA[{0}: Can't use SoftDrive with AT22xx modules. Please use the MoverController.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9087">MoverExceedsTrackLimitsError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Mover exceeds track limits of {1}.]]></DisplayName>
+				<DisplayName TxtId="9087"><![CDATA[{0}: Mover exceeds track limits of {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9088">FailedToGetMcTrackInfoError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't get MC track info from {1}.]]></DisplayName>
+				<DisplayName TxtId="9088"><![CDATA[{0}: Can't get MC track info from {1}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9089">PartDoesNotFitToMcTrackError</Name>
-				<DisplayName TxtId=""><![CDATA[Length of {0} does not fit to {1}. The MC track must be the same length or max. 0.01 mm longer than {2}!]]></DisplayName>
+				<DisplayName TxtId="9089"><![CDATA[Length of {0} does not fit to {1}. The MC track must be the same length or max. 0.01 mm longer than {2}!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9090">CantActivateTrackOnXlError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't activate {1}, because active modules of the Mover are not part of the requested Track.]]></DisplayName>
+				<DisplayName TxtId="9090"><![CDATA[{0}: Can't activate {1}, because active modules of the Mover are not part of the requested Track.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9091">InvalidTrackOidError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't activate Track, ObjectId {1} is invalid.]]></DisplayName>
+				<DisplayName TxtId="9091"><![CDATA[{0}: Can't activate Track, ObjectId {1} is invalid.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9092">InvalidTrackConfiguration_IsClosedError</Name>
-				<DisplayName TxtId=""><![CDATA[{0} (0x{1}): Track configuration is invalid - the track cannot be closed.]]></DisplayName>
+				<DisplayName TxtId="9092"><![CDATA[{0} (0x{1}): Track configuration is invalid - the track cannot be closed.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9093">XLPartTooShortError</Name>
-				<DisplayName TxtId=""><![CDATA[{0} is too short by {1} mm.]]></DisplayName>
+				<DisplayName TxtId="9093"><![CDATA[{0} is too short by {1} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9094">XLModulesOverlappingError</Name>
-				<DisplayName TxtId=""><![CDATA[{0} (0x{1}) and {2} (0x{3}) are overlapping!]]></DisplayName>
+				<DisplayName TxtId="9094"><![CDATA[{0} (0x{1}) and {2} (0x{3}) are overlapping!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9095">McTrackTooLongError</Name>
-				<DisplayName TxtId=""><![CDATA[{0} is too long by {1} mm!]]></DisplayName>
+				<DisplayName TxtId="9095"><![CDATA[{0} is too long by {1} mm!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9096">McTrackTooShortError</Name>
-				<DisplayName TxtId=""><![CDATA[{0} is too short by {1} mm!]]></DisplayName>
+				<DisplayName TxtId="9096"><![CDATA[{0} is too short by {1} mm!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9097">InvalidConnection_SecondAlwaysConnectionError</Name>
-				<DisplayName TxtId=""><![CDATA[{0} has invalid connection. The part has already a end-start connection to {1}. Second connection to {2} is invalid!]]></DisplayName>
+				<DisplayName TxtId="9097"><![CDATA[{0} has invalid connection. The part has already a end-start connection to {1}. Second connection to {2} is invalid!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9098">InvalidConnection_MultipleTypesError</Name>
-				<DisplayName TxtId=""><![CDATA[{0} has multiple connection types. At the moment only one connection type per part is possible. Please wait for future support.]]></DisplayName>
+				<DisplayName TxtId="9098"><![CDATA[{0} has multiple connection types. At the moment only one connection type per part is possible. Please wait for future support.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9099">CantGetInterfaceOfConnectedPartError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Unable to get interface of the connected part with Object ID {1}. Please verfiy the connection is an other part on the same Processing Unit.]]></DisplayName>
+				<DisplayName TxtId="9099"><![CDATA[{0}: Unable to get interface of the connected part with Object ID {1}. Please verfiy the connection is an other part on the same Processing Unit.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9100">PartConnectionAlreadyExistsError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Connection to {1} is not possible because the declaration of Part Block state {2} - {3} is twice for {4}.]]></DisplayName>
+				<DisplayName TxtId="9100"><![CDATA[{0}: Connection to {1} is not possible because the declaration of Part Block state {2} - {3} is twice for {4}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9101">InvalidConnection_SamePartBlockError</Name>
-				<DisplayName TxtId=""><![CDATA[Invalid connection. {0} and {1} are on the same Part Block ({2}). If this is intended, please use connection type 'Always'.]]></DisplayName>
+				<DisplayName TxtId="9101"><![CDATA[Invalid connection. {0} and {1} are on the same Part Block ({2}). If this is intended, please use connection type 'Always'.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9102">InvalidConnection_MultipleSwitchesError</Name>
-				<DisplayName TxtId=""><![CDATA[{0} has a configured part switch with OTCID {1} and {2}. At the moment only one part switch per part is possible. Please wait for future support.]]></DisplayName>
+				<DisplayName TxtId="9102"><![CDATA[{0} has a configured part switch with OTCID {1} and {2}. At the moment only one part switch per part is possible. Please wait for future support.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9103">InvalidConnection_CantGetInterfaceOfSwitchError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't get IXtsMc3Switch interface of object with OTCID {1}. Please check your connection configuration.]]></DisplayName>
+				<DisplayName TxtId="9103"><![CDATA[{0}: Can't get IXtsMc3Switch interface of object with OTCID {1}. Please check your connection configuration.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9104">InvalidConnection_SwitchConfigContradictoryError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Configuration of switch with OTCID {1} in state {2} is contradictory. Two possible connections to {3} with link type {4} and {5} with link type {6}.]]></DisplayName>
+				<DisplayName TxtId="9104"><![CDATA[{0}: Configuration of switch with OTCID {1} in state {2} is contradictory. Two possible connections to {3} with link type {4} and {5} with link type {6}.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9105">CantActivateTrackWithPartBlockManagementError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't activate track. Track handling is done automatically.]]></DisplayName>
+				<DisplayName TxtId="9105"><![CDATA[{0}: Can't activate track. Track handling is done automatically.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9106">InvalidConnection_InvalidAlwaysConnectionError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't add always connection to {1}. {2} already has a possible previous part. The connection should be always active, therefore a second connection is not possible.]]></DisplayName>
+				<DisplayName TxtId="9106"><![CDATA[{0}: Can't add always connection to {1}. {2} already has a possible previous part. The connection should be always active, therefore a second connection is not possible.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9107">InvalidConnectionState_CantSetPrevOrNextError</Name>
-				<DisplayName TxtId=""><![CDATA[The current state of {0} is not valid. Can't set {1} as {2} part of {3}. The part already has an active connection.]]></DisplayName>
+				<DisplayName TxtId="9107"><![CDATA[The current state of {0} is not valid. Can't set {1} as {2} part of {3}. The part already has an active connection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9108">PartBlock_InvalidStateChangeError</Name>
-				<DisplayName TxtId=""><![CDATA[{0}: Can't change to state {1}. The state change activates connection of {2} to {3}, but {4} already has a active connection.]]></DisplayName>
+				<DisplayName TxtId="9108"><![CDATA[{0}: Can't change to state {1}. The state change activates connection of {2} to {3}, but {4} already has a active connection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9109">TaskIsMissingError</Name>
-				<DisplayName TxtId=""><![CDATA[Task of {0} ({1}) is missing!]]></DisplayName>
+				<DisplayName TxtId="9109"><![CDATA[Task of {0} ({1}) is missing!]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9110">DetectionAborted_NotEnoughMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Detection is aborted because there are not enough movers available. Total available are {0} where {1} are already on included parts but {2} are configured to be detected.]]></DisplayName>
+				<DisplayName TxtId="9110"><![CDATA[Detection is aborted because there are not enough movers available. Total available are {0} where {1} are already on included parts but {2} are configured to be detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9111">DetectionAborted_TooManyMoversError</Name>
-				<DisplayName TxtId=""><![CDATA[Detection is aborted because there are already too many included movers ({0}) but only {1} are configured to be detected.]]></DisplayName>
+				<DisplayName TxtId="9111"><![CDATA[Detection is aborted because there are already too many included movers ({0}) but only {1} are configured to be detected.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9112">DetectionAbortedNoPartsIncludedError</Name>
-				<DisplayName TxtId=""><![CDATA[Mover detection is aborted. All parts are excluded from detection.]]></DisplayName>
+				<DisplayName TxtId="9112"><![CDATA[Mover detection is aborted. All parts are excluded from detection.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="9113">ArriveAbortedMoverIsEnabledError</Name>
-				<DisplayName TxtId=""><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></DisplayName>
+				<DisplayName TxtId="9113"><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></DisplayName>
+				<Severity>Verbose</Severity>
+			</EventId>
+			<EventId>
+				<Name Id="9114">MoverFrozenWithPartInfoError</Name>
+				<DisplayName TxtId="9114"><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 			<EventId>
 				<Name Id="15000">MessageDebug</Name>
-				<DisplayName TxtId=""><![CDATA[DEBUG-MSG: '{0}', '{1}', '{2}', '{3}']]></DisplayName>
+				<DisplayName TxtId="15000"><![CDATA[DEBUG-MSG: '{0}', '{1}', '{2}', '{3}']]></DisplayName>
 				<Severity>Verbose</Severity>
 			</EventId>
 		</DataType>
@@ -6226,37 +6256,6 @@ External Setpoint Generation:
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Name>
-			<BitSize>256</BitSize>
-			<SubItem>
-				<Name>V</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<BitSize>64</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>J</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<BitSize>64</BitSize>
-				<BitOffs>64</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>D</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<BitSize>64</BitSize>
-				<BitOffs>128</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>A</Name>
-				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
-				<BitSize>64</BitSize>
-				<BitOffs>192</BitOffs>
-			</SubItem>
-			<Hides>
-				<Hide GUID="{76B46C5A-3834-A827-19CD-BB547965FE41}"/>
-			</Hides>
-		</DataType>
-		<DataType>
 			<Name GUID="{1500FFCE-0727-F0FF-6AEB-C3B7FBED5C6B}" Namespace="Tc3_Mc3PlanarMotion" IecLibraryType="true" AutoDeleteType="true">CDT_MCTOPLC_PLANAR_MOVER</Name>
 			<Comment><![CDATA[ Contains the information of the Planar Mover passed from MC to PLC. ]]></Comment>
 			<BitSize>320</BitSize>
@@ -6340,6 +6339,37 @@ External Setpoint Generation:
 					</Property>
 				</Properties>
 			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Name>
+			<BitSize>256</BitSize>
+			<SubItem>
+				<Name>V</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>J</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>A</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{76B46C5A-3834-A827-19CD-BB547965FE41}"/>
+			</Hides>
 		</DataType>
 		<DataType>
 			<Name GUID="{8CF7E034-6BBC-291C-E83F-2D2297581DBB}" Namespace="Tc3_Mc3PlanarMotion" IecLibraryType="true" AutoDeleteType="true">CDT_PLCTOMC_PLANAR_MOVER</Name>
@@ -10666,10 +10696,10 @@ External Setpoint Generation:
 				</Task>
 			</Tasks>
 			<Modules>
-				<Module Id="#x01010730" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+				<Module Id="#x01010730" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 					<Name>XTS ProcessingUnit 2</Name>
 					<ImageId>1000</ImageId>
-					<TmcDesc GUID="{53A0BC71-1B01-456F-8AF4-C892F791F4C2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<TmcDesc GUID="{53A0BC71-1B01-456F-8AF4-C892F791F4C2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XtsProcessingUnit</Name>
 						<CLSID ClassFactory="TcIoXts">{61827435-7B03-4734-A344-F5A75F8060C8}</CLSID>
 						<Info>
@@ -10716,6 +10746,7 @@ External Setpoint Generation:
 							<Group Collapsed="true"><![CDATA[Advanced]]></Group>
 							<Group Collapsed="true"><![CDATA[Simulation]]></Group>
 							<Group Collapsed="true"><![CDATA[XL]]></Group>
+							<Group><![CDATA[XL - Gap measurement]]></Group>
 							<Group Collapsed="true"><![CDATA[Structure]]></Group>
 							<Group><![CDATA[Info]]></Group>
 							<Group><![CDATA[Drive Info]]></Group>
@@ -11502,6 +11533,33 @@ External Setpoint Generation:
 								<PTCID>#x0308059e</PTCID>
 								<ContextId>1</ContextId>
 							</Parameter>
+							<Parameter Group="XL - Gap measurement">
+								<Name>DisableAutoGapMeasurementOnStartup</Name>
+								<Comment><![CDATA[If set to true the automatic gap measurement on startup is disabled. (Module start positions and part lengths can only be measured after the measurement is triggered manually)]]></Comment>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+								<Default>
+									<EnumText>FALSE</EnumText>
+								</Default>
+								<PTCID>#x0308058f</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+							<Parameter Group="XL - Gap measurement">
+								<Name>StartGapMeasurement</Name>
+								<Comment><![CDATA[(Re-) starts the the gap measurement to measure the module start positions and part lengths.]]></Comment>
+								<BitSize>0</BitSize>
+								<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
+								<PTCID>#x03080590</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
+							<Parameter Group="XL - Gap measurement">
+								<Name>StopGapMeasurement</Name>
+								<Comment><![CDATA[Stops the the gap measurement and calculates the module start positions and part lengths based on the measuremnts so far.]]></Comment>
+								<BitSize>0</BitSize>
+								<BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}"/>
+								<PTCID>#x03080591</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
 							<Parameter OnlineParameter="true" ReadOnly="true" Group="Structure">
 								<Name>MoverCount</Name>
 								<Comment><![CDATA[Returns the number of movers.]]></Comment>
@@ -11762,6 +11820,17 @@ External Setpoint Generation:
 								<PTCID>#x0308027c</PTCID>
 								<ContextId>1</ContextId>
 							</Parameter>
+							<Parameter OnlineParameter="true" ReadOnly="true" Group="XL - Gap measurement">
+								<Name>IsGapMeasurementActive</Name>
+								<Comment><![CDATA[Returns if the gap measurement is active.]]></Comment>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+								<Default>
+									<EnumText>FALSE</EnumText>
+								</Default>
+								<PTCID>#x03080592</PTCID>
+								<ContextId>1</ContextId>
+							</Parameter>
 							<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
 								<Name>AdsServicePort</Name>
 								<Comment><![CDATA[Gets the port number which can be used to consume additional ADS services of the processing unit.]]></Comment>
@@ -12013,6 +12082,10 @@ External Setpoint Generation:
 								<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 							</EventMessage>
 							<EventMessage>
+								<Id>45</Id>
+								<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+							</EventMessage>
+							<EventMessage>
 								<Id>5000</Id>
 								<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 							</EventMessage>
@@ -12247,6 +12320,22 @@ External Setpoint Generation:
 							<EventMessage>
 								<Id>5058</Id>
 								<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+							</EventMessage>
+							<EventMessage>
+								<Id>5059</Id>
+								<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+							</EventMessage>
+							<EventMessage>
+								<Id>5060</Id>
+								<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+							</EventMessage>
+							<EventMessage>
+								<Id>5061</Id>
+								<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+							</EventMessage>
+							<EventMessage>
+								<Id>5062</Id>
+								<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 							</EventMessage>
 							<EventMessage>
 								<Id>9000</Id>
@@ -12705,13 +12794,17 @@ External Setpoint Generation:
 								<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
 							</EventMessage>
 							<EventMessage>
+								<Id>9114</Id>
+								<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
+							</EventMessage>
+							<EventMessage>
 								<Id>15000</Id>
 								<Message><![CDATA[DEBUG-MSG: '{0}', '{1}', '{2}', '{3}']]></Message>
 							</EventMessage>
 						</EventMessages>
 						<EventClasses>
 							<EventClass>
-								<Type GUID="{68E64A2B-A826-9780-C29E-0598DC59AC66}">XtsEventClass</Type>
+								<Type GUID="{EC0AEFE8-7A05-1214-1B8B-DD987D74ADF7}">XtsEventClass</Type>
 							</EventClass>
 							<EventClass>
 								<Type GUID="{3F661C3A-AB6D-C4FC-CA76-1CF8C1F87728}">Tc3_XtsInterfaceEventClass</Type>
@@ -13072,6 +13165,10 @@ External Setpoint Generation:
 								<Name>IsDefaultCommutationEnabled</Name>
 								<EnumText>FALSE</EnumText>
 							</Value>
+							<Value>
+								<Name>DisableAutoGapMeasurementOnStartup</Name>
+								<EnumText>FALSE</EnumText>
+							</Value>
 						</ParameterValues>
 						<InterfacePointerValues>
 							<Value>
@@ -13080,10 +13177,10 @@ External Setpoint Generation:
 							</Value>
 						</InterfacePointerValues>
 					</TmcDesc>
-					<Module Id="#x01010740" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010740" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XL Part Main</Name>
 						<ImageId>1001</ImageId>
-						<TmcDesc GUID="{93A38860-5211-4770-B4BB-87154C8B57F2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{93A38860-5211-4770-B4BB-87154C8B57F2}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLPart</Name>
 							<CLSID ClassFactory="TcIoXts">{46246B03-1D83-42F3-841A-5A74A94B96C2}</CLSID>
 							<Info>
@@ -13152,21 +13249,30 @@ External Setpoint Generation:
 									<ContextId>1</ContextId>
 								</Parameter>
 								<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
-									<Name>StartExtension</Name>
-									<Comment><![CDATA[Extension that is inserted before the start of the first module.]]></Comment>
-									<BitSize>32</BitSize>
-									<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
-									<Unit><![CDATA[mm]]></Unit>
-									<PTCID>#x0308039a</PTCID>
-									<ContextId>1</ContextId>
-								</Parameter>
-								<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
 									<Name>EndExtension</Name>
 									<Comment><![CDATA[Extension that is inserted after the end of the last module.]]></Comment>
 									<BitSize>32</BitSize>
 									<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
 									<Unit><![CDATA[mm]]></Unit>
 									<PTCID>#x0308039b</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+									<Name>MeasuredEndExtension</Name>
+									<Comment><![CDATA[Shows the measured end extension of the part.]]></Comment>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+									<Unit><![CDATA[mm]]></Unit>
+									<PTCID>#x0308055b</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+									<Name>MeasuredLength</Name>
+									<Comment><![CDATA[Shows the measured part length. Is zero if the part is not measured yet.]]></Comment>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+									<Unit><![CDATA[mm]]></Unit>
+									<PTCID>#x0308055c</PTCID>
 									<ContextId>1</ContextId>
 								</Parameter>
 								<Parameter OnlineParameter="true" ReadOnly="true" Group="Drive Info">
@@ -13298,10 +13404,10 @@ External Setpoint Generation:
 								</Value>
 							</ParameterValues>
 						</TmcDesc>
-						<Module Id="#x01010110" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010110" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 13</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -13592,6 +13698,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -13790,10 +13914,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010100" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010100" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 12</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -14084,6 +14208,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -14282,10 +14424,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 11</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -14576,6 +14718,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -14774,10 +14934,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 10</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -15068,6 +15228,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -15266,10 +15444,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 9</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -15560,6 +15738,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -15758,10 +15954,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 8</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -16052,6 +16248,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -16250,10 +16464,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 7</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -16544,6 +16758,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -16742,10 +16974,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x010100a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010100a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 6</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -17036,6 +17268,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -17234,10 +17484,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010090" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010090" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 5</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -17528,6 +17778,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -17726,10 +17994,10 @@ External Setpoint Generation:
 								</DataPointerValues>
 							</TmcDesc>
 						</Module>
-						<Module Id="#x01010080" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010080" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XL Module 4</Name>
 							<ImageId>1002</ImageId>
-							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{B35F22EE-DBB3-4C59-A663-591F25B3691C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>AT5100_0100</Name>
 								<CLSID ClassFactory="TcIoXts">{3C7B1F8C-16AA-42D8-8B6D-6E49934F4F0F}</CLSID>
 								<Info>
@@ -18020,6 +18288,24 @@ External Setpoint Generation:
 										<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
 										<Unit><![CDATA[mm]]></Unit>
 										<PTCID>#x0308028b</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" HideParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredGap</Name>
+										<Comment><![CDATA[Shows the measured gap between the previous module and this module.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
+										<Name>MeasuredStartPosition</Name>
+										<Comment><![CDATA[Shows the measured start position. Is zero if the module start position is not measured yet.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-00000000000D}">REAL</BaseType>
+										<Unit><![CDATA[mm]]></Unit>
+										<PTCID>#x0308055d</PTCID>
 										<ContextId>1</ContextId>
 									</Parameter>
 									<Parameter OnlineParameter="true" ReadOnly="true" Group="Info">
@@ -18219,10 +18505,10 @@ External Setpoint Generation:
 							</TmcDesc>
 						</Module>
 					</Module>
-					<Module Id="#x01010020" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010020" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Track Main</Name>
 						<ImageId>1003</ImageId>
-						<TmcDesc GUID="{4EBEBA88-A772-4DC6-8AA0-C3959356823A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{4EBEBA88-A772-4DC6-8AA0-C3959356823A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsTrack</Name>
 							<CLSID ClassFactory="TcIoXts">{AAB804B1-26EB-4240-BC7B-2DBE6FE99982}</CLSID>
 							<Info>
@@ -18443,10 +18729,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 1</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -18819,10 +19105,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 2</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -19195,10 +19481,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 3</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -19571,10 +19857,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 4</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -19947,10 +20233,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 5</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -20323,10 +20609,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 6</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -20699,10 +20985,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 7</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -21075,10 +21361,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 8</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -21451,10 +21737,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010c90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010c90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 9</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -21827,10 +22113,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010ca0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010ca0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 10</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -22203,10 +22489,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010cb0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010cb0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 11</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -22579,10 +22865,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010cc0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010cc0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>IPC2 XL_Mover 12</Name>
 						<ImageId>1004</ImageId>
-						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{35216444-5D99-4518-9793-CB2C4F7D5D9C}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsXLMover</Name>
 							<CLSID ClassFactory="TcIoXts">{9B4B27F5-4E94-4A23-93DB-68F1C8ABB7D3}</CLSID>
 							<Info>
@@ -22956,10 +23242,10 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Module>
-				<Module Id="#x01010030" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+				<Module Id="#x01010030" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 					<Name>Std Parameter Set - 4mm AirGap StraightTunedLeon</Name>
 					<ImageId>1005</ImageId>
-					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XtsMoverParameterSet</Name>
 						<CLSID ClassFactory="TcIoXts">{B055B40D-DEC1-4D72-961C-D151E31A9BA5}</CLSID>
 						<Info>
@@ -23128,10 +23414,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010040" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>General</Name>
 						<ImageId>1006</ImageId>
-						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverGeneralParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{98BEC76D-D436-4208-9F8B-486BE57865BD}</CLSID>
 							<Info>
@@ -23395,10 +23681,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010050" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Encoder</Name>
 						<ImageId>1007</ImageId>
-						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverEncoderParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{2A657C12-787C-40C0-8E6C-D68FB6D58760}</CLSID>
 							<Info>
@@ -23579,10 +23865,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010060" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010060" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Position Control</Name>
 						<ImageId>1008</ImageId>
-						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverPositionControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{57584E44-D085-4D23-86E4-3BE2859F4EC5}</CLSID>
 							<Info>
@@ -23807,10 +24093,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010070" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Velocity Control</Name>
 						<ImageId>1009</ImageId>
-						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverVelocityControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{E9D8B517-6857-41D8-A4A3-60C89603D74A}</CLSID>
 							<Info>
@@ -24061,10 +24347,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010120" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010120" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Filter 1</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -24205,10 +24491,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010130" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010130" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Filter 2</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -24349,10 +24635,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010140" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010140" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Feed Forward</Name>
 						<ImageId>1011</ImageId>
-						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverFeedForwardParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{7E8B155E-1E66-48E1-9D28-0607FA48FC11}</CLSID>
 							<Info>
@@ -24654,10 +24940,10 @@ External Setpoint Generation:
 						</TmcDesc>
 					</Module>
 				</Module>
-				<Module Id="#x010106a0" Disabled="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+				<Module Id="#x010106a0" Disabled="true" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 					<Name>4mmAirGapSonoma</Name>
 					<ImageId>1005</ImageId>
-					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<TmcDesc GUID="{B055B40D-DEC1-4D72-961C-D151E31A9BA5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XtsMoverParameterSet</Name>
 						<CLSID ClassFactory="TcIoXts">{B055B40D-DEC1-4D72-961C-D151E31A9BA5}</CLSID>
 						<Info>
@@ -24830,10 +25116,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010106b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>General_Obj1 (XtsMoverGeneralParameterSet)</Name>
 						<ImageId>1006</ImageId>
-						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{98BEC76D-D436-4208-9F8B-486BE57865BD}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverGeneralParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{98BEC76D-D436-4208-9F8B-486BE57865BD}</CLSID>
 							<Info>
@@ -25097,10 +25383,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Encoder_Obj2 (XtsMoverEncoderParameterSet)</Name>
 						<ImageId>1007</ImageId>
-						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{2A657C12-787C-40C0-8E6C-D68FB6D58760}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverEncoderParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{2A657C12-787C-40C0-8E6C-D68FB6D58760}</CLSID>
 							<Info>
@@ -25281,10 +25567,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Position Controller_Obj3 (XtsMoverPositionControllerParameterSet)</Name>
 						<ImageId>1008</ImageId>
-						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{57584E44-D085-4D23-86E4-3BE2859F4EC5}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverPositionControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{57584E44-D085-4D23-86E4-3BE2859F4EC5}</CLSID>
 							<Info>
@@ -25509,10 +25795,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Velocity Controller_Obj4 (XtsMoverVelocityControllerParameterSet)</Name>
 						<ImageId>1009</ImageId>
-						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{E9D8B517-6857-41D8-A4A3-60C89603D74A}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverVelocityControllerParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{E9D8B517-6857-41D8-A4A3-60C89603D74A}</CLSID>
 							<Info>
@@ -25763,10 +26049,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x010106f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010106f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Filter1</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -25907,10 +26193,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010700" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010700" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Feed Forward_Obj6 (XtsMoverFeedForwardParameterSet)</Name>
 						<ImageId>1011</ImageId>
-						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{7E8B155E-1E66-48E1-9D28-0607FA48FC11}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverFeedForwardParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{7E8B155E-1E66-48E1-9D28-0607FA48FC11}</CLSID>
 							<Info>
@@ -26211,10 +26497,10 @@ External Setpoint Generation:
 							</ParameterValues>
 						</TmcDesc>
 					</Module>
-					<Module Id="#x01010710" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010710" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Filter2</Name>
 						<ImageId>1010</ImageId>
-						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{FAEB97D8-ED6E-4986-8449-630C65D48156}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverFilterParameterSet</Name>
 							<CLSID ClassFactory="TcIoXts">{FAEB97D8-ED6E-4986-8449-630C65D48156}</CLSID>
 							<Info>
@@ -26516,10 +26802,10 @@ External Setpoint Generation:
 							<Type GUID="{25521FAA-EA5F-4C7F-8864-BBCCDACD2E98}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
 					</Vars>
-					<Module Id="#x010104a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010104a0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>Axis 1_Obj1 (XtsMoverController)</Name>
 						<ImageId>1012</ImageId>
-						<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XtsMoverController</Name>
 							<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 							<Info>
@@ -27057,6 +27343,10 @@ External Setpoint Generation:
 									<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 								</EventMessage>
 								<EventMessage>
+									<Id>45</Id>
+									<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+								</EventMessage>
+								<EventMessage>
 									<Id>5000</Id>
 									<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 								</EventMessage>
@@ -27291,6 +27581,22 @@ External Setpoint Generation:
 								<EventMessage>
 									<Id>5058</Id>
 									<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+								</EventMessage>
+								<EventMessage>
+									<Id>5059</Id>
+									<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+								</EventMessage>
+								<EventMessage>
+									<Id>5060</Id>
+									<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+								</EventMessage>
+								<EventMessage>
+									<Id>5061</Id>
+									<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+								</EventMessage>
+								<EventMessage>
+									<Id>5062</Id>
+									<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 								</EventMessage>
 								<EventMessage>
 									<Id>9000</Id>
@@ -27747,6 +28053,10 @@ External Setpoint Generation:
 								<EventMessage>
 									<Id>9113</Id>
 									<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+								</EventMessage>
+								<EventMessage>
+									<Id>9114</Id>
+									<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 								</EventMessage>
 								<EventMessage>
 									<Id>15000</Id>
@@ -28274,10 +28584,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010750" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010750" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 01 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -28422,10 +28732,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010760" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010760" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 01 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -28968,6 +29278,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -29202,6 +29516,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -29658,6 +29988,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -30038,10 +30372,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010109b0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 02 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -30186,10 +30520,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x010109c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010109c0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 02 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -30732,6 +31066,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -30966,6 +31304,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -31422,6 +31776,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -31802,10 +32160,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010109d0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 03 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -31950,10 +32308,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x010109e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x010109e0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 03 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -32496,6 +32854,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -32730,6 +33092,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -33186,6 +33564,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -33566,10 +33948,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x010109f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x010109f0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 04 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -33714,10 +34096,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a00" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a00" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 04 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -34260,6 +34642,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -34494,6 +34880,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -34950,6 +35352,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -35330,10 +35736,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 05 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -35478,10 +35884,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 05 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -36024,6 +36430,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -36258,6 +36668,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -36714,6 +37140,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -37094,10 +37524,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a30" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 06 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -37242,10 +37672,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a40" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 06 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -37788,6 +38218,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -38022,6 +38456,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -38478,6 +38928,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -38858,10 +39312,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a50" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 07 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -39006,10 +39460,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a60" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 07 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -39552,6 +40006,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -39786,6 +40244,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -40242,6 +40716,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -40622,10 +41100,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a70" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 08 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -40770,10 +41248,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010a80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010a80" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 08 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -41316,6 +41794,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -41550,6 +42032,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -42006,6 +42504,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -42386,10 +42888,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010a90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010a90" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 09 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -42534,10 +43036,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010aa0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010aa0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 09 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -43080,6 +43582,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -43314,6 +43820,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -43770,6 +44292,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -44150,10 +44676,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010ab0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010ab0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 10 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -44298,10 +44824,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010ac0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010ac0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 10 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -44844,6 +45370,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -45078,6 +45608,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -45534,6 +46080,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -45914,10 +46464,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010ad0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010ad0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 11 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -46062,10 +46612,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010ae0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010ae0" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 11 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -46608,6 +47158,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -46842,6 +47396,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -47298,6 +47868,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -47678,10 +48252,10 @@ External Setpoint Generation:
 							</Value>
 						</ParameterValues>
 					</TmcDesc>
-					<Module Id="#x01010b10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+					<Module Id="#x01010b10" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 						<Name>XConverter 12 IPC2</Name>
 						<ImageId>1014</ImageId>
-						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<TmcDesc GUID="{F00CA22C-7740-421E-AF7E-69B044CC7AAF}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>XConverter</Name>
 							<CLSID ClassFactory="TcIoXts">{6062013C-3891-4684-B42A-D35750682B9C}</CLSID>
 							<Info>
@@ -47826,10 +48400,10 @@ External Setpoint Generation:
 								</Value>
 							</InterfacePointerValues>
 						</TmcDesc>
-						<Module Id="#x01010b20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+						<Module Id="#x01010b20" KeepUnrestoredLinks="2" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 							<Name>MoverController 12 IPC2</Name>
 							<ImageId>1012</ImageId>
-							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.100.0.17">
+							<TmcDesc GUID="{168BD96C-155E-4474-9DAD-83ECB801D40D}" ClassFactoryId="Beckhoff Automation GmbH|TcIoXts|0.2.29.0">
 								<Name>XtsMoverController</Name>
 								<CLSID ClassFactory="TcIoXts">{168BD96C-155E-4474-9DAD-83ECB801D40D}</CLSID>
 								<Info>
@@ -48372,6 +48946,10 @@ External Setpoint Generation:
 										<Message><![CDATA[Teaching plausibility check is passed for {0} module(s). {0} warning(s) are ignored.]]></Message>
 									</EventMessage>
 									<EventMessage>
+										<Id>45</Id>
+										<Message><![CDATA[The module start positions and part lengths are calculated based on {0}/{1} measured module(s)]]></Message>
+									</EventMessage>
+									<EventMessage>
 										<Id>5000</Id>
 										<Message><![CDATA[The XTS is designed to run with a cycle time of 250 us. Other cycle times may be used with care.]]></Message>
 									</EventMessage>
@@ -48606,6 +49184,22 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>5058</Id>
 										<Message><![CDATA[All parts are excluded from detection. Include part to be able to start detection.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5059</Id>
+										<Message><![CDATA[The measured {0} of '{1}' differs from the configured {2} by {3} mm.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5060</Id>
+										<Message><![CDATA[Since not all modules have been measured yet, the module start positions and part lengths may change when measuring the entire system.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5061</Id>
+										<Message><![CDATA[A new gap measurement can only be started if none is currently active. Please stop the current gap measurement before starting a new one.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>5062</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>9000</Id>
@@ -49062,6 +49656,10 @@ External Setpoint Generation:
 									<EventMessage>
 										<Id>9113</Id>
 										<Message><![CDATA[Arrive of {0} ({1}) is aborted because it is enabled.]]></Message>
+									</EventMessage>
+									<EventMessage>
+										<Id>9114</Id>
+										<Message><![CDATA['{0}' is frozen on {1} on position {2} mm.]]></Message>
 									</EventMessage>
 									<EventMessage>
 										<Id>15000</Id>
@@ -50305,7 +50903,7 @@ External Setpoint Generation:
 		</Motion>
 		<Plc>
 			<Project GUID="{23F3AAC5-D2AC-4B6B-826F-C638329B5E0D}" Name="SaftyPLC" PrjFilePath="SaftyPLC\SaftyPLC.plcproj" TmcFilePath="SaftyPLC\SaftyPLC.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{5EC3C8F3-D55F-38A8-271D-E68DC621BBC0}" TmcPath="SaftyPLC\SaftyPLC.tmc">
+				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{3C25AF97-1FC8-7616-558E-45B4C390CF56}" TmcPath="SaftyPLC\SaftyPLC.tmc">
 					<Name>SaftyPLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -50437,7 +51035,7 @@ External Setpoint Generation:
 				</Instance>
 			</Project>
 			<Project GUID="{58EE9543-7EAA-4B53-B777-145942758DE0}" Name="MC3_Multi_IPC2" PrjFilePath="MC3_Multi_IPC2\MC3_Multi_IPC2.plcproj" TmcFilePath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{D5877182-99F5-348C-1E46-4F77B551B3A5}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{B1F44D45-20C1-DC51-4D05-0A4E8027BBB3}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
 					<Name>MC3_Multi_IPC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -50542,10 +51140,6 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>GVL_DataExchange.Dynamics</Name>
-							<Type GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Type>
-						</Var>
-						<Var>
 							<Name>GVL_MC.fbMover[1].fbPlanarMover.MCTOPLC</Name>
 							<Comment><![CDATA[ Mover data that is transferred from the Planar Mover to this function block. ]]></Comment>
 							<Type GUID="{1500FFCE-0727-F0FF-6AEB-C3B7FBED5C6B}" Namespace="Tc3_Mc3PlanarMotion">CDT_MCTOPLC_PLANAR_MOVER</Type>
@@ -50619,6 +51213,10 @@ External Setpoint Generation:
 							<Name>GVL_MC.EnterSystem.MCTOPLC_STD</Name>
 							<Comment><![CDATA[ Track connection in data that is transferred from the Planar Track Connection In to this function block. ]]></Comment>
 							<Type GUID="{114358A6-D770-4A98-986E-C49E74F8BB9A}" Namespace="MC">CDT_MCTOPLC_PLANAR_TRACK_CONNECTION_IN</Type>
+						</Var>
+						<Var>
+							<Name>GVL_DataExchange.Dynamics</Name>
+							<Type GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Type>
 						</Var>
 					</Vars>
 					<Contexts>
@@ -53609,6 +54207,9 @@ Bit 8 - 15 : reserved]]></Comment>
 				<Image Id="2" ImageFlags="#x00000030" AddrType="9" ImageType="3">
 					<Name>Image</Name>
 				</Image>
+				<Image Id="4" AddrType="10" ImageType="3">
+					<Name>Image-2</Name>
+				</Image>
 				<Box Id="1" BoxType="9099">
 					<Name>Term 1 (EK1200)</Name>
 					<ImageId>1017</ImageId>
@@ -53619,6 +54220,7 @@ Bit 8 - 15 : reserved]]></Comment>
 						<EtherCAT SlaveType="1" PdiType="#x0104" CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x07113052" RevisionNo="#x00120000" RepeatSupport="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL1809 16Ch. Dig. Input 24V, 3ms" Desc="EL1809" PortABoxInfo="#x01000001">
 							<SyncMan>001002000000010004000000000000000200001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
+							<SuTask>#x02010020</SuTask>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
 								<Entry Name="Input" Index="#x6000" Sub="#x01">
 									<Type>BIT</Type>
@@ -53708,6 +54310,7 @@ Bit 8 - 15 : reserved]]></Comment>
 							<SyncMan>000f01004400010003000000000000000100000f44090000</SyncMan>
 							<SyncMan>010f01004400010003000000000000000100010f44090000</SyncMan>
 							<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
+							<SuTask>#x02010020</SuTask>
 							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
 								<Entry Name="Output" Index="#x7000" Sub="#x01">
 									<Type>BIT</Type>
@@ -53808,7 +54411,7 @@ Bit 8 - 15 : reserved]]></Comment>
 							<BootStrapData>0010f400f410f400</BootStrapData>
 							<SuName></SuName>
 							<SuName></SuName>
-							<SuTask>#x00000000</SuTask>
+							<SuTask>#x02010020</SuTask>
 							<SuTask>#x00000000</SuTask>
 							<MBoxUserCmdData>004003000a0000001f000000000000000000000000000000000000000000000020f31005020000000100456e61626c6520446961674d65737361676520617320656d657267656e637900</MBoxUserCmdData>
 							<Pdo Name="ConnectionInputs" Index="#x1a00" Flags="#x2011" SyncMan="3">
@@ -54016,7 +54619,7 @@ Bit 8 - 15 : reserved]]></Comment>
 						</Slot>
 					</EtherCAT>
 				</Box>
-				<EtherCAT/>
+				<EtherCAT DcSyncTask="2"/>
 			</Device>
 			<Device Id="2" DevType="112" AmsPort="28674" AmsNetId="0.0.0.0.3.1" RemoteName="Device 2 (EtherCAT Automation Protocol)">
 				<Name>Device 2 (EtherCAT Automation Protocol)</Name>
@@ -54346,6 +54949,7 @@ Bit 8 - 15 : reserved]]></Comment>
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2041-0850-4020-500820000403}" Id="#x02030070"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500841000403}" Id="#x02030190"/>
 		<MappingInfo Identifier="{00000000-2041-0850-4020-500880000403}" Id="#x02030060"/>
 		<MappingInfo Identifier="{00000000-0060-0304-6000-120560000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-0060-0304-7000-120560000403}" Id="#x02030040"/>
