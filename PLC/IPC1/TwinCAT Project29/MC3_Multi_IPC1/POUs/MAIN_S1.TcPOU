@@ -174,9 +174,17 @@ IF MessageTrigger[5].Q THEN
 	ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Module Fault Line 3 PlcTask SyncUnit %s ' , strArg:= TO_STRING(ModuleState3[2]));
 END_IF
 
+///======================================================================================
+// Track Update 
+fbTrackobject(TrackID:= GVL_mc.aMcTracks[E_TrackNum.big].MCTOPLC_STD.TrackOID,iMover:= gvl_mc.iMover ); 
+fbTrackobject.CyclicUpdate();
 
+FOR i := 1 TO GVL_MC.nNumTracks DO 
+	GVL_MC.aMcTracks[i].Update();
+	GVL_MC.TrackFeedback[i].Update();
+END_FOR	
 //===========================================================================================
-
+//Moverupdate=============================================================================== 
 GVL_MC.ipXtsProcessingUnit :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number,0);
 AllDone  := TRUE;
 FOR i := 1 TO GVL_MC.nNumMovers DO 	
@@ -185,19 +193,6 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 		ipXlMover  :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number, 0).XlMover(i, 0);
 		AllDone := AllDone AND GVL_MC.fbMover[i].Init(ipXlMover, GVL_MC.ipXtsProcessingUnit); 
 	END_IF
-	InitDone := alldone;
-	
-	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
-	IF Fp_error.Q THEN
-		state := 140;
-		Fault := TRUE;
-
-		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
-	ELSE
-		Fault := FALSE;
-	END_IF
-	
-
 
 	GVL_MC.Feedback[i].Update();
 	GVL_MC.fbMover[i].CycleUpdate();
@@ -209,6 +204,16 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.direction := MC_Direction.mcDirectionPositive;
 	GVL_MC.fbMover[i].P_MoveOnTrackOptions.gapMode := MC_GAP_MODE_ON_TRACK.Fast1D;
 	GVL_DataExchange.aMoverInfos[i] :=  GVL_MC.fbMover[i].P_MoverInfos;
+	
+	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.STD.State = 102 AND state = 100);
+	IF Fp_error.Q THEN
+		state := 140;
+		Fault := TRUE;
+
+		ADSLOGSTR(msgCtrlMask:= ADSLOG_MSGTYPE_LOG , msgFmtStr:= 'Mover %s Faulted ' , strArg:= INT_TO_STRING(i));
+	ELSE
+		Fault := FALSE;
+	END_IF
 END_FOR	
 
 GVL_DataExchange.Dynamics.v := stMoverConfigNormal.Velo;
@@ -216,22 +221,12 @@ GVL_DataExchange.Dynamics.A := stMoverConfigNormal.Accel;
 GVL_DataExchange.Dynamics.D := stMoverConfigNormal.Decel;
 GVL_DataExchange.Dynamics.J := stMoverConfigNormal.Jerk;
 
-fbTrackobject(TrackID:= GVL_mc.aMcTracks[E_TrackNum.big].MCTOPLC_STD.TrackOID,iMover:= gvl_mc.iMover ); 
-fbTrackobject.CyclicUpdate();
-
-FOR i := 1 TO GVL_MC.nNumTracks DO 
-	GVL_MC.aMcTracks[i].Update();
-	GVL_MC.TrackFeedback[i].Update();
-END_FOR	
-
-IF NOT Init THEN
-	Init := TRUE;
+IF  alldone THEN
+	InitDone := TRUE;
+ELSE	
+	RETURN;
 END_IF
-
-
-
-
-
+//====================================================================================
 
 IF state < 99 AND xReset THEN 
 	IF State = 1 THEN 
@@ -242,7 +237,7 @@ END_IF
 IF state = 99 AND xStart AND remoteState  = 99 THEN   
 	state := 100;  
 END_IF
-
+//=====================================================================================
 CASE state OF
 	0: 
 		
@@ -313,7 +308,12 @@ CASE state OF
 	18: 
 	
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO  
-			GVL_MC.fbMover[i].JoinNearestTrack(aMcTracks,nNumTracks);	
+			GVL_MC.fbMover[i].JoinNearestTrack(aMcTracks,nNumTracks);
+			//set Sync trail=================================================	
+			GVL_MC.fbMover[i].ClearSyncTrail();
+			GVL_MC.fbMover[i].SetSyncTrail(aMcTracks[E_TrackNum.Small]);
+			GVL_MC.fbMover[i].SetSyncTrail(aMcTracks[E_TrackNum.MainEnd]);
+			//===============================================================
 		END_FOR
 		state := 20;
 	
@@ -419,7 +419,7 @@ CASE state OF
 							velo:= stMoverConfigNormal.velo);
 							MoverState[i] := 8; 
 						// reduce the gap of the leading mover 
-						fbMover[moverInFront].MoveOnTrack(track:= GVL_Mc.aMcTracks[E_TrackNum.Big], targetPos:= GVL_Mc.aMcTracks[E_TrackNum.Big].GetLength()-500, gap:= 0);
+						fbMover[moverInFront].MoveOnTrack(track:= GVL_Mc.aMcTracks[EndTrack], targetPos:= GVL_Mc.aMcTracks[EndTrack].GetLength()-200, gap:= 0);
 
 					END_IF 
 			
@@ -438,10 +438,10 @@ CASE state OF
                  		distToMoverInFront := 0;
                   END_IF
 				  
-               	IF fbMover[nForCounter].P_SyncFeedback.inSync OR  MOver[nForCounter].TrackID =  GVL_Mc.aMCTracks[E_TrackNum.MainEnd].MCTOPLC_STD.TrackOID THEN 
+               	IF fbMover[i].P_SyncFeedback.inSync OR  fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID =  GVL_Mc.aMCTracks[E_TrackNum.MainEnd].MCTOPLC_STD.TrackOID THEN 
 						MoverState[i] := 10;
 						Short :=FALSE;
-				ELSIF	fbMover[nForCounter].P_SyncFeedback.Error THEN
+				ELSIF	fbMover[i].P_SyncFeedback.Error THEN
 						MoverState[i] := 6;
 				END_IF 
 

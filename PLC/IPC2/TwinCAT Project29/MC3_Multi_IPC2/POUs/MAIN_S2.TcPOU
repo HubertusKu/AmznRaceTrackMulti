@@ -84,17 +84,27 @@ ELSE
 	stMoverConfigNormal.Jerk	:=	GVL_DataExchange.Dynamics.J;
 END_IF
 // =====================
+/// Track Update  =====================================
+
+FOR i := 1 TO GVL_MC.nNumTracks DO 
+	GVL_MC.aMcTracks[i].Update();
+	GVL_MC.TrackFeedback[i].Update();
+END_FOR	
+
+//=========================================================
+//=============MoverUpdate===================================
 GVL_MC.ipXtsProcessingUnit :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number,0);
 AllDone := TRUE;
+
 FOR i := 1 TO GVL_MC.nNumMovers DO 
 	
 	IF NOT InitDone  THEN
 		ipXlMover  :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number, 0).XlMover(i, 0);
 		AllDone := AllDone AND GVL_MC.fbMover[i].Init(ipXlMover, GVL_MC.ipXtsProcessingUnit); 
 	END_IF
-	InitDone := alldone;
+
 	
-	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
+	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.STD.State = 102 AND state = 100);
 	IF Fp_error.Q THEN
 		state := 140;
 		Fault := TRUE;
@@ -116,14 +126,15 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 	GVL_DataExchange.aMoverInfos[i] :=  GVL_MC.fbMover[i].P_MoverInfos;
 END_FOR	
 
-FOR i := 1 TO GVL_MC.nNumTracks DO 
-	GVL_MC.aMcTracks[i].Update();
-	GVL_MC.TrackFeedback[i].Update();
-END_FOR	
 
-IF NOT Init THEN
-	Init := TRUE;
+IF  alldone THEN
+	InitDone := TRUE;
+ELSE	
+	RETURN;
 END_IF
+
+//==========================================================================
+
 
 IF state <99 AND xEAPReset THEN 
 	state := 0; 
@@ -140,7 +151,7 @@ END_IF
 IF b110SyncState <>1 THEN 
 	SyncFault := TRUE; 
 END_IF
-
+//=================================================================================
 
 
 CASE state OF
@@ -227,7 +238,10 @@ CASE state OF
 		IF bAlldone THEN
 			state := 99;
 		END_IF
-		
+	99:
+	 	IF GVL_MC.nNumActiveMovers = 0 THEN
+			state := 100;
+		END_IF	
 	100: 
 		arrivedOTCID := GVL_MC.EnterSystem.PopFirstMoverInQueue();
 		IF arrivedOTCID <> 0 THEN

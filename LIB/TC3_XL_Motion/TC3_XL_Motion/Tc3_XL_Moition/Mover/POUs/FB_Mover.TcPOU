@@ -39,7 +39,7 @@ VAR
 	_distToEndOfTrack : LREAL;
 
 	fbResult						: FB_TcMessage;
-	_ipComObject					: ITComObject;
+///	_ipComObject					: ITComObject;
 	PID_OnTrackInfos				: PTCID := 16#05030180;
 	bInit 							: BOOL;
 	nErrorID						: HRESULT; 
@@ -55,6 +55,19 @@ END_VAR
     <Folder Name="Methods" Id="{0af15190-d2aa-44a0-bb66-f7b3132dbfa1}" />
     <Folder Name="Pointer" Id="{88a55610-b4ba-442c-901c-a1d5c38e9c09}" />
     <Folder Name="Properties" Id="{7031571e-e1d9-43e7-ab72-63d8e981e89e}" />
+    <Method Name="ClearSyncTrail" Id="{e61bcda0-90c3-4136-81ce-acf5e5eb8d9e}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD ClearSyncTrail : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[_syncTrail.Clear();
+
+IF _syncTrail.TrackCount = 0 THEN
+	ClearSyncTrail := TRUE;
+END_IF]]></ST>
+      </Implementation>
+    </Method>
     <Method Name="CycleUpdate" Id="{f03058aa-6296-4ef4-9484-d5b71f801a75}" FolderPath="Methods\">
       <Declaration><![CDATA[
 
@@ -78,7 +91,7 @@ fbPlanarMover.Update();
 fbPlanarFeedback.Update();
 SyncMoverFeedback.Update();
 UpdateXtsTrack();
-GetOnTrackInfos() ;
+GetOnTrackInfos(fbPlanarMover.MCTOPLC.STD.MoverOID) ;
 
 
 _stMoverinfos.MoverOtcid :=fbPlanarMover.MCTOPLC.STD.MoverOID ;
@@ -116,6 +129,30 @@ END_IF
 
 
 ]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Disable" Id="{d4cd6619-4c4b-49cb-88a3-5d2e4721828c}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Disable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbPlanarMover.Enable(
+	commandFeedback:= fbPlanarFeedback);
+	
+Disable :=fbPlanarFeedback.Done OR fbPlanarFeedback.Error;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Enable" Id="{8f81c7e1-1425-40e9-94a8-fc8dd0ad962e}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Enable : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbPlanarMover.Disable(
+	commandFeedback:= fbPlanarFeedback);
+	
+Enable :=fbPlanarFeedback.Done OR fbPlanarFeedback.Error;]]></ST>
       </Implementation>
     </Method>
     <Method Name="GetActHwPosModuloPointer" Id="{545ee952-faf6-4fbe-a77f-0166a9d43d19}" FolderPath="Pointer\">
@@ -223,22 +260,7 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="GetComObject" Id="{91c739c1-09e3-4950-bc67-3b2aa97918ba}" FolderPath="Pointer\">
-      <Declaration><![CDATA[METHOD GetComObject : BOOL
-VAR_INPUT
-	nObjectId: OTCID;
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[IF FW_ObjMgr_GetObjectInstance(	oid		:= nObjectId, 
-								iid		:= TC_GLOBAL_IID_LIST.IID_ITComObject, 
-								pipUnk	:= ADR(_ipComObject)) = 0
-THEN
-	GetComObject := TRUE;
-END_IF]]></ST>
-      </Implementation>
-    </Method>
-    <Method Name="GetDistanceToEot" Id="{e9f79926-9abd-432b-bf12-313fbb070747}" FolderPath="Methods\">
+    <Method Name="GetDistanceToEot" Id="{e9f79926-9abd-432b-bf12-313fbb070747}" FolderPath="Pointer\">
       <Declaration><![CDATA[METHOD GetDistanceToEot : LREAL
 VAR_INPUT
 	TrackLenght : LREAL;
@@ -252,8 +274,11 @@ IF fbPlanarMover.MCTOPLC.SETONTRACK.TrackOID<>0 THEN
 END_IF]]></ST>
       </Implementation>
     </Method>
-    <Method Name="GetOnTrackInfos" Id="{80c76236-e464-41c7-ade3-18309c2f7e10}" FolderPath="Methods\">
+    <Method Name="GetOnTrackInfos" Id="{80c76236-e464-41c7-ade3-18309c2f7e10}" FolderPath="Pointer\">
       <Declaration><![CDATA[METHOD GetOnTrackInfos : BOOL
+VAR_INPUT
+	nObjectId : otcid; 
+END_VAR
 VAR
 	nData 			: UDINT := SIZEOF(_stMoverOnTrackInfos);
 	pData 			: PVOID := ADR(_stMoverOnTrackInfos);
@@ -263,9 +288,17 @@ END_VAR
 VAR_INST
 	hResult : HRESULT;
 	bError : BOOL;
+	_ipComObject : ITComObject;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[bError := FALSE;
+
+
+IF nObjectId <> 0 AND_THEN _ipComObject = 0 THEN
+	 FW_ObjMgr_GetObjectInstance(	oid		:= nObjectId, 
+								iid		:= TC_GLOBAL_IID_LIST.IID_ITComObject, 
+								pipUnk	:= ADR(_ipComObject)) ;
+END_IF
 
 IF _ipComObject <> 0 THEN 
 	 hResult := 	_ipComObject.TcgetObjPara(		pid := PID_OnTrackInfos,
@@ -427,7 +460,20 @@ END_IF
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="Init" Id="{64dda721-646a-4cf1-ab7d-9993c2a9294b}" FolderPath="Methods\">
+    <Method Name="Halt" Id="{be2a5a02-47df-4fd0-9ccd-24499830f258}" FolderPath="Methods\">
+      <Declaration><![CDATA[METHOD Halt : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[fbPlanarMover.Halt(
+	commandFeedback:= fbPlanarFeedback, 
+	constraint:= _stDynamics);
+	
+Halt :=fbPlanarFeedback.Done OR fbPlanarFeedback.Error;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Init" Id="{64dda721-646a-4cf1-ab7d-9993c2a9294b}" FolderPath="Pointer\">
       <Declaration><![CDATA[METHOD Init : BOOL
 VAR_INPUT
 
@@ -447,12 +493,7 @@ ipXtsMover:= XtsMover;
 ipXtsProcessingUnit :=  XtsProcessingUnit;
 
 
-IF NOT Getpointer THEN
-	IF GetComObject(nObjectId:=fbPlanarMover.MCTOPLC.STD.MoverOID) THEN
-		Getpointer := TRUE;
-	END_IF
-	RETURN;
-END_IF
+
 
 ControllerOID:= ipXtsMover.GetMoverController(CmdFeedback);
 IF ControllerOID <> 0  THEN
@@ -468,7 +509,7 @@ IF ControllerOID <> 0  THEN
 	
 END_IF
 			
-IF  bInit AND  CmdFeedback.IsDone THEN
+IF    CmdFeedback.IsDone THEN
 	_bIsInitialized := TRUE;
 	Init := TRUE;
 END_IF
@@ -719,19 +760,6 @@ END_VAR
         </Implementation>
       </Set>
     </Property>
-    <Method Name="SetClearSyncTrail" Id="{e61bcda0-90c3-4136-81ce-acf5e5eb8d9e}" FolderPath="Methods\">
-      <Declaration><![CDATA[METHOD SetClearSyncTrail : BOOL
-VAR_INPUT
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[_syncTrail.Clear();
-
-IF _syncTrail.TrackCount = 0 THEN
-	SetClearSyncTrail := TRUE;
-END_IF]]></ST>
-      </Implementation>
-    </Method>
     <Method Name="SetSyncTrail" Id="{8774251d-30e6-45ca-a10f-4e71c1952ba8}" FolderPath="Methods\">
       <Declaration><![CDATA[METHOD SetSyncTrail : BOOL
 VAR_INPUT
