@@ -369,7 +369,7 @@ CASE state OF
 						Short := TRUE;
 						MoverState[i] := 4;
 					ELSE
-						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.Big],(GVL_MC.aMcTracks[E_TrackNum.Big].GetLength()-12000), GVL_MC.defaultGap);			
+						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.Big],(GVL_MC.aMcTracks[E_TrackNum.Big].GetLength()-10000), GVL_MC.defaultGap);			
 						MoverState[i] := 10;
 					END_IF
 				ELSIF NOT bSwitch AND  GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[E_TrackNum.MainStart].MCTOPLC_STD.TrackOID THEN
