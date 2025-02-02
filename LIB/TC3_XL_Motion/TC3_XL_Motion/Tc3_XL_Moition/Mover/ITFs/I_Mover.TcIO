@@ -10,10 +10,28 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
+    <Method Name="Disable" Id="{e91945c1-9d32-4cba-8166-b0aba4551baa}">
+      <Declaration><![CDATA[METHOD Disable : bool
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Enable" Id="{5d8e5a39-3048-4a88-a12a-fc0ef73a8ceb}">
+      <Declaration><![CDATA[METHOD Enable : bool
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
     <Method Name="GetDistanceToEot" Id="{c91b2c76-08f0-4c9a-a6b4-12cb24acad37}">
       <Declaration><![CDATA[METHOD GetDistanceToEot : LREAL
 VAR_INPUT
 	TrackLenght : LREAL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Halt" Id="{0188fbfe-8d16-48a3-9f0f-e2d1a04bbb00}">
+      <Declaration><![CDATA[METHOD Halt : bool
+VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
