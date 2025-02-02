@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
   <POU Name="MAIN_S1" Id="{1e7add0e-820a-414b-96de-5fe81886ac49}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN_S1
 
@@ -18,6 +18,7 @@ VAR
 	MoverState :ARRAY[1..GVL_MC.nNumMovers] OF UINT;
 	nForCounter ,i: UINT;
 	Velo : LREAL := 2000;
+	fbPWM : FB_PWM;
 	//mover :ARRAY[1..nNumMovers] OF MC_PlanarMover;
 	
 	LocalSystemTime : FB_LocalSystemTime;
@@ -84,7 +85,7 @@ VAR
 
 	A : LREAL := 0.63;
 	B : LREAL := 0.21;
-	C : LREAL := 6;
+	C : LREAL := 10;
 	
 	cmdFeedback: Tc3_XtsInterface.XtsCommandFeedback;
 	BUFFER: BYTE;
@@ -185,10 +186,10 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 		ipXlMover  :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number, 0).XlMover(i, 0);
 		AllDone := AllDone AND GVL_MC.fbMover[i].Init(ipXlMover, GVL_MC.ipXtsProcessingUnit); 
 	END_IF
-	InitDone := alldone;
+	
 	
 	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
-	IF Fp_error.Q THEN
+	IF Fp_error.Q AND FALSE THEN
 		state := 140;
 		Fault := TRUE;
 
@@ -211,6 +212,11 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 	GVL_DataExchange.aMoverInfos[i] :=  GVL_MC.fbMover[i].P_MoverInfos;
 END_FOR	
 
+IF AllDone THEN
+	InitDone := TRUE;
+ELSE 
+	RETURN;
+END_IF
 GVL_DataExchange.Dynamics.v := stMoverConfigNormal.Velo;
 GVL_DataExchange.Dynamics.A := stMoverConfigNormal.Accel;
 GVL_DataExchange.Dynamics.D := stMoverConfigNormal.Decel;
@@ -224,9 +230,7 @@ FOR i := 1 TO GVL_MC.nNumTracks DO
 	GVL_MC.TrackFeedback[i].Update();
 END_FOR	
 
-IF NOT Init THEN
-	Init := TRUE;
-END_IF
+
 
 
 
@@ -313,7 +317,12 @@ CASE state OF
 	18: 
 	
 		FOR i := 1 TO GVL_MC.nNumActiveMovers DO  
-			GVL_MC.fbMover[i].JoinNearestTrack(aMcTracks,nNumTracks);	
+			GVL_MC.fbMover[i].JoinNearestTrack(aMcTracks,nNumTracks);
+			//set Sync trail=================================================	
+			GVL_MC.fbMover[i].ClearSyncTrail();
+			GVL_MC.fbMover[i].SetSyncTrail(aMcTracks[E_TrackNum.Small]);
+			GVL_MC.fbMover[i].SetSyncTrail(aMcTracks[E_TrackNum.MainEnd]);
+			//===============================================================
 		END_FOR
 		state := 20;
 	
@@ -358,7 +367,7 @@ CASE state OF
 						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.Small], SwitchParkPos(* GVL_MC.aMcTracks[E_TrackNum.Small].GetLength()/2*), GVL_MC.defaultGap);
 						MoverNo1 := i;
 						Short := TRUE;
-						MoverState[i] := 6;
+						MoverState[i] := 4;
 					ELSE
 						GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[E_TrackNum.Big],(GVL_MC.aMcTracks[E_TrackNum.Big].GetLength()-12000), GVL_MC.defaultGap);			
 						MoverState[i] := 10;
@@ -419,7 +428,7 @@ CASE state OF
 							velo:= stMoverConfigNormal.velo);
 							MoverState[i] := 8; 
 						// reduce the gap of the leading mover 
-						fbMover[moverInFront].MoveOnTrack(track:= GVL_Mc.aMcTracks[E_TrackNum.Big], targetPos:= GVL_Mc.aMcTracks[E_TrackNum.Big].GetLength()-500, gap:= 0);
+						fbMover[moverInFront].MoveOnTrack(track:= GVL_Mc.aMcTracks[E_TrackNum.MainEnd], targetPos:= GVL_Mc.aMcTracks[E_TrackNum.MainEnd].GetLength()-250, gap:= 0);
 
 					END_IF 
 			
@@ -447,14 +456,14 @@ CASE state OF
 
 			10:
 
-				IF SystemReady AND (  GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 500 AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID <>  GVL_MC.aMcTracks[StartTrack].MCTOPLC_STD.TrackOID) THEN
+				IF  (  GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > 500 AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID <>  GVL_MC.aMcTracks[StartTrack].MCTOPLC_STD.TrackOID) THEN
 					GVL_MC.fbMover[i].MoveOnTrack(GVL_MC.aMcTracks[EndTrack], GVL_MC.aMcTracks[EndTrack].GetLength()- 200, GVL_MC.defaultGap);
 					MoverState[i] := 12;
 				END_IF
 		
 			12: 
 				//500mm after that the boundary change commmand is issued 
-				IF GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > GVL_MC.aMcTracks[E_TrackNum.MainEnd].GetLength() - 2300 AND // 2300
+				IF SystemReady AND GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > GVL_MC.aMcTracks[E_TrackNum.MainEnd].GetLength() - 2300 AND // 2300
 				(GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[E_TrackNum.MainEnd].MCTOPLC_STD.TrackOID)  THEN 
 					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem, GVL_MC.defaultGap); 
 					MoverState[i] := 15; 
@@ -507,18 +516,16 @@ CASE state OF
 	
 END_CASE
 
-//bMagnetOn := FALSE;
+bMagnetOn := FALSE;
 FOR nForCounter:=1 TO GVL_MC.nNumMovers DO
-	
-//	IF  GVL_MC.fbMover[nForCounter].XtsXlMover.GetPositionInfo_trackObjectId(0) = GVL_mc.XtsShortcutOid AND (IsBetween(GVL_MC.fbMover[nForCounter].XtsXlMover.GetPositionInfo_trackPosition(0), gvl_mc.fMagnetEntry - (Velo*0.06), gvl_mc.fMagnetExit(*- Velo*0.04*))) THEN
-//		bMagnetOn := TRUE;
-//	END_IF
+	IF  GVL_MC.fbMover[nForCounter].XtsXlMover.GetPositionInfo_trackObjectId(0) = GVL_mc.XtsShortcutOid AND (IsBetween(GVL_MC.fbMover[nForCounter].XtsXlMover.GetPositionInfo_trackPosition(0), gvl_mc.fMagnetEntry - (Velo*0.06), gvl_mc.fMagnetExit(*- (Velo*0.04)*))) THEN
+		bMagnetOn := TRUE;
+	END_IF
 END_FOR
 
 
-		SwitchCurrent := ((A*(((Velo/1000)*(Velo/1000))))+(B*(Velo/1000))+C);
+SwitchCurrent := ((A*(((Velo/1000)*(Velo/1000))))+(B*(Velo/1000))+C);
 IF bMagnetOn AND NOT Fault THEN
-
 	MagnetValue := TO_INT(SwitchCurrent*1310);
 ELSE
  	MagnetValue := 0;
@@ -545,5 +552,18 @@ power_trafo := voltage_trafo * current_trafo;
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="MAIN_S1">
+      <LineId Id="3" Count="77" />
+      <LineId Id="426" Count="0" />
+      <LineId Id="424" Count="1" />
+      <LineId Id="428" Count="1" />
+      <LineId Id="81" Count="13" />
+      <LineId Id="97" Count="85" />
+      <LineId Id="417" Count="6" />
+      <LineId Id="185" Count="194" />
+      <LineId Id="381" Count="7" />
+      <LineId Id="390" Count="23" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>

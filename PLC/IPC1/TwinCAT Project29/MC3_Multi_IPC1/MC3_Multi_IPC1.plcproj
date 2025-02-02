@@ -83,6 +83,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\FB_PWM.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\FB_TrackObject.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -175,6 +178,11 @@
     <None Include="MC3_Multi_IPC1.tmc">
       <SubType>Content</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="Tc3_XL_Motion">
+      <Resolution>Tc3_XL_Motion, 0.0.1.26 (Beckhoff Automation GmbH)</Resolution>
+    </PlaceholderResolution>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>

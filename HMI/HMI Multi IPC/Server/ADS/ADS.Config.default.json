@@ -20,7 +20,7 @@
     "RUNTIMES": {
         "PLC IPC1": {
             "ENABLED": true,
-            "NETID": "172.17.68.164.1.1",
+            "NETID": "127.0.0.1.1.1",
             "PORT": 853,
             "READ_ONLY": false,
             "SYMBOLS": {},
@@ -28,7 +28,7 @@
         },
         "PLC IPC2": {
             "ENABLED": true,
-            "NETID": "172.17.70.114.1.1",
+            "NETID": "172.22.209.127.1.1",
             "PORT": 851,
             "READ_ONLY": false,
             "SYMBOLS": {},
@@ -36,7 +36,7 @@
         },
         "Safety IPC1": {
             "ENABLED": true,
-            "NETID": "172.17.68.164.1.1",
+            "NETID": "127.0.0.1.1.1",
             "PORT": 852,
             "READ_ONLY": false,
             "SYMBOLS": {},
@@ -44,7 +44,7 @@
         },
         "Safety IPC2": {
             "ENABLED": true,
-            "NETID": "172.17.70.114.1.1",
+            "NETID": "172.22.209.127.1.1",
             "PORT": 852,
             "READ_ONLY": false,
             "SYMBOLS": {},

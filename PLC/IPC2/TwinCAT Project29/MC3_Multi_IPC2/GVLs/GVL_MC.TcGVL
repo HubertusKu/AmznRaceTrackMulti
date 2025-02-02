@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
   <GVL Name="GVL_MC" Id="{e6112190-7ee2-4c69-9f2e-cd1d96ada747}">
     <Declaration><![CDATA[
 VAR_GLOBAL CONSTANT
 	nNumMovers					: UINT := 12;
-	nNumActiveMovers 			: UINT := 0;
 	nNumTracks					: UINT := 1;
 	XtsShortcutOid				: otcid := 16#010100B0 ;
 	XtsOutterLoopOid 			: otcid := 16#01010300;
+END_VAR
+
+VAR_GLOBAL PERSISTENT
+	nNumActiveMovers 			: UINT := 0;
 END_VAR
 
 VAR_GLOBAL

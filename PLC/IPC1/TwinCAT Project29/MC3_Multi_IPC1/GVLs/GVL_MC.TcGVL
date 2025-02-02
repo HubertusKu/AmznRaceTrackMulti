@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
   <GVL Name="GVL_MC" Id="{0b209c63-aa83-4511-8475-d1f9ba389ff4}">
     <Declaration><![CDATA[
 VAR_GLOBAL CONSTANT
@@ -8,13 +8,12 @@ VAR_GLOBAL CONSTANT
 	XtsShortcutOid				: otcid := 16#01010490 ;
 	XtsOutterLoopOid 			: otcid := 16#01010480;
 	
-	fMagnetEntry : LREAL := 1800; //PLEASE ENTER THE MAGNET ENTRY!!!
-	fMagnetExit : LREAL := 2650; //PLEASE ENTER THE MAGNET EXIT!!!
+	fMagnetEntry : LREAL := 1766; //PLEASE ENTER THE MAGNET ENTRY!!!
+	fMagnetExit : LREAL := 2332; //PLEASE ENTER THE MAGNET EXIT!!!
 	
     standardAccel : LREAL := 4000; 
     standardDecel : LREAL :=4000; 
     standardJerk : LREAL := 16000; 
-
 
 END_VAR
 VAR_GLOBAL PERSISTENT
@@ -38,6 +37,7 @@ VAR_GLOBAL
 	EnterSystem 				:	MC_PlanarTrackConnectionIn;	
 	Mover						:	ARRAY[0..GVL_MC.nNumMovers] OF MoverSort;
 	defaultGap					:	LREAL := 900.0;
+	SafetyOK			 AT %I* :	BOOL;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

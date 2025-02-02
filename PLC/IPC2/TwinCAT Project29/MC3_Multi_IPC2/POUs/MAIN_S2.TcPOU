@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.11">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.8">
   <POU Name="MAIN_S2" Id="{eb537839-0cb8-4f4d-83cf-5c0c733fdb11}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN_S2
 
@@ -92,10 +92,10 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 		ipXlMover  :=  GVL_MC.fbXtsEnvironment.ProcessingUnit(XPU_Number, 0).XlMover(i, 0);
 		AllDone := AllDone AND GVL_MC.fbMover[i].Init(ipXlMover, GVL_MC.ipXtsProcessingUnit); 
 	END_IF
-	InitDone := alldone;
+	
 	
 	Fp_error(clk := GVL_MC.fbMover[i].P_PlanarMover.Error AND GVL_MC.fbMover[i].XtsXlMover.GetIsActive(0) AND state = 100);
-	IF Fp_error.Q THEN
+	IF Fp_error.Q AND FALSE THEN
 		state := 140;
 		Fault := TRUE;
 
@@ -116,14 +116,18 @@ FOR i := 1 TO GVL_MC.nNumMovers DO
 	GVL_DataExchange.aMoverInfos[i] :=  GVL_MC.fbMover[i].P_MoverInfos;
 END_FOR	
 
+IF AllDone THEN
+	InitDone := TRUE;
+ELSE
+	RETURN;
+END_IF
+
 FOR i := 1 TO GVL_MC.nNumTracks DO 
 	GVL_MC.aMcTracks[i].Update();
 	GVL_MC.TrackFeedback[i].Update();
 END_FOR	
 
-IF NOT Init THEN
-	Init := TRUE;
-END_IF
+
 
 IF state <99 AND xEAPReset THEN 
 	state := 0; 
@@ -271,7 +275,7 @@ CASE state OF
 					MoverState[i] := 12;
 				END_IF		
 			12: IF GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.SetPos > GVL_MC.aMcTracks[EndTrack].GetLength() - 2300 AND 
-				(GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[EndTrack].MCTOPLC_STD.TrackOID) AND SystemReady THEN 
+				(GVL_MC.fbMover[i].P_PlanarMover.MCTOPLC.SETONTRACK.TrackOID = GVL_MC.aMcTracks[EndTrack].MCTOPLC_STD.TrackOID) THEN 
 					GVL_MC.fbMover[i].LeaveSystemAt(GVL_MC.ExitSystem, GVL_MC.defaultGap); 
 					MoverState[i] := 15; 
 				END_IF	
@@ -324,5 +328,13 @@ END_CASE
 
 ]]></ST>
     </Implementation>
+    <LineIds Name="MAIN_S2">
+      <LineId Id="3" Count="49" />
+      <LineId Id="261" Count="4" />
+      <LineId Id="260" Count="0" />
+      <LineId Id="53" Count="5" />
+      <LineId Id="61" Count="198" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
   </POU>
 </TcPlcObject>
