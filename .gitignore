@@ -21,7 +21,7 @@ LineIDs.dbg.bak
 *.tmcRefac
 
 # TwinCAT project files
-*.tsproj.bak
+**/.tsproj.bak*/
 *.tsproj.b?k
 *.tsproj.orig
 *.xti.bak
