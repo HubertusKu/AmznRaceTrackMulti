@@ -1,0 +1,659 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.13" ClassName="CDevEthernetProtocolNvDef" SubType="112">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{F091D892-6DE7-4535-9A27-9E098F7C2781}" Namespace="MC">MC_MOVER_TRANSFER_ENTERING_STATE</Name>
+			<Comment><![CDATA[State for the transition of a leaving mover.]]></Comment>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Invalid]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[Indicates no or invalid information, e.g. no connection or component not yet ready.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Ready]]></Text>
+				<Enum>1</Enum>
+				<Comment><![CDATA[No transfer ongoing, but ready to start one.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Approved]]></Text>
+				<Enum>2</Enum>
+				<Comment><![CDATA[Transfer is approved (i.e. ongoing).]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Done]]></Text>
+				<Enum>3</Enum>
+				<Comment><![CDATA[Transfer is done, mover arrived.]]></Comment>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{A3858106-4084-4EC7-8A84-55B0E9A82E98}" Namespace="MC">GAP_CONTROL_INFO</Name>
+			<Comment><![CDATA[Provides information for gap control over system boundaries.]]></Comment>
+			<BitSize>384</BitSize>
+			<SubItem>
+				<Name>DcTimeStamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<Comment><![CDATA[Time for gap control.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>MoverId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar mover with which gap control may be necessary.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Pos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Position of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Velo</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Velocity of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Acc</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Acceleration of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>VeloLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Velocity limit of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AccLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Acceleration limit of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DecLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Deceleration limit of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>JerkLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Jerk limit of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>288</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Gap</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Gap of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>320</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GapMode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment><![CDATA[Time synchronisation information for time offset calculation.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>352</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{F7A580A7-7F84-49DA-8794-E4D00ED09AD4}" Namespace="MC">TIME_SYNC_INFO</Name>
+			<Comment><![CDATA[Provides information for gap control over system boundaries.]]></Comment>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>OwnDcTimeStamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<Comment><![CDATA[Current time of sending instance.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LatestOtherDcTimeStamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<Comment><![CDATA[Latest time of other instance received on sending instance side.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{8FF57F7C-2175-4CBB-91A3-220C437F153A}" Namespace="MC">CDT_MCTOMC_PLANAR_TRACK_CONNECTION_IN</Name>
+			<Comment><![CDATA[CDT provides current planar track information.]]></Comment>
+			<BitSize>704</BitSize>
+			<SubItem>
+				<Name>EnteringState</Name>
+				<Type GUID="{F091D892-6DE7-4535-9A27-9E098F7C2781}" Namespace="MC">MC_MOVER_TRANSFER_ENTERING_STATE</Type>
+				<Comment><![CDATA[State indicating the entering side status.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>RequestingMoverId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar mover that requested the transition.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ApprovingMoverId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar mover that is approving the transition.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DistanceAfter</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<Comment><![CDATA[Distance that the transitioning mover has after the system boundary.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GapControlInfo</Name>
+				<Type GUID="{A3858106-4084-4EC7-8A84-55B0E9A82E98}" Namespace="MC">GAP_CONTROL_INFO</Type>
+				<Comment><![CDATA[Gap control information of potential collision partner on other system.]]></Comment>
+				<BitSize>384</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TimeSyncInfo</Name>
+				<Type GUID="{F7A580A7-7F84-49DA-8794-E4D00ED09AD4}" Namespace="MC">TIME_SYNC_INFO</Type>
+				<Comment><![CDATA[Gap control information of potential collision partner on other system.]]></Comment>
+				<BitSize>128</BitSize>
+				<BitOffs>576</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{D052184D-8A18-4C8E-8941-1E36BCBC3E55}" Namespace="MC">MC_MOVER_TRANSFER_LEAVING_STATE</Name>
+			<Comment><![CDATA[State for the transition of a leaving mover.]]></Comment>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Invalid]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[Indicates no or invalid information, e.g. no connection or component not yet ready.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Ready]]></Text>
+				<Enum>1</Enum>
+				<Comment><![CDATA[No transfer ongoing, but ready to start one.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Requested]]></Text>
+				<Enum>2</Enum>
+				<Comment><![CDATA[Transfer is requested (i.e. ongoing).]]></Comment>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{96769BC5-FB3F-42B1-90E1-F8A602CE94AB}" Namespace="MC">CDT_MCTOMC_PLANAR_TRACK_CONNECTION_OUT</Name>
+			<Comment><![CDATA[CDT provides current planar track information.]]></Comment>
+			<BitSize>768</BitSize>
+			<SubItem>
+				<Name>LeavingState</Name>
+				<Type GUID="{D052184D-8A18-4C8E-8941-1E36BCBC3E55}" Namespace="MC">MC_MOVER_TRANSFER_LEAVING_STATE</Type>
+				<Comment><![CDATA[State indicating the leaving side status.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>RequestingMoverId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar mover that is requesting the transition.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LeavingTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<Comment><![CDATA[Time when the transitioning mover switches the systems.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LeavingVelocity</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<Comment><![CDATA[Velocity of the transitioning mover at the system boundary.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LeavingAcceleration</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<Comment><![CDATA[Acceleration of the transitioning mover at the system boundary.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GapControlInfo</Name>
+				<Type GUID="{A3858106-4084-4EC7-8A84-55B0E9A82E98}" Namespace="MC">GAP_CONTROL_INFO</Type>
+				<Comment><![CDATA[Gap control information of potential collision partner on other system.]]></Comment>
+				<BitSize>384</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TimeSyncInfo</Name>
+				<Type GUID="{F7A580A7-7F84-49DA-8794-E4D00ED09AD4}" Namespace="MC">TIME_SYNC_INFO</Type>
+				<Comment><![CDATA[Time synchronisation information for time offset calculation.]]></Comment>
+				<BitSize>128</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{2438F91B-E188-4ED7-8594-54354F9ED6A4}" Namespace="Safety" TcBaseType="true">FSOE_6</Name>
+			<BitSize>48</BitSize>
+			<SubItem>
+				<Name>FSoE CMD</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000002}">USINT</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE Data</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000032}">BITARR8</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE CRC_0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>FSoE ConnID</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Name>
+			<BitSize>256</BitSize>
+			<SubItem>
+				<Name>V</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>J</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>D</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>A</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{76B46C5A-3834-A827-19CD-BB547965FE41}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{D4650A08-DB56-4EAE-9BC4-749608C22CCE}">ST_DataExchange</Name>
+			<BitSize>320</BitSize>
+			<SubItem>
+				<Name>Dynamics</Name>
+				<Type GUID="{CE67C11A-9BB8-4BCA-BAE0-581A18EE4656}">ST_Dynamics</Type>
+				<BitSize>256</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Reset</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Run</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>264</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SafetyInRun</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>272</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<Device Id="3" DevType="112" AmsPort="28675" AmsNetId="0.0.0.0.4.1" RemoteName="Device 3 (EtherCAT Automation Protocol)">
+		<Name>__FILENAME__</Name>
+		<AddressInfo>
+			<Pnp>
+				<DeviceDesc>X001 (TwinCAT-Intel PCI Ethernet Adapter (Gigabit) </DeviceDesc>
+				<DeviceName></DeviceName>
+				<DeviceData>000000000000</DeviceData>
+			</Pnp>
+		</AddressInfo>
+		<Image Id="6" AddrType="1" ImageType="3">
+			<Name>Image</Name>
+		</Image>
+		<Box Id="3" BoxType="9051">
+			<Name>Box 28 (Publisher)</Name>
+			<ImageId>99</ImageId>
+			<Vars VarGrpType="1">
+				<Name>Inputs</Name>
+				<Var BoxStateVariable="true">
+					<Name>FrameState</Name>
+					<Comment><![CDATA[0x0001 = Not sent (frame skipped)
+0x0002 = Error (frame oversized)
+0x0004 = Subscriber missing (Unicast only)
+]]></Comment>
+					<Type>UINT</Type>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2">
+				<Name>Outputs</Name>
+				<Var BoxStateVariable="true">
+					<Name>FrameCtrl</Name>
+					<Comment><![CDATA[0x0001 = Disable sending
+0x0002 = Remove destination MAC from ARP cache
+]]></Comment>
+					<Type>UINT</Type>
+				</Var>
+			</Vars>
+			<Eap InOut="1" Mac="ffffffffffff" DisableSubscriberMonitoring="true" ArpRetryInterval="1000">
+				<EapVar Id="4" VarInOut="1" NvId="1" NvLength="88">
+					<Name>MC Track - XL In Syst 1</Name>
+					<ImageId>97</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarState</Name>
+							<Comment><![CDATA[0x0001 = Not sent (variable skipped)
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>16</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarCtrl</Name>
+							<Comment><![CDATA[0x0001 = Disable publishing
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>16</BitOffs>
+						</Var>
+						<Var>
+							<Name>VarData</Name>
+							<Type GUID="{8FF57F7C-2175-4CBB-91A3-220C437F153A}" Namespace="MC">CDT_MCTOMC_PLANAR_TRACK_CONNECTION_IN</Type>
+							<BitOffs>32</BitOffs>
+						</Var>
+					</Vars>
+				</EapVar>
+				<EapVar Id="2" VarInOut="1" NvId="2" NvLength="96">
+					<Name>MC Track - XL Out Syst 1</Name>
+					<ImageId>97</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarState</Name>
+							<Comment><![CDATA[0x0001 = Not sent (variable skipped)
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>32</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarCtrl</Name>
+							<Comment><![CDATA[0x0001 = Disable publishing
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>736</BitOffs>
+						</Var>
+						<Var>
+							<Name>VarData</Name>
+							<Type GUID="{96769BC5-FB3F-42B1-90E1-F8A602CE94AB}" Namespace="MC">CDT_MCTOMC_PLANAR_TRACK_CONNECTION_OUT</Type>
+							<BitOffs>752</BitOffs>
+						</Var>
+					</Vars>
+				</EapVar>
+				<EapVar Id="3" VarInOut="1" NvId="3" NvLength="6">
+					<Name>Safety</Name>
+					<ImageId>97</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarState</Name>
+							<Comment><![CDATA[0x0001 = Not sent (variable skipped)
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>48</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarCtrl</Name>
+							<Comment><![CDATA[0x0001 = Disable publishing
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>1520</BitOffs>
+						</Var>
+						<Var>
+							<Name>VarData</Name>
+							<Type GUID="{2438F91B-E188-4ED7-8594-54354F9ED6A4}" Namespace="Safety">FSOE_6</Type>
+							<BitOffs>1536</BitOffs>
+						</Var>
+					</Vars>
+				</EapVar>
+				<EapVar Id="1" VarInOut="1" NvId="4" NvLength="40">
+					<Name>Command</Name>
+					<ImageId>97</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarState</Name>
+							<Comment><![CDATA[0x0001 = Not sent (variable skipped)
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>64</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarCtrl</Name>
+							<Comment><![CDATA[0x0001 = Disable publishing
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>1584</BitOffs>
+						</Var>
+						<Var>
+							<Name>VarData</Name>
+							<Type GUID="{D4650A08-DB56-4EAE-9BC4-749608C22CCE}">ST_DataExchange</Type>
+							<BitOffs>1600</BitOffs>
+						</Var>
+					</Vars>
+				</EapVar>
+			</Eap>
+		</Box>
+		<Box Id="6" BoxType="9052">
+			<Name>Box 29 (Subscriber)</Name>
+			<ImageId>100</ImageId>
+			<Vars VarGrpType="1">
+				<Name>Inputs</Name>
+				<Var BoxStateVariable="true">
+					<Name>FrameState</Name>
+					<Type>UINT</Type>
+					<BitOffs>80</BitOffs>
+				</Var>
+			</Vars>
+			<Vars VarGrpType="2">
+				<Name>Outputs</Name>
+				<Var BoxStateVariable="true">
+					<Name>FrameCtrl</Name>
+					<Type>UINT</Type>
+					<BitOffs>1920</BitOffs>
+				</Var>
+			</Vars>
+			<Eap>
+				<EapVar Id="1" NvId="1" NvLength="88">
+					<Name>MC Track - XL In Syst 2</Name>
+					<ImageId>98</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarState</Name>
+							<Comment><![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>96</BitOffs>
+						</Var>
+						<Var>
+							<Name>Quality</Name>
+							<Comment><![CDATA[Duration the variable is not refreshed (in 100µs)]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>112</BitOffs>
+						</Var>
+						<Var>
+							<Name>CycleIndex</Name>
+							<Comment><![CDATA[Incremented each publisher cycle]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>128</BitOffs>
+						</Var>
+						<Var>
+							<Name>VarData</Name>
+							<Type GUID="{8FF57F7C-2175-4CBB-91A3-220C437F153A}" Namespace="MC">CDT_MCTOMC_PLANAR_TRACK_CONNECTION_IN</Type>
+							<BitOffs>144</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarCtrl</Name>
+							<Comment><![CDATA[0x0001 = Ignore hash value
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>1936</BitOffs>
+						</Var>
+					</Vars>
+				</EapVar>
+				<EapVar Id="2" NvId="2" NvLength="96">
+					<Name>MC Track - XL Out Syst 2</Name>
+					<ImageId>98</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarState</Name>
+							<Comment><![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>848</BitOffs>
+						</Var>
+						<Var>
+							<Name>Quality</Name>
+							<Comment><![CDATA[Duration the variable is not refreshed (in 100µs)]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>864</BitOffs>
+						</Var>
+						<Var>
+							<Name>CycleIndex</Name>
+							<Comment><![CDATA[Incremented each publisher cycle]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>880</BitOffs>
+						</Var>
+						<Var>
+							<Name>VarData</Name>
+							<Type GUID="{96769BC5-FB3F-42B1-90E1-F8A602CE94AB}" Namespace="MC">CDT_MCTOMC_PLANAR_TRACK_CONNECTION_OUT</Type>
+							<BitOffs>896</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarCtrl</Name>
+							<Comment><![CDATA[0x0001 = Ignore hash value
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>1952</BitOffs>
+						</Var>
+					</Vars>
+				</EapVar>
+				<EapVar Id="3" NvId="3" NvLength="6">
+					<Name>Safety</Name>
+					<ImageId>98</ImageId>
+					<Vars VarGrpType="1">
+						<Name>Inputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarState</Name>
+							<Comment><![CDATA[0x0001 = Invalid hash value received
+0x0002 = Invalid variable length received
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>1664</BitOffs>
+						</Var>
+						<Var>
+							<Name>Quality</Name>
+							<Comment><![CDATA[Duration the variable is not refreshed (in 100µs)]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>1680</BitOffs>
+						</Var>
+						<Var>
+							<Name>CycleIndex</Name>
+							<Comment><![CDATA[Incremented each publisher cycle]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>1696</BitOffs>
+						</Var>
+						<Var>
+							<Name>VarData</Name>
+							<Type GUID="{2438F91B-E188-4ED7-8594-54354F9ED6A4}" Namespace="Safety">FSOE_6</Type>
+							<BitOffs>1712</BitOffs>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2">
+						<Name>Outputs</Name>
+						<Var BoxStateVariable="true">
+							<Name>VarCtrl</Name>
+							<Comment><![CDATA[0x0001 = Ignore hash value
+]]></Comment>
+							<Type>UINT</Type>
+							<BitOffs>1968</BitOffs>
+						</Var>
+					</Vars>
+				</EapVar>
+			</Eap>
+		</Box>
+		<Ethernet DeviceDesc="X001 (TwinCAT-Intel PCI Ethernet Adapter (Gigabit) V2)" VirtualDeviceName="true"/>
+		<Eap EapDeviceGuid="{6133D6B6-E5FE-4958-8442-F102AFC660F7}"/>
+	</Device>
+	<Mappings>
+		<OwnerA>
+			<OwnerB Name="TINC^MC Project IPC1^Groups^IPC 1 In Connection">
+				<Link VarA="Box 28 (Publisher)^MC Track - XL In Syst 1^Outputs^VarData" VarB="McToMc^ToNeighbourSystem"/>
+				<Link VarA="Box 29 (Subscriber)^MC Track - XL Out Syst 2^Inputs^VarData" VarB="McToMc^FromNeighbourSystem"/>
+			</OwnerB>
+			<OwnerB Name="TINC^MC Project IPC1^Groups^IPC 1 Out Connection">
+				<Link VarA="Box 28 (Publisher)^MC Track - XL Out Syst 1^Outputs^VarData" VarB="McToMc^ToNeighbourSystem"/>
+				<Link VarA="Box 29 (Subscriber)^MC Track - XL In Syst 2^Inputs^VarData" VarB="McToMc^FromNeighbourSystem"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
+</TcSmItem>

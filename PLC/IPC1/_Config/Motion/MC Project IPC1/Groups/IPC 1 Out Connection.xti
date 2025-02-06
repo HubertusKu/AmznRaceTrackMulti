@@ -1,0 +1,594 @@
+<?xml version="1.0"?>
+<TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4026.13" ClassName="CTComMcObjDef" SubType="72">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{6D2B99B2-A9F2-44AF-A298-4BB7A08AE294}" Namespace="MC" TcBaseType="true">MC_PLANAR_STATE</Name>
+			<Comment><![CDATA[Indicates the enable state of a component.]]></Comment>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Invalid]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[Indicates no or invalid information, e.g. no connection or component not yet ready.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Disabled]]></Text>
+				<Enum>1</Enum>
+				<Comment><![CDATA[Indicates a disabled component.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Enabling]]></Text>
+				<Enum>2</Enum>
+				<Comment><![CDATA[Indicates an enabling component.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Enabled]]></Text>
+				<Enum>3</Enum>
+				<Comment><![CDATA[Indicates an enabled component.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Disabling]]></Text>
+				<Enum>4</Enum>
+				<Comment><![CDATA[Indicates a disabling component.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Error]]></Text>
+				<Enum>5</Enum>
+				<Comment><![CDATA[Indicates a component in error state.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[ErrorPending]]></Text>
+				<Enum>6</Enum>
+				<Comment><![CDATA[Indicates that a component is transitioning from any non error state to the error state.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Resetting]]></Text>
+				<Enum>7</Enum>
+				<Comment><![CDATA[Indicates that a component is resetting after it was in error state.]]></Comment>
+			</EnumInfo>
+			<Properties>
+				<Property>
+					<Name>plcAttribute_qualified_only</Name>
+				</Property>
+			</Properties>
+		</DataType>
+		<DataType>
+			<Name GUID="{9E820E67-264A-4170-958A-0B26CA5C91FA}" Namespace="MC">MC_POINT_XYC</Name>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>x</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>y</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>c</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<Format>
+				<Printf>(%g, %g, %g)</Printf>
+				<Parameter>.x</Parameter>
+				<Parameter>.y</Parameter>
+				<Parameter>.c</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{B2CF933E-E29A-438B-9E75-AAB0461C5B7C}" Namespace="MC">MC_DIRECTION_XYC</Name>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>x</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>y</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>c</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<Format>
+				<Printf>(%g, %g, %g)</Printf>
+				<Parameter>.x</Parameter>
+				<Parameter>.y</Parameter>
+				<Parameter>.c</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{9CF57A84-3D9F-46AA-AFF5-7F4A3573BEC7}" Namespace="MC" TcBaseType="true">CDT_MCTOPLC_PLANAR_TRACK_CONNECTION_OUT</Name>
+			<Comment><![CDATA[CDT provides current planar track connection out information.]]></Comment>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>TrackConnectionOutOID</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar track connection out.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{D052184D-8A18-4C8E-8941-1E36BCBC3E55}" Namespace="MC">MC_MOVER_TRANSFER_LEAVING_STATE</Name>
+			<Comment><![CDATA[State for the transition of a leaving mover.]]></Comment>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Invalid]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[Indicates no or invalid information, e.g. no connection or component not yet ready.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Ready]]></Text>
+				<Enum>1</Enum>
+				<Comment><![CDATA[No transfer ongoing, but ready to start one.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Requested]]></Text>
+				<Enum>2</Enum>
+				<Comment><![CDATA[Transfer is requested (i.e. ongoing).]]></Comment>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{A3858106-4084-4EC7-8A84-55B0E9A82E98}" Namespace="MC">GAP_CONTROL_INFO</Name>
+			<Comment><![CDATA[Provides information for gap control over system boundaries.]]></Comment>
+			<BitSize>384</BitSize>
+			<SubItem>
+				<Name>DcTimeStamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<Comment><![CDATA[Time for gap control.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>MoverId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar mover with which gap control may be necessary.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Pos</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Position of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Velo</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Velocity of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Acc</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Acceleration of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>VeloLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Velocity limit of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AccLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Acceleration limit of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DecLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Deceleration limit of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>JerkLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Jerk limit of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>288</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Gap</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000D}">REAL</Type>
+				<Comment><![CDATA[Gap of the mover for gap control.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>320</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GapMode</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment><![CDATA[Time synchronisation information for time offset calculation.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>352</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{F7A580A7-7F84-49DA-8794-E4D00ED09AD4}" Namespace="MC">TIME_SYNC_INFO</Name>
+			<Comment><![CDATA[Provides information for gap control over system boundaries.]]></Comment>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>OwnDcTimeStamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<Comment><![CDATA[Current time of sending instance.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LatestOtherDcTimeStamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<Comment><![CDATA[Latest time of other instance received on sending instance side.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{96769BC5-FB3F-42B1-90E1-F8A602CE94AB}" Namespace="MC">CDT_MCTOMC_PLANAR_TRACK_CONNECTION_OUT</Name>
+			<Comment><![CDATA[CDT provides current planar track information.]]></Comment>
+			<BitSize>768</BitSize>
+			<SubItem>
+				<Name>LeavingState</Name>
+				<Type GUID="{D052184D-8A18-4C8E-8941-1E36BCBC3E55}" Namespace="MC">MC_MOVER_TRANSFER_LEAVING_STATE</Type>
+				<Comment><![CDATA[State indicating the leaving side status.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>RequestingMoverId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar mover that is requesting the transition.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LeavingTime</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000C}">LINT</Type>
+				<Comment><![CDATA[Time when the transitioning mover switches the systems.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LeavingVelocity</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<Comment><![CDATA[Velocity of the transitioning mover at the system boundary.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LeavingAcceleration</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<Comment><![CDATA[Acceleration of the transitioning mover at the system boundary.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GapControlInfo</Name>
+				<Type GUID="{A3858106-4084-4EC7-8A84-55B0E9A82E98}" Namespace="MC">GAP_CONTROL_INFO</Type>
+				<Comment><![CDATA[Gap control information of potential collision partner on other system.]]></Comment>
+				<BitSize>384</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TimeSyncInfo</Name>
+				<Type GUID="{F7A580A7-7F84-49DA-8794-E4D00ED09AD4}" Namespace="MC">TIME_SYNC_INFO</Type>
+				<Comment><![CDATA[Time synchronisation information for time offset calculation.]]></Comment>
+				<BitSize>128</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{F091D892-6DE7-4535-9A27-9E098F7C2781}" Namespace="MC">MC_MOVER_TRANSFER_ENTERING_STATE</Name>
+			<Comment><![CDATA[State for the transition of a leaving mover.]]></Comment>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[Invalid]]></Text>
+				<Enum>0</Enum>
+				<Comment><![CDATA[Indicates no or invalid information, e.g. no connection or component not yet ready.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Ready]]></Text>
+				<Enum>1</Enum>
+				<Comment><![CDATA[No transfer ongoing, but ready to start one.]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Approved]]></Text>
+				<Enum>2</Enum>
+				<Comment><![CDATA[Transfer is approved (i.e. ongoing).]]></Comment>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[Done]]></Text>
+				<Enum>3</Enum>
+				<Comment><![CDATA[Transfer is done, mover arrived.]]></Comment>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{8FF57F7C-2175-4CBB-91A3-220C437F153A}" Namespace="MC">CDT_MCTOMC_PLANAR_TRACK_CONNECTION_IN</Name>
+			<Comment><![CDATA[CDT provides current planar track information.]]></Comment>
+			<BitSize>704</BitSize>
+			<SubItem>
+				<Name>EnteringState</Name>
+				<Type GUID="{F091D892-6DE7-4535-9A27-9E098F7C2781}" Namespace="MC">MC_MOVER_TRANSFER_ENTERING_STATE</Type>
+				<Comment><![CDATA[State indicating the entering side status.]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>RequestingMoverId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar mover that requested the transition.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ApprovingMoverId</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+				<Comment><![CDATA[Object id of the planar mover that is approving the transition.]]></Comment>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DistanceAfter</Name>
+				<Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+				<Comment><![CDATA[Distance that the transitioning mover has after the system boundary.]]></Comment>
+				<BitSize>64</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>GapControlInfo</Name>
+				<Type GUID="{A3858106-4084-4EC7-8A84-55B0E9A82E98}" Namespace="MC">GAP_CONTROL_INFO</Type>
+				<Comment><![CDATA[Gap control information of potential collision partner on other system.]]></Comment>
+				<BitSize>384</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>TimeSyncInfo</Name>
+				<Type GUID="{F7A580A7-7F84-49DA-8794-E4D00ED09AD4}" Namespace="MC">TIME_SYNC_INFO</Type>
+				<Comment><![CDATA[Gap control information of potential collision partner on other system.]]></Comment>
+				<BitSize>128</BitSize>
+				<BitOffs>576</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e00000001001800000000000000000000000000000000000000000000000000939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393bdbbbb5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c939393939393c5c3c35d5c5c9e9d9d5d5c5c636363c5c3c3c5c3c37d7c7b6c6b6cc0bebd545454c0bebdbdbbbb636363939393939393c5c3c35d5c5cadababc8c6c5605f5ea8a6a4c5c3c3c5c3c3adabab9e9d9dc5c3c3939393605f5e70706f939393939393cccccc5d5c5c5454549a9a976c6b6cc5c3c3c5c3c3c5c3c3c5c3c3c5c3c3c5c3c3605f5eb2b2b2b0aeae939393939393d0cecd5d5c5c8785859696965d5c5caaa8a7545454747474c5c3c3c5c3c36c6b6caaa8a7b2b2b2b2b2b2939393939393d5d3d3605f5ed5d3d35d5c5ccccccc5d5c5cb0aeae7d7c7b9e9c9ac5c3c35d5c5cbdbbbbb2b2b2bdbbbb939393939393dddddd5d5c5cdddddd6c6b6cadababcbcbcbcbcbcb9493915d5c5c545454939393c0bebdbdbbbbb2b2b2939393939393dddddd5d5c5ce3e3e3adabab6c6b6cd0cecdcbcbcbcbcbcbc8c6c55d5c5cc5c3c3c0bebdbdbbbbb2b2b2939393939393e3e3e3605f5ee3e3e3e3e3e3636363adababd0cecdcbcbcb8a8988878585c5c3c3c5c3c3bdbbbbbdbbbb939393939393e3e3e35d5c5ceaeaeaeaeaeae3e3e3545454adabab9a9a975d5c5ccbcbcbc8c6c5c5c3c3bdbbbbb2b2b2939393939393e3e3e35d5c5cf1f1f1eaeaeae3e3e3e3e3e36c6b6c797977d5d3d3cbcbcbc8c6c5c5c3c3bdbbbbb2b2b2939393939393e3e3e3605f5eeaeaeaeaeaeae3e3e3ddddddddddddd5d3d3d5d3d3ccccccc8c6c5c5c3c3bdbbbbbdbbbb939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393</ImageData>
+	</ImageDatas>
+	<GroupModule Id="#x05120090" AutoReloadTmc="true">
+		<Name>__FILENAME__</Name>
+		<ImageId>1000</ImageId>
+		<TmcDesc GUID="{FDE9174E-B8E6-4FA6-9656-81D029196589}" TcSmClass="TComMcGroupObj">
+			<Name>Planar Track Connection Out</Name>
+			<CLSID ClassFactory="TcNc3">{050300DE-0000-0000-F000-000000000064}</CLSID>
+			<Info>
+				<ImageData>424dd6020000000000003600000028000000100000000e00000001001800000000000000000000000000000000000000000000000000939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393bdbbbb5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c5d5c5c939393939393c5c3c35d5c5c9e9d9d5d5c5c636363c5c3c3c5c3c37d7c7b6c6b6cc0bebd545454c0bebdbdbbbb636363939393939393c5c3c35d5c5cadababc8c6c5605f5ea8a6a4c5c3c3c5c3c3adabab9e9d9dc5c3c3939393605f5e70706f939393939393cccccc5d5c5c5454549a9a976c6b6cc5c3c3c5c3c3c5c3c3c5c3c3c5c3c3c5c3c3605f5eb2b2b2b0aeae939393939393d0cecd5d5c5c8785859696965d5c5caaa8a7545454747474c5c3c3c5c3c36c6b6caaa8a7b2b2b2b2b2b2939393939393d5d3d3605f5ed5d3d35d5c5ccccccc5d5c5cb0aeae7d7c7b9e9c9ac5c3c35d5c5cbdbbbbb2b2b2bdbbbb939393939393dddddd5d5c5cdddddd6c6b6cadababcbcbcbcbcbcb9493915d5c5c545454939393c0bebdbdbbbbb2b2b2939393939393dddddd5d5c5ce3e3e3adabab6c6b6cd0cecdcbcbcbcbcbcbc8c6c55d5c5cc5c3c3c0bebdbdbbbbb2b2b2939393939393e3e3e3605f5ee3e3e3e3e3e3636363adababd0cecdcbcbcb8a8988878585c5c3c3c5c3c3bdbbbbbdbbbb939393939393e3e3e35d5c5ceaeaeaeaeaeae3e3e3545454adabab9a9a975d5c5ccbcbcbc8c6c5c5c3c3bdbbbbb2b2b2939393939393e3e3e35d5c5cf1f1f1eaeaeae3e3e3e3e3e36c6b6c797977d5d3d3cbcbcbc8c6c5c5c3c3bdbbbbb2b2b2939393939393e3e3e3605f5eeaeaeaeaeaeae3e3e3ddddddddddddd5d3d3d5d3d3ccccccc8c6c5c5c3c3bdbbbbbdbbbb939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393939393</ImageData>
+			</Info>
+			<InitSequence>PSO</InitSequence>
+			<Contexts>
+				<Context>
+					<Id>0</Id>
+					<Name>MET</Name>
+					<ManualConfig>
+						<OTCID>#x02010040</OTCID>
+					</ManualConfig>
+					<Priority>3</Priority>
+					<CycleTime>2000000</CycleTime>
+					<DependOn>ParentObject</DependOn>
+				</Context>
+				<Context>
+					<Id>1</Id>
+					<Name>MPT</Name>
+					<ManualConfig>
+						<OTCID>#x02010050</OTCID>
+					</ManualConfig>
+					<Priority>8</Priority>
+					<CycleTime>10000000</CycleTime>
+					<DependOn>ParentObject</DependOn>
+				</Context>
+			</Contexts>
+			<Parameters>
+				<Parameter HideParameter="true">
+					<Name>TraceLevel</Name>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+					<Default>
+						<Value>2</Value>
+					</Default>
+					<PTCID>#x03002103</PTCID>
+				</Parameter>
+				<Parameter HideParameter="true">
+					<Name>Ctx_TaskOid</Name>
+					<Comment><![CDATA[Task implementing ICyclicCaller for cyclic execution of this module]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<PTCID>#x03002060</PTCID>
+				</Parameter>
+				<Parameter>
+					<Name>PartOID</Name>
+					<Comment><![CDATA[Object id of the PlanarPart the track is in.]]></Comment>
+					<BitSize>32</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</BaseType>
+					<PTCID>#x050300e0</PTCID>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true">
+					<Name>State</Name>
+					<Comment><![CDATA[State, read only.]]></Comment>
+					<BitSize>16</BitSize>
+					<BaseType GUID="{6D2B99B2-A9F2-44AF-A298-4BB7A08AE294}" Namespace="MC">MC_PLANAR_STATE</BaseType>
+					<PTCID>#x050300b6</PTCID>
+				</Parameter>
+				<Parameter OnlineParameter="true" ReadOnly="true">
+					<Name>Time offset</Name>
+					<Comment><![CDATA[Time offset to corresponding in connection, i.e. between this and the neighbour system.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<Unit><![CDATA[s]]></Unit>
+					<PTCID>#x0503016f</PTCID>
+				</Parameter>
+				<Parameter>
+					<Name>Position</Name>
+					<Comment><![CDATA[Position of the track connection.]]></Comment>
+					<BitSize>192</BitSize>
+					<BaseType GUID="{9E820E67-264A-4170-958A-0B26CA5C91FA}" Namespace="MC">MC_POINT_XYC</BaseType>
+					<Default>
+						<Value>0</Value>
+					</Default>
+					<PTCID>#x0503016c</PTCID>
+				</Parameter>
+				<Parameter>
+					<Name>Tangent</Name>
+					<Comment><![CDATA[Tangential direction of the track connection.]]></Comment>
+					<BitSize>192</BitSize>
+					<BaseType GUID="{B2CF933E-E29A-438B-9E75-AAB0461C5B7C}" Namespace="MC">MC_DIRECTION_XYC</BaseType>
+					<Default>
+						<Value>0</Value>
+					</Default>
+					<PTCID>#x0503016d</PTCID>
+				</Parameter>
+				<Parameter>
+					<Name>Time offset filter time</Name>
+					<Comment><![CDATA[Zero means no filtering, increasing positive values increase smoothing and delay of the actual time offset.]]></Comment>
+					<BitSize>64</BitSize>
+					<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+					<Unit><![CDATA[s]]></Unit>
+					<Default>
+						<Value>0.01</Value>
+					</Default>
+					<PTCID>#x05030110</PTCID>
+				</Parameter>
+			</Parameters>
+			<DataAreas>
+				<DataArea>
+					<AreaNo AreaType="OutputSrc">1</AreaNo>
+					<Name>McToPlc</Name>
+					<ContextId>0</ContextId>
+					<ByteSize>4</ByteSize>
+					<Symbol>
+						<Name>STD</Name>
+						<BitSize>32</BitSize>
+						<BaseType GUID="{9CF57A84-3D9F-46AA-AFF5-7F4A3573BEC7}">MC.CDT_MCTOPLC_PLANAR_TRACK_CONNECTION_OUT</BaseType>
+						<BitOffs>0</BitOffs>
+					</Symbol>
+				</DataArea>
+				<DataArea>
+					<AreaNo AreaType="OutputSrc" CreateSymbols="true">2</AreaNo>
+					<Name>McToMc</Name>
+					<ContextId>0</ContextId>
+					<ByteSize>96</ByteSize>
+					<Symbol>
+						<Name>ToNeighbourSystem</Name>
+						<BitSize>768</BitSize>
+						<BaseType GUID="{96769BC5-FB3F-42B1-90E1-F8A602CE94AB}">MC.CDT_MCTOMC_PLANAR_TRACK_CONNECTION_OUT</BaseType>
+						<BitOffs>0</BitOffs>
+					</Symbol>
+				</DataArea>
+				<DataArea>
+					<AreaNo AreaType="InputDst" CreateSymbols="true">3</AreaNo>
+					<Name>McToMc</Name>
+					<ContextId>0</ContextId>
+					<ByteSize>88</ByteSize>
+					<Symbol>
+						<Name>FromNeighbourSystem</Name>
+						<BitSize>704</BitSize>
+						<BaseType GUID="{8FF57F7C-2175-4CBB-91A3-220C437F153A}">MC.CDT_MCTOMC_PLANAR_TRACK_CONNECTION_IN</BaseType>
+						<BitOffs>0</BitOffs>
+					</Symbol>
+				</DataArea>
+			</DataAreas>
+			<Properties>
+				<Property>
+					<Name>Category</Name>
+					<Value>MC Object</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>McPlanarTrackConnectionOut</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>HideTcComContextPP</Value>
+				</Property>
+				<Property>
+					<Name>Category</Name>
+					<Value>MC GroupModule</Value>
+				</Property>
+			</Properties>
+			<ParentOTCID>#x05100010</ParentOTCID>
+			<ParameterValues>
+				<Value>
+					<Name>TraceLevel</Name>
+					<EnumText>tlWarning</EnumText>
+				</Value>
+				<Value>
+					<Name>Ctx_TaskOid</Name>
+					<Value>33620032</Value>
+				</Value>
+				<Value>
+					<Name>PartOID</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Position.x</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Position.y</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Position.c</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Tangent.x</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Tangent.y</Name>
+					<Value>-1</Value>
+				</Value>
+				<Value>
+					<Name>Tangent.c</Name>
+					<Value>0</Value>
+				</Value>
+				<Value>
+					<Name>Time offset filter time</Name>
+					<Value>0.01</Value>
+				</Value>
+			</ParameterValues>
+		</TmcDesc>
+		<UnrestoredVarLinks ImportTime="2024-11-13T07:32:39">
+			<OwnerA Name="McToMc" Prefix="TINC^MC Project IPC1^Groups^IPC 1 Out Connection" Type="2">
+				<OwnerB Name="TINC^MC Project IPC2^Groups^IPC 2 In Connection">
+					<Link VarA="FromNeighbourSystem" GrpA="McToMc" TypeA="MC.CDT_MCTOMC_PLANAR_TRACK_CONNECTION_IN" InOutA="0" GuidA="{8FF57F7C-2175-4CBB-91A3-220C437F153A}" VarB="McToMc^ToNeighbourSystem"/>
+				</OwnerB>
+			</OwnerA>
+		</UnrestoredVarLinks>
+		<UnrestoredVarLinks ImportTime="2024-11-18T09:39:01">
+			<OwnerA Name="McToMc" Prefix="TINC^MC Project IPC1^Groups^IPC 1 Out Connection" Type="2">
+				<OwnerB Name="TINC^MC Project IPC2^Groups^IPC 2 In Connection">
+					<Link VarA="FromNeighbourSystem" GrpA="McToMc" TypeA="MC.CDT_MCTOMC_PLANAR_TRACK_CONNECTION_IN" InOutA="0" GuidA="{8FF57F7C-2175-4CBB-91A3-220C437F153A}" VarB="McToMc^ToNeighbourSystem"/>
+				</OwnerB>
+			</OwnerA>
+		</UnrestoredVarLinks>
+	</GroupModule>
+</TcSmItem>
