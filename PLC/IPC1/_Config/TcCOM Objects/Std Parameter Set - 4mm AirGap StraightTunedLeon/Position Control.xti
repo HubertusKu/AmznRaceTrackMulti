@@ -262,7 +262,7 @@
 				</Value>
 				<Value>
 					<Name>Kp_standstill</Name>
-					<Value>0.009</Value>
+					<Value>0.003</Value>
 				</Value>
 				<Value>
 					<Name>Kp_precise_standstill</Name>

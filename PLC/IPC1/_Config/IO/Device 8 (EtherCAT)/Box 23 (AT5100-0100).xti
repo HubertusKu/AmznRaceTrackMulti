@@ -39,7 +39,7 @@
 			<SyncMan>001000012600010001000000800000010001001026010000</SyncMan>
 			<SyncMan>001100012200010002000000800000010001001122010000</SyncMan>
 			<SyncMan>001210002400010003000000000000000c00001224010000</SyncMan>
-			<SyncMan>00143c002000010004000000000000003000001420010000</SyncMan>
+			<SyncMan>001431002000010004000000000000003000001420010000</SyncMan>
 			<Fmmu>0000000000000000001200020100000001000000000000000000000000000000</Fmmu>
 			<Fmmu>0000000000000000001400010100000002000000000000000000000000000000</Fmmu>
 			<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
@@ -77,7 +77,7 @@ Bit 14 - 15 : reserved]]></Comment>
 					<Type>INT</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="DRV Info data 1" Index="#x1a04" Flags="#x0000" SyncMan="3">
+			<Pdo Name="DRV Info data 1" Index="#x1a04" Flags="#x0000">
 				<Entry Name="Info data 1" BitLen="16" Index="#x6010" Sub="#x12">
 					<Type>UINT</Type>
 				</Entry>
@@ -91,11 +91,7 @@ Bit 14 - 15 : reserved]]></Comment>
 					<Type>USINT</Type>
 				</Entry>
 			</Pdo>
-			<Pdo Name="DRV Info data 2" Index="#x1a05" Flags="#x0000">
-				<Entry Name="Info data 2" BitLen="16" Index="#x6010" Sub="#x13">
-					<Type>UINT</Type>
-				</Entry>
-			</Pdo>
+			<Pdo Name="DRV Info data 2" Index="#x1a05" Flags="#x0000" SyncMan="3"/>
 			<Pdo Name="DRV Info data 3" Index="#x1a0d" Flags="#x0000">
 				<Entry Name="Info data 3" BitLen="16" Index="#x6010" Sub="#x14">
 					<Type>UINT</Type>

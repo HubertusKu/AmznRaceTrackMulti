@@ -4671,10 +4671,12 @@ Bit 8 - 15 : reserved]]></Comment>
 		<MappingInfo Identifier="{08502041-0060-0304-4020-500860000403}" Id="#x02030120" Watchdog="00000000000000000000000000000000"/>
 		<MappingInfo Identifier="{08502081-0060-0304-8020-500860000403}" Id="#x02030130" Watchdog="00000000000000000000000000000000"/>
 		<OwnerA Name="TIID^Device 1">
+			<OwnerB Name="TIID^Device 1^Term 1 (EK1200)^Term 90 (EL1904)">
+				<Link VarA="Term 1 (EK1200)^Term 91 (EL2912)^ConnectionInputs^Message_142 TxPDO" VarB="Module 1 (FSOES)^RxPDO^FSOE"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1^Term 1 (EK1200)^Term 91 (EL2912)">
 				<Link VarA="Term 1 (EK1200)^Term 89 (EL1904)^Module 1 (FSOES)^RxPDO^FSOE" VarB="ConnectionInputs^Message_141 TxPDO"/>
 				<Link VarA="Term 1 (EK1200)^Term 89 (EL1904)^Module 1 (FSOES)^TxPDO^FSOE" VarB="ConnectionOutputs^Message_141 RxPDO"/>
-				<Link VarA="Term 1 (EK1200)^Term 90 (EL1904)^Module 1 (FSOES)^RxPDO^FSOE" VarB="ConnectionInputs^Message_142 TxPDO"/>
 				<Link VarA="Term 1 (EK1200)^Term 90 (EL1904)^Module 1 (FSOES)^TxPDO^FSOE" VarB="ConnectionOutputs^Message_142 RxPDO"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)^Box 28 (Publisher)">
@@ -4683,11 +4685,11 @@ Bit 8 - 15 : reserved]]></Comment>
 			<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)^Box 29 (Subscriber)">
 				<Link VarA="Term 1 (EK1200)^Term 91 (EL2912)^ConnectionOutputs^Message_143 RxPDO" VarB="Safety^Inputs^VarData"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 4 (EtherCAT)^Box 59 (AT5100-0100)">
-				<Link VarA="Term 1 (EK1200)^Term 91 (EL2912)^ConnectionInputs^Message_116 TxPDO" VarB="Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4"/>
+			<OwnerB Name="TIID^Device 4 (EtherCAT)^Box 63 (AT5100-0100)">
+				<Link VarA="Term 1 (EK1200)^Term 91 (EL2912)^ConnectionInputs^Message_120 TxPDO" VarB="Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 8 (EtherCAT)^Box 26 (AT5100-0100)">
-				<Link VarA="Term 1 (EK1200)^Term 91 (EL2912)^ConnectionOutputs^Message_83 RxPDO" VarB="Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4"/>
+			<OwnerB Name="TIID^Device 8 (EtherCAT)^Box 30 (AT5100-0100)">
+				<Link VarA="Term 1 (EK1200)^Term 91 (EL2912)^ConnectionOutputs^Message_87 RxPDO" VarB="Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4"/>
 			</OwnerB>
 		</OwnerA>
 		<OwnerA Name="TIID^Device 4 (EtherCAT)">
@@ -4710,6 +4712,7 @@ Bit 8 - 15 : reserved]]></Comment>
 				<Link VarA="Box 57 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_114 RxPDO"/>
 				<Link VarA="Box 58 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_115 TxPDO"/>
 				<Link VarA="Box 58 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_115 RxPDO"/>
+				<Link VarA="Box 59 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_116 TxPDO"/>
 				<Link VarA="Box 59 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_116 RxPDO"/>
 				<Link VarA="Box 60 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_117 TxPDO"/>
 				<Link VarA="Box 60 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_117 RxPDO"/>
@@ -4717,7 +4720,6 @@ Bit 8 - 15 : reserved]]></Comment>
 				<Link VarA="Box 61 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_118 RxPDO"/>
 				<Link VarA="Box 62 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_119 TxPDO"/>
 				<Link VarA="Box 62 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_119 RxPDO"/>
-				<Link VarA="Box 63 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_120 TxPDO"/>
 				<Link VarA="Box 63 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_120 RxPDO"/>
 				<Link VarA="Box 64 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_121 TxPDO"/>
 				<Link VarA="Box 64 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_121 RxPDO"/>
@@ -4756,6 +4758,7 @@ Bit 8 - 15 : reserved]]></Comment>
 				<Link VarA="Box 25 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_82 TxPDO"/>
 				<Link VarA="Box 25 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_82 RxPDO"/>
 				<Link VarA="Box 26 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_83 TxPDO"/>
+				<Link VarA="Box 26 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_83 RxPDO"/>
 				<Link VarA="Box 27 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_84 TxPDO"/>
 				<Link VarA="Box 27 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_84 RxPDO"/>
 				<Link VarA="Box 28 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_85 TxPDO"/>
@@ -4763,7 +4766,6 @@ Bit 8 - 15 : reserved]]></Comment>
 				<Link VarA="Box 29 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_86 TxPDO"/>
 				<Link VarA="Box 29 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_86 RxPDO"/>
 				<Link VarA="Box 30 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_87 TxPDO"/>
-				<Link VarA="Box 30 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_87 RxPDO"/>
 				<Link VarA="Box 31 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_88 TxPDO"/>
 				<Link VarA="Box 31 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Send Message^Message_4" VarB="ConnectionOutputs^Message_88 RxPDO"/>
 				<Link VarA="Box 32 (AT5100-0100)^Module 1 (SAFETY)^SAFETY FSoE Connection 1 Receive Message^Message_4" VarB="ConnectionInputs^Message_89 TxPDO"/>
