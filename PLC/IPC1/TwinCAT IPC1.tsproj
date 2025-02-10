@@ -1141,7 +1141,7 @@
 				</Instance>
 			</Project>
 			<Project GUID="{8E54AB6E-24FA-4DB6-A8C6-2DF000807775}" Name="MC3_Multi_IPC1" PrjFilePath="MC3_Multi_IPC1\MC3_Multi_IPC1.plcproj" TmcFilePath="MC3_Multi_IPC1\MC3_Multi_IPC1.tmc" ReloadTmc="true" AmsPort="853" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{6664AF9C-D9A7-3501-2319-EA4DC64DF3F7}" TmcPath="MC3_Multi_IPC1\MC3_Multi_IPC1.tmc">
+				<Instance Id="#x08502080" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{E27B98C0-0D66-4C1C-2A9A-39B68BDDFB87}" TmcPath="MC3_Multi_IPC1\MC3_Multi_IPC1.tmc">
 					<Name>MC3_Multi_IPC1 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">

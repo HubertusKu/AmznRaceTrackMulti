@@ -32932,7 +32932,7 @@ External Setpoint Generation:
 				</Instance>
 			</Project>
 			<Project GUID="{58EE9543-7EAA-4B53-B777-145942758DE0}" Name="MC3_Multi_IPC2" PrjFilePath="MC3_Multi_IPC2\MC3_Multi_IPC2.plcproj" TmcFilePath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{BEE8CED1-B035-6AE7-EE2F-94CD29D7D57F}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{7837BA7A-3553-A478-1A3B-6FA19A317F73}" TmcPath="MC3_Multi_IPC2\MC3_Multi_IPC2.tmc">
 					<Name>MC3_Multi_IPC2 Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="2" AreaNo="1">

@@ -536,7 +536,7 @@
 				</Value>
 				<Value>
 					<Name>StartupTrackPosition</Name>
-					<Value>0.200000002980232</Value>
+					<Value>1444</Value>
 				</Value>
 				<Value>
 					<Name>SimulatedStartUpPart</Name>
@@ -548,7 +548,7 @@
 				</Value>
 				<Value>
 					<Name>IsVirtualFeedbackEnabled</Name>
-					<EnumText>TRUE</EnumText>
+					<EnumText>FALSE</EnumText>
 				</Value>
 				<Value>
 					<Name>IsDetectionOnStartupEnabled</Name>
